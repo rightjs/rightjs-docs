@@ -1,7 +1,5 @@
-<% content_for :modules do %>
-  <%= stylesheet_link_tag('custom-build') %>
-  <%= javascript_include_tag('/builds/scripts.js') %>
-<% end -%>
+<% content_for :modules, stylesheet_link_tag('custom-build') %>
+<% content_for :modules, javascript_include_tag('/builds/scripts.js') %>
 
 <form action="<%= custom_builds_path %>" id="custom-build-form" method="post">
   <p>
@@ -24,10 +22,10 @@
         ['compress', 'pages.builds.modules.compress'.t      ],
         ['build',    'pages.builds.modules.build'.t         ]
       ].collect do |options|
-        content_tag :li,
+        "<li#{options[2] ? ' class="goods"' : ''}>"+
             check_box_tag("options[#{options.first}]", 1, !options[2] && options[0] != 'olds') +
-            label_tag("options_#{options.first}", options[1]),
-          :class => options[2] ? :goods : nil
+            label_tag("options_#{options.first}", options[1])+
+        "</li>"
           
       end.join("\n")
       %>

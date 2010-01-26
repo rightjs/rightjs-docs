@@ -9,9 +9,9 @@
     </ul>
     <dt>Демонстрация виджетов</dt>
     <ul>
-    <% ui_list.each do |unit| -%>
+    <% ui_list.each do |unit| %>
       <li><%= link_to unit[:name], unit[:url] + '/demo' %></li>
-    <% end -%>
+    <% end %>
     </ul>
   </dl>
 </p>

@@ -35,6 +35,6 @@ github service.
   
   :'in-edit'     => "A simple in-place editors feature for RightJS"
 }
--%>
+%>
 
 <%= partial 'unit', :collection => ui_list %>

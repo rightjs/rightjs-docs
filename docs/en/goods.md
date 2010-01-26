@@ -37,6 +37,6 @@ can include them in the main build at the [custom builds page](<%= builds_path %
                "the jQuery's 'live' feature or the Prototype 'lowpro' plugin, but with some additional abilities."
 
 }
--%>
+%>
 
 <%= partial 'unit', :collection => goods_list %>

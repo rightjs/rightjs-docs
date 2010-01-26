@@ -14,6 +14,11 @@ Every partial template is situated inside of the `com/` directory in a sub-direc
 that has the same name as the page it belongs to. For example the `browsers` partial
 on the `/browsers` page is in the file called `com/browsers/_browsers.html.erb`
 
+## RightJS Core API
+
+The RightJS Core api-documentation is situated inside of the `en/docs/` directories
+and repeat the packages/files structure of the core source code.
+
 
 ## Formatting
 

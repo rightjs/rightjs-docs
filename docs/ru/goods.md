@@ -37,6 +37,6 @@ RightJS Goods - это подпроект RightJS, содержащий колл
                "поведения элементов страницы, схожую с методом \"live\" в jQuery и плагином \"lowpro\" в Prototype"
 
 }
--%>
+%>
 
 <%= partial 'unit', :collection => goods_list %>

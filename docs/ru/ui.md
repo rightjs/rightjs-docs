@@ -34,6 +34,6 @@ RightJS UI - это подпроект содержащий стандартны
   
   :'in-edit'     => "Простой виджет in-place редакторов RightJS"
 }
--%>
+%>
 
 <%= partial 'unit', :collection => ui_list %>
