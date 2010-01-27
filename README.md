@@ -22,7 +22,7 @@ After that simply fire it up like that
 
 And open the following address in your browser
 
-    http://localhost:300
+    http://localhost:3000
 
 
 

@@ -36,16 +36,16 @@ the following order, so it could be programmatically parsed out later
 2. Basic description of the unit
 3. List of the methods in the following format (the order doesn't matter)
    
-   --------------------------------------
-   \#\#\# \#methodName (or '.methodName' for class level methods)
-   
-       method(semantic) -> result
-   
-   Method description in here
-   
-       some(example, code)
-   
-   --------------------------------------
+    --------------------------------------
+    ### #methodName (or '.methodName' for class level methods)
+    
+        method(semantic) -> result
+    
+    Method description in here
+    
+        some(example, code)
+    
+    --------------------------------------
 
 ## Unit Cross-References
 
