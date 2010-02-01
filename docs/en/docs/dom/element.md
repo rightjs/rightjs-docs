@@ -1,26 +1,26 @@
 # Element
 
-The dom-element unit in RightJS is called `Element` and it handles all the
-dom-element extensions.
+The DOM element unit in RightJS is called `Element` and it handles all the
+DOM element extensions.
 
 
 ## Additional Methods
 
-If you use RightJS own methods and functions to navigate around elements,
-then all the extensions on selected elements will be available automatically
-and immediately.
+If you use RightJS' own methods and functions to navigate around elements,
+all the extensions on selected elements will be available automatically and
+immediately.
 
-The only exception is the cases when you take an element from outside of
-the RightJS stack. Say, you assign an event handler directly in an element
-attribute, or you receive a dom-element that was found by another script.
-In those cases you need to call the `$()` function on those elements at
-least once to make all the additional methods to appear.
+The only exceptions are cases when you take an element from outside the
+RightJS stack, say you assign an event handler directly in an element
+attribute or you receive a DOM element that was found by another script.
+In these cases you need to call the `$()` function on those elements at
+least once to make all the additional methods available.
 
 
-## Set Methods And Chains
+## Set Methods and Chains
 
 All the set-methods in RightJS return a reference to the object they belong
-to, this way you can easily create chains of calls like that
+to, this way you can easily create chains of calls like:
 
     $('some-element').on("click", function() {})
       .setStyle({fontSize: '200%'})
@@ -30,19 +30,19 @@ to, this way you can easily create chains of calls like that
 
 ## Selector Methods
 
-There is a number of methods like, {#parents}, {#siblings}, etc. to
-help you to navigate around an element's neighborhood. All the methods can be
-used as is, or they can receive an optional css-selector rule that will filter
-out the result.
+There is a number of methods like, {#parents}, {#siblings} and so on to
+help you navigate around an element's neighborhood. All the methods can be
+used as are, or they can receive an optional CSS selector rule which will
+filter the result.
 
     var element = $('some-element');
     
     element.siblings();      // all the siblings
     element.siblings('div'); // all the siblings with tag 'div'
 
-__NOTE__: RightJS doesn't use any special interfaces to process node lists,
-instead of that we use simple {Array} instances. And as they support calls
-by name, you can take all the advantages of that working with dom-elements
+__NOTE__: RightJS doesn't use any special interfaces to process node lists
+but uses simple {Array} instances. And as they support calls by name, you 
+can take advantage of this working with DOM elements:
 
     $('some-list').select('li')
       .filter('hasClass', 'marked')
@@ -52,7 +52,7 @@ by name, you can take all the advantages of that working with dom-elements
 ## Events Processing
 
 The `Element` unit has all the standard {Observer} unit interface and handles
-events binding the same exact way.
+events binding in the exact same way.
 
     $('some-element').on('click', function() {
       call_that_function();
@@ -68,12 +68,12 @@ events binding the same exact way.
       function1, function2, function3
     ]);
 
-There are also shortcuts for all the standard dom-events. And you can use the
-name references for callbacks by as well
+There are also shortcuts for all the standard DOM events. And you can use the
+name references for callbacks as well:
 
     $('element').onClick('addClass', 'marked');
 
-And finally, you can trigger any event handler manually like this
+Finally, you can trigger any event handler manually like this:
 
     element.onClick('addClass', 'clicked');
     element.onKeypress('radioClass', 'typing');
@@ -84,8 +84,8 @@ And finally, you can trigger any event handler manually like this
 
 ## Custom events
 
-At the interface level, in RightJS there is no difference between standard
-and custom events, all of them are handled the same exact way
+At the interface level, there is no difference between standard
+and custom events in RightJS. All of them are handled the exact same way:
 
     element.on('my-event', function() {....});
     element.fire('my-event');
@@ -95,16 +95,16 @@ and custom events, all of them are handled the same exact way
 
     Element.addMethods(Object methods[, boolean dont_rewrite])
 
-Registers additional methods for the dom-elements on the page
+Registers additional methods for the DOM elements on the page.
 
-__DEPRECATED__: please use the {.include} method instead
+__DEPRECATED__: Please use the {.include} method instead.
 
 
 ### .include
   
     Element.include(Object methods[, boolean don_rewrite])
 
-Registers additional methods for the dom-elements on the page
+Registers additional methods for the DOM elements on the page.
     
     Element.include({
       myMethod: function() {....}
@@ -117,12 +117,12 @@ Registers additional methods for the dom-elements on the page
 
     initialize(String tag_name[, Object options]) -> Element new
 
-The standard constructor, takes two arguments, the tag name and options.
-Options are generally the element attributes, and additionally you can send
-the following keys to preset your element properties on instance.
+The standard constructor which takes two arguments, the tag name and options.
+Options are generally the element attributes and additionally you can send
+the following keys to preset your element properties on instance:
   
 * 'html'    - a source code to fill up the innerHTML property
-* 'class'   - css-class name(s) for the element
+* 'class'   - CSS class name(s) for the element
 * 'style'   - a hash (or string) of styles to be preset
 * 'observe' - a hash of events to observe
 
@@ -146,7 +146,7 @@ Everything will be handled in one flow.
     set(String name, String value) -> Element self
     set(Object properties_hash)    -> Element self
 
-Assigns the given attribute(s) to the element
+Assigns the given attribute(s) to the element.
 
     $('element').set('title', 'some title');
   
@@ -160,7 +160,7 @@ Assigns the given attribute(s) to the element
 
     get(String name) -> String value or null if empty
 
-Reads an element attribute. Returns null if the attribute is not set
+Reads an element attribute. Returns null if the attribute is not set.
 
     // <div id="div" title="some title"></div>
   
@@ -171,7 +171,7 @@ Reads an element attribute. Returns null if the attribute is not set
 
     has(String name) -> boolean
 
-Checks if an element has non-empty attribute with that name
+Checks if an element has a non-empty attribute with that name.
 
     // <div id="div" title="some title"></div>
   
@@ -183,7 +183,7 @@ Checks if an element has non-empty attribute with that name
 
     erase(String name) -> Element self
 
-Erases an attribute out of an element by the given name
+Erases the attribute with the given name from an element.
 
     // <div id="div" title="some title"></div>
     
@@ -198,9 +198,9 @@ Erases an attribute out of an element by the given name
 
     hidden() -> boolean
 
-Checks if the element has style 'display' as 'none'
+Checks if the element has style 'display' set to 'none'.
   
-__NOTE:__ Checks both, the element own and computed (css) styles.
+__NOTE__: Checks both the element's own and the computed (CSS) styles.
 
     /*
       <style type="text/css">
@@ -231,8 +231,8 @@ Checks if the element is visible. See the {#hidden} method for more details.
 
     hide([String effect[, Object options]]) -> Element self
 
-Hides out the element. If a valid effect name was specified and the {Fx}
-module is available, the the effect will be used to process the hiding.
+Hides the element. If a valid effect name was specified and the {Fx}
+module is available, the effect will be used to perform the hiding.
 
     $('some-element').hide();
     
@@ -244,8 +244,8 @@ module is available, the the effect will be used to process the hiding.
 
     show([String effect[, Object options]]) -> Element self
 
-Shows up the element. If a valid effect name was specified and the {Fx}
-module is available, then the effect will be used to process the showing
+Shows (un-hides) the element. If a valid effect name was specified and 
+the {Fx} module is available, the effect will be used to perform the showing.
 
     $('some-element').show();
   
@@ -257,8 +257,8 @@ module is available, then the effect will be used to process the showing
 
     toggle([String effect[, Object options]]) -> Element self
 
-Toggles the element visibility status. If a valid effect name was specified,
-the effect will be used to process the toggle.
+Toggles the element's visibility status. If a valid effect name was specified,
+the effect will be used to perform the toggling.
 
     $('some-element').toggle();
     
@@ -271,7 +271,7 @@ the effect will be used to process the toggle.
     radio([String effect[, Object options]]) -> Element self
 
 Hides all the sibling elements and shows itself. If a valid effect name was
-specified, the effect will be used to process the show
+specified, the effect will be used to perform the showing.
 
     $('some-element').radio();
     
@@ -282,7 +282,7 @@ specified, the effect will be used to process the show
 
     parent([String css_rule]) -> Element parent or null
 
-Selects the parent element. The first one if there is no css-rule, or the
+Selects the parent element. The first one if there is no CSS rule or the
 first one that matches the rule.
 
     /*
@@ -301,8 +301,8 @@ first one that matches the rule.
 
     parents([String css_rule]) -> Array of elements
 
-Returns the list of the element parent nodes, from down to up. If a css-rule
-was specified, the list will be filtered out by the rule
+Returns a list of the element's parent nodes, from down to top. If a CSS rule
+was specified, the list will be filtered by that rule
 
     /*
       <div id="one">
@@ -320,8 +320,8 @@ was specified, the list will be filtered out by the rule
 
     subNodes([String css_rule]) -> Array of elements
 
-Returns a list of the immediate descendants of the element. Optionally
-filtered out by the given css-rule.
+Returns a list of the immediate descendants from the element, optionally
+filtered by the given CSS rule.
 
     /*
       <div id="one">
@@ -338,8 +338,8 @@ filtered out by the given css-rule.
   
     siblings([String css_rule]) -> Array of eleemnts
 
-Returns the list of the siblings. Optionally filtered out by the given 
-css-rule.
+Returns a list of the siblings, optionally filtered by the given 
+CSS rule.
 
     /*
       <div>
@@ -357,8 +357,8 @@ css-rule.
 
     nextSiblings([String css_rule]) -> Array of elements
 
-Collects the element later siblings. Optionally filtered out by the given
-css-rule.
+Collects the element's later siblings, optionally filtered by the given
+CSS rule.
 
     /*
       <div>
@@ -397,7 +397,7 @@ css-rule.
 
     next([String css_rule]) -> Element or null
 
-Returns the next sibling of the element, or if a css-rule was specified the
+Returns the next sibling of the element or if a CSS rule is specified the
 next sibling that matches the rule.
 
     /*
@@ -416,7 +416,7 @@ next sibling that matches the rule.
 
     prev([String css_rule]) -> Element or null
 
-Returns the previous sibling of the element, or if a css-rule was specified 
+Returns the previous sibling of the element or if a CSS rule is specified 
 the previous sibling that matches the rule.
 
     /*
@@ -436,7 +436,7 @@ the previous sibling that matches the rule.
     first(String css_rule) -> Element or null
 
 Returns the first node in the internal structure that matches the given
-css-rule.
+CSS rule.
 
     /*
       <div id="one">
@@ -454,7 +454,7 @@ css-rule.
 
     select(String css_rule) -> Array of elements
 
-Selects all matching elements out of the element internal structure.
+Selects all matching elements out of the element's internal structure.
 
     /*
       <div id="one">
@@ -472,7 +472,7 @@ Selects all matching elements out of the element internal structure.
 
     match(String css_rule) -> boolean
 
-Checks if the element matches the given css rule
+Checks if the element matches the given CSS rule.
 
     // <div id="some-element"></div>
     
@@ -484,7 +484,7 @@ Checks if the element matches the given css rule
 
     remove() -> Element self
 
-Removes the element out of its parent element
+Removes the element from its parent element.
 
     $('some-element').remove();
 
@@ -495,15 +495,15 @@ Removes the element out of its parent element
 
 Inserts the given content into the element at the given position.
   
-The content might be one of the following
+The content can be one of the following:
   
-* An element instance
-* A string with HTML code (scripts will be evaluated)
-* A list of elements (array, or NodeList or something iterable)
-* A hash like {position: content}
+* an element instance
+* a string with HTML code (scripts will be evaluated)
+* a list of elements (array, or NodeList or something iterable)
+* a hash like {position: content}
   
-Position might be the one of the following
-  top/bottom/before/after/instead
+Position can be one of the following:
+  top / bottom / before / after / instead
     
 The `bottom` value is used by default.
 
@@ -553,9 +553,9 @@ Replaces the current element with the given content.
 
     update(mixed content) -> Element self
 
-Replaces the current element internal structure with the given content
+Replaces the current element's internal structure with the given content
 
-__NOTE__: all the scripts will be evaluated _after_ the update
+__NOTE__: All scripts will be evaluated _after_ the update.
 
     // <div id="one">foo bar</div>
     
@@ -568,7 +568,7 @@ __NOTE__: all the scripts will be evaluated _after_ the update
 
     wrap(Element wrapper) -> Element self
 
-Wraps the current element with the given one
+Wraps the current element with the given one.
 
     // <div id="one"><div id="two"></div></div>
     
@@ -581,7 +581,7 @@ Wraps the current element with the given one
 
     clean() -> Element self
 
-Removes all the child nodes out of the element
+Removes all child nodes from the element.
 
     $('element').clean();
 
@@ -602,7 +602,7 @@ Checks if the element has no internal text or elements.
     setStyle(Object styles)            -> Element self
     setStyle(String styles_def)        -> Element self
 
-Assigns a style to the element
+Assigns a style to the element.
 
     $('element').setStyle('display', 'block');
     
@@ -621,7 +621,7 @@ Assigns a style to the element
 Requests the element style by name. Supports both camelized and dasherized
 names.
   
-NOTE: Will process both element own and computed (css) level styles
+__NOTE__: Will process both the element's own and computed (CSS) level styles.
 
     $('element').hide();
     
@@ -632,7 +632,7 @@ NOTE: Will process both element own and computed (css) level styles
 
     hasClass(String class) -> boolean
 
-Checks if the element has the css-class name
+Checks if the element is assigned to the given CSS class name.
 
     var element = $('element');
     
@@ -647,7 +647,7 @@ Checks if the element has the css-class name
 
     setClass(String name) -> Element self
 
-Replaces all the element css-class names with the given one
+Replaces all the element CSS class names with the given one.
 
     element.className = 'foo bar';
     
@@ -661,7 +661,7 @@ Replaces all the element css-class names with the given one
 
     addClass(String name) -> Element self
 
-Adds the css-class name to the element class names list
+Adds the given CSS class name to the element class names list.
 
     element.className = 'foo';
     
@@ -675,7 +675,7 @@ Adds the css-class name to the element class names list
 
     removeClass(String name) -> Element self
 
-Removes the css-class name out of the element class names list
+Removes the given CSS class name from the element class names list.
 
     element.className = 'foo bar';
     
@@ -688,7 +688,7 @@ Removes the css-class name out of the element class names list
 
     toggleClass(String name) -> Element self
 
-Toggles the css-class name presence on the element class names list
+Toggles the CSS class name presence on the element class names list.
 
     element.className = 'foo';
     
@@ -703,8 +703,8 @@ Toggles the css-class name presence on the element class names list
 
     radioClass(String name) -> Element self
 
-Removes the css-class name out of all the element siblings and adds it to
-the current element
+Removes the CSS class name from of all the element's siblings and adds it to
+the current element.
 
     $('element').radioClass('boo');
 
@@ -716,9 +716,9 @@ the current element
     observe(String eventName, Array list_list_of_callbacks)  -> Element self
     observe(Object event_listeners_hash)                     -> Element self
 
-Binds an event listener to the element
+Binds an event listener to the element.
 
-__DEPRECATED__: use the {#on} method instead
+__DEPRECATED__: Use the {#on} method instead.
 
     $('element').observe('click', function() {
       // do something about it
@@ -741,7 +741,7 @@ __DEPRECATED__: use the {#on} method instead
     on(String eventName, Array list_list_of_callbacks)  -> Element self
     on(Object event_listeners_hash)                     -> Element self
 
-Binds an event listener to the element
+Binds an event listener to the element.
 
     $('element').on('click', function() {
       // do something about it
@@ -762,8 +762,8 @@ Binds an event listener to the element
     observes(Function listener)              -> boolean
     observes(String name, Function listener) -> boolean
 
-Checks if the given listener observers the element events. You can have a 
-check in general or against some event name.
+Checks if the given listener observers the element events. You can do either
+a general check or against a specific event name.
 
     var func = function() {};
     
@@ -779,8 +779,8 @@ check in general or against some event name.
     listeners(String name) -> Array of functions
 
 
-Returns the list the element event listeners. Might be narrowed down by an
-event name scope.
+Returns a list of element event listeners which can optionally be narrowed down
+by an event name scope.
 
     var func = function() {};
     
@@ -798,9 +798,9 @@ event name scope.
     stopObserving(Function listener)     -> Element self
     stopObserving(String name, listener) -> Element self
 
-Unsubscribes the event listener. It can be done globally for a particular
-event name, or for some particular listener, or for listener and an event
-name
+Unsubscribes the event listener. This can be done globally for a particular
+event name, for some particular listener or for some particular listener and
+event name.
 
     var listener = function() {};
     
@@ -827,7 +827,7 @@ Returns the element sizes hash.
 
     position() -> Object {x: NN , y: NN }
 
-Returns the element absolute position on the page
+Returns the element's absolute position on the page.
 
     var top  = $('element').position().y;
     var left = $('element').position().x;
@@ -838,7 +838,7 @@ Returns the element absolute position on the page
 
     scrolls() -> Object {x: NN , y: NN }
 
-Returns the element scrolls in a hash
+Returns the element's scroll values in a hash.
 
     var scroll_top  = $('element').scrolls().y;
     var scroll_left = $('element').scrolls().x;
@@ -848,8 +848,8 @@ Returns the element scrolls in a hash
 
     dimensions() -> Object
 
-Returns the element dimensions in a single hash. Includes the element
-`width`, `height`, `top` and `left` positions and `scrollLeft` and 
+Returns the element's dimensions in a single hash. Includes the element's
+`width`, `height`, `top` and `left` positions as well as `scrollLeft` and 
 `scrollTop` values.
 
     $('element').dimensions();
@@ -861,9 +861,8 @@ Returns the element dimensions in a single hash. Includes the element
 
 Sets the element width to the given size.
 
-__NOTE__: this method will automatically adjust the actual style.width for
-existing paddings and borders so the end result was exactly the same as 
-was asked.
+__NOTE__: This method will automatically adjust the actual style.width for
+existing paddings and borders so the end result will be exactly as requested.
 
     var element = new Element('div', {
       style: {
@@ -883,11 +882,10 @@ was asked.
 
     setHeight(number pixels) -> Element self
 
-Sets the element height to the given size.
+Sets the element's height to the given size.
 
-__NOTE__: this method will automatically adjust the actual style.height for
-existing paddings and borders so the end result was exactly the same as 
-was asked.
+__NOTE__: This method will automatically adjust the actual style.height for
+existing paddings and borders so the end result will be exactly as requested.
 
     var element = new Element('div', {
       style: {
@@ -906,10 +904,10 @@ was asked.
     resize(number width, number height) -> Element self
     resize({x: number, y: number})      -> Element self
 
-Sets the element size.
+Sets the element's size.
   
-__NOTE:__ this method will automatically adjust the actual style for existing
-paddings and borders so the end result was exactly the same as asked.
+__NOTE__: This method will automatically adjust the actual style for existing
+paddings and borders so the end result will be exactly as requested.
 
     var element = new Element('div', {
       style: {
@@ -931,7 +929,7 @@ paddings and borders so the end result was exactly the same as asked.
     moveTo(number left, number top) -> Element self
     moveTo({x: number, y: number})  -> Element self
 
-Move the element to the given position
+Move the element to the given position.
 
     element.moveTo(100, 100);
     element.moveTo({x: 100, y: 100});
@@ -942,7 +940,7 @@ Move the element to the given position
     scrollTo(number left, number top) -> Element self
     scrollTo({x: number, y: number})  -> Element self
 
-Sets the element scrolling position
+Sets the element's scrolling position.
 
     element.scrollTo(100, 100);
     element.scrollTo({x: 100, y: 100});
@@ -951,7 +949,7 @@ Sets the element scrolling position
 
     scrollThere() -> Element self
 
-Scrolls the window to the element
+Scrolls the window to the element.
 
     element.scrollThere();
 
@@ -960,15 +958,15 @@ Scrolls the window to the element
 
     load(String url[, Object options]) -> Element self
 
-This method loads the given url and updates the element innerHTML property 
+This method loads the given URL and updates the element's innerHTML property 
 with the response body.
   
 Takes all the standard {Xhr} class options as the second parameter.
   
-If there is any javascript code in the response, by default it will be
+If there is any JavaScript code in the response, it will by default be
 automatically evaluated after the element body was updated.
   
-__NOTE:__ will perform a `GET` request by default.
+__NOTE__: Will perform a `GET` request by default.
 
     element.load('/something');
     
