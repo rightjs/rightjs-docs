@@ -1,9 +1,9 @@
-# Custom Build Creating
+# Custom Build Creation
 
-You are free to create your own build of RightJS that fits your needs the best.
+You are free to create your own build of RightJS which best fits your needs.
 
 To create the builds we use [Front Compiler](http://github.com/MadRabbit/frontcompiler),
-the most effective javascript compressing library written in Ruby.
+the most effective JavaScript compression library written in Ruby.
 
 ## Custom Builder
 <%= partial 'form' %>
@@ -11,14 +11,15 @@ the most effective javascript compressing library written in Ruby.
 <div style="font-size: 80%">
   <h2>The Self-Building Feature</h2>
   <p>
-    The self-building feature creates a self-building javascript code
-    that reconstructs itself on the browser side. It gives additionally about 25-30%
-    of compression, but in exchange it takes about 5-100 ms on reconstruction (depends on a browser).
+    The self-building feature creates self-building javascript code which
+    reconstructs itself on the browser side. It gives you an additional 25-30%
+    compression, but in exchange it takes about 5 to 100 ms for reconstruction. The
+    exact duration depends on the browser and hardware.
   </p>
   <p>
-    In most of the cases of real live applications it is practically invisible for the
-    user, but if you are creating an extremely light-weight application and care about the
-    user experience you might consider to switch the feature off.
+    For most real life applications it is practically not noticable to the user,
+    but if you are creating an extremely light-weight application and care about
+    user experience you might consider turning this feature off.
   </p>
 </div>
 
