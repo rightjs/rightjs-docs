@@ -5,26 +5,26 @@ Feel free to contact us directly <%= contact_email %>
 
 # Google Group
 
-You also can find some people on the [google group](http://groups.google.com/group/rightjs).
+You can also find some people on the [google group](http://groups.google.com/group/rightjs).
 
 # Twitter
 
-Or you could drop me a line on [twitter](http://twitter.com/rightjs)
+Or you could drop me a line on [Twitter](http://twitter.com/rightjs).
 
 # IRC Channel
 
-RightJS has it's own IRC channel on the freenode service [#rightjs](irc://irc.freenode.net/rightjs)
+RightJS has its own IRC channel [#rightjs](irc://irc.freenode.net/rightjs) on Freenode.
 
 # Tickets Tracker
 
-We keep our tickets at the [Lighthouse](<%= RIGHTJS_TICKETS_TRACKER_URL %>) service
+We manage our tickets over at the [Lighthouse](<%= RIGHTJS_TICKETS_TRACKER_URL %>) service.
 
 # Participate
 
-If you want to participate in the project, if you've spotted a bug or can offer some enhancements,
-you can easily do so. All the source code of the project is freely available on the GitHub service.
+If you wish to participate in the project, have spotted a bug or would like to offer some 
+enhancements, simply fork the source code which is freely available on Github.
 
 <http://github.com/rightjs>
 
-Please also check the [participation](/participate) page. There are some basic project
-descriptions and suggestions how you could help.
+Please check the [participation](/participate) page as well. There are some basic project
+descriptions and suggestions which could be helpful.
