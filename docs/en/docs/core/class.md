@@ -4,8 +4,8 @@
 [Ruby]:      http://www.ruby-lang.org
 
 RightJS is an object-oriented framework and therefore provides extensive
-object-oriented programming features, which are basically a mix of the ideas
-from the [Prototype][] JavaScript framework and [Ruby][] programming language.
+object-oriented programming features, which are basically a mix of ideas
+from [Prototype][] JavaScript framework and [Ruby][] programming language.
 
 
 ## Basic Definition
@@ -43,7 +43,7 @@ refer to a super method by calling the `this.$super` variable
 
 ## Ruby-style Mixins
 
-[Ruby][] takes advantages of multiple-inheritance by allowing the users to
+[Ruby][] takes advantages of multiple-inheritance by allowing developers to
 define shared modules and then inject them in classes when needed. RightJS
 monkeys this feature in its `Class` unit.
 
@@ -58,7 +58,7 @@ monkeys this feature in its `Class` unit.
       // the rest of the class
     });
 
-You can specify several modules by using arrays
+You can specify several modules by using arrays:
 
     var Klass = new Class({
       include: [Module1, Module2, ...],
@@ -67,7 +67,7 @@ You can specify several modules by using arrays
       extend:  [Module1, Module2, ...]
     });
 
-You also can define class-level methods in-line with all the rest of the class
+You can also define class-level methods in-line with all the rest of the class:
 
     var Klass = new Class({
       extend: {
@@ -80,7 +80,7 @@ You also can define class-level methods in-line with all the rest of the class
       // instance level methods
     });
 
-And you can call the `include()` and `extend()` methods after a class was defined
+And you can call the `include()` and `extend()` methods after a class was defined:
 
     var Klass = new Class({
       // ....
@@ -89,10 +89,10 @@ And you can call the `include()` and `extend()` methods after a class was define
     Klass.include(Module, Module, ...);
     Klass.extend(Module, Module, ...);
     
-__NOTE:__ the mixins follow the same priority principles as it is in the
-[Ruby][] language. If you inject your modules _with_ a class definition,
-then the class own methods will overwrite methods from the modules. But if you
-inject your modules _after_ class was defined by using the `include()` and
+__NOTE:__ The mixins follow the same priority principles as they do on
+[Ruby][]. If you inject your modules _with_ a class definition, then the 
+class' own methods will overwrite methods from the modules. But if you
+inject your modules _after_ a class was defined by using the `include()` and
 `extend()` methods, then methods from the modules will overwrite methods in
 the class.
 
@@ -100,9 +100,9 @@ the class.
 ## Mixin Callbacks
   
 As RightJS monkeys the modules system from [Ruby][], it also supports the post
-injection callbacks the same way it is done in [Ruby][]. The names of the
-callback methods are similar: `selfIncluded` and `selfExtended`. Or in 
-an underscored version `self_included` and `self_extened`.
+injection callbacks the same way [Ruby][] does. The names of the callback methods 
+are similar: `selfIncluded` and `selfExtended`. Or in their underscored version 
+`self_included` and `self_extened`.
 
     var Module = {
       selfIncluded: function(klass) {
@@ -125,4 +125,4 @@ an underscored version `self_included` and `self_extened`.
 
 You might also check the
 [OOP tutorial page](/tutorials/object-oriented-programming) for more detailed
-information on the topic.
+information on this topic.
