@@ -1,7 +1,7 @@
 # Event
 
-To provide an ability of working with the DOM-events in a cross-browser way,
-RightJS as many other JavaScript frameworks provides some extensions for the
+To provide the ability of working with DOM events in a cross-browser way,
+RightJS like many other JavaScript frameworks provides some extensions to the
 events system.
 
 If you attach your event listeners via the RightJS interfaces, then all the
@@ -10,14 +10,13 @@ might need to call the {Event.ext} method on your events.
 
 ## Internet Explorer Fixes
 
-Instead of providing some mediative interface for the dom events, to let you
-work with the events in a cross-browser way RightJS fixes the IE type of
-events creating the W3C type of attributes for the events, so that you could
-work with them in IE transparently as if you had a normal browser.
+Instead of providing some mediative interface for the DOM events, RightJS fixes 
+IE events by creating W3C style attributes for the events in order for you to
+work with them in IE as if it were a normal browser.
 
-The list of faked attributes is following:
+The list of fake attributes is:
 
-* `which` - which mouse button was pressed (1,2,3)
+* `which` - which mouse button was pressed (1, 2, 3)
 * `target` - target element reference
 * `currentTarget` - the bounding (listener) element reference
 * `relatedTarget` - the related element for the over and out mouse events
@@ -27,7 +26,7 @@ The list of faked attributes is following:
 
     Event.ext(Event event) -> Event extended
 
-Extends the event object with additional methods
+Extends the event object with additional methods.
   
     $('element').attachEvent('onclick', function(event) {
       Event.ext(event);
@@ -40,16 +39,16 @@ Extends the event object with additional methods
 
     Event.addMethods(Object methods[, boolean dont_rewrite])
 
-Registers additional methods for the dom events
+Registers additional methods for the DOM events.
 
-__DEPRECATED__: Please use the {.include} method instead
+__DEPRECATED__: Please use the {.include} method instead.
 
     
 ### .include
 
     Event.include(Object methods[, boolean dont_rewrite])
 
-Registers additional methods for the dom events
+Registers additional methods for the DOM events.
 
     Event.include({
       myMethod: function() {....}
@@ -65,7 +64,7 @@ Registers additional methods for the dom events
 
     stop() -> Event self
 
-Stops the event from further bubbling and cancels default handling
+Stops the event from further bubbling and cancels default handling.
 
     $('element').onContextmenu(function(e) {
       e.stop();
@@ -77,21 +76,21 @@ Stops the event from further bubbling and cancels default handling
 
     preventDefault() -> void
 
-Prevents the event defaults
+Prevents the event defaults.
   
 
 ### #stopPropagation
 
     stopPropagation() -> void
 
-Stops the event propagation
+Stops the event propagation.
 
 
 ### #position
 
     position() -> {x: NNN, y: NNN}
 
-Returns the current event position
+Returns the current event position.
 
     $('element').onMouseover(function(event) {
       $('nice-looking-title').show().moveTo(event.position());
