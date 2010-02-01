@@ -1,12 +1,11 @@
 # Form Element
 
-All the form elements, like inputs, selects and textareas in RightJS have some
-additional features to help working with them.
+All the form elements like inputs, selects and textareas have some additional
+features in RightJS to help you working with them.
 
 ## Events
 
-In additional to usual dom-elements, form elements handles some additional
-events. Those are the names
+Unlike other DOM elements, form elements handle a bunch of additional events:
 
 * disable
 * enable
@@ -14,17 +13,17 @@ events. Those are the names
 * blur
 * change
 
-They are handled simultaneously with all the other events, so all the
-shortcuts are in place, you can wire and run the events in the usual way.
+They are handled simultaneously with all the other events. All shortcuts
+are in place, you can wire and run the events the usual way.
 
 ### .addMethods
 
     addMethods(Object methods[, boolean dont_rewrite])
 
 Registers additional methods for the form input element units, like INPUT,
-SELECT, TEXTAREA
+SELECT, TEXTAREA.
 
-__DEPRECATED__: Please use the {.include} method instead
+__DEPRECATED__: Please use the {.include} method instead.
 
 
 ### .include
@@ -32,7 +31,7 @@ __DEPRECATED__: Please use the {.include} method instead
     include(Object methods[, boolean dont_rewrite])
 
 Registers additional methods for the form input element units, like INPUT,
-SELECT, TEXTAREA
+SELECT, TEXTAREA.
 
     Form.Element.include({
       myMethod: function() {....}
@@ -46,7 +45,7 @@ SELECT, TEXTAREA
 
     getValue() -> mixed value
 
-An unified access to get a form element value
+Unified access to get a form element value.
 
     $('input').getValue();
     $('select').getValue();
@@ -58,7 +57,7 @@ An unified access to get a form element value
 
     setValue(mixed value) -> Element self
 
-An unified value setter for the form elements
+Unified value setter for the form elements.
 
     $('input').setValue('text');
     $('select').setValue(1);
@@ -70,7 +69,7 @@ An unified value setter for the form elements
 
     disable() -> Element self
 
-Disables the element
+Disables the element.
 
     $('element').disable();
 
@@ -79,7 +78,7 @@ Disables the element
 
     enable() -> Element self
 
-Enables the element
+Enables the element.
 
     $('input').enable();
 
@@ -88,7 +87,7 @@ Enables the element
 
     focus() -> Element self
 
-Puts the focus on the element
+Puts the focus on the element.
 
     $('input').focus();
 
@@ -97,7 +96,7 @@ Puts the focus on the element
 
     select() -> Element self
 
-Puts the focus on the element and selects its data
+Puts the focus on the element and selects its data.
 
     $('input').select();
 
@@ -106,7 +105,7 @@ Puts the focus on the element and selects its data
 
     blur() -> Element self
 
-Looses the focus on the element
+Looses the focus on the element.
 
     $('input').blur();
 
