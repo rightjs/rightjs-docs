@@ -82,7 +82,7 @@ interesting things from Mootools.
 
 But there are several differences between them as well. Mootools brings quite a lot 
 of functional features like carrying and call-chains. And it tends to mix them with 
-the object-orented approach which provides some interesting features and its an own 
+the object-orented approach which provides some interesting features and its own 
 way of doing things. Having said that, RightJS is a simpler tool. It has both functional
 and object-oriented features, but RightJS keeps them separated in order to allow the
 developer to choose how he wants to deal with things.

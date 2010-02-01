@@ -8,7 +8,7 @@ help you to deal with sizes and scrolls in a cross-browser way.
 
     sizes() -> Object {x: NN , y: NN }
 
-Returns the window's internal space sizes.
+Returns the internal space sizes of the window.
 
     window.sizes();
 
@@ -28,7 +28,7 @@ Returns the scroll offsets for the window.
     scrollTo(Element element)         -> window self
     scrollTo(String element_id)       -> window self
 
-Handles the window's main scrollbars. Can scroll the window to any position
+Handles the main scrollbars of the window. Can scroll the window to any position
 or element.
 
     window.scrollTo(123, 123);

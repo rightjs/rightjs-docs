@@ -30,8 +30,8 @@ to, this way you can easily create chains of calls like:
 
 ## Selector Methods
 
-There is a number of methods like, {#parents}, {#siblings} and so on to
-help you navigate around an element's neighborhood. All the methods can be
+There are a number of methods like {#parents}, {#siblings} and so on to
+help you navigate in the neighborhood of an element. All the methods can be
 used as are, or they can receive an optional CSS selector rule which will
 filter the result.
 
@@ -200,7 +200,7 @@ Erases the attribute with the given name from an element.
 
 Checks if the element has style 'display' set to 'none'.
   
-__NOTE__: Checks both the element's own and the computed (CSS) styles.
+__NOTE__: Checks both element styles as well as the computed (CSS) styles.
 
     /*
       <style type="text/css">
@@ -301,7 +301,7 @@ first one that matches the rule.
 
     parents([String css_rule]) -> Array of elements
 
-Returns a list of the element's parent nodes, from down to top. If a CSS rule
+Returns the list of parent nodes of the element (from bottom up). If a CSS rule
 was specified, the list will be filtered by that rule
 
     /*
@@ -357,7 +357,7 @@ CSS rule.
 
     nextSiblings([String css_rule]) -> Array of elements
 
-Collects the element's later siblings, optionally filtered by the given
+Collects later siblings of the element, optionally filtered by the given
 CSS rule.
 
     /*
@@ -454,7 +454,7 @@ CSS rule.
 
     select(String css_rule) -> Array of elements
 
-Selects all matching elements out of the element's internal structure.
+Selects all matching elements from the internal structure of the element.
 
     /*
       <div id="one">
@@ -553,7 +553,7 @@ Replaces the current element with the given content.
 
     update(mixed content) -> Element self
 
-Replaces the current element's internal structure with the given content
+Replaces the internal structure of the element with the given content.
 
 __NOTE__: All scripts will be evaluated _after_ the update.
 
@@ -620,8 +620,8 @@ Assigns a style to the element.
 
 Requests the element style by name. Supports both camelized and dasherized
 names.
-  
-__NOTE__: Will process both the element's own and computed (CSS) level styles.
+
+__NOTE__: Checks both element styles as well as the computed (CSS) styles.  
 
     $('element').hide();
     
@@ -703,8 +703,8 @@ Toggles the CSS class name presence on the element class names list.
 
     radioClass(String name) -> Element self
 
-Removes the CSS class name from of all the element's siblings and adds it to
-the current element.
+Removes the CSS class name from all siblings of the element and adds it to
+the element.
 
     $('element').radioClass('boo');
 
@@ -827,7 +827,7 @@ Returns the element sizes hash.
 
     position() -> Object {x: NN , y: NN }
 
-Returns the element's absolute position on the page.
+Returns the absolute position of the element on the page.
 
     var top  = $('element').position().y;
     var left = $('element').position().x;
@@ -838,7 +838,7 @@ Returns the element's absolute position on the page.
 
     scrolls() -> Object {x: NN , y: NN }
 
-Returns the element's scroll values in a hash.
+Returns the scroll values of the element in a hash.
 
     var scroll_top  = $('element').scrolls().y;
     var scroll_left = $('element').scrolls().x;
@@ -848,7 +848,7 @@ Returns the element's scroll values in a hash.
 
     dimensions() -> Object
 
-Returns the element's dimensions in a single hash. Includes the element's
+Returns the dimensions of the element in a single hash. Includes the
 `width`, `height`, `top` and `left` positions as well as `scrollLeft` and 
 `scrollTop` values.
 
@@ -882,7 +882,7 @@ existing paddings and borders so the end result will be exactly as requested.
 
     setHeight(number pixels) -> Element self
 
-Sets the element's height to the given size.
+Sets the height of the element to the given size.
 
 __NOTE__: This method will automatically adjust the actual style.height for
 existing paddings and borders so the end result will be exactly as requested.
@@ -904,7 +904,7 @@ existing paddings and borders so the end result will be exactly as requested.
     resize(number width, number height) -> Element self
     resize({x: number, y: number})      -> Element self
 
-Sets the element's size.
+Sets the size of the element.
   
 __NOTE__: This method will automatically adjust the actual style for existing
 paddings and borders so the end result will be exactly as requested.
@@ -940,7 +940,7 @@ Move the element to the given position.
     scrollTo(number left, number top) -> Element self
     scrollTo({x: number, y: number})  -> Element self
 
-Sets the element's scrolling position.
+Sets the scrolling position of the element.
 
     element.scrollTo(100, 100);
     element.scrollTo({x: 100, y: 100});
@@ -958,8 +958,8 @@ Scrolls the window to the element.
 
     load(String url[, Object options]) -> Element self
 
-This method loads the given URL and updates the element's innerHTML property 
-with the response body.
+This method loads the given URL and updates the innerHTML property of
+the element with the response body.
   
 Takes all the standard {Xhr} class options as the second parameter.
   
