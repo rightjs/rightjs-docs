@@ -11,7 +11,7 @@ interfaces.
     $(String element_id) -> Element
     $(Element element)   -> Element
 
-Finds an element by its ID or prepares an existing element
+Finds an element by its ID or prepares an existing element.
 
     $('some-id');
     $(element);
@@ -21,10 +21,10 @@ Finds an element by its ID or prepares an existing element
 
     $$(String css_rule) -> Array of elements
 
-Finds all the elements on the page that match the given css-rule. It supports
+Finds all the elements on the page that match the given CSS rule. It supports
 any valid CSS3 selectors.
 
-__NOTE__: this method will return an _empty_ list if nothing was found
+__NOTE__: This method will return an _empty_ list if nothing was found.
 
     $$('div > span.foo');
 
@@ -33,7 +33,7 @@ __NOTE__: this method will return an _empty_ list if nothing was found
 
     $w(String string) -> Array of strings
 
-Splits the given string into a list of words by spaces
+Splits the given string into a list of words (separated by spaces).
 
     $w('one two    three'); // -> ['one', 'two', 'three']
 
@@ -42,7 +42,7 @@ Splits the given string into a list of words by spaces
 
     $A(Iterable it) -> Array
 
-Converts any iterable object into an {Array} instance
+Converts any iterable object into an {Array} instance.
 
     function() {
       var args = $A(arguments);
@@ -65,7 +65,7 @@ A shortcut for `new Element`
 
 Extends the first object with data from the second one.
   
-If the third argument is `true`, then it skips all the overlapping keys
+If the third argument is `true`, it skips all the overlapping keys.
 
     var o = {1:1};
     $ext(o, {2:2}); // -> {1:1, 2:2}
@@ -78,7 +78,7 @@ If the third argument is `true`, then it skips all the overlapping keys
     $try(Function function[, Function function, ...]) -> mixed result
 
 Evaluates the argument functions one by one and returns the result of the 
-first one that _does not_ raises any exception
+first one that _does not_ raise an exception.
 
     var result = $try(
       function() { throw 'error'; },
@@ -94,7 +94,7 @@ first one that _does not_ raises any exception
     $eval(String code) -> void
 
 Evaluates the given piece of JavaScript code in the context of the current 
-window
+window.
 
     $eval('var foo = "bar";');
     
@@ -105,7 +105,7 @@ window
 
     $break() -> void
 
-Initiates a manual break in case of callback based iterations
+Initiates a manual break in case of callback based iterations.
 
     [1,2,3,4].walk(function(value, i) {
       if (i > 1) $break();
@@ -119,7 +119,7 @@ Initiates a manual break in case of callback based iterations
 
     $alias(Object object, Object aliases) -> Object the first
 
-Creates the first object property aliases
+Creates the first object property aliases.
 
     var object = {
       foo: function() {};
@@ -136,7 +136,7 @@ Creates the first object property aliases
 
     defined(mixed value) -> boolean check result
 
-Checks if the given value is equal to `undefined`
+Checks if the given value is equal to `undefined`.
 
     var object = {
       foo: 'foo'
@@ -150,7 +150,7 @@ Checks if the given value is equal to `undefined`
 
     isHash(mixed value) -> boolean check result
 
-Checks if the given value is a pure JavaScript object (a hash)
+Checks if the given value is a pure JavaScript object (a hash).
 
     isHash([1,2,3]);      // -> false
     isHash('foo bar');    // -> false
@@ -162,7 +162,7 @@ Checks if the given value is a pure JavaScript object (a hash)
 
     isFunction(mixed value) -> boolean check result
 
-Checks if the given value is a {Function}
+Checks if the given value is a {Function}.
 
     isFunction('boo');         // -> false
     isFunction(function() {}); // -> true
@@ -173,7 +173,7 @@ Checks if the given value is a {Function}
 
     isString(mixed value) -> boolean check result
 
-Checks if the given value is a {String}
+Checks if the given value is a {String}.
 
     isString([]); // -> false
     isString({}); // -> false
@@ -184,7 +184,7 @@ Checks if the given value is a {String}
 
     isArray(mixed value) -> boolean check result
 
-Checks if the given value is an instance of {Array}
+Checks if the given value is an instance of {Array}.
 
     isArray({}); // -> false
     isArray(''); // -> false
@@ -195,7 +195,7 @@ Checks if the given value is an instance of {Array}
 
     isNumber(mixed value) -> boolean check result
 
-Checks if the given value is a {Number}
+Checks if the given value is a {Number}.
 
     isNumber('1'); //  -> false
     isNumber(111); //  -> true
@@ -207,7 +207,7 @@ Checks if the given value is a {Number}
 
     isElement(mixed value) -> boolean check result
 
-Checks if the given value is an {HTMLElement} instance
+Checks if the given value is an {HTMLElement} instance.
 
     isElement(document.createTextNode('boo')); // -> false
     isElement(document.createElement('div'));  // -> true
@@ -217,7 +217,7 @@ Checks if the given value is an {HTMLElement} instance
 
     isNode(mixed value) -> boolean check result
 
-Checks if the given value is a DOM node (both TextNode or HTMLElement)
+Checks if the given value is a DOM node (both TextNode or HTMLElement).
 
     isNode(document.createTextNode('boo')); // -> true
     isNode(document.createElement('div'));  // -> true
