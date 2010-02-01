@@ -1,110 +1,122 @@
 # Comparison
 
-A few words about basic differences and similarities between RightJS and other major JavaScript frameworks.
+A few words on differences and similarities between RightJS and other major
+JavaScript frameworks.
 
 
 ## Disclaimer
 
-Except the obvious reason of brainwashing and making you use RightJS, this article is meant to give you some
-ideas where RightJS is situated (or supposed to be situated) relatively to other JavaScript frameworks.
+Besides the obvious purpose of brainwashing and having you choose RightJS,
+this article is meant to give you an idea where RightJS is situated (or 
+supposed to be situated) in relation to other JavaScript frameworks.
 
 
-And I have a humble hope that you understand or at least have a feeling that this is the author's opinion,
-that obviously doesn't have anything to do with other people's reality and therefore should not be trusted.
+Furthermore, I have the humble hope that you understand this as the author's
+opinion which for obvious reasons doesn't have anything to do with other
+people's realities and therefore should not be trusted.
 
 
 ## RightJS vs. jQuery
 
-Both quite small, modular and relay on plugins and extensions. Both have quite a lot of short and handy methods.
-And both help you write a compact code.
+Both are quite small, modular and rely on plugins and extensions. Both have 
+quite a lot of short and handy methods. And both help you write compact code.
 
 
-The main difference between them is that jQuery is more oriented to procedural and functional approaches. 
-RightJS provides basic functional and procedural programming features too, but it's more object-oriented
-and made to be closer to the server-side developers who work with dynamic languages like Ruby and Python.
+The main difference is that jQuery is more oriented towards procedural and
+functional approaches. RightJS on the other hand provides basic functional and 
+procedural programming features, too, but it's more object-oriented and designed
+to be familiar to server-side developers who work with dynamic languages like Ruby
+and Python.
 
 
-Another major difference is that jQuery works internally isolating all the processes inside its own scope, RightJS
-on the other hand extends the JavaScript unit prototypes and provides an instant access to most of its features.
+Another major difference is that jQuery internally isolates all its processes 
+inside of an own scope whereas RightJS extends the JavaScript unit prototypes 
+and thus provides instant and more semantic access to most of its features.
 
 
-### Pros and Contras
+### Pros and Cons
 
 * \+ Extensive object-oriented abilities
 * \+ Immediately available native class extensions
 * \+ Additional handy features like 'call-by-name'
 * \+ Shared modules {Observer} and {Options}
-* \+ More readable and clean syntax
+* \+ More readable and cleaner syntax
 * \+ Much better performance
-* \+ Much more compact and modular UI Library
-* \+ Cleaner and better organized internal code
-* \- No safe-mode (at least yet)
+* \+ Much more compact and modular UI library
+* \+ Cleaner and better organization of internal code
+* \- No safe-mode (at least not yet)
 
 
 ## RightJS vs. Prototype/Scriptaculous
 
-Prototype and RightJS have quite a lot in common and based on the same principle of `prototype` extensions.
-More of that RightJS inherited the naming principles and many method and class names are the same or similar
-to the ones you might see in Prototype.
+Prototype and RightJS have quite a lot in common and are based on the same principle 
+of `prototype` extensions. Moreover, RightJS inherited the naming principles and many
+method and class names from what you might see in Prototype.
 
-The difference between them is that RightJS is a modular framework with a small simple core and plugins, when Prototype
-is more like a monolithic all-in-one framework. Then RightJS is mostly the modern browsers oriented, keeping all the
-old browsers support in a separated module with patches, when Prototype has a special public API for faster elements
-processing on old browsers.
+The differences are that RightJS is a modular framework with a small simple core and 
+plugins, whereas Prototype is more of a monolithic all-in-one framework. And RightJS
+mostly aims at modern browsers keeping all the old browsers support in a separate
+module with patches. Prototype on the other hand has a special public API for faster
+elements processing on old browsers.
 
-### Pros and Contras
+### Pros and Cons
 
-* \+ Modular, plugins oriented structure
+* \+ Modular and plugin oriented structure
 * \+ Much smaller size
 * \+ Much better performance
 * \+ No rarely used code and obsolete features
 * \+ Cleaner and more compact syntax
 * \+ Additional features like call-by-name and function extensions
 * \+ Better and more flexible Fx library
-* \+ Basic Fx and Cookies support out of box
+* \+ Basic Fx and cookies support out of box
 * \+ Own UI library and plugins collection
-* \- No fast class-level functions (needed only with IE6 and 7 browsers)
+* \- No fast class-level functions (needed only for old IE 6 and 7 browsers)
 
 
 ## RightJS vs. Mootools
 
-RightJS and Mootools are pretty similar too, both started on the road of making a better Prototype, and as the matter
-of fact RightJS cherry-picked quite a few interesting things from Mootools.
+RightJS and Mootools are pretty similar, too. Both started with the goal of making 
+a better Prototype and as a matter of fact RightJS cherry-picked quite a few 
+interesting things from Mootools.
 
 
-But there are several differences between them. Mootools brings quite a lot of functional approach
-features, like carrying and call-chains, and tends to mix them with the object-orented approach providing some
-interesting features and its own way of doing the thins. RightJS comparing to Mootools is a simpler tool. It
-has both functional and object-oriented features, but RightJS keeps them separated allowing a developer to choose
-how he wants to deal with his task.
+But there are several differences between them as well. Mootools brings quite a lot 
+of functional features like carrying and call-chains. And it tends to mix them with 
+the object-orented approach which provides some interesting features and its an own 
+way of doing things. Having said that, RightJS is a simpler tool. It has both functional
+and object-oriented features, but RightJS keeps them separated in order to allow the
+developer to choose how he wants to deal with things.
 
-Another difference is that Mootools tries to bring its own naming system for methods, classes and modules, when
-RightJS tries to stay close to the more or less standard Prototype and Ruby/Python naming principles.
+Another difference is that Mootools tries to bring its own naming system for methods,
+classes and modules when RightJS tries to stay as close to the more or less standard
+Prototype and Ruby/Python naming principles.
 
-### Pros and Contras
+### Pros and Cons
 
-* \+ A bit compacter core and modules
+* \+ A bit more compact core and modules
 * \+ Better performance
 * \+ More standard, clean and readable syntax
 * \+ Simplified way of dealing with everyday problems
 * \+ Better Fx library where you just specify the end result
-* \- I don't really see any significant contras in here
+* \- I don't really see any significant cons here
 
 
 ## RightJS vs. YUI and Dojo
 
-Dojo and YUI frameworks are similar and both quite different comparing to RightJS. RightJS is a modern framework
-more like Ruby, when YUI it's more like an equivalent of Java. Dojo is probably closer to Python.
+Dojo and YUI frameworks are similar and both differ quite noticable from RightJS which
+is a modern framework in the spirit of Ruby. YUI on the other hand is more the equivalent
+of Java and Dojo probably closer to Python.
 
-The key difference between them is that YUI and Dojo work inside their own namespaces and you supposed to work
-through their nested API. RightJS on the other hand, provides you an instant access to most of its features so
-that whenever you have an object you can immediately call its functionality, creating chains, etc.
+The key difference between them is that YUI and Dojo work inside their own namespaces
+and you are supposed to work through their nested APIs. RightJS provides you instant access
+to most of its features on the objects themselves and thus makes it very easy to call or
+chain these features.
 
-### Pros and Contras
+### Pros and Cons
 
-* \+ Smaller, modular library
-* \+ Let you write much more compact applications code
+* \+ Smaller and modular library
+* \+ Let you write much more compact application code
 * \+ Instant access to the functionality
-* \+ Dynamic languages like extensions for the core classes
+* \+ Dynamic approach like extensions of core classes
 * \+ Functional approach features
-* \- Doesn't have it's own namespace
+* \- Doesn't have its own namespace
