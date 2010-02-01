@@ -1,6 +1,6 @@
 # Supported Browsers
 
-RightJS is meant to be working with all the modern and some old but still used browsers.
+RightJS is meant to be working with all modern as well as some old browsers still in use.
 
 It was tested to work with the following browsers
 
@@ -8,8 +8,8 @@ It was tested to work with the following browsers
 
 ## Quirks Mode
 
-To make RightJS work correctly with styles and dimensions in the Internet Explorer and Opera
-browsers you have to specify the document type definition on your page. For example like this one
+To make RightJS work correctly with styles and dimensions on Internet Explorer and Opera
+browsers you have to specify the document type definition on your page. For example:
 
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml11.dtd">
 
@@ -17,18 +17,17 @@ RightJS has no intention to fix the nonstandard quirks mode behavior.
 
 ## The Old Browsers
 
-RightJS tries to concentrate its efforts on the modern browsers, therefore,
-despite it provides a basic support of the old browsers like IE 6 and Konq 3, those
-browsers will have low priority in things like performance optimizations and 
-specific browser problems patching.
+RightJS tries to concentrate its efforts on modern browsers. While it provides basic
+support for browsers like IE 6 and Konq 3, such old browsers have low priority when it
+comes to performance optimization and specific browser problems patching.
 
 ## Internet Explorer 8
 
-IE8 has a native css-selectors support. Usually, when you have a correct XHTML document
-the interface is available by default, but if you have some hacks and non standards you
-might need to specify the following entry in your document header
+IE 8 has native support for CSS selectors. For a correct XHTML document this interface is
+usually available by default, however, if you use hacks and non-standards you might need
+to specify the following in your document header:
     
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
 
-Otherwise, the feature will not be available and RightJS will use its own manual css-selectors
-engine.
+Otherwise, the interface will not be available and RightJS will use its own manual CSS
+selectors engine.
