@@ -189,3 +189,27 @@ __ВНИМАНИЕ:__ данный метод конвертирует запя�
     '123,45'.toFloat(); // -> 123.45
     '123-45'.toFloat(); // -> 123.45
 
+
+### #behave
+
+    behave(String event, Function callback)              -> void
+    behave(String event, String callback[, arg, arg...]) -> void
+    behave(Object events_hash)                           -> void
+
+Подключает общего слушателя событий уровня документа используя
+технуку делегирования обработки событий
+
+    // простой пример
+    "div.red".behave('click', function() {
+      alert("Это красный");
+    });
+
+    // со ссылкой на обработчик по имени
+    "div.red".behave('click', 'addClass', 'that-was-red');
+
+    // обработка нескольких событий одновременно
+    "div.red".behave({
+      mouseover: function() { this.addClas('that-was-red')},
+      mouseout:  ['removeClass', 'that-was-red'],
+      click:     'hide'
+    });

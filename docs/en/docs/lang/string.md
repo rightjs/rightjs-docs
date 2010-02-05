@@ -189,3 +189,28 @@ the parameter
     '123,45'.toFloat(); // -> 123.45
     '123-45'.toFloat(); // -> 123.45
 
+
+### #behave
+
+    behave(String event, Function callback)              -> void
+    behave(String event, String callback[, arg, arg...]) -> void
+    behave(Object events_hash)                           -> void
+    
+Attaches a document level events delegation listener
+
+    // simple case
+    "div.red".behave('click', function() {
+      alert("That's red")
+    });
+    
+    // by name reference
+    "div.red".behave('click', 'addClass', 'that-was-red');
+    
+    // several event callbacks attachment
+    "div.red".behave({
+      mouseover: function() { this.addClas('that-was-red')},
+      mouseout:  ['removeClass', 'that-was-red'],
+      click:     'hide'
+    });
+
+

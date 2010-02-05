@@ -59,6 +59,30 @@ Registers additional methods for the DOM events.
     });
 
 
+### .delegate
+
+    Event.delegate(Object description) -> Function delegation
+
+Creates a function that will delegate the actual event handler
+depending on the element that triggered the event
+
+__NOTE__: the actual callback function will be called in the context
+of the element that _triggered_ the event
+
+    var delegation = Event.delegate({
+      "div.red":   function() { alert('You have clicked the red block'); },
+      "div.green": function() { alert('You have clicked the green block'); }
+    });
+
+    document.onClick(delegation);
+
+    // you also can use references by-name
+    var delegation = Event.delegate({
+      ".red":     ['addClass', 'was-red'],
+      ".green":   ['addClass', 'was-green'],
+      ".hide-me": 'hide'
+    });
+
 
 ### #stop
 

@@ -125,6 +125,7 @@ the following keys to preset your element properties on instance:
 * 'class'   - CSS class name(s) for the element
 * 'style'   - a hash (or string) of styles to be preset
 * 'observe' - a hash of events to observe
+* 'on'      - same as `'observe'`
 
 Everything will be handled in one flow.
 
