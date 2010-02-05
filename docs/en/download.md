@@ -31,6 +31,16 @@ There are also a number of plugins out of the [RightJS Goods](/goods) project th
 [Custom Build Page](<%= builds_path %>)
 
 
+# Server-Side Build
+
+RightJS also available as a server-side library. In this case it contains only the
+native JavaScript unit extensions, plus the {Class}, {Observer}, {Options} units along
+side with all the non-dom utility functions out of the {Util} module.
+
+Our server-side build follows the CommonJS principles and ready to be used with the
+[node.js](http://nodejs.org) framework
+
+
 # GitHub Repository
 
 The original source code of the project is situated at the github account over here
