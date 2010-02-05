@@ -52,7 +52,7 @@ can take advantage of this working with DOM elements:
 ## Events Processing
 
 The `Element` unit has all the standard {Observer} unit interface and handles
-events binding in the exact same way.
+events binding in the same exact way.
 
     $('some-element').on('click', function() {
       call_that_function();

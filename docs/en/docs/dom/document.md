@@ -1,7 +1,7 @@
 # Document
 
 The `document` object in RightJS has the standard {Observer} interface,
-and it handles the `dom-ready` event.
+and it also handles the `dom-ready` event.
 
 ## Document Ready
 

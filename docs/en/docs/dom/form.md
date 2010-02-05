@@ -2,7 +2,7 @@
 
 RightJS inherits forms from the common {Element} unit, which means you can do
 everything you can do with any other element plus several additional features 
-which ease working with forms a lot.
+which make the work with forms a lot easier
 
 ## Ajax handling
 

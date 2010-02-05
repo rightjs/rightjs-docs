@@ -1,7 +1,7 @@
 # Browser
 
 `Browser` is a global object that contains markers allowing you to determine
-the current type of browser. The following keys available:
+the current type of browser. The following keys are available:
 
 Key           | Description                         |
 --------------|-------------------------------------|

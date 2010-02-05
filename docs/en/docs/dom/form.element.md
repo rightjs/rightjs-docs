@@ -1,7 +1,7 @@
 # Form Element
 
 All the form elements like inputs, selects and textareas have some additional
-features in RightJS to help you working with them.
+features in RightJS to help you work with them.
 
 ## Events
 
