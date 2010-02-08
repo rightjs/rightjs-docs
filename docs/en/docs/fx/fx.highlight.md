@@ -1,6 +1,6 @@
 # Fx.Highlight
 
-Fx.Highlight is a standard elements highlighting visual effect.
+Fx.Highlight is the standard element highlighting visual effect.
 
 ## Default Color
 
@@ -12,8 +12,8 @@ default color by assigning the `Fx.Highlight.Options.color` variable.
 
     start([String highlight_color[, String end_color]]) -> Fx self
 
-Starts the element highlighting effect, might take the highlight and final
-color arguments
+Starts the element highlighting effect. May take the highlight and final
+color arguments:
 
     var fx = new Fx.Highlight('element');
     
