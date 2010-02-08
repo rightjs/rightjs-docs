@@ -8,7 +8,7 @@ style.
 
     start(Object {x:N, y:N}) -> Fx self
 
-Starts the element scrolling effect, you can specify one direction only if you
+Starts the element scrolling effect. You can specify one direction only if you
 need.
 
     var fx = new Fx.Scroll('element');
