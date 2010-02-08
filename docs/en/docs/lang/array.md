@@ -287,7 +287,7 @@ values are passed, the presence of _all_ of them are checked:
 
     without(mixed value[, mixed value, ...]) -> Array new
   
-Creates a new array without the specified elements.
+Creates a copy of the array without the specified elements.
 
     [0,1,2,3].without(1,3);
     

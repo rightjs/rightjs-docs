@@ -1,13 +1,13 @@
 # Object
 
 The {Object} unit in RightJS has some pretty much standard additional methods
-that provide frequently used functionality for the objects processing
+which provide frequently used functionalities to process objects.
 
 ### .keys
 
     Object.keys(Object object) -> Array keys
 
-Collects the object keys list
+Collects the object keys into an array.
 
     Object.keys({'a':1, 'b':2, 'c':3})
     
@@ -18,7 +18,7 @@ Collects the object keys list
 
     Object.values(Object object) -> Array values
 
-Collects the object values list
+Collects the object values into an array.
 
     Object.values({'a':1, 'b':2, 'c':3})
     
@@ -29,7 +29,7 @@ Collects the object values list
 
     Object.empty(Object object) -> boolean
 
-Checks if the object has any key-value pairs in it
+Checks if the object has any key-value pairs in it.
 
     Object.empty({'a':1}) // -> false
     Object.empty({})      // -> true
@@ -38,8 +38,7 @@ Checks if the object has any key-value pairs in it
 
     Object.without(Object object, String key[, keys..]) -> Object new
 
-Creates a new object that contains all the same key - value pairs as the
-original, but without the given keys
+Creates a copy of the object without the specified key-value pairs in it.
 
     var object = {'a': 1, 'b': 2, 'c': 3};
     Object.without(object, 'b');
@@ -50,8 +49,7 @@ original, but without the given keys
 
     Object.only(Object object, String key[, keys...]) -> Object new
 
-Creates a new object that contains only the specified key-value pairs of the
-original object.
+Creates a copy of the object with only the specified key-value paris in it.
 
     var object = {'a': 1, 'b': 2, 'c': 3};
     Object.only(object, 'b', 'c');
@@ -63,7 +61,7 @@ original object.
     Object.merge(Object o1, Object o2[, objects..]) -> Object new
 
 Creates a new object that contains all the key-value pairs of the given
-objects
+objects.
 
     Object.merge({'a': 1, 'b': 2}, {'c': 3});
     
@@ -73,7 +71,7 @@ objects
 
     Object.toQueryString(Object object) -> String
 
-Converts the object into an url options string
+Converts the object into a URL options string
 
     Object.toQueryString({a:'a', b:'b', c:'%#?'}));
     
