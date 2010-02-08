@@ -1,15 +1,15 @@
 # Function
 
 RightJS extends the `Function` unit prototype to provide the standard FP
-features like binding, curring and chains. It also adds couple of methods
-for nicer delayed and periodical calls handling.
+features like binding, curring and chains. It also adds a couple of methods
+for nicer delayed and periodical call handling.
 
 ### #bind
 
     bind(Object scope[, argument,...]) -> Function new
 
 Binds the function to be executed in the specified context. Additionally, it
-can take optional curry arguments
+can take optional curry arguments:
   
     var object = {
       attr: 'value'
@@ -29,8 +29,8 @@ can take optional curry arguments
 
     bindAsEventListener(Object scope[, argument, ...]) -> Function new
 
-Binds the function to the given scope the way that it was handling the first 
-argument as an event
+Binds the function to the given scope as if it were handling the first 
+argument as an event:
 
     var object = {
       attr: 'value'
@@ -50,7 +50,7 @@ argument as an event
 
     curry(mixed value[, mixed value, ...]) -> Function new
 
-The standard functional approach currying feature
+The standard functional approach currying feature.
 
     var multiplier = function(x, y) {
       return x * y
@@ -66,7 +66,7 @@ The standard functional approach currying feature
 
     rcurry(mixed value[, value, ...]) -> Function new
 
-The functional approach right currying feature
+The right functional approach currying feature
 
     var callback = function() { return $A(arguments); };
     
@@ -84,10 +84,11 @@ The functional approach right currying feature
 
     delay(Integer timeout) -> Number timeout marker
 
-Schedules a delayed execution for the function.
-  
-__NOTE__: this method returns a timeout pointer with additional method
-called `cancel()` by calling which the timeout can be canceled.
+Schedules the delayed execution of the function after `timeout`
+seconds have expired.
+
+__NOTE__: This method returns a timeout pointer. Call the `cancel()`
+method on this pointer to abort the timer
 
     var func = function() {
       alert('boo');
@@ -95,12 +96,12 @@ called `cancel()` by calling which the timeout can be canceled.
     
     var timeout = func.delay(2000);
     
-    // should see the boo in 2 seconds
-    // you can cancel the delayed execution
-    
+    // You should see the boo in 2 seconds.
+
+    // Cancel the delayed execution like this:
     window.clearTimeout(timeout);
     
-    // or like that
+    // Or like that:
     timeout.cancel();
 
 
@@ -108,10 +109,11 @@ called `cancel()` by calling which the timeout can be canceled.
 
     periodical(Integer timeout) -> Number timeout marker
 
-Makes the function be periodically executed with the given timeout.
+Schedule the function to be periodically executed every `timeout` 
+seconds.
 
-__NOTE__: this method returns a timeout pointer with additional method
-called `stop()` by calling which the periodical execution can be stopped.
+__NOTE__: This method returns a timeout pointer. Call the `stop()`
+method on this pointer to stop the periodical execution.
 
     var func = function() {
       // check something
@@ -119,12 +121,12 @@ called `stop()` by calling which the periodical execution can be stopped.
     
     var marker = func.periodical(4000);
     
-    // now the function will get executed every 4 seconds
+    // Now the function will get executed every 4 seconds.
     
-    // to stop it just pass it to the standard clearInterval method
+    // Stop the periodical execution like this:
     window.clearInterval(marker);
     
-    // or call the 'stop' method
+    // Or like that:
     marker.stop();
 
 
@@ -133,7 +135,7 @@ called `stop()` by calling which the periodical execution can be stopped.
     chain(Function func[, value, ...]) -> Function new
 
 Schedules the argument function to be called immediately after
-the main function. Optionally with some pre-binded arguments
+the main function. Optionally with some pre-bound arguments:
     
     var f1 = function(list, num) { list.push(num); };
     var f2 = function(list, num) { list.push(num); };
@@ -146,4 +148,3 @@ the main function. Optionally with some pre-binded arguments
     f(list, 1); // calls the first function
     
     list // -> [1, 2, 3]
-
