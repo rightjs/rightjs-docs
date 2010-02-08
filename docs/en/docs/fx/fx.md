@@ -1,24 +1,24 @@
 # Fx Basics
 
-By default RightJS comes with some basic visual effects package and Fx is the
-basic unit of the package. You won't need to instance this class manually, but
-it defines the common visual effects interface.
+By default RightJS comes with the basic visual effects package. It has one base 
+(abstract) class Fx which defines the common visual effects interface and is used 
+as the basis for all the other Fx classes.
 
 ## Events
 
-Fx objects handle the next events
+Fx objects handle the following events:
 
 * start
 * finish
 * cancel
-  
-Following the general events handling convention over the framework it means
-you can use all the common `on`, `stopObserving`, etc. methods along
-with the `onStart`, `onFinish`, `onCancel` shortcuts.
+ 
+In line with the general events handling convention this means that you can 
+use all the common `on`, `stopObserving` etc methods as well as `onStart`, 
+`onFinish`, `onCancel` shortcuts.
 
 ## Options
 
-There are common list of options which all the visual effects share
+All visual effects support the following options:
 
 Name       | Default  | Description                                           |
 -----------|----------|-------------------------------------------------------|
@@ -28,7 +28,7 @@ queue      | true     | boolean marker if the effect should be queued         |
 
 ## Durations
 
-There are three named durations, which you can use with the fx options.
+There are three named durations which an be used in Fx options:
 
 Name   | Value             |
 -------|-------------------|
@@ -38,18 +38,18 @@ long   | 800 ms            |
 
 ## Transitions
 
-There are several predefined transitions for the visual effects. You can use
-the names in the options or specify your own function if you need.
+There are several predefined transitions for visual effects. You can use
+them in options or specify your own function if you need.
 
 Name | Description                                               |
 -----|-----------------------------------------------------------|
 Sin  | slow at the beginning and the end, but fast in the middle |
 Cos  | fast at the beginning and the end, but slow in the middle |
-Exp  | slow at the beginning and rapidly throttles to the end    |
-Log  | fast at the beginning and rapidly slows down to the end   |
+Exp  | slow at the beginning, quickly accelerates to the end     |
+Log  | fast at the beginning, quickly slows down to the end      |
 Lin  | a constant speed transition                               |
 
-By default it's the `Sin` transition that suits most of the cases.
+The default transition `Sin` is a good choice in most cases.
 
 
 ### #initialize
@@ -63,10 +63,10 @@ The basic constructor
 
     start() -> Fx self
 
-Starts the effect processing
+Starts the effect.
 
-__NOTE__: _DO NOT_ overload this method, if you need to make some preparations
-in your effect use the {#prepare} method. This method just receives your
+__NOTE__: _DO NOT_ overload this method! If you need to make some preparations
+in your effect, use the {#prepare} method. This method just receives your
 attributes and holds them inside the visual effects queue.
 
 
@@ -74,43 +74,42 @@ attributes and holds them inside the visual effects queue.
 
     finish() -> Fx self
 
-Forces the effect to stop and mark it as a completely finished
+Forces the effect to stop and marks it as a completely finished.
 
 
 ### #cancel
 
     cancel() -> Fx self
 
-Cancels the effect
+Cancels the effect.
 
 
 ### #pause
 
     pause() -> Fx self
 
-Puts the effect on pause with an ability to resume it later
+Puts the effect on pause with the ability to be resumed later.
 
 
 ### #resume
 
     resume() -> Fx self
 
-Resumes a paused effect processing
+Resumes a paused effect.
 
 
 ### #prepare
 
     prepare([....]) -> void
     
-An abstract method, which is getting called with all the same arguments as the
-{#start} method when the visual effects queue comes to this effect.
+Abstract method which gets called with the same arguments as the {#start} 
+method when the visual effects queue reaches this effect.
 
 
 ### #render
 
     render(Float position) -> void
 
-Abstract protected method where the actual effect rendering supposed to be
-happening. During the effect run it receives float numbers from 0 to 1 that
+Abstract protected method where the actual effect rendering is supposed to 
+happen. During the effect run it receives float numbers from 0 to 1 which
 represent the position of the effect from the beginning to the end.
-
