@@ -1,14 +1,13 @@
 # Fx Element Extensions
 
-There are several shortcuts to initiate visual effects right out
-of dom-elements.
+There are several shortcuts to initiate visual effects on DOM elements.
 
 
 ### #morph
 
     morph(Object style[, Object fx_options]) -> Element self
 
-Runs the {Fx.Morph} effect on the element
+Runs the {Fx.Morph} effect on the element.
 
     $(element).morph({
       width: '200px',
@@ -21,7 +20,7 @@ Runs the {Fx.Morph} effect on the element
     highlight([String color[, Object fx_options]]) -> Element self
     highlight([Object fx_options])                 -> Element self
 
-Runs the {Fx.Highlight} effect on the element
+Runs the {Fx.Highlight} effect on the element.
 
     $(element).highlight();
     
@@ -33,7 +32,7 @@ Runs the {Fx.Highlight} effect on the element
     fade([String how[, Object options]]) -> Element self
     fade([Object options])               -> Element self
 
-Runs the {Fx.Fade} effect on the element
+Runs the {Fx.Fade} effect on the element.
 
     $(element).fade();
     
@@ -45,7 +44,7 @@ Runs the {Fx.Fade} effect on the element
     slide([String how[, Object fx_options]]) -> Element self
     slide([Object fx_options])               -> Element self
 
-Runs the {Fx.Slide} effect on the element
+Runs the {Fx.Slide} effect on the element.
 
     $(element).slide();
     
@@ -57,7 +56,7 @@ Runs the {Fx.Slide} effect on the element
 
     scroll(Object {x:N, y:N}[, Object options]) -> Element self
 
-Smoothly scrolls to the given position
+Smoothly scrolls to the given position.
 
     $(element).scroll({x: 100});
     $(element).scroll({y: 200});
