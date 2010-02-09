@@ -1,10 +1,10 @@
 # Options
 
-`Options` is a shared module, which can be used with the classes that
-need an option attribute support.
+`Options` is a shared module, which can be used with classes that need
+support for option attributes.
 
-Generally, it provides the `setOptions` method where it merges any
-default options with given ones and assigns the result to the `options`
+Generally, it provides the `setOptions` method which merges any default
+options with the given ones and assigns the result to the `options`
 property of the instance.
 
     var Steake = new Class({
@@ -41,9 +41,9 @@ property of the instance.
 
 ## Default Options
 
-Default options might be an instance attribute, or a class level attribute
-or one of the ancestor classes attribute. The module will look through all of
-them form the instance to the top class and use the first found.
+Default options may be an instance attribute, a class level attribute or an
+attribute of any ancestor class. The module looks through all of them from
+the instance up to the top ancestor class and uses the first one found.
 
     var Klass = new Class({
       include: Options,
@@ -74,8 +74,8 @@ them form the instance to the top class and use the first found.
       }
     });
 
-The default options object might be named as an object or as a constant,
-meaningly `'OPTIONS'` or `'Options'`
+The default options object may be named either `'OPTIONS'` (like a
+constant) or `'Options'` (like an object):
 
     var Klass = new Class({
       include: Options,
@@ -90,7 +90,7 @@ meaningly `'OPTIONS'` or `'Options'`
 
     setOptions(Object options) -> Object self instance
 
-Assigns the options to the instance.
+Assigns the given options to the instance.
 
     var object = new ClassWithOptions();
     
@@ -103,16 +103,16 @@ Assigns the options to the instance.
   
     cutOptions(arguments) -> Array of arguments without options
 
-Cuts off an ending options hash from the list of arguments  set them up using 
-the {#setOptions} method and at then returns a new list without the ending
-hash.
+Cuts off a trailing options hash from the list of arguments, sets the
+options up using the {#setOptions} method and then returns a new list 
+without the trailing options hash.
 
     var Klass = new Class({
       include: Options,
     
       /**
-       * this constructor can take various number of arguments
-       * with an options hash at the end
+       * This constructor can take various numbers of arguments
+       * with an options hash as the last argument.
        */
       initialize: function() {
         var args = this.cutOptions(arguments);
