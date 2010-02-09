@@ -1,11 +1,11 @@
 # Observer
 
-`Observer` is a shared drop in base-class for the cases when you need
-to implement the observer pattern. It is used in many places all over the 
-framework and defines the common interface for the observable units.
+`Observer` is a shared drop-in base class you need to implement the 
+observer pattern. It is used in many places all over the framework and 
+defines the common interface for all observable units.
 
 ## Usage
-Generally `Observer` is a usual class. You can use it by itself or as
+Generally, `Observer` is a normal class. You can use it by itself or as
 an ancestor for your own classes.
 
     var observer = new Observer();
@@ -18,8 +18,8 @@ an ancestor for your own classes.
     });
     var my_observer = new MyObserver();
 
-Or if you don't have an ability to inherit the class directly you can use its
-static method called {Observer.create} to make practically any object to
+Or, if you don't have an ability to inherit the class directly, you can use 
+its static method call {Observer.create} to make practically any object
 behave like an observer.
 
     var Klass = new Class(AnotherKlass, {
@@ -40,11 +40,11 @@ behave like an observer.
 
 ## Shortcuts
 
-The `Observer` unit provides an ability to generate nice looking
-shortcut methods to wire and fire events that your observer supposed to
-handle. To do so, you need to specify in your class an instance or class
-level attribute called `EVENTS`. RightJS will watch the name
-and if found, will try to generate shortcuts automatically.
+The `Observer` unit provides the ability to generate elegant shortcut 
+methods to wire and fire events your observer is supposed to handle. 
+To do so, you need to specify an instance or class level attribute 
+`EVENTS` in your class. RightJS will watch the name and if found, 
+will try to generate the shortcuts automatically.
 
     var Klass = new Class(Observer, {
       EVENTS: $w('start stop')
@@ -53,14 +53,14 @@ and if found, will try to generate shortcuts automatically.
     var klass = new Klass();
     klass.onStart(function() {...});
 
-__NOTE:__ if your class has intersecting methods the shortcuts generator 
+__NOTE:__ If your class has intersecting methods, the shortcuts generator 
 will keep them alive and just skip the name.
 
 ## Call By Name
 
 The `Observer` class follows the general 'call by name' feature of RightJS.
 This means that instead of specifying a particular function to observe, you 
-can specify a method name and some attributes, which should be called on the
+can specify a method name and some attributes which will be called on the
 event.
 
     var Kid = new Class(Observer, {
@@ -84,7 +84,7 @@ event.
 
     Observer.create(Object object[, Array events_list]) -> Object observable
 
-The static observers builder, adds the observer functionality to any object.
+The static observer builder, adds observer functionality to any object.
 
     var object = {....};
 
@@ -97,7 +97,7 @@ The static observers builder, adds the observer functionality to any object.
 
     Observer.createShortcuts(Observer object, Array names) -> Object
 
-Generates the observer shortcuts on the observable unit
+Generates the observer shortcuts on the given observable unit.
 
     var observer = new Observer();
     
@@ -109,10 +109,11 @@ Generates the observer shortcuts on the observable unit
 
     initialize([Object options])
 
-The generic constructor. If you send with options keys like `'onSomething'`
-the observer will automatically wire it to the to the 'something' event.
+The generic constructor: If you call it with an array of option keys like
+`'onSomething'`, the observer will automatically wire it to the to the 
+'something' event.
 
-__NOTE__: if you create a subclass of `Observer` and overload its constructor,
+__NOTE__: If you create a subclass of `Observer` and overload its constructor,
 don't forget to call `this.$super(options);` inside of it to bypass the event
 handlers.
 
@@ -129,9 +130,9 @@ handlers.
     observe(String name, Array callbacks[, arguments])    -> Observer self
     observe(Object hash)                                  -> Observer self
 
-Makes the observer observe the event with the callback.
+Tells the observer to observe the event with the given callback.
 
-__DEPRECATED__: please use the {#on} method instead
+__DEPRECATED__: Please use the {#on} method instead.
 
     var observer = new Observer();
     
@@ -157,7 +158,7 @@ __DEPRECATED__: please use the {#on} method instead
     on(String name, Array callbacks[, arguments])    -> Observer self
     on(Object hash)                                  -> Observer self
 
-Binds an event listener to the observer
+Binds an event listener to the observer.
 
     var observer = new Observer();
     
@@ -182,7 +183,7 @@ Binds an event listener to the observer
     observes(Function callback)              -> boolean
     observes(String name, Function callback) -> boolean
 
-Checks if the observer watches the given event or/and callback
+Checks if the observer watches the given event or/and callback.
 
     var observer = new Observer();
     var callback = function() {};
@@ -204,8 +205,8 @@ Checks if the observer watches the given event or/and callback
     stopObserving(Function callback)              -> Observer self
     stopObserving(String name, Function callback) -> Observer self
 
-Makes the observer to stop observing certain callback or whole event or
-some particular callback for some particular event
+Tells the observer to stop observing a certain callback, the whole event or
+some particular callback for some particular event.
 
     var observer = new Observer();
     var callback = function() {};
@@ -222,7 +223,7 @@ some particular callback for some particular event
 
     fire(String name[, arguments, ...]) -> Observer self
 
-Triggers an event processing
+Triggers an event processing.
 
     var observer = new Observer();
     
@@ -237,7 +238,7 @@ Triggers an event processing
 
     listeners([String name]) -> Array of callbacks
 
-Returns the list of registered listeners for the given event
+Returns the list of registered listeners for the given event.
 
     var observer = new Observer();
     var callback = function() {};
