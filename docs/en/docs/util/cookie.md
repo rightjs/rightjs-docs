@@ -1,8 +1,9 @@
 # Cookie
 
-`Cookie` is an object oriented wrapper over a browser's native cookies support
+`Cookie` is an object oriented wrapper around the native cookie support
+of the browser.
 
-You can work with the `Cookie` object at the class level
+You can work with the `Cookie` object at class level.
 
     Cookie.set('name', 'value');
     Cookie.set('name', 'value', {duration: 10});
@@ -11,7 +12,7 @@ You can work with the `Cookie` object at the class level
     
     Cookie.remove('name');
 
-Or you can use usual instances like this
+Or you can use instances like this:
 
     var cookie = new Cookie('name');
     var cookie = new Cookie('name', {duration: 4});
@@ -22,14 +23,14 @@ Or you can use usual instances like this
 
 ## Options
 
-You can use the following options with your cookies
+You can use the following options with your cookies:
 
 Name     | Duration                                                  |
 ---------|-----------------------------------------------------------|
-duration | a number of days, how long the cookie should stay alive   |
+duration | number of days the cookie will stay alive                 |
 domain   | a string domain name                                      |
 path     | a string path                                             |
-secure   | boolean marker if the cookie should get marked as secure  |
+secure   | boolean to set if the cookie should get marked as secure  |
  
 ## Values Escaping
 
@@ -40,16 +41,16 @@ automatically encoded and decoded.
     
     Cookie.get('name'); // -> '%"&=*"'
 
-And if you include the [JSON](/goods/json) feature on your page, then you'll
+And if you include the [JSON](/goods/json) feature on your page, you will
 be able to save/retrieve any JSON exportable objects, like booleans, arrays
-and plain objects
+or plain objects.
 
 
 ### .set
 
     Cookie.set(String name, String value[, Object options]) -> Cookie
 
-Sets the cookie
+Sets the cookie.
 
     Cookie.set('name', 'value');
     Cookie.set('name', 'value', {duration: 4});
@@ -58,7 +59,7 @@ Sets the cookie
 
     Cookie.get(String name) -> String value or null
 
-Finds and reads a cookie by name. Returns null if nothing found
+Finds and reads a cookie by name. Returns null if nothing is found.
 
     Cookie.set('name', 'value');
     
@@ -68,7 +69,7 @@ Finds and reads a cookie by name. Returns null if nothing found
 
     Cookie.remove(String name) -> Cookie 
 
-Erases cookie value by name
+Erases a cookie value by name.
 
     Cookie.set('name', 'value');
     
@@ -91,7 +92,7 @@ Basic constructor. See the list of options in the description above.
 
     set(String value) -> Cookie self
   
-Sets the cookie value
+Sets the cookie value.
 
     var cookie = new Cookie('name');
   
@@ -104,7 +105,7 @@ Sets the cookie value
 
     get() -> String value or null
   
-Reads the cookie value
+Reads the cookie value.
 
     var cookie = new Cookie('name');
     
@@ -117,7 +118,7 @@ Reads the cookie value
 
     remove() -> Cookie self
 
-Erases the cookie out of the browser's memory
+Removes the cookie from of the browser memory.
 
     var cookie = new Cookie('name');
     cookie.set('value');
