@@ -8,7 +8,7 @@ to make your life easier.
 
     empty() -> boolean
 
-Checks if the string is empty
+Checks if the string is empty.
 
     ''.empty();  // -> true
     ' '.empty(); // -> false
@@ -19,7 +19,7 @@ Checks if the string is empty
 
     blank() -> boolean
 
-Checks if the string is empty or contains only spaces
+Checks if the string is empty or contains whitespace only.
 
     ''.blank();   // -> true
     ' '.blank();  // -> true
@@ -31,7 +31,7 @@ Checks if the string is empty or contains only spaces
 
     trim() -> String new
 
-Removes trailing spaces at the beginning and the end of the string
+Removes whitespace spaces from the beginning and the end of the string.
 
     ' asdf '.trim(); // -> 'asdf'
 
@@ -40,7 +40,7 @@ Removes trailing spaces at the beginning and the end of the string
 
     stripTags(); -> String new
 
-Removes all the tags out of the string
+Removes all tags from of the string.
 
     'a <b>c</b> d'.stripTags(); // -> 'a c d'
 
@@ -51,7 +51,7 @@ Removes all the tags out of the string
     stripScripts(true);              -> String new
     stripScripts(Function receiver); -> String new
 
-Strips all the javascript tags out of the string.
+Strips all JavaScript tags from the string.
 
 This method takes several possible arguments. If a boolean `true` is passed 
 then the scripts will be evaluated after extraction. If a function is passed
@@ -73,8 +73,8 @@ every script body will be tossed into the function.
 
     extractScripts() -> String scripts
 
-Extracts bodies of every script tag in the string and returns them as a 
-single string
+Extracts the bodies of every JavaScript tag in the string and returns them 
+as a single string.
 
     var string = 'asdf <script>alert(1);</script>asdf<script>alert(2);</script>';
     
@@ -87,7 +87,7 @@ single string
 
 Evals scripts in the string.
 
-__NOTE:__ this method will not remove the scripts out of the string
+__NOTE:__ This method will not remove the scripts from the string.
 
     var string = 'asdf <script>alert(1);</script>';
     
@@ -98,7 +98,7 @@ __NOTE:__ this method will not remove the scripts out of the string
 
     camelize() -> String new
 
-Converts a string from an underscored/dashed version into a camel cased one
+Converts the string from underscored or dashed to camel case.
 
     'foo_bar'.camelize(); // -> 'fooBar'
     'foo-bar'.camelize(); // -> 'fooBar'
@@ -110,7 +110,7 @@ Converts a string from an underscored/dashed version into a camel cased one
 
     underscored() -> String new
 
-Converts a camel cased or dashed string into an underscored one
+Converts the string from camel case or dashed to underscored.
 
     'fooBar'.underscored();  // -> 'foo_bar'
     'foo-bar'.underscored(); // -> 'foo_bar'
@@ -120,9 +120,9 @@ Converts a camel cased or dashed string into an underscored one
 
     capitalize() -> String new
 
-Creates a capitalized version of the string
+Creates a capitalized version of the string.
 
-__NOTE__: this method supports most of the UTF-8 symbols
+__NOTE__: This method supports most of the UTF-8 symbols.
 
     'boo boo boo'.capitalize();    // -> 'Boo Boo Boo'
     'йокарный бабай'.capitalize(); // -> 'Йокарный Бабай'
@@ -133,7 +133,7 @@ __NOTE__: this method supports most of the UTF-8 symbols
 
     includes(String token) -> boolean
 
-Checks if the string contains the given substring
+Checks if the string contains the given substring.
 
     'foo'.includes('bar'); // -> false
     'foo'.includes('oo');  // -> true
@@ -144,7 +144,7 @@ Checks if the string contains the given substring
 
     startsWith(String token[, boolean ignorecase]) -> boolean
 
-Checks if the string starts with the given substring
+Checks if the string starts with the given substring.
 
     'onSomething'.startsWith('on');           // -> true
     
@@ -157,7 +157,7 @@ Checks if the string starts with the given substring
 
     endsWith(String token[, boolean ignorecase]) -> boolean
 
-Checks if the string ends up with the given substring
+Checks if the string ends with the given substring.
 
     'image.gif'.endsWith('.gif');       // -> true
     
@@ -170,7 +170,7 @@ Checks if the string ends up with the given substring
 
     toInt([Integer base]) -> Integer
 
-Converts the string to an Integer number
+Converts the string to an Integer number.
 
     '123'.toInt(); // -> 123
 
@@ -182,8 +182,8 @@ Converts the string to an Integer number
 
 Converts the string to a float number.
 
-__NOTE:__ processes dashes and comas as decimal pinter unless you pass true as 
-the parameter
+__NOTE:__ Processes dashes and commas as decimal markers unless you 
+pass the argument `true`.
 
     '123.45'.toFloat(); // -> 123.45
     '123,45'.toFloat(); // -> 123.45
@@ -196,7 +196,7 @@ the parameter
     behave(String event, String callback[, arg, arg...]) -> void
     behave(Object events_hash)                           -> void
     
-Attaches a document level events delegation listener
+Attaches a document level events delegation listener.
 
     // simple case
     "div.red".behave('click', function() {
