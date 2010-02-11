@@ -1,7 +1,7 @@
 # Cookie
 
 `Cookie` is an object oriented wrapper around the native cookie support
-of the browser.
+of a browser.
 
 You can work with the `Cookie` object at class level.
 

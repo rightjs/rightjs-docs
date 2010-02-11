@@ -1,6 +1,6 @@
 # Object
 
-The {Object} unit in RightJS has some pretty much standard additional methods
+The {Object} unit in RightJS has some pretty much standard additional methods,
 which provide frequently used functionalities to process objects.
 
 ### .keys

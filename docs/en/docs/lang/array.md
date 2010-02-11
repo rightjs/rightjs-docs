@@ -28,9 +28,8 @@ Finally, it adds several additional but standard methods like {#compact},
 
 ## Iterators Handling
 
-There are two ways of using iterators. Either pass a lambda function as the
-only argument which will receive the following three arguments on every 
-iteration:
+There are two ways of using iterators. Either pass a lambda function, which will
+receive the following three arguments on every iteration:
 
 * the current array element
 * the element index in the array
@@ -50,7 +49,7 @@ The method 'foo(1, 2, 3)' will be called for every element of the array.
 
     indexOf(mixed value) -> Integer
 
-Search the array for the given value and return the index of the first apearance 
+Searches the array for the given value and returns the index of the _first_ appearance 
 or -1 if the value is not found in the array.
 
 
@@ -58,7 +57,7 @@ or -1 if the value is not found in the array.
 
     lastIndexOf(mixed value) -> Integer
   
-Search the array for the given value and return the index of the last apearance 
+Searches the array for the given value and returns the index of the _last_ appearance 
 or -1 if the value is not found in the array.
 
 
@@ -262,7 +261,7 @@ from the original one.
 
     uniq() -> Array new
 
-Remove all duplicate elements from the array.
+Creates a new array that contains only unique entries of the original
 
     [0,1,1,2,0,1,2,3,3].uniq();
     
@@ -298,8 +297,8 @@ Creates a copy of the array without the specified elements.
 
     shuffle() -> Array new
 
-Creates a new array which contains has all the same items as the 
-original one in random order.
+Creates a new array, which contains has all the same items as the 
+original one but in a random order.
 
     [0,1,2,3,4].shuffle();
     

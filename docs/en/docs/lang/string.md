@@ -19,7 +19,7 @@ Checks if the string is empty.
 
     blank() -> boolean
 
-Checks if the string is empty or contains whitespace only.
+Checks if the string is empty or contains whitespaces only.
 
     ''.blank();   // -> true
     ' '.blank();  // -> true
@@ -31,7 +31,7 @@ Checks if the string is empty or contains whitespace only.
 
     trim() -> String new
 
-Removes whitespace spaces from the beginning and the end of the string.
+Removes whitespaces from the beginning and the end of the string.
 
     ' asdf '.trim(); // -> 'asdf'
 
@@ -40,7 +40,7 @@ Removes whitespace spaces from the beginning and the end of the string.
 
     stripTags(); -> String new
 
-Removes all tags from of the string.
+Removes all tags from the string.
 
     'a <b>c</b> d'.stripTags(); // -> 'a c d'
 
@@ -110,7 +110,7 @@ Converts the string from underscored or dashed to camel case.
 
     underscored() -> String new
 
-Converts the string from camel case or dashed to underscored.
+Converts the string from camel or dashed to underscored case.
 
     'fooBar'.underscored();  // -> 'foo_bar'
     'foo-bar'.underscored(); // -> 'foo_bar'

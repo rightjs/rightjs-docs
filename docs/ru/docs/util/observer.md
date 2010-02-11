@@ -94,7 +94,7 @@ __ВНИМАНИЕ:__ если ваш класс имеет методы пер�
 
     Observer.create(object);
 
-    object.observe('something', function() {.....});
+    object.on('something', function() {.....});
 
 
 ### .createShortcuts

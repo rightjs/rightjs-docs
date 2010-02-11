@@ -2,7 +2,7 @@
 
 RightJS extends the `Function` unit prototype to provide the standard FP
 features like binding, curring and chains. It also adds a couple of methods
-for nicer delayed and periodical call handling.
+for nicer delayed and periodical calls handling.
 
 ### #bind
 
@@ -29,7 +29,7 @@ can take optional curry arguments:
 
     bindAsEventListener(Object scope[, argument, ...]) -> Function new
 
-Binds the function to the given scope as if it were handling the first 
+Binds the function to the given scope as if it was handling the first 
 argument as an event:
 
     var object = {
@@ -66,7 +66,7 @@ The standard functional approach currying feature.
 
     rcurry(mixed value[, value, ...]) -> Function new
 
-The right functional approach currying feature
+The standard functional approach right currying feature
 
     var callback = function() { return $A(arguments); };
     
@@ -85,7 +85,7 @@ The right functional approach currying feature
     delay(Integer timeout) -> Number timeout marker
 
 Schedules the delayed execution of the function after `timeout`
-seconds have expired.
+milliseconds have expired.
 
 __NOTE__: This method returns a timeout pointer. Call the `cancel()`
 method on this pointer to abort the timer
@@ -110,7 +110,7 @@ method on this pointer to abort the timer
     periodical(Integer timeout) -> Number timeout marker
 
 Schedule the function to be periodically executed every `timeout` 
-seconds.
+milliseconds.
 
 __NOTE__: This method returns a timeout pointer. Call the `stop()`
 method on this pointer to stop the periodical execution.

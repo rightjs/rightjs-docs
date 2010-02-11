@@ -22,7 +22,7 @@ the following values:
 
     start([String how]) -> Fx.Slide self
 
-Starts the effect. May take an argument like in, out or toggle.
+Starts the effect. May take an argument like `in`, `out` or `toggle`.
 
     new Fx.Slide(element).start();
     

@@ -1,6 +1,6 @@
 # Xhr
 
-Xhr is the standard XML HTTP request handler for RightJS.
+Xhr is the standard XmlHTTPRequest handler for RightJS.
 
 ## Options
 
@@ -26,8 +26,8 @@ object or be passed along with any Xhr functionality interface.
 
 ## Spinners
 
-The {Xhr} class in RightJS handles the spinners automatically. Specify them
-as an element object instance or as an element-id.
+The {Xhr} class in RightJS handles the spinners automatically. You can
+specify them as an element object instance or as an element-id.
 
     Xhr.Options.spinner = $('spinner');
     
@@ -46,9 +46,9 @@ as an element object instance or as an element-id.
 You can send custom parameters with XHR requests. Specify them either as a
 url-encoded string or as an object.
 
-There are different levels.
+There are three different levels.
 
-You can specify global params which will be sent with all subsequent XHR
+You can specify global params, which will be sent with all subsequent XHR
 requests:
 
     Xhr.Options.params = 'myapp=true';
@@ -58,7 +58,7 @@ requests:
     
     new Xhr('/foo/bar').send();
 
-You can specify per-request parameters by sending them as options:
+You can specify per-request parameters by sending them as constructor options:
 
     var xhr = new Xhr('/foo/bar', {
       params: {myapp: true}
@@ -66,7 +66,7 @@ You can specify per-request parameters by sending them as options:
   
     xhr.send(); // the server will see the 'myapp=true' params
 
-And you can specify the params by use of the {Xhr#send} method:
+And you can specify the per-send params using of the {Xhr#send} method:
 
     var xhr = new Xhr('/foo/bar').send('myapp=true');
 
@@ -76,11 +76,11 @@ a single hash once a request is being made.
 
 ## Events
 
-The RightJS Xhr class is inherited from the standard {Observer} class, which
-means that Xhr instances follow all the standard observer rules. You can add,
+The RightJS `Xhr` class is inherited from the standard {Observer} class, which
+means that `Xhr` instances follow all the standard observer rules. You can add,
 list and remove event handlers the usual way.
 
-The Xhr class supports the following events:
+The `Xhr` class supports the following events:
 
 Name     | Description                                                  |
 ---------|--------------------------------------------------------------|
@@ -94,7 +94,7 @@ cancel   | after the request has been canceled _manually_               |
 __NOTE:__ Every callback will receive two arguments. The first one is the
 request instance and the second one is the actual original request instance.
 
-You can attach listeners to these events globally as well by use of the `Xhr` 
+You can attach listeners to these events globally as well as using the `Xhr` 
 class level observers:
 
     Xhr.onCreate(function() {...});

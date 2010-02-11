@@ -1,6 +1,6 @@
 # Math
 
-RightJS overloads the {.random} method to make it more comfortable to use.
+RightJS overloads the {.random} method to make it more useful.
 
 ### .random
 

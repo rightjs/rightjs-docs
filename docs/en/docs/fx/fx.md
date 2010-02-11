@@ -1,12 +1,12 @@
 # Fx Basics
 
 By default RightJS comes with the basic visual effects package. It has one base 
-(abstract) class Fx which defines the common visual effects interface and is used 
-as the basis for all the other Fx classes.
+(abstract) class `Fx`, which defines the common visual effects interface and is used 
+as the basis for all the other effect classes.
 
 ## Events
 
-Fx objects handle the following events:
+`Fx` objects handle the following events:
 
 * start
 * finish
@@ -28,7 +28,7 @@ queue      | true     | boolean marker if the effect should be queued         |
 
 ## Durations
 
-There are three named durations which an be used in Fx options:
+There are three named durations which an be used in `Fx` options:
 
 Name   | Value             |
 -------|-------------------|
@@ -81,7 +81,7 @@ Forces the effect to stop and marks it as a completely finished.
 
     cancel() -> Fx self
 
-Cancels the effect.
+Cancels the effect and interrupts the visual effects queue.
 
 
 ### #pause
@@ -111,5 +111,5 @@ method when the visual effects queue reaches this effect.
     render(Float position) -> void
 
 Abstract protected method where the actual effect rendering is supposed to 
-happen. During the effect run it receives float numbers from 0 to 1 which
+happen. During the effect run it receives float numbers from `0` to `1` that
 represent the position of the effect from the beginning to the end.

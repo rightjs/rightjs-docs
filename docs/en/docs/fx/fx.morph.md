@@ -1,7 +1,7 @@
 # Fx.Morph
 
-Fx.Morph is a basic DOM element morphing visual effect. It can morph
-an element from its current state to any end style.
+Fx.Morph is a basic DOM element morphing visual effect. It can gradually morph
+an element style from its current state to any end value.
 
 You can specify several keys in your end style, all of which will be processed
 simultaneously in order to achieve an outstanding user experience.

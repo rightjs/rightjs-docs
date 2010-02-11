@@ -1,6 +1,6 @@
 # Observer
 
-`Observer` is a shared drop-in base class you need to implement the 
+`Observer` is a shared drop-in base class that implements the 
 observer pattern. It is used in many places all over the framework and 
 defines the common interface for all observable units.
 
@@ -19,7 +19,7 @@ an ancestor for your own classes.
     var my_observer = new MyObserver();
 
 Or, if you don't have an ability to inherit the class directly, you can use 
-its static method call {Observer.create} to make practically any object
+its static method called {Observer.create} to make practically any object
 behave like an observer.
 
     var Klass = new Class(AnotherKlass, {
@@ -41,10 +41,10 @@ behave like an observer.
 ## Shortcuts
 
 The `Observer` unit provides the ability to generate elegant shortcut 
-methods to wire and fire events your observer is supposed to handle. 
+methods to process events your observer is supposed to handle. 
 To do so, you need to specify an instance or class level attribute 
 `EVENTS` in your class. RightJS will watch the name and if found, 
-will try to generate the shortcuts automatically.
+will generate the shortcuts automatically.
 
     var Klass = new Class(Observer, {
       EVENTS: $w('start stop')
@@ -54,7 +54,7 @@ will try to generate the shortcuts automatically.
     klass.onStart(function() {...});
 
 __NOTE:__ If your class has intersecting methods, the shortcuts generator 
-will keep them alive and just skip the name.
+will keep them alive and simply skipping those names.
 
 ## Call By Name
 
@@ -90,7 +90,7 @@ The static observer builder, adds observer functionality to any object.
 
     Observer.create(object);
 
-    object.observe('something', function() {.....});
+    object.on('something', function() {.....});
 
 
 ### .createShortcuts
@@ -109,7 +109,7 @@ Generates the observer shortcuts on the given observable unit.
 
     initialize([Object options])
 
-The generic constructor: If you call it with an array of option keys like
+The generic constructor: If you call it with a hash of option keys like
 `'onSomething'`, the observer will automatically wire it to the to the 
 'something' event.
 

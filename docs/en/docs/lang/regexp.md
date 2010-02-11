@@ -5,6 +5,6 @@
     RegExp.escape(String string) -> String new
 
 Escapes all the command characters in the string so it can safely be used 
-as part of a regular expression:
+as a part of a regular expression:
 
     RegExp.escape('[{!}]'); // -> "\[\{\!\}\]"

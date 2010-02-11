@@ -1,6 +1,6 @@
 # Download
 
-By default RightJS comes in two files. One of them is the actual core which works 
+By default RightJS comes in two files. One of them is the actual core, which works 
 for all the modern browsers while the other one is a dynamically loadable module 
 with patches for old browsers.
 
@@ -27,7 +27,7 @@ directory.
 
 By default RightJS comes with several plugins like advanced form handling, cookies 
 and so on already baked in. You can switch things you don't use off and thus reduce 
-the build size to 18k.
+the build size down to 18k.
 
 Furthermore, there are a number of plugins from the [RightJS Goods](/goods) project
 which can  be embedded into your build as well.
