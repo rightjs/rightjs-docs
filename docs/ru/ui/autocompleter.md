@@ -120,10 +120,10 @@ done   | когда какой-либо вариант был выбран и в
     /*
       в этом случае скрипт будет опрашивать адреса в виде
  
-      /my/url?param=a
-      /my/url?param=as
-      /my/url?param=asd
-      /my/url?param=asdf
+      /my/url?search=a
+      /my/url?search=as
+      /my/url?search=asd
+      /my/url?search=asdf
   
     */
 

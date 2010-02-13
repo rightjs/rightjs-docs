@@ -116,10 +116,10 @@ specify the `'param'` and `'url'` options as the default and usual approach.
     /*
       In this case the autocompleter will hit urls like this.
  
-      /my/url?param=a
-      /my/url?param=as
-      /my/url?param=asd
-      /my/url?param=asdf
+      /my/url?search=a
+      /my/url?search=as
+      /my/url?search=asd
+      /my/url?search=asdf
   
     */
 
