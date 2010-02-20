@@ -33,7 +33,9 @@ github service.
   
   :rater         => "A simple rating widget that can work as a part of a form or as a standalone widget",
   
-  :'in-edit'     => "A simple in-place editors feature for RightJS"
+  :'in-edit'     => "A simple in-place editors feature for RightJS",
+  
+  :uploader      => "Form uploading progress widget for RightJS"
 }
 %>
 
