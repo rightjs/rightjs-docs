@@ -25,7 +25,7 @@ set :sessions,    true
 set :views, Proc.new { File.join(root, "docs") }
 
 GOODS_LIST = %w{json effects events behavior dnd rails}
-UIS_LIST   = %w{autocompleter calendar tabs rater slider selectable sortable lightbox tooltips in-edit}
+UIS_LIST   = %w{autocompleter calendar tabs rater slider selectable sortable lightbox tooltips in-edit uploader}
 API_PACKS  = %w{core dom fx lang util}
 
 LANGUAGES  = %w{

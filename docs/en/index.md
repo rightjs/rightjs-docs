@@ -30,7 +30,7 @@
       <p>
         RightJS is a really compact framework of just 30k and as the matter of fact it
         already has several plugins backed in. It has everything any serious framework
-        should have, dom manipulations handling, native units extensions, basic visual
+        should have, dom manipulations handling, native unit extensions, basic visual
         effects, extensive OOP abilities, AJAX, additional form features, cookies. You
         name it!
       </p>

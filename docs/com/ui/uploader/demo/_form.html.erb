@@ -1,0 +1,57 @@
+<% content_for :modules, javascript_include_tag('/builds/ui/right-uploader-min.js') %>
+
+<style type="text/css">
+  div.right-progress-bar {
+    border-color: #AAA;
+  }
+  div.right-progress-bar div.bar {
+    background: #C8C6C0;
+  }
+</style>
+
+<div class="form-with-progress-demo">
+  <p>
+    <input type="file" disabled="true" />
+    <input type="button" value="Send" disabled="true" />
+  </p>
+  
+  <div class="right-progress-bar" id="demo-progress-bar">
+    <div class="bar"></div>
+    <div class="num">0%</div>
+  </div>
+</div>
+
+<script type="text/javascript">
+// <![CDATA[
+  var element = $('demo-progress-bar').show();
+  var bar = element.first('.bar');
+  var num = element.first('.num');
+  var counter = 0;
+  var steps   = 11;
+  
+  (function() {
+    var value = (counter / steps  * 100).round() + '%';
+    
+    if (counter == 0) {
+      num.innerHTML = value;
+      bar.style.width = value;
+    } else {
+      bar.morph({width: value});
+      (function() {
+        num.innerHTML = value;
+      }).delay(200);
+    }
+    
+    if (counter == steps) {
+      counter = 0;
+      var timeout = 4000;
+    } else {
+      counter ++;
+      var timeout = 1000;
+    }
+    
+    arguments.callee.delay(timeout);
+  })();
+  
+// ]]>
+</script>
