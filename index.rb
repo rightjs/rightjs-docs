@@ -41,9 +41,9 @@ LANGUAGES  = %w{
   Prolog
 }
 
-
 Sinatra::Templates.instance_eval do
   RIGHTJS_TICKETS_TRACKER_URL = 'http://tickets.com'
+  RIGHTJS_VERSION             = "1.5.4"
   class PagesController
     LANGUAGES = LANGUAGES
   end

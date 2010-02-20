@@ -23,6 +23,16 @@ directory.
        right-olds[bla-bla-bla].js
         
 
+# Hot Link
+
+As we didn't quite make it to the Google API hosting yet. You can use the hot-links
+above to have a common RightJS library connection.
+
+The first link always points to the _latest_ version of RightJS and will get automatically
+updated over the time. The second link always points to _that exact_ version of RightJS.
+
+
+
 # Custom Build
 
 By default RightJS comes with several plugins like advanced form handling, cookies 
@@ -56,4 +66,9 @@ The original source code of the project can be found on Github:
 
 # License
 
-RightJS is an open-source project released under the terms of the MIT-License.
+RightJS is an open-source project.
+
+All the source code are released under the terms of the MIT-License.
+
+All the documentation on this site is released under the
+[Creative Commons 3](http://creativecommons.org/licenses/by-nc-sa/3.0/) license
