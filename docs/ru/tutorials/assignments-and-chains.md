@@ -10,7 +10,7 @@ RightJS спроектирован таким образом, что кажды�
     var element = new Element('div');
     element.update('text');
     element.insertTo(document.body);
-    element.hightlight();
+    element.highlight();
 
 Вы могли бы написать все в одну строчку
 

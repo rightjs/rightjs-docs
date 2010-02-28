@@ -10,7 +10,7 @@ For example instead of this code
     var element = new Element('div');
     element.update('text');
     element.insertTo(document.body);
-    element.hightlight();
+    element.highlight();
 
 You could write everything in a single line.
 
