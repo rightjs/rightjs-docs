@@ -1,7 +1,7 @@
 # Draggable
 
 `Draggable` is the standard draggable units handling class out of the
-[Drag'n'Drop](/goods/drag-n-drop) library.
+[Drag'n'Drop](/goods/drag-and-drop) library.
 
 For the public API it has only two methods the constructor and destructor.
 The constructor receives a reference to an element and the options hash.
@@ -14,7 +14,7 @@ the element making it not draggable anymore.
     draggable.destroy();
 
 You might also use the auto-discovery feature and the {Element} level shortcuts to
-create draggables. Please see the main [Drag'n'Drop](/goods/drag-n-drop) page for more details.
+create draggables. Please see the main [Drag'n'Drop](/goods/drag-and-drop) page for more details.
 
 <%= anchors_index %>
 

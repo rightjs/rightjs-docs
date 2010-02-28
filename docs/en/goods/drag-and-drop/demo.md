@@ -1,6 +1,6 @@
 # Drag'n'Drop Demo
 
-Some standard demo cases for the drag-n-drop feature
+Some standard demo cases for the drag-and-drop feature
 
 ## Simple Draggables, :simple
 <%= partial 'simple' %>

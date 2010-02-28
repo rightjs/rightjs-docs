@@ -4,7 +4,7 @@ Right Sortable is the sortable lists feature for RightJS
 
 <%= partial '/ui/head', :locals => {:name => 'sortable'} %>
 
-__NOTE:__ This module requires the  [drag-n-drop](/goods/drag-n-drop) library
+__NOTE:__ This module requires the  [drag-and-drop](/goods/drag-and-drop) library
 
 <%= anchors_index %>
 

@@ -1,6 +1,6 @@
 # Droppable
 
-`Droppable` is the standard droppable units handling class out of the [Drag'n'Drop](/goods/drag-n-drop) library.
+`Droppable` is the standard droppable units handling class out of the [Drag'n'Drop](/goods/drag-and-drop) library.
 
 For the public API it has only two methods the constructor and destructor.
 The constructor that takes a reference to an element and the options hash.
@@ -13,7 +13,7 @@ The destructor is just a method that detaches all the event handling out of the 
 
 
 You might also use the auto-discovery feature and the {Element} level shortcuts to
-create droppables. Please see the main [Drag'n'Drop](/goods/drag-n-drop)
+create droppables. Please see the main [Drag'n'Drop](/goods/drag-and-drop)
 page for more details.
 
 <%= anchors_index %>

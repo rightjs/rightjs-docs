@@ -1,12 +1,12 @@
 # Drag'n'Drop Module
 
-This is the standard drag-n-drop library for RightJS. As most of libraries of this type it
+This is the standard drag-and-drop library for RightJS. As most of libraries of this type it
 contains basically two units `Draggable` and `Droppable`. There are two separated documents
 for each of them, plus you might take a look at some simple demo page
 
-* [Draggable](/goods/drag-n-drop/draggable)
-* [Droppable](/goods/drag-n-drop/droppable)
-* [Demo Page](/goods/drag-n-drop/demo)
+* [Draggable](/goods/drag-and-drop/draggable)
+* [Droppable](/goods/drag-and-drop/droppable)
+* [Demo Page](/goods/drag-and-drop/demo)
 
 <%= anchors_index %>
 

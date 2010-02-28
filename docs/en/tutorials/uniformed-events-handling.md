@@ -10,7 +10,7 @@ All of them works via the same interface and uses the same set of features.
 ## Usage Basics, :usage
 
 The {Observer} module has all the standard methods to assign, remote, check and trigger events.
-So when you see a list of supported by a unit events, like say [Draggable](/goods/drag-n-drop/draggable#events)
+So when you see a list of supported by a unit events, like say [Draggable](/goods/drag-and-drop/draggable#events)
 you can use them right away like this
 
     new Draggable().on('start', function() {....});
