@@ -1,13 +1,12 @@
-# Drag'n'Drop Demo
+# Drag-and-drop Demo
 
-Some standard demo cases for the drag-and-drop feature
+Some standard demo cases for the drag-and-drop feature.
 
 ## Simple Draggables, :simple
 <%= partial 'simple' %>
 
-## Draggables With Constraints, :constrained
+## Draggables with Constraints, :constrained
 <%= partial 'constrained' %>
-
 
 ## Simple Droppable, :droppables
 <%= partial 'droppable' %>
