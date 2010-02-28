@@ -6,6 +6,8 @@ You can see all them in action at the main [visual effects demo](/fx-demo) page.
 
 <%= anchors_index %>
 
+<%= partial '/goods/download', :locals => {:name => 'effects'} %>
+
 ## Fx.CSS, :CSS
 
 `Fx.CSS` is an equivalent of the {Fx.Morph} effect, but instead of using styles it

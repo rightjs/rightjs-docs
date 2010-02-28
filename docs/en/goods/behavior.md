@@ -5,6 +5,7 @@ and then it will automatically watch any changes on the web-page and update matc
 
 <%= anchors_index %>
 
+<%= partial '/goods/download', :locals => {:name => 'behavior'} %>
 
 ## Simple Example, :simple
 

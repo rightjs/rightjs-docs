@@ -5,6 +5,8 @@ with DOM events a lot.
 
 <%= anchors_index %>
 
+<%= partial '/goods/download', :locals => {:name => 'events'} %>
+
 ## Keys And Buttons Determination, :keys
 
 There are two additional constants appear at the {Event} class when the module is included.

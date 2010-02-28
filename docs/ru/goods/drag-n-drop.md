@@ -10,16 +10,7 @@
 
 <%= anchors_index %>
 
-## Скачать, :download
-
-Данная библиотека идет во всех трех стандартных сборках
-
-* [right-dnd.js](/builds/goods/right-dnd.js)
-* [right-dnd-min.js](/builds/goods/right-dnd-min.js)
-* [right-dnd-src.js](/builds/goods/right-dnd-src.js)
-
-И так же существует возможность встроить ее в основное ядро на
-[странице пользовательских сборок](<%= builds_path %>).
+<%= partial '/goods/download', :locals => {:name => 'dnd'} %>
 
 ## Автоматическая инициализация, :discovery
 

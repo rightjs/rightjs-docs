@@ -5,6 +5,7 @@
 
 <%= anchors_index %>
 
+<%= partial '/goods/download', :locals => {:name => 'behavior'} %>
 
 ## Простой пример, :simple
 

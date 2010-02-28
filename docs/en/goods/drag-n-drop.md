@@ -10,15 +10,7 @@ for each of them, plus you might take a look at some simple demo page
 
 <%= anchors_index %>
 
-## Download, :download
-
-This library comes in the three standard builds
-
-* [right-dnd.js](/builds/goods/right-dnd.js)
-* [right-dnd-min.js](/builds/goods/right-dnd-min.js)
-* [right-dnd-src.js](/builds/goods/right-dnd-src.js)
-  
-It also available as an option at the [custom build](<%= builds_path %>) page.
+<%= partial '/goods/download', :locals => {:name => 'dnd'} %>
 
 ## Auto-Discovery Feature, :discovery
 
