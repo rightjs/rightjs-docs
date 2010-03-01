@@ -20,7 +20,7 @@ can include them in the main build at the [custom builds page](<%= builds_path %
   :rails    => "Provides a conventional ajax operations interface and RightJS core "+
                "extensions with underscored and ruby-like aliases.",
                 
-  :dnd      => "The standard drag-n-drop library for RightJS",
+  :dnd      => "The standard drag-and-drop library for RightJS",
   
   :effects  => "By default RightJS comes with a basic Fx engine and a few most used visual "+
                 "effects. This module contains a library of all the additional visual effects.",
