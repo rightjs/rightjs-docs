@@ -1,12 +1,12 @@
 # Модуль Drag'n'Drop
 
-Это стандартный модуль drag-n-drop для RightJS. Как и большинство библиотек подобного рода,
+Это стандартный модуль drag-and-drop для RightJS. Как и большинство библиотек подобного рода,
 он содержит два базовых класса `Draggable` и `Droppable`. По каждому из них существует
 отдельная статья, а так же есть общая для них демо страница
 
-* [Draggable](/goods/drag-n-drop/draggable)
-* [Droppable](/goods/drag-n-drop/droppable)
-* [Демо страница](/goods/drag-n-drop/demo)
+* [Draggable](/goods/drag-and-drop/draggable)
+* [Droppable](/goods/drag-and-drop/droppable)
+* [Демо страница](/goods/drag-and-drop/demo)
 
 <%= anchors_index %>
 

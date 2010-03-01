@@ -1,6 +1,6 @@
 # Демо Drag'n'Drop модуля
 
-Несколько стандартный применений для drag-n-drop библиотеки
+Несколько стандартный применений для [drag-and-drop](/goods/drag-and-drop) библиотеки
 
 ## Простые Draggables, :simple
 <%= partial 'simple' %>

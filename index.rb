@@ -261,7 +261,7 @@ end
 
 get %r{/(.*)} do |path|
   @path = path == '' ? 'index' : path
-  @path = @path.gsub('/dnd', '/drag-n-drop')
+  @path = @path.gsub('/dnd', '/drag-and-drop')
   
   @languages = {
     'en' => 'English',
