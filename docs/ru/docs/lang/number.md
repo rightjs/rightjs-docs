@@ -5,6 +5,24 @@ RightJS расширяет класс `Number` для того чтобы раб
 добавлено несколько методов для работы с итерациями в стиле языка Ruby
 
 
+
+### .include
+
+    Number.include(Object new_methods[, Boolean dont_overwrite) -> Number
+
+Регистрирует новые методы для объектов типа `Number`
+
+Если второй аргумент равен `true`, то данный метод _пропустит уже существующие_ методы
+
+    Number.include({
+      double: function() {
+        return this * 2;
+      }
+    });
+    
+    2..double(); // -> 4
+
+
 ### #abs
 
     abs() -> number absolute value

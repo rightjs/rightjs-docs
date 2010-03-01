@@ -15,11 +15,12 @@ We will get through them one by one and later I'll put some words in about metho
 
 ## JavaScript Natives Extending, :natives
 
-When we are talking about extending native units like {String}, {Array}, {Function} etc.
-we are talking about extending the object prototypes. So the extension of natives is
-simple. Just use the `$ext` function on the unit prototype like that
+For most JavaScript native units, like {String}, {Array}, {Function}, etc. there are class
+level methods like {String.include}, {Array.include}, etc. which are consistent with
+other units and meant to help you to extend native classes. The process of extending looks
+as simple as that
 
-    $ext(Array.prototype, {
+    Array.include({
       myMethod1: function() { return 1; },
       myMethod2: function() { return 2; }
     });
@@ -28,7 +29,7 @@ simple. Just use the `$ext` function on the unit prototype like that
     [1,2,3,4].myMethod2(); // -> 2
     
     
-    $ext(String.prototype, {
+    String.include({
       hasBoo: function() {
         return this.includes('boo');
       }

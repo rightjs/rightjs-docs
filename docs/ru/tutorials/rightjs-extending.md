@@ -16,11 +16,12 @@
 
 ## Расширение родных классов JavaScript, :natives
 
-Когда мы говорим о расширении родных классов JavaScript, таких как {String}, {Array}, {Function} и т.д.
-мы имеем ввиду расширение прототипов этих классов. В этом смысле расширение родных юнитов,
-дело совершенно простое. Просто используйте функцию `$ext` на объекте прототипа нужного класса.
+Для большинства родных классов JavaScript, таких как {String}, {Array}, {Function} и т.д. существуют
+методы уровня класса вида {String.include}, {Array.include}, которые имеют тот же самый
+смысл что и в других классах библиотеки и служат для расширения юнитов. Процесс использования
+выглядит очень просто.
 
-    $ext(Array.prototype, {
+    Array.include({
       myMethod1: function() { return 1; },
       myMethod2: function() { return 2; }
     });
@@ -29,7 +30,7 @@
     [1,2,3,4].myMethod2(); // -> 2
     
     
-    $ext(String.prototype, {
+    String.include({
       hasBoo: function() {
         return this.includes('boo');
       }

@@ -16,15 +16,6 @@ Unlike other DOM elements, form elements handle a bunch of additional events:
 They are handled simultaneously with all the other events. All shortcuts
 are in place, you can wire and run the events the usual way.
 
-### .addMethods
-
-    addMethods(Object methods[, boolean dont_rewrite])
-
-Registers additional methods for the form input element units, like INPUT,
-SELECT, TEXTAREA.
-
-__DEPRECATED__: Please use the {.include} method instead.
-
 
 ### .include
 

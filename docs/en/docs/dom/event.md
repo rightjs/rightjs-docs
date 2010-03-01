@@ -34,15 +34,6 @@ Extends the event object with additional methods.
       event.stop();
     });
 
-
-### .addMethods
-
-    Event.addMethods(Object methods[, boolean dont_rewrite])
-
-Registers additional methods for the DOM events.
-
-__DEPRECATED__: Please use the {.include} method instead.
-
     
 ### .include
 
@@ -82,6 +73,37 @@ of the element that _triggered_ the event
       ".green":   ['addClass', 'was-green'],
       ".hide-me": 'hide'
     });
+    
+
+### .behave
+
+    Event.behave(String css_rule, String event, Function callback)        -> Object events
+    Event.behave(String css_rule, String event, String method[, arg, ..]) -> Object events
+    Event.behave(String css_rule, Object event_handlers)                  -> Object events
+
+Attaches a document level events delegation handler.
+
+Returns a hash that can be used to switch the handlers off in the
+`document.stopObserving` method.
+
+    // with usual functions
+    Event.behave("#todos li", "click", function() { this.remove(); });
+
+    // with a call by name
+    Event.behave("#todos li", "click", "addClass", "marked");
+
+    // with a hash of handlers
+    Event.behave("#todos li", {
+      mouseover: function() { this.addClass('hovered'); },
+      mouseout:  ['removeClass', 'hovered'],
+      click:     'remove'
+    });
+
+    // turning handlers off
+    var handlers = Event.behave(.....);
+
+    document.stopObserving(handlers);
+
 
 
 ### #stop

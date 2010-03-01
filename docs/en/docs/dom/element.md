@@ -91,15 +91,6 @@ and custom events in RightJS. All of them are handled the exact same way:
     element.fire('my-event');
 
 
-### .addMethods
-
-    Element.addMethods(Object methods[, boolean dont_rewrite])
-
-Registers additional methods for the DOM elements on the page.
-
-__DEPRECATED__: Please use the {.include} method instead.
-
-
 ### .include
   
     Element.include(Object methods[, boolean don_rewrite])
@@ -976,3 +967,11 @@ __NOTE__: Will perform a `GET` request by default.
       spinner: 'spinner-id'
     });
 
+### #stop
+
+    stop() -> Element self
+
+Immediately stops and cancels all active visual effects on the element
+
+    $('element').slide().fade().stop();
+    

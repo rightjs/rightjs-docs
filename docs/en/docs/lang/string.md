@@ -4,6 +4,23 @@ RightJS extends the native String class with some additional powerful methods
 to make your life easier.
 
 
+### .include
+
+    String.include(Object new_methods[, Boolean dont_overwrite) -> String
+
+Registers new functionality for `String` instances
+
+If the second argument is `true`, then the method _will skip_ already existing methods
+
+    String.include({
+      double: function() {
+        return this + ' ' + this;
+      }
+    });
+    
+    'boo'.double(); // -> 'boo boo'
+
+
 ### #empty
 
     empty() -> boolean

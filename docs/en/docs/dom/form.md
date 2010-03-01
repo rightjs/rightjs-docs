@@ -32,15 +32,6 @@ If your form has an element with the CSS class `spinner`, it will be automatical
 used as a spinner for your form submission. You don't need to define it explicitly.
 
 
-### .addMethods
-
-    addMethods(Object methods[, boolean dont_rewrite])
-
-Registers additional methods for the `Form` elements.
-
-__DEPRECATED__: Please use the {.include} method instead.
-
-
 ### .include
 
     include(Object methods[, boolean dont_rewrite])

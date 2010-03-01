@@ -4,6 +4,29 @@ RightJS extends the `Function` unit prototype to provide the standard FP
 features like binding, curring and chains. It also adds a couple of methods
 for nicer delayed and periodical calls handling.
 
+
+### .include
+
+    Function.include(Object new_methods[, Boolean dont_overwrite) -> Function
+
+Registers new functionality for `Function` instances
+
+If the second argument is `true`, then the method _will skip_ already existing methods
+
+    Function.include({
+      double: function() {
+        return this.call() * 2;
+      }
+    });
+    
+    var two = function() {
+      return 2;
+    };
+    
+    two.double(); // -> 4
+
+
+
 ### #bind
 
     bind(Object scope[, argument,...]) -> Function new
