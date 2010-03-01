@@ -6,7 +6,7 @@
 The public API consists of only two methods: constructor and destructor. The 
 constructor receives a reference to an element and the options hash while 
 the destructor is just a method which detaches all the events handling from
-the element thus rendering it not draggable anymore.
+the element thus making it not draggable anymore.
 
     // Make 'my-element' draggable ...
     var draggable = new Draggable('my-element', {axis: 'x'});

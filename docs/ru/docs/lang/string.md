@@ -4,6 +4,24 @@ RightJS расширяет класс строк несколькими допо
 методами для обработки наиболее часто встречающихся операций.
 
 
+### .include
+
+    String.include(Object new_methods[, Boolean dont_overwrite) -> String
+
+Регистрирует новые методы для объектов типа `String`
+
+Если второй аргумент равен `true`, то данный метод _пропустит уже существующие_ методы
+
+    String.include({
+      double: function() {
+        return this + ' ' + this;
+      }
+    });
+    
+    'boo'.double(); // -> 'boo boo'
+
+
+
 ### #empty
 
     empty() -> boolean

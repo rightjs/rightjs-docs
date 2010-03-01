@@ -48,6 +48,7 @@ following events.
 * request
 * complete
 * success
+* failure
 * cancel
 
 You can send your callbacks along with the constructor options or handle by
@@ -81,7 +82,7 @@ and the original XMLHttpRequest object.
 Additionally you can use the {Xhr} class level {Observer} interface to
 attach global event listeners for all the xhr requests.
 
-    Xhr.onSend(call_that_function);
+    Xhr.onCreate(call_that_function);
     
     new Xhr('/some/url').send(); // <- will automatically call that function
 

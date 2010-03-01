@@ -204,6 +204,7 @@ Checks if the observer watches the given event or/and callback.
     stopObserving(String name)                    -> Observer self
     stopObserving(Function callback)              -> Observer self
     stopObserving(String name, Function callback) -> Observer self
+    stopObserving(Object events)                  -> Observer self
 
 Tells the observer to stop observing a certain callback, the whole event or
 some particular callback for some particular event.

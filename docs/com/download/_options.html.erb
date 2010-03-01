@@ -1,15 +1,9 @@
 <dl id="download-options">
-  <dt><%= "pages.download.Packed".t %></dt>
+  <dt><%= "pages.download.Standard".t %></dt>
   <ul>
-    <li><%= link_to 'right.js.zip',  '/builds/current/right.js.zip' %></li>
-  </ul>
-  <dt><%= "pages.download.Minified".t %></dt>
-  <ul>
-    <li><%= link_to 'right-min.js.zip',  '/builds/current/right-min.js.zip' %></li>
-  </ul>
-  <dt><%= "pages.download.Uncompressed".t %></dt>
-  <ul>
-    <li><%= link_to 'right-src.js.zip',  '/builds/current/right-src.js.zip' %></li>
+    <li><%= link_to 'right.js.zip',  '/builds/current/right.js.zip' %> - <%= 'pages.misc.packed_version'.t %></li>
+    <li><%= link_to 'right-min.js.zip',  '/builds/current/right-min.js.zip' %> - <%= 'pages.misc.minified_version'.t %></li>
+    <li><%= link_to 'right-src.js.zip',  '/builds/current/right-src.js.zip' %> - <%= 'pages.misc.source_version'.t %></li>
   </ul>
   <dt><%= "pages.download.ServerSide".t %></dt>
   <ul>

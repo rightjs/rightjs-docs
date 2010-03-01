@@ -6,6 +6,8 @@
 
 <%= anchors_index %>
 
+<%= partial '/goods/download', :locals => {:name => 'effects'} %>
+
 ## Fx.CSS, :CSS
 
 `Fx.CSS` - это эквивалент для эффекта {Fx.Morph}, но с той разницей, что он работает

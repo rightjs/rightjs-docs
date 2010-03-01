@@ -45,6 +45,23 @@ RightJS расширяет функциональность класса `Array`
 
 В данном случае, для каждого элемента данного массива будет вызван метод
 `'foo'` с аргументами `1,2,3`
+
+
+### .include
+
+    Array.include(Object new_methods[, Boolean dont_overwrite) -> Array
+
+Регистрирует новые методы для объектов типа `Array`
+
+Если второй аргумент равен `true`, то данный метод _пропустит уже существующие_ методы
+
+    Array.include({
+      double: function() {
+        return [this.clone(), this.clone()];
+      }
+    });
+    
+    [1].double(); // -> [[1], [1]]
  
 
 

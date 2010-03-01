@@ -6,10 +6,11 @@ elements.
 
 <%= anchors_index %>
 
+<%= partial '/goods/download', :locals => {:name => 'behavior'} %>
 
 ## Simple Example, :simple
 
-This use is really simple: Just define a CSS rule and assign events you wish to handle:
+The usage is really simple: Just define a CSS rule and assign events you wish to handle:
 
     "#todo-list div.item".behave('click', function() {...});
 

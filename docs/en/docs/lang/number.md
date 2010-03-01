@@ -4,6 +4,22 @@ RightJS extends the `Number` unit in order to make it support the {Math}
 module methods in a more natural, object-oriented way. And it adds the 
 handy Ruby style loop methods as well.
 
+### .include
+
+    Number.include(Object new_methods[, Boolean dont_overwrite) -> Number
+
+Registers new functionality for `Number` instances
+
+If the second argument is `true`, then the method _will skip_ already existing methods
+
+    Number.include({
+      double: function() {
+        return this * 2;
+      }
+    });
+    
+    2..double(); // -> 4
+
 
 ### #abs
 

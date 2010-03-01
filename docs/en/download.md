@@ -2,7 +2,7 @@
 
 By default RightJS comes in two files. One of them is the actual core, which works 
 for all the modern browsers while the other one is a dynamically loadable module 
-with patches for old browsers.
+with patches for old browsers (older than IE8, FF 3.5, Opera 10.10 and all Konqs).
 
 <%= partial 'options' %>
 

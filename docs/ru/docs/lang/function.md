@@ -4,6 +4,29 @@ RightJS расширяет класс функций `Function` нескольк
 методами из функциональной парадигмы, а так же добавляет пару методов для
 более удобной работы с задержками и периодическими вызовами.
 
+
+### .include
+
+    Function.include(Object new_methods[, Boolean dont_overwrite) -> Function
+
+Регистрирует новые методы для объектов типа `Function`
+
+Если второй аргумент равен `true`, то данный метод _пропустит уже существующие_ методы
+
+    Function.include({
+      double: function() {
+        return this.call() * 2;
+      }
+    });
+    
+    var two = function() {
+      return 2;
+    };
+    
+    two.double(); // -> 4
+
+
+
 ### #bind
 
     bind(Object scope[, argument,...]) -> Function new

@@ -33,15 +33,6 @@ RightJS добавляет несколько стандартных расши�
       event.stop();
     });
 
-
-### .addMethods
-
-    Event.addMethods(Object methods[, boolean dont_rewrite])
-
-Регистрирует дополнительные методы для объектов событий.
-
-__УСТАРЕВШЕЕ__: пожалуйста используйте метод {.include}
-
     
 ### .include
 
@@ -82,6 +73,34 @@ __ВНИМАНИЕ__: указанная функция-обработичк с�
       ".hide-me": 'hide'
     });
 
+
+### .behave
+
+    Event.behave(String css_rule, String event, Function callback)        -> Object events
+    Event.behave(String css_rule, String event, String method[, arg, ..]) -> Object events
+    Event.behave(String css_rule, Object event_handlers)                  -> Object events
+
+Подключает делегированный обработчик событий уровня документа, возвращает
+хэш с реальными обработчиками который можно использовать для отключения
+обработки в методе `document.stopObserving`
+
+    // с обычными функциями
+    Event.behave("#todos li", "click", function() { this.remove(); });
+    
+    // с вызовом по имени
+    Event.behave("#todos li", "click", "addClass", "marked");
+    
+    // с хэшем обработчиков
+    Event.behave("#todos li", {
+      mouseover: function() { this.addClass('hovered'); },
+      mouseout:  ['removeClass', 'hovered'],
+      click:     'remove'
+    });
+    
+    // отключение обработчика
+    var handlers = Event.behave(.....);
+    
+    document.stopObserving(handlers);
 
 
 ### #stop

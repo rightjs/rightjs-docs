@@ -209,6 +209,7 @@ __УСТАРЕВШЕЕ__: используйте более короткий м�
     stopObserving(String name)                    -> Observer self
     stopObserving(Function callback)              -> Observer self
     stopObserving(String name, Function callback) -> Observer self
+    stopObserving(Object events)                  -> Observer self
 
 Отключает слушателя от объекта
 

@@ -44,6 +44,22 @@ arguments, for example:
 The method 'foo(1, 2, 3)' will be called for every element of the array.
  
 
+### .include
+
+    Array.include(Object new_methods[, Boolean dont_overwrite) -> Array
+
+Registers new functionality for `Array` instances
+
+If the second argument is `true`, then the method _will skip_ already existing methods
+
+    Array.include({
+      double: function() {
+        return [this.clone(), this.clone()];
+      }
+    });
+    
+    [1].double(); // -> [[1], [1]]
+
 
 ### #indexOf
 
