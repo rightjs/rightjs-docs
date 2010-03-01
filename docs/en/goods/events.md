@@ -1,21 +1,21 @@
 # Advanced DOM Events Handling
 
-This module provides additional functionality that might be helpful when you need to work
-with DOM events a lot.
+This module provides additional functionalities which might be helpful when you need to work
+a lot with DOM events.
 
 <%= anchors_index %>
 
-## Keys And Buttons Determination, :keys
+## Keys and Buttons Determination, :keys
 
-There are two additional constants appear at the {Event} class when the module is included.
+Two additional constants appear in the {Event} class when this module is included.
 
-The first one is `Event.BUTTONS` and keeps the mouse button numbers
+`Event.BUTTONS` reports the mouse button numbers:
 
 * `LEFT` - 0 (1 for IE and Konqueror)
 * `MIDDLE` - 1 (4 for IE and Konqueror)
 * `RIGHT` - 2
 
-The second one is `Event.KEYS` that keeps codes of the command keys on a keyboard
+`Event.KEYS` contains the codes of the command keys on the keyboard:
 
 * `BACKSPACE`
 * `TAB`
@@ -33,8 +33,8 @@ The second one is `Event.KEYS` that keeps codes of the command keys on a keyboar
 * `INSERT`
 * `DELETE`
 
-For each of the constants there is a respective method that will check if that key/button was pressed.
-The names follow the constant names, like this:
+For each of the constants a method exists which will check if that key or mouse button was pressed. The names 
+are equivalent to the constant names above:
 
     $('element').onClick(function(event) {
       if (event.isLeftClick())
@@ -48,12 +48,10 @@ The names follow the constant names, like this:
 
 ## DOM Events Firing, :dom
 
-By default when you try to initiate events on dom elements in RightJS, it will simply go through
-all the callbacks registered to the element with a fake event. It works but it's not real.
+By default when you try to initiate events on a DOM element, RightJS will simply go through all the callbacks 
+registered to the element by use of a fake event. This works fine, but it's not the real thing.
 
-If you need to fire real dom-events, then you might use this module. When it is included this
-module wraps the original events initiation methods and uses the new ones, so that there will
-be no difference at the API level.
+If you need to fire real DOM events, you should use this module. Once included, the module wraps the original
+events initiation methods and uses the new ones. Therefore, nothing changes on the API level.
 
 __NOTE:__ Konqueror 3 does not support this feature.
-
