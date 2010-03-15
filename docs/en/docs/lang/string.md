@@ -207,27 +207,36 @@ pass the argument `true`.
     '123-45'.toFloat(); // -> 123.45
 
 
-### #behave
+### #on
 
-    behave(String event, Function callback)              -> void
-    behave(String event, String callback[, arg, arg...]) -> void
-    behave(Object events_hash)                           -> void
+    on(String event, Function callback)              -> void
+    on(String event, String callback[, arg, arg...]) -> void
+    on(Object events_hash)                           -> void
     
 Attaches a document level events delegation listener.
 
     // simple case
-    "div.red".behave('click', function() {
+    "div.red".on('click', function() {
       alert("That's red")
     });
     
     // by name reference
-    "div.red".behave('click', 'addClass', 'that-was-red');
+    "div.red".on('click', 'addClass', 'that-was-red');
     
     // several event callbacks attachment
-    "div.red".behave({
+    "div.red".on({
       mouseover: function() { this.addClas('that-was-red')},
       mouseout:  ['removeClass', 'that-was-red'],
       click:     'hide'
     });
 
 
+### #behave
+
+    behave(String event, Function callback)              -> void
+    behave(String event, String callback[, arg, arg...]) -> void
+    behave(Object events_hash)                           -> void
+
+Alias for the {#on} method
+
+__DEPRECATED__: Please use the shorter method {#on}

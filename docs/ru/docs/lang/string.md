@@ -208,7 +208,7 @@ __ВНИМАНИЕ:__ данный метод конвертирует запя�
     '123-45'.toFloat(); // -> 123.45
 
 
-### #behave
+### #on
 
     behave(String event, Function callback)              -> void
     behave(String event, String callback[, arg, arg...]) -> void
@@ -218,16 +218,28 @@ __ВНИМАНИЕ:__ данный метод конвертирует запя�
 технуку делегирования обработки событий
 
     // простой пример
-    "div.red".behave('click', function() {
-      alert("Это красный");
+    "div.red".on('click', function() {
+      alert("Это красный DIV");
     });
 
     // со ссылкой на обработчик по имени
-    "div.red".behave('click', 'addClass', 'that-was-red');
+    "div.red".on('click', 'addClass', 'that-was-red');
 
     // обработка нескольких событий одновременно
-    "div.red".behave({
+    "div.red".on({
       mouseover: function() { this.addClas('that-was-red')},
       mouseout:  ['removeClass', 'that-was-red'],
       click:     'hide'
     });
+
+
+
+### #behave
+
+    behave(String event, Function callback)              -> void
+    behave(String event, String callback[, arg, arg...]) -> void
+    behave(Object events_hash)                           -> void
+
+__УСТАРЕВШЕЕ__: Старое название метода {#on}
+
+
