@@ -71,7 +71,7 @@ Xhr       | {}         | additional Xhr options
 idParam   | 'id'       | the url id value name
 posParam  | 'position' | the url position value name
 parseId   | true       | if the id attribute should be converted into an integer before sending
-relName   | 'sortable' | the auto-discovery feature key
+cssRule   | '\[rel^=sortable\]' | the auto-discoverable elements marker
 
 
 ## Events List, :events

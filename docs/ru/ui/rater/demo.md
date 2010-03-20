@@ -11,42 +11,59 @@
   </div>
 </p>
 <p>
-  <div class="right-rater" data-rater-options="{value:1}">
-    <div>&#9733;</div><div>&#9733;</div><div>&#9733;</div><div>&#9733;</div><div>&#9733;</div>
+  <div class="right-rater">
+    <div class="right-rater-glow">&#9733;</div><div>&#9733;</div><div>&#9733;</div><div>&#9733;</div><div>&#9733;</div>
   </div>
 </p>
 <p>
-  <div class="right-rater" data-rater-options="{value:2}">
-    <div>&#9733;</div><div>&#9733;</div><div>&#9733;</div><div>&#9733;</div><div>&#9733;</div>
+  <div class="right-rater">
+    <div class="right-rater-glow">&#9733;</div>
+    <div class="right-rater-glow">&#9733;</div>
+    <div>&#9733;</div><div>&#9733;</div><div>&#9733;</div>
   </div>
 </p>
 <p>
-  <div class="right-rater" data-rater-options="{value:3}">
-    <div>&#9733;</div><div>&#9733;</div><div>&#9733;</div><div>&#9733;</div><div>&#9733;</div>
+  <div class="right-rater">
+    <div class="right-rater-glow">&#9733;</div>
+    <div class="right-rater-glow">&#9733;</div>
+    <div class="right-rater-glow">&#9733;</div>
+    <div>&#9733;</div><div>&#9733;</div>
   </div>
 </p>
 <p>
-  <div class="right-rater" data-rater-options="{value:4}">
-    <div>&#9733;</div><div>&#9733;</div><div>&#9733;</div><div>&#9733;</div><div>&#9733;</div>
+  <div class="right-rater">
+    <div class="right-rater-glow">&#9733;</div>
+    <div class="right-rater-glow">&#9733;</div>
+    <div class="right-rater-glow">&#9733;</div>
+    <div class="right-rater-glow">&#9733;</div><div>&#9733;</div>
   </div>
 </p>
 <p>
-  <div class="right-rater" data-rater-options="{value:5}">
-    <div>&#9733;</div><div>&#9733;</div><div>&#9733;</div><div>&#9733;</div><div>&#9733;</div>
+  <div class="right-rater">
+    <div class="right-rater-glow">&#9733;</div>
+    <div class="right-rater-glow">&#9733;</div>
+    <div class="right-rater-glow">&#9733;</div>
+    <div class="right-rater-glow">&#9733;</div>
+    <div class="right-rater-glow">&#9733;</div>
   </div>
 </p>
+
 
 ## Блокируемые рейтинги, :disabled
 
 <p>
-  <div class="right-rater" data-rater-options="{value:2, disabled:true}">
-    <div>&#9733;</div><div>&#9733;</div><div>&#9733;</div><div>&#9733;</div><div>&#9733;</div>
+  <div class="right-rater" data-rater-options="{disabled:true}">
+    <div class="right-rater-glow">&#9733;</div>
+    <div class="right-rater-glow">&#9733;</div>
+    <div>&#9733;</div><div>&#9733;</div><div>&#9733;</div>
   </div>
   этот рейтинг заблокирован
 </p>
 <p>
-  <div class="right-rater" data-rater-options="{value:2, disableOnVote:true}">
-    <div>&#9733;</div><div>&#9733;</div><div>&#9733;</div><div>&#9733;</div><div>&#9733;</div>
+  <div class="right-rater" data-rater-options="{disableOnVote:true}">
+    <div class="right-rater-glow">&#9733;</div>
+    <div class="right-rater-glow">&#9733;</div>
+    <div>&#9733;</div><div>&#9733;</div><div>&#9733;</div>
   </div>
   этот рейтинг заблокируется как только вы выберете значение
 </p>
@@ -54,17 +71,19 @@
 ## Назначенный рейтинг, :assigned
 
 <p>
-  <div class="right-rater" data-rater-options="{value:2, update:'the-field'}">
-    <div>&#9733;</div><div>&#9733;</div><div>&#9733;</div><div>&#9733;</div><div>&#9733;</div>
+  <div class="right-rater" data-rater-options="{update:'the-field'}">
+    <div class="right-rater-glow">&#9733;</div>
+    <div class="right-rater-glow">&#9733;</div>
+    <div>&#9733;</div><div>&#9733;</div><div>&#9733;</div>
   </div>
-  <input type="text" id="the-field" size="1" />
+  <input type="text" id="the-field" size="1" value="2" />
 </p>
 
 ## Удаленный рейтинг, :remote
 
 <p>
-  <div class="right-rater" data-rater-options="{value:1, url:'test', Xhr:{evalScripts:true,spinner:'rate-spinner'}}">
-    <div>&#9733;</div><div>&#9733;</div><div>&#9733;</div><div>&#9733;</div><div>&#9733;</div>
+  <div class="right-rater" data-rater-options="{url:'test', Xhr:{evalScripts:true,spinner:'rate-spinner'}}">
+    <div class="right-rater-glow">&#9733;</div><div>&#9733;</div><div>&#9733;</div><div>&#9733;</div><div>&#9733;</div>
   </div>
   
   <%= image_tag 'spinner.gif', :id => 'rate-spinner', :style => "display:none" %>

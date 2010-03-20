@@ -70,10 +70,7 @@ And you don't need to do those things manually. In similarity to the
 [Lightbox 2](http://www.huddletogether.com/projects/lightbox2) project, you can set the attribute
 `rel="lightbox"` and Lightbox will automatically hook those links to be shown in the lightboxes.
 
-The road trips with the `rel="lightbox[roadtrip]"` attribute work too
-
-You can change the markers in the `cssRule` and `roadtripRule` options (the list is below),
-and use any sort of markers you need, like say specific css-class or attribute.
+Galleries with the `rel="lightbox[roadtrip]"` attributes work too
 
 
 ## Video Streams, :video
@@ -103,8 +100,7 @@ hideOnEsc       | true    | should the lightbox be closed on the Esc button
 hideOnOutClick  | true    | should the lightbox be closed on click outside of the box
 showCloseButton | true    | should the close button be available
 blockContent    | false   | if true, content will be blocked by a transparent DIV
-cssRule         | "a\[rel^=lightbox\]"              | css-rule for _all_ lightbox links
-roadtripRule    | "a\[rel='lightbox\[roadtrip\]'\]" | css-rule for road trip lightbox links
+cssRule         | "a\[rel^=lightbox\]" | css-rule for automatically processable lightbox links
 mediaWidth      | 425     | video player width
 mediaHeight     | 350     | video player height
 

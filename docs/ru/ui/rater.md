@@ -30,8 +30,8 @@
 обработчики событий.
 
     <div class="right-rater" data-rater-options="{url:'/boo'}">
-      <div>★</div>
-      <div>★</div>
+      <div class="right-rater-glow">★</div>
+      <div class="right-rater-glow">★</div>
       <div>★</div>
       <div>★</div>
       <div>★</div>

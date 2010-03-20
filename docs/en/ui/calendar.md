@@ -40,8 +40,8 @@ After that you will have the `Calendar` unit available
 ## Inputs Auto-Discovery, :discovery
 
 If you like, you can use the auto-initialization feature. Simply specify the `rel="calendar"`
-attribute on your `INPUT` element and when the page is loaded the calendar script will automatically find the
-element and initialize all the things.
+attribute on your `INPUT` element and the script will automatically initialize the autocompletion
+feature on this element when it needed.
 
     <input type="text" rel="calendar" />
 
@@ -75,8 +75,8 @@ firstDay       | 1          | 1 for Monday, 0 for Sunday
 numberOfMonths | 1          | a number of month to display, or a \[x,y\] months greed definition
 fxName         | 'fade'     | the visual effect name, use `null` if you don't want any fx
 fxDuration     | 'short'    | the visual effects duration
-relName        | 'calendar' | the rel-attribute name for the auto-discovery feature
-checkTags      | '\*'       | the tags name to be checked on load (to narrow down the search)
+cssRule        | '\[rel^=calendar\]' | the auto-discoverable calendar elements css-rule
+
 
 
 You also can alter the `Calendar.Options` object to make the changes global.

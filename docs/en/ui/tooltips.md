@@ -27,8 +27,8 @@ fxName     | 'fade'     | the appearance fx name
 fxDuration | 400        | the visual effect duration
 delay      | 400        | the tooltip appearance delay
 idSuffix   | '-tooltip' | the tooltip ids suffix
-relName    | 'tooltip'  | the rel-attribute name for the auto-discovery feature
-checkTags  | '\*'       | the tags name to be checked on load (to narrow down the search)
+cssRule    | '\[rel=tooltip\]' | automatically initializeable tooltips rule
+move       | true       | a marker if the tooltip should be moving with the mouse
 
 In order to change the options alter the `Tooltip.Options` object, like this
 

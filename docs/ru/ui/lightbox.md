@@ -67,11 +67,7 @@ hide()                               | закрывает лайтбокс
 автоматически будет следить за кликами на этих ссылках и показывать лайтбокс.
 
 Можно так же помечать последовательности/коллекции ссылок с помощью атрибута
-`rel="lightbox[roadtrip]"` 
-
-Вы можете изменить маркеры на любые другие, например специальные css-классы,
-используя опции `cssRule` и `roadtripRule` (см. ниже)
-
+`rel="lightbox[roadtrip]"`
 
 ## Ссылки на видео, :video
 
@@ -100,8 +96,7 @@ hideOnEsc       | true       | флаг, если нужно закрывать 
 hideOnOutClick  | true       | флаг, если лайтбокс должен закрываться по клику вне бокса
 showCloseButton | true       | флаг, если кнопка закрытия должна быть видна
 blockContent    | false      | если `true` то контент будет заблокирован прозрачным DIV элементом
-cssRule         | "a\[rel^=lightbox\]"              | css-rule for _all_ lightbox links
-roadtripRule    | "a\[rel='lightbox\[roadtrip\]'\]" | css-rule for road trip lightbox links
+cssRule         | "a\[rel^=lightbox\]" | css-правило для автоматически инициалзируемых ссылок
 mediaWidth      | 425     | video player width
 mediaHeight     | 350     | video player height
 

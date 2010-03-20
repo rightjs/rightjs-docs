@@ -86,7 +86,7 @@ local      | null              | an optional local search results list
 fxName     | 'slide'           | visual effects name, use 'null' to disable fx
 fxDuration | 'short'           | the visual effect duration
 spinner    | 'native'          | spinner element reference
-relName    | 'autocompleter'   | the auto-discovery feature key
+cssRule    | '\[rel^=autocompleter\]'   | the auto-discoverable autocompleters css-rule
 
 
 ## Events List, :events

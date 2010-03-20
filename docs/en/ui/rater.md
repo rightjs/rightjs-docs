@@ -29,8 +29,8 @@ Or you can define your rater element directly inside your page and our script wi
 find it by the `right-rater` class name and then automatically initialize it.
 
     <div class="right-rater" data-rater-options="{url:'/boo'}">
-      <div>★</div>
-      <div>★</div>
+      <div class="right-rater-glow">★</div>
+      <div class="right-rater-glow">★</div>
       <div>★</div>
       <div>★</div>
       <div>★</div>
