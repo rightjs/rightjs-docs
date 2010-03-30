@@ -80,6 +80,26 @@ standard dom-events
 
 See the [dom-event basics](/tutorials/dom-events-handling) for more information
 
+## Unobtrusive Programming, :unobtrusive
+
+RightJS supports unobtrusive programming using the events delegation
+technique. In a simple case it looks like that
+
+    "#todos li".on('click', function() {
+      this.toggleClass('marked');
+    });
+    
+    // you also can use hashes
+    "#todos li".on({
+      mouseover: function() { this.addClass('hovered');    },
+      mouseout:  function() { this.removeClass('hovered'); }
+    });
+    
+    // by-name references are also available
+    "#todos li".on('click', 'toggleClass', 'marked');
+    
+See the [events delegation article](/tutorials/events-delegation) for more
+information.
 
 
 ## Visual Effects, :fx

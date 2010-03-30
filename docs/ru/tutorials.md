@@ -17,6 +17,7 @@
     <%= menu_link_to "DOM навигация и манипулирование",  tutorial_path('dom-navigation-and-manipulations') %>
     <%= menu_link_to "Обработка событий DOM",            tutorial_path('dom-events-handling') %>
     <%= menu_link_to "Смена визуального состояния",      tutorial_path('elements-toggling') %>
+    <%= menu_link_to "Unobtrusive программирование и делегация событий", tutorial_path('events-delegation') %>
   </ul>
   <dt>Дополнительные вопросы</dt>
   <ul>

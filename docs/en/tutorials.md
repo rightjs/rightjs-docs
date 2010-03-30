@@ -17,6 +17,7 @@
     <%= menu_link_to "DOM Navigation And Manipulations", tutorial_path('dom-navigation-and-manipulations') %>
     <%= menu_link_to "DOM Events Handling",              tutorial_path('dom-events-handling') %>
     <%= menu_link_to "Elements Visual State Toggling",   tutorial_path('elements-toggling') %>
+    <%= menu_link_to "Unobtrusive Programming And Events Delegation", tutorial_path('events-delegation') %>
   </ul>
   <dt>Additional Features</dt>
   <ul>
