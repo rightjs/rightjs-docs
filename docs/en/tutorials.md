@@ -4,6 +4,7 @@
   <dt>General Features</dt>
   <ul>
     <%= menu_link_to "Getting Started",                  tutorial_path('getting-started') %>
+    <%= menu_link_to "Top 10 Features",                  tutorial_path('top-10-features') %>
     <%= menu_link_to "Call By Name",                     tutorial_path('call-by-name') %>
     <%= menu_link_to "Assignments And Chains",           tutorial_path('assignments-and-chains') %>
     <%= menu_link_to "Work With Numbers",                tutorial_path("work-with-numbers") %>

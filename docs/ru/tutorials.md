@@ -4,6 +4,7 @@
   <dt>Общие вопросы</dt>
   <ul>
     <%= menu_link_to "Быстрый старт",                    tutorial_path('getting-started') %>
+    <%= menu_link_to "Десятка лучших особенностей",      tutorial_path('top-10-features') %>
     <%= menu_link_to "Вызов по имени",                   tutorial_path('call-by-name') %>
     <%= menu_link_to "Мутирующие методы и цепи",         tutorial_path('assignments-and-chains') %>
     <%= menu_link_to "Работа с числами",                 tutorial_path("work-with-numbers") %>

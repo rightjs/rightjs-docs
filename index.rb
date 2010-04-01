@@ -362,6 +362,7 @@ __END__
             <label><%= 'sidebar.Documentation'.t %></label>
             <ul>
               <%= menu_link_to 'sidebar.Getting_Started'.t, '/tutorials/getting-started' %>
+              <%= menu_link_to 'sidebar.Top_10_Features'.t, '/tutorials/top-10-features' %>
               <%= menu_link_to 'sidebar.API_Reference'.t, '/docs' %>
               <%= menu_link_to 'sidebar.Tutorials'.t, '/tutorials' %>
             </ul>
