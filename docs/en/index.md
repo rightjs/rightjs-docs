@@ -15,7 +15,7 @@
       </p>
       <p>
         On one side RightJS has a really nice and simple, easy to write and read syntax
-        that makes it a snap to use and extend even for noobs. An on the other, it 
+        that makes it a snap to use an extend even for noobs. An on the other, it 
         supports multiple paradigms, has extensive OOP and FP abilities along with other
         features that will make any tough professional happy.
       </p>
