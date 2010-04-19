@@ -152,6 +152,18 @@ out of the [RightJS UI](/ui) library.
   <input type="text" id="input-4" />
 </p>
 
+## With Limited Number Of Options To Select, :limited
+<p>
+  You can pick only 3 items on the list
+  <ul class="right-selectable" data-selectable-options="{limit: 3}">
+    <li>One</li>
+    <li>Two</li>
+    <li>Three</li>
+    <li>Four</li>
+    <li>Five</li>
+  </ul>
+</p>
+
 ## Programmatically Generated, :generated
 
 <div id="generated-selects"> </div>

@@ -152,6 +152,19 @@
   <input type="text" id="input-4" />
 </p>
 
+## С ограничением на количество элементов, :limited
+<p>
+  Вы можете выбрать только три позиции в данном списке
+  <ul class="right-selectable" data-selectable-options="{limit: 3}">
+    <li>Раз</li>
+    <li>Два</li>
+    <li>Три</li>
+    <li>Четыре</li>
+    <li>Пять</li>
+  </ul>
+</p>
+
+
 ## Программно сгенерированные, :generated
 
 <div id="generated-selects"> </div>

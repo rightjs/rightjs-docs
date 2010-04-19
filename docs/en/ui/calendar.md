@@ -75,6 +75,7 @@ firstDay       | 1          | 1 for Monday, 0 for Sunday
 numberOfMonths | 1          | a number of month to display, or a \[x,y\] months greed definition
 fxName         | 'fade'     | the visual effect name, use `null` if you don't want any fx
 fxDuration     | 'short'    | the visual effects duration
+hideOnPick     | false      | a marker if the popup should get hidden when user picks a date
 cssRule        | '\[rel^=calendar\]' | the auto-discoverable calendar elements css-rule
 
 

@@ -204,6 +204,7 @@ fxName     | 'slide' | the drop-down options list fx-name (null, 'slide', 'fade'
 fxDuration | 'short' | the drop-down options list fx-duration
 update     | null    | a field to be assigned to
 parseIds   | false   | if it should parse integer ids out of the keys
+limit      | null    | the maximum number of items the user can choose on the list
 refresh    | true    | a flag if it should automatically refresh the items list
 
 
