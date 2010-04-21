@@ -23,7 +23,7 @@ with a delay in milliseconds and you're good to go
     // call it periodically every 2 seconds
     callback.periodical(2000);
 
-You also can use carrying with your delays and periodical calls
+You also can use currying with your delays and periodical calls
 
     var timer = function(message) {
       console.log(message);

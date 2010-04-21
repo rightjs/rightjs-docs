@@ -13,6 +13,7 @@
     <%= menu_link_to "Единообразная обработка опций",    tutorial_path('uniformed-options-handling') %>
     <%= menu_link_to "Единообразная обработка событий",  tutorial_path('uniformed-events-handling') %>
     <%= menu_link_to "ООП программирование с RightJS",   tutorial_path('object-oriented-programming') %>
+    <%= menu_link_to "Функциональное программирование",  tutorial_path('functional-programming') %>
   </ul>
   <dt>DOM Манипуляции</dt>
   <ul>

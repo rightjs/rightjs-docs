@@ -13,6 +13,7 @@
     <%= menu_link_to "Uniformed Options Handling",       tutorial_path('uniformed-options-handling') %>
     <%= menu_link_to "Uniformed Events Handling",        tutorial_path('uniformed-events-handling') %>
     <%= menu_link_to "Object Oriented Programming",      tutorial_path('object-oriented-programming') %>
+    <%= menu_link_to "Functional Programming",           tutorial_path('functional-programming') %>
   </ul>
   <dt>DOM Features</dt>
   <ul>
