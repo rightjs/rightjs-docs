@@ -8,6 +8,7 @@
     <%= menu_link_to "Call By Name",                     tutorial_path('call-by-name') %>
     <%= menu_link_to "Assignments And Chains",           tutorial_path('assignments-and-chains') %>
     <%= menu_link_to "Work With Numbers",                tutorial_path("work-with-numbers") %>
+    <%= menu_link_to "Delays And Timers",                tutorial_path('delays-and-timers') %>
     <%= menu_link_to "RightJS Extending Guide",          tutorial_path('rightjs-extending') %>
     <%= menu_link_to "Uniformed Options Handling",       tutorial_path('uniformed-options-handling') %>
     <%= menu_link_to "Uniformed Events Handling",        tutorial_path('uniformed-events-handling') %>

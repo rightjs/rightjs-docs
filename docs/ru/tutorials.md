@@ -8,6 +8,7 @@
     <%= menu_link_to "Вызов по имени",                   tutorial_path('call-by-name') %>
     <%= menu_link_to "Мутирующие методы и цепи",         tutorial_path('assignments-and-chains') %>
     <%= menu_link_to "Работа с числами",                 tutorial_path("work-with-numbers") %>
+    <%= menu_link_to "Таймеры и периодческие вызовы",    tutorial_path('delays-and-timers') %>
     <%= menu_link_to "Пособие по расширению RightJS",    tutorial_path('rightjs-extending') %>
     <%= menu_link_to "Единообразная обработка опций",    tutorial_path('uniformed-options-handling') %>
     <%= menu_link_to "Единообразная обработка событий",  tutorial_path('uniformed-events-handling') %>
