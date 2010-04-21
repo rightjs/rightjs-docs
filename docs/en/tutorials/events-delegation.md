@@ -24,10 +24,10 @@ For example, say you have the following web-page
     </html>
 
 Now when a user clicks on any of the `LI` elements, the `click` event will
-bubble from `LI` to the `UL` element, then to `BODY`, to `HTML` and up to the
-`document` object.
+bubble from `LI` to the `UL` element, then to `BODY`, to `HTML`, all the way
+up to the `document` object.
 
-Normally we simple attach event listeners to the target elements itself and
+Normally, we simply attach event listeners to the target elements itself and
 take care of things locally, but generally we can catch the event at any of
 the levels and then call the listener in the context of the element that
 was actually clicked.
@@ -37,7 +37,7 @@ was actually clicked.
 There are several reasons why you might need to use the events delegation
 technique.
 
-First of all you might have a huge grid of cells, say same 50x50 table. And
+First of all you might have a huge grid of cells, say some 50x50 table. And
 you need to handle clicks on every cell simultaneously. In this case, instead
 of attaching the same function 2500 times to every cell, you can attach it
 only once at the table element itself and handle all clicks in one place. This
@@ -48,10 +48,10 @@ dynamically add and remove cells on that grid table in the first example. If
 you handle your events on the cells level, then you'll need to take care of
 proper event listeners attachment the same time you add new cells, which might
 overcomplicate your application logic. But if you attach your listener to
-the table level, then all new cells will get handled automatically with all
+the table level, then all new cells will get handled automatically with all the
 others. No need to initialize them specifically. 
 
-And the third case is known as the `unobtrusive scripting` approach. The idea
+And the third case is known as the unobtrusive scripting approach. The idea
 is that you can describe the application logic unobtrusively at the document
 level without accessing the page elements directly. It gives you several
 advantages in the application design and allows to create more safe
