@@ -72,7 +72,7 @@ You can easily solve the problem using the currying feature like this.
       item.onClick(log_index.curry(index));
     });
 
-With currying you'll simple create a bunch of anonymous functions that will
+With currying you simply create a bunch of anonymous functions that will
 keep the arguments inside.
 
 
@@ -120,9 +120,9 @@ that builds and logs a person's full name.
       console.log(this.firstName + " " + this.lastName);
     };
 
-Note, that the function refers to `this` as it was a part any of those
-objects. In JavaScript you can call this `log_name` function in the context
-of  any of those objects, like that
+Note, that the function refers to `this` as it was an actual part of any of 
+those objects. Then in JavaScript you can call this `log_name` function in the
+context of  any of those objects, like that
 
     log_name.call(karl); // -> 'Karl Marx'
     log_name.call(bill); // -> 'Bill Gates'
