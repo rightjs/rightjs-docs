@@ -24,8 +24,8 @@
   </ul>
   <dt>Additional Features</dt>
   <ul>
-    <%= menu_link_to "Ajax Handling",                    tutorial_path('ajax-handling') %>
+    <%= menu_link_to "Ajax Basics",                      tutorial_path('ajax-handling') %>
+    <%= menu_link_to "Ajax Forms",                       tutorial_path('ajax-forms') %>
     <%= menu_link_to "Visual Effects",                   tutorial_path('visual-effects') %>
-    <%= menu_link_to "Ajaxed Photo Gallery",             tutorial_path('ajaxed-photo-gallery') %>
   </ul>
 </dl>

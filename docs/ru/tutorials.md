@@ -25,7 +25,7 @@
   <dt>Дополнительные вопросы</dt>
   <ul>
     <%= menu_link_to "Работа с Ajax",                    tutorial_path('ajax-handling') %>
+    <%= menu_link_to "Ajax формы",                      tutorial_path('ajax-forms') %>
     <%= menu_link_to "Визуальные эффекты",               tutorial_path('visual-effects') %>
-    <%= menu_link_to "Ajax фото галлерея",               tutorial_path('ajaxed-photo-gallery') %>
   </ul>
 </dl>
