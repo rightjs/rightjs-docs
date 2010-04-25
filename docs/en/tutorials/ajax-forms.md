@@ -39,7 +39,7 @@ use the method {Form#unremotize}
     $('my-form').submit(); // -> goes via http
 
 You also can use the `remote` option when you create your form 
-programmatically, in this case your it will be marked as remote by default
+programmatically, in this case it will be marked as remote by default
 
     var form = new Form({remote: true, action: '/url'});
     
@@ -127,9 +127,9 @@ you embed your JavaScript in a simple HTML page layout like that.
     </html>
 
 The trick is that you send back a normal page that contains a piece of
-JavaScript, which get evaluated in the context of your actual working window.
+JavaScript, which gets evaluated in the context of your actual working window.
 
 __NOTE__: as the script will be evaluated automatically by the browser, you
-should not specify the `evalScripts` options with your options, otherwise it
+should not specify the `evalScripts` key with your options, otherwise it
 will be run twice.
 
