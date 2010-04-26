@@ -1,6 +1,7 @@
 # Примеры приложений
 
 
+* [Right Mines](http://stcamp.net/examples/r_mines/) - старый добрый сапер реализованный с помощью RightJS
 * [Right Sudoku](http://stcamp.net/games/sudoku/) - игра судоку реализованная с помощью RightJS
 * [Typing Ninja](http://stcamp.net/games/t-ninja/) - старая игра - клавиатурный тренажер с падающими буквами
 * [Happy Nippo](http://stcamp.net/games/nippo/) - машинка для заучивания японских иероглифов

@@ -1,6 +1,7 @@
 # Showcases
 
 
+* [Right Mines](http://stcamp.net/examples/r_mines/) - good old mines game implemented with RightJS
 * [Right Sudoku](http://stcamp.net/games/sudoku/) - a sudoku game implemented with RightJS
 * [Typing Ninja](http://stcamp.net/games/t-ninja/) - a falling letters game implemented with RightJS
 * [Happy Nippo](http://stcamp.net/games/nippo/) - Japanese kana alphabets training machine
