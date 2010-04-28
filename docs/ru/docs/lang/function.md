@@ -63,11 +63,13 @@ RightJS расширяет класс функций `Function` нескольк
       return this.attr +' > '+ event.eventName +' > '+ arg1 +' > '+ arg2;
     };
     
-    var observer = new Observer();
-    observer.on('foo', func.bindAsEventListener('argument1', 'argument2'));
-    observer.fire('foo');
+    $('some-element')
+      .onClick(
+        func.bindAsEventListener(object, 'argument1', 'argument2')
+      )
+      .fire('click');
   
-    // -> 'value > foo > argument1 > argument2'
+    // -> 'value > click > argument1 > argument2'
 
 
 ### #curry
