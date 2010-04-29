@@ -6,6 +6,8 @@
 * [Typing Ninja](http://stcamp.net/games/t-ninja/) - старая игра - клавиатурный тренажер с падающими буквами
 * [Happy Nippo](http://stcamp.net/games/nippo/) - машинка для заучивания японских иероглифов
 * [KindaPlayer](http://stcamp.net/examples/kinda_player/) - музыкальный плеер с интерфейсом на основе HTML/CSS
+* [RightJS Patterns](http://github.com/rightjs/rightjs-patterns) - шаблоны проектирования реализованные на RightJS
+
 
 <script type="text/javascript">
 // <![CDATA[

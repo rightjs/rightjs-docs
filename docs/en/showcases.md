@@ -6,6 +6,8 @@
 * [Typing Ninja](http://stcamp.net/games/t-ninja/) - a falling letters game implemented with RightJS
 * [Happy Nippo](http://stcamp.net/games/nippo/) - Japanese kana alphabets training machine
 * [KindaPlayer](http://stcamp.net/examples/kinda_player/) - HTML/CSS based music player
+* [RightJS Patterns](http://github.com/rightjs/rightjs-patterns) - Software Design Patterns in RightJS
+
 
 <script type="text/javascript">
 // <![CDATA[
