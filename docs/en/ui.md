@@ -35,7 +35,9 @@ github service.
   
   :'in-edit'     => "A simple in-place editors feature for RightJS",
   
-  :uploader      => "Form uploading progress widget for RightJS"
+  :uploader      => "Form uploading progress widget for RightJS",
+  
+  :resizable     => "Resizable blocks feature for RightJS"
 }
 %>
 
