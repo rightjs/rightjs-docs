@@ -1,5 +1,9 @@
 # Behaviors Module
 
+__NOTE__: This module is deprecated and will be removed with RightJS 1.6 release! Use the
+built in events delegation features instead. [Check this tutorial](/tutorials/events-delegation)
+
+
 The behaviors module provides the ability to define behaviors on element groups selected by
 CSS rules. It watches any changes on the web-page and automatically updates the matching 
 elements.
