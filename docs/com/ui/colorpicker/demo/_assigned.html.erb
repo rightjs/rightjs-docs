@@ -1,0 +1,16 @@
+<p>
+  <input type="text" name="val1" value="#FF0" id="direct-assignment-test" />
+  <input type="text" name="val2" value="rgb(255,255,0)" id="handled-assignment-test" />
+  <a href="#" id="handled-assignment-test-handle">set</a>
+</p>
+<script type="text/javascript">
+// <![CDATA[
+  new Colorpicker({
+    update: 'direct-assignment-test'
+  });
+  
+  new Colorpicker({
+    format: 'rgb'
+  }).assignTo('handled-assignment-test', 'handled-assignment-test-handle');
+// ]]>
+</script>

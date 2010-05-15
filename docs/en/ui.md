@@ -37,7 +37,9 @@ github service.
   
   :uploader      => "Form uploading progress widget for RightJS",
   
-  :resizable     => "Resizable blocks feature for RightJS"
+  :resizable     => "Resizable blocks feature for RightJS",
+  
+  :colorpicker   => "The colorpicker widget for RightJS"
 }
 %>
 

@@ -25,7 +25,7 @@ set :sessions,    true
 set :views, Proc.new { File.join(root, "docs") }
 
 GOODS_LIST = %w{json effects events behavior dnd rails}
-UIS_LIST   = %w{autocompleter calendar tabs rater slider selectable sortable lightbox tooltips in-edit uploader resizable}
+UIS_LIST   = %w{autocompleter calendar tabs rater slider selectable sortable lightbox tooltips in-edit uploader resizable colorpicker}
 API_PACKS  = %w{core dom fx lang util}
 
 LANGUAGES  = %w{
@@ -327,7 +327,7 @@ __END__
   <head>
     <title>RightJS: <%= @title %></title>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-    <%= javascript_include_tag '/javascripts/right.js', '/javascripts/application.js' %>
+    <%= javascript_include_tag '/hotlink/right.js', '/javascripts/application.js' %>
     <%= javascript_include_tag '/builds/ui/right-autocompleter.js' %>
     <%= stylesheet_link_tag 'application' %>
     <%= @content_for ? @content_for[:modules] : '' %>
