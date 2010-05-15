@@ -66,7 +66,7 @@ update     | null    | an element to update with the color text
 updateBg   | null    | an element to update it's background color
 fxName     | 'fade'  | the popup showing/hiding visual effect
 fxDuration | 'short' | the visual effect duration
-cssRule    | '*\[rel^=colorpicker\]' | the auto discovery feature css-rule
+cssRule    | '\*\[rel^=colorpicker\]' | the auto discovery feature css-rule
 
 As usual you can use any of those options with the `Colorpicker` class
 constructor or use the `data-colorpicker-options` HTML5 attribute to set 
@@ -124,9 +124,9 @@ The colorpicker widget has the following HTML structure
         <input type="text" class="display" />
         
         <div class="rgb-display">
-          <div><label>R:</label><input type="text" /></div>
-          <div><label>G:</label><input type="text" /></div>
-          <div><label>B:</label><input type="text" /></div>
+          <div><label>R:</label><input /></div>
+          <div><label>G:</label><input /></div>
+          <div><label>B:</label><input /></div>
         </div>
         
         <input type="button" class="right-ui-button" />
