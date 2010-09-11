@@ -399,7 +399,6 @@ __END__
           <%= link_to "menu.Browsers".t,   "/browsers"   %> |
           <%= link_to "menu.Comparison".t, "/comparison" %> |
           <%= link_to "menu.Philosophy".t, "/philosophy" %> |
-          <%= link_to "menu.Roadmap".t,    "/roadmap"    %> |
           <%= link_to "menu.Contacts".t,   "/contacts"   %>
         </div>
         <div id="copyright">Copyright &copy; 2008-2010 Nikolay V. Nemshilov aka St.</div>
