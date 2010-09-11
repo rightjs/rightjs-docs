@@ -5,4 +5,4 @@ search box to find methods by name.
 
 # Tutorials
 
-Several articles are available in the [tutorials section](/tutorials)
+<%= partial '/tutorials/index_en' %>
