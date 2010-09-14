@@ -2,7 +2,7 @@
 
 RightJS 2 is not just a regular functionality update, but a giant leap and
 basically a complete restart of the framework. We took everything you loved 
-about RightJS 1 and brought it to the completely knew level.
+about RightJS 1 and brought it to the completely new level.
 
 Let's get through the changes, shall we?
 
@@ -336,6 +336,7 @@ side.
 The result is the following.
 
 RigthJS 1.5.6 weights 42k minified and 14.5k gzipped
+
 RightJS 2.0.0 weights 44k minified and 15.5k gzipped
 
 Which I think, is a pretty darn good exchange for all the new features we have
