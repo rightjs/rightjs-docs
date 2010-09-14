@@ -9,6 +9,7 @@ screwed by browser updates.
 And as RightJS is known for setting the things right, with the version 2.0.0
 we switched from direct elements access to dom-wrappers.
 
+<%= anchors_index %>
 
 
 ## What are DOM-Wrappers?, :what
@@ -34,9 +35,9 @@ proxy objects.
 There are many ways to implement dom-wrappers, and, as it usually happens over
 here, we choose the right one.
 
-Dom-wrappers in RightJS 2 the same exact API as dom-extensions in RightJS 1,
-and because of that it looks and feels exactly the same way, like nothing
-happened
+Dom-wrappers in RightJS 2 have the same exact API as dom-extensions in
+RightJS 1, and because of that it looks and feels exactly the same way, like
+nothing happened
 
     $('element').addClass('marked');
     
@@ -164,7 +165,7 @@ The system of dom-wrappers in RightJS is an open structure and you're free to
 create your own types that will handle elements with certain tags. For example
 you can add the `TABLE` elements specific wrapper like so
 
-    Element.Wrappers.TABLE = new Wrapper(Element, {
+    var Table = new Wrapper(Element, {
       sort: function() {
         // sort your table in here
       },
@@ -174,6 +175,9 @@ you can add the `TABLE` elements specific wrapper like so
         // so it updated the TBODY part only
       }
     });
+    
+    // registering the wrapper in the system
+    Element.Wrappers.TABLE = Table;
 
 Once you've done that, any time you access a table element on your page it
 will be wrapped with your custom wrapper
@@ -262,8 +266,8 @@ they manipulate with any other elements on the page
     widget.onClick(my_additional_handler);
     // and so one ....
 
-This will allow you to create really nice and easy to maintain widgets than
-before, more of that they will be much compacter and easier to understand.
+This will allow you to create much nicer and easier to maintain widgets than
+before, more of that they will be much compacter and simpler to understand.
 
 
 
@@ -283,8 +287,8 @@ in any way.
     $('my-widget') instanceof MyWidget; // true
     
     // or any other way, for example
-    $(document.body).children().last(); // -> MyWidget
     $$('div.my-widget').last();         // -> MyWidget
+    $(document.body).children().last(); // -> MyWidget
     ....
 
 To remove your wrapper from the cache, you can either reinitialize the raw
