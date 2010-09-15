@@ -110,7 +110,7 @@ This is the official and the right way to do that, use it any time you feel
 like it.
 
 
-## DOM-Wrappers === Classes, :classes
+## DOM-Wrappers == Classes, :classes
 
 Now to the good parts. Because we have them.
 
