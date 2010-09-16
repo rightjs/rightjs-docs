@@ -335,9 +335,9 @@ side.
 
 The result is the following.
 
-RigthJS 1.5.6 weights 42k minified and 14.5k gzipped
+RigthJS 1.5.6 weighs 42k minified and 14.5k gzipped
 
-RightJS 2.0.0 weights 44k minified and 15.5k gzipped
+RightJS 2.0.0 weighs 44k minified and 15.5k gzipped
 
 Which I think, is a pretty darn good exchange for all the new features we have
 in RightJS 2. And you should agree with me and we shall all live happily ever

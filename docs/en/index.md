@@ -25,7 +25,7 @@
   
   :compact => {
     :title    => "It's Compact",
-    :subtitle => "Weights only 30k!",
+    :subtitle => "Weighs only 30k!",
     :text     => %Q{
       <p>
         RightJS is a really compact framework of just 30k and as the matter of fact it

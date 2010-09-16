@@ -401,7 +401,7 @@ __END__
           <%= link_to "menu.Philosophy".t, "/philosophy" %> |
           <%= link_to "menu.Contacts".t,   "/contacts"   %>
         </div>
-        <div id="copyright">Copyright &copy; 2008-2010 Nikolay V. Nemshilov aka St.</div>
+        <div id="copyright">Copyright &copy; 2008-2010 Nikolay Nemshilov</div>
       </div>
     </div>
   </body>
