@@ -4,8 +4,8 @@ Some notes on the documentation organization on the site.
 
 All the files are separated by language in the folders like `en/`, `ru/`.
 Inside of every folder all the files and directories repeat the urls structure,
-so if you're looking for a page `/goods/drag-and-drop/demo`, you need the file
-`en/goods/drag-and-drop/demo.md`
+so if you're looking for a page `/plugins/drag-and-drop/demo`, you need the file
+`en/plugins/drag-and-drop/demo.md`
 
 There are also partial templates, that represent common pieces of text
 for all the languages. For example HTML code of examples, common structures, etc.

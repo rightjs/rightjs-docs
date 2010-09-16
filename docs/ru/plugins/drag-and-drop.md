@@ -4,13 +4,13 @@
 он содержит два базовых класса `Draggable` и `Droppable`. По каждому из них существует
 отдельная статья, а так же есть общая для них демо страница
 
-* [Draggable](/goods/drag-and-drop/draggable)
-* [Droppable](/goods/drag-and-drop/droppable)
-* [Демо страница](/goods/drag-and-drop/demo)
+* [Draggable](/plugins/drag-and-drop/draggable)
+* [Droppable](/plugins/drag-and-drop/droppable)
+* [Демо страница](/plugins/drag-and-drop/demo)
 
 <%= anchors_index %>
 
-<%= partial '/goods/download', :locals => {:name => 'dnd'} %>
+<%= partial '/plugins/download', :locals => {:name => 'dnd'} %>
 
 ## Автоматическая инициализация, :discovery
 

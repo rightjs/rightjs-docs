@@ -41,7 +41,7 @@ automatically encoded and decoded.
     
     Cookie.get('name'); // -> '%"&=*"'
 
-And if you include the [JSON](/goods/json) feature on your page, you will
+And if you include the [JSON](/plugins/json) feature on your page, you will
 be able to save/retrieve any JSON exportable objects, like booleans, arrays
 or plain objects.
 

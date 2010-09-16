@@ -1,7 +1,7 @@
 # Uniformed Options Handling
 
 RightJS has its own conventional way to process options in all the configurable units like {Xhr}, {Fx}, {Cookie} and
-all the modules out of the the [Goods](/goods) and [UI](/ui) libraries.
+all the modules out of the the [Plugins](/plugins) and [UI](/ui) libraries.
 
 For this purpose there is a simple shared module called {Options}. All the RightJS units use it and so can you.
 
@@ -94,4 +94,4 @@ set your options inside it in a JSON format. For example
 
 When a script will process your element it will automatically check the attributes and try to use them as options.
 
-This principle works with all auto-discoverable units out of the [UI](/ui) and [Goods](/goods) libraries
+This principle works with all auto-discoverable units out of the [UI](/ui) and [Plugins](/plugins) libraries

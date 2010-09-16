@@ -67,7 +67,7 @@
 @hots_block = {
   :title     => "What's Hot?",
   :ui        => "A collection of useful interfaces and widgets",
-  :goods     => "A collection of common use plugins",
+  :plugins   => "A collection of common use plugins",
   :showcases => "Slick applications/games built with RightJS"
 }
 

@@ -4,7 +4,7 @@ This module provides the standard JSON import/export functionality, plus some ad
 
 __NOTE__: this module uitilizes browser's _native_ JSON format support if it is available
 
-<%= partial '/goods/download', :locals => {:name => 'json'} %>
+<%= partial '/plugins/download', :locals => {:name => 'json'} %>
 
 ## JSON Encoding And Decoding, :encoding
 

@@ -11,7 +11,7 @@
         ['fx',       'pages.builds.modules.fx'.t            ],
         ['olds',     'pages.builds.modules.olds'.t          ],
         
-        # RightJS Goods modules
+        # RightJS Plugins modules
         ['json',     'pages.builds.modules.json'.t,     true],
         ['events',   'pages.builds.modules.events'.t,   true],
         ['effects',  'pages.builds.modules.effects'.t,  true],
@@ -22,7 +22,7 @@
         ['compress', 'pages.builds.modules.compress'.t      ],
         ['build',    'pages.builds.modules.build'.t         ]
       ].collect do |options|
-        "<li#{options[2] ? ' class="goods"' : ''}>"+
+        "<li#{options[2] ? ' class="plugins"' : ''}>"+
             check_box_tag("options[#{options.first}]", 1, !options[2] && options[0] != 'olds') +
             label_tag("options_#{options.first}", options[1])+
         "</li>"

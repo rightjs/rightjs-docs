@@ -4,7 +4,7 @@
 
 <%= partial '/ui/head', :locals => {:name => 'sortable'} %>
 
-__ВНИМАНИЕ:__ данный виджет требует модуль [drag-and-drop](/goods/drag-and-drop)
+__ВНИМАНИЕ:__ данный виджет требует модуль [drag-and-drop](/plugins/drag-and-drop)
 
 
 <%= anchors_index %>

@@ -9,7 +9,7 @@ __ВНИМАНИЕ__: Данный модуль устарел и будет у�
 
 <%= anchors_index %>
 
-<%= partial '/goods/download', :locals => {:name => 'behavior'} %>
+<%= partial '/plugins/download', :locals => {:name => 'behavior'} %>
 
 ## Простой пример, :simple
 

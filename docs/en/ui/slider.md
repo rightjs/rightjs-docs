@@ -17,7 +17,7 @@ to any element, which it will update.
 
 ## Usage Basics, :usage
 
-__NOTE__: This widget uses the [drag-and-drop](/goods/drag-and-drop) module. Include it onto your page along
+__NOTE__: This widget uses the [drag-and-drop](/plugins/drag-and-drop) module. Include it onto your page along
 with one of the files above, then create your slider like that
 
     new Slider({min: 0, max: 100, value: 20})

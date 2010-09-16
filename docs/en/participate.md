@@ -17,15 +17,15 @@ You're pretty much welcome with bug-fixes and performance optimizations for the 
 new features, but keep in mind that all the suggestions will be judged by their size and desire for 99% of
 users.
 
-If you have a good new feature, you might better suggest it for the RightJS Goods project
+If you have a good new feature, you might better suggest it for the RightJS Plugins project
 
-## RightJS Goods
+## RightJS Plugins
 
-[Goods](http://github.com/rightjs/rightjs-goods) is a collection of officially supported plugins
+[Plugins](http://github.com/rightjs/rightjs-plugins) is a collection of officially supported plugins
 and extensions for RightJS Core. It contains all the standard extensions, like JSON, Dragn'n'Drop, etc.
 Things that most people use but which they don't need in 99% of cases.
 
-All the plugins are available as standalone blocks on this list [RightJS Goods](/goods)
+All the plugins are available as standalone blocks on this list [RightJS Plugins](/plugins)
 and you also have them as options at the [custom builds page](<%= builds_path %>)
 
 Feel free to suggest and submit new plugins in there. Anything practical is welcome.

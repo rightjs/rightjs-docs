@@ -4,7 +4,7 @@
 
 <%= anchors_index %>
 
-<%= partial '/goods/download', :locals => {:name => 'events'} %>
+<%= partial '/plugins/download', :locals => {:name => 'events'} %>
 
 ## Определение клавиш и кнопок, :keys
 

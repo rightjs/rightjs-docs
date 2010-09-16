@@ -173,7 +173,7 @@ information on this topic.
 
 By default RightJS has a simple interface to help you work with the cookies. It automatically
 escapes/unescapes the values, sets expiration dates and makes other helpful things.
-And if you hook up the [JSON](/goods/json) module it will transparently save
+And if you hook up the [JSON](/plugins/json) module it will transparently save
 and retrieve any JSON exportable values like arrays, objects, booleans, etc.
 
     Cookie.set('key', 'value');

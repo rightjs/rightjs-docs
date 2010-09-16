@@ -12,7 +12,7 @@
 # Browse:
 #   http://localhost:3000
 # 
-# Copyright (C) 2010 Nikolay V. Nemshilov aka St.
+# Copyright (C) 2010 Nikolay Nemshilov
 #
 
 require 'rubygems'
@@ -24,7 +24,7 @@ set :port,        3000
 set :sessions,    true
 set :views, Proc.new { File.join(root, "docs") }
 
-GOODS_LIST = %w{json effects events behavior dnd rails}
+PLUGINS_LIST = %w{json effects events behavior dnd rails}
 UIS_LIST   = %w{autocompleter calendar tabs rater slider selectable sortable lightbox tooltips in-edit uploader resizable colorpicker}
 API_PACKS  = %w{core dom fx lang util}
 
@@ -101,12 +101,12 @@ helpers do
     "/tutorials/#{name}"
   end
   
-  def goods_list
-    GOODS_LIST.collect do |key|
+  def plugins_list
+    PLUGINS_LIST.collect do |key|
       {
         :key  => key.to_sym,
         :name => key.capitalize,
-        :url  => "/goods/#{key}"
+        :url  => "/plugins/#{key}"
       }
     end.sort_by{|i| i[:name]}
   end
@@ -121,9 +121,9 @@ helpers do
     end.sort_by{|i| i[:name]}
   end
   
-  def goods_modules_menu
+  def plugins_modules_menu
     "<ul>\n"+
-      goods_list.collect{ |obj| "<li><a href=\"#{obj[:url]}\">#{obj[:name]}</a></li>" }.join("\n")+
+      plugins_list.collect{ |obj| "<li><a href=\"#{obj[:url]}\">#{obj[:name]}</a></li>" }.join("\n")+
     "</ul>"
   end
   
@@ -282,7 +282,7 @@ get %r{/(.*)} do |path|
     erb @content, :layout => false
   else
     @content = Shmaruku.to_html(erb(@content))
-    @content.gsub!(/('|")\/(images|builds\/ui|builds\/goods|builds\/current)\//, '\\1http://rightjs.org/\\2/')
+    @content.gsub!(/('|")\/(images|builds\/ui|builds\/plugins|builds\/current)\//, '\\1http://rightjs.org/\\2/')
     
     # joining the cross-references
     @content.gsub! /([^%#])\{([a-z\.#]+[a-z])\}/i do |match|
@@ -344,6 +344,7 @@ __END__
             <li><a href="/">Home</a></li>
             <li><a href="/download">Download</a></li>
             <li><a href="/plugins">Plugins</a></li>
+            <li><a href="/ui">UI</a></li>
             <li><a href="/demos">Demos</a></li>
             <li><a href="/docs">Docs</a></li>
           </ul>
@@ -376,8 +377,8 @@ __END__
           <div class="box">
             <label><%= 'sidebar.Additional'.t %></label>
             <ul>
-              <%= menu_link_to 'sidebar.RightJS_Goods'.t, '/goods' %>
-              <%= goods_modules_menu %>
+              <%= menu_link_to 'sidebar.RightJS_Plugins'.t, '/plugins' %>
+              <%= plugins_modules_menu %>
               <%= menu_link_to 'sidebar.RightJS_UI'.t, '/ui' %>
               <%= ui_modules_menu %>
               <%= menu_link_to 'sidebar.Showcases'.t, '/showcases' %>

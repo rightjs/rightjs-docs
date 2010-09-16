@@ -1,14 +1,14 @@
 # Плагины общего назначения
 
-RightJS Goods - это подпроект RightJS, содержащий коллекцию официально поддерживаемых
+RightJS Plugins - это подпроект RightJS, содержащий коллекцию официально поддерживаемых
 плагинов и расширений общего назначения для RightJS
 
 Весь исходный код данного проекта доступен в открытом доступе под MIT лицензией на
 сервере github
 
-<http://github.com/rightjs/rightjs-goods>
+<http://github.com/rightjs/rightjs-plugins>
 
-`git clone git://github.com/rightjs/rightjs-goods.git`
+`git clone git://github.com/rightjs/rightjs-plugins.git`
 
 Вы можете использовать каждый из модулей подключая их самостоятельными файломи на своих
 страницах, а так же вы можете встроить любой из них непосредственно в ядро на странице
@@ -39,4 +39,4 @@ RightJS Goods - это подпроект RightJS, содержащий колл
 }
 %>
 
-<%= partial 'unit', :collection => goods_list %>
+<%= partial 'unit', :collection => plugins_list %>

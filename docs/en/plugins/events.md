@@ -5,7 +5,7 @@ a lot with DOM events.
 
 <%= anchors_index %>
 
-<%= partial '/goods/download', :locals => {:name => 'events'} %>
+<%= partial '/plugins/download', :locals => {:name => 'events'} %>
 
 ## Keys And Buttons Determination, :keys
 

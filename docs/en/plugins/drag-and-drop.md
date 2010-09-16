@@ -4,13 +4,13 @@ This is the standard drag-and-drop library for RightJS. As most of libraries of 
 contains basically two units `Draggable` and `Droppable`. There are two separated documents
 for each of them, plus you might take a look at some simple demo page
 
-* [Draggable](/goods/drag-and-drop/draggable)
-* [Droppable](/goods/drag-and-drop/droppable)
-* [Demo Page](/goods/drag-and-drop/demo)
+* [Draggable](/plugins/drag-and-drop/draggable)
+* [Droppable](/plugins/drag-and-drop/droppable)
+* [Demo Page](/plugins/drag-and-drop/demo)
 
 <%= anchors_index %>
 
-<%= partial '/goods/download', :locals => {:name => 'dnd'} %>
+<%= partial '/plugins/download', :locals => {:name => 'dnd'} %>
 
 ## Auto-Discovery Feature, :discovery
 

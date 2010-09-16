@@ -6,7 +6,7 @@
 __ВНИМАНИЕ__: Этот модуль использует _родную_ функциональность для работы JSON форматом, если
 она доступна в используемом браузере.
 
-<%= partial '/goods/download', :locals => {:name => 'json'} %>
+<%= partial '/plugins/download', :locals => {:name => 'json'} %>
 
 
 ## Кодирование и декодирование JSON, :encoding

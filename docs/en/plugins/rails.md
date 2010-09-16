@@ -9,4 +9,4 @@ It is available as a ruby-on-rails plugin and as a ruby-gem. There are also some
 Generally this plugin is meant to be used with ruby-on-rails projects, but if you want to use
 it with different framework, you can download the plugin right here.
 
-<%= partial '/goods/download', :locals => {:name => 'rails'} %>
+<%= partial '/plugins/download', :locals => {:name => 'rails'} %>

@@ -10,7 +10,7 @@ elements.
 
 <%= anchors_index %>
 
-<%= partial '/goods/download', :locals => {:name => 'behavior'} %>
+<%= partial '/plugins/download', :locals => {:name => 'behavior'} %>
 
 ## Simple Example, :simple
 

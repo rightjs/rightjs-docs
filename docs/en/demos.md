@@ -5,7 +5,7 @@
     <dt>Basic Demos</dt>
     <ul>
       <li><%= link_to 'Visual Effects Demo', '/fx-demo' %></li>
-      <li><%= link_to "Drag'n'Drop Demo",    '/goods/drag-and-drop/demo' %></li>
+      <li><%= link_to "Drag'n'Drop Demo",    '/plugins/drag-and-drop/demo' %></li>
     </ul>
     <dt>RightJS UI</dt>
     <ul>
