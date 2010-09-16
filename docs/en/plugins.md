@@ -27,7 +27,9 @@ can include them in the main build at the [custom builds page](<%= builds_path %
                 
   :json     => "This module provides the standard JSON import/export feature. Additionally "+
                "when included it provides better JSON responses check for the {Xhr} module and "+
-               "also an ability to save and retrieve objects and arrays in the {Cookie} module transparently."
+               "also an ability to save and retrieve objects and arrays in the {Cookie} module transparently.",
+  
+  :jquerysh => "This plugin changes the `$()` function behavior to the one the jQuery users used to"
 
 }
 %>
