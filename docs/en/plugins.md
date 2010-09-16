@@ -27,14 +27,7 @@ can include them in the main build at the [custom builds page](<%= builds_path %
                 
   :json     => "This module provides the standard JSON import/export feature. Additionally "+
                "when included it provides better JSON responses check for the {Xhr} module and "+
-               "also an ability to save and retrieve objects and arrays in the {Cookie} module transparently.",
-               
-  :events   => "This module provides additional functionality for the DOM events handling, like additional "+
-               "methods to check which button or key was pressed. And it also provides an "+
-               "ability to fire real DOM events on your page elements.",
-               
-  :behavior => "This module provides an unobtrusive behavior definitions functionality, similar to "+
-               "the jQuery's 'live' feature or the Prototype 'lowpro' plugin, but with some additional abilities."
+               "also an ability to save and retrieve objects and arrays in the {Cookie} module transparently."
 
 }
 %>
