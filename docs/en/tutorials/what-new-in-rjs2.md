@@ -177,6 +177,39 @@ For more information see the [API Documentation](/docs/element#delegate) and
 [Events Delegation Tutorial](<%= tutorial_path('events-delegation') %>)
 
 
+## Stop Events By Return False, :stop
+
+There is a thing upon which many folks stumble. When you specify your event
+listener as an element attribute, you can use `return false` to prevent the
+default event handling, like that
+
+    var element = document.getElementById('my-element');
+
+    element.onclick = function() {
+      return false; // will stop the click
+    };
+
+But when you do the same thing by putting your listener into the listeners
+queue with the `addEventListener`, method it doesn't work.
+
+    element.addEventListener('click', function() {
+      return false; // have no effect
+    }, false);
+
+In this case you need to receive the event object and explicitly tell it that
+you love it so much and want it to stop and stay with you forever. Which is
+kinda annoying.
+
+Here at RightJS, we are in business of setting thing right and being nice to
+our users. So the {Element#on} function was changed a bit and now when you
+`return false` in your listener, RightJS will understand that you actually
+want your event to be stopped and it will stop that sneaky bastard for you.
+
+    $('my-element).onClick(function() {
+      return false; // will effectivly stop the event
+    });
+
+
 ## Cross-Frame Safe, :frames
 
 Because of all the DOM-Wrappers and safe-mode changes, RightJS is now
