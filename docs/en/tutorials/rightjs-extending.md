@@ -90,7 +90,7 @@ an element with RightJS methods you will have them available on the element.
 There are few more methods like this, to extend another dom-units
 
 * {Form.include} - extends the FORM elements only
-* {Form.Element.include} - extends INPUT, SELECT and TEXTAREA elements only
+* {Input.include} - extends INPUT, SELECT and TEXTAREA elements only
 * {Event.include} - extends the dom events
 
 All those methods will register your extensions inside the objects and extend the units

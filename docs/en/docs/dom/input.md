@@ -1,4 +1,4 @@
-# Form Element
+# Input
 
 All the form elements like inputs, selects and textareas have some additional
 features in RightJS to help you work with them.
@@ -24,7 +24,7 @@ are in place, you can wire and run the events the usual way.
 Registers additional methods for the form input element units, like INPUT,
 SELECT, TEXTAREA.
 
-    Form.Element.include({
+    Input.include({
       myMethod: function() {....}
     });
 
