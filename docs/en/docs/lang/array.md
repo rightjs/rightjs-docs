@@ -16,8 +16,8 @@ array elements or process the same attribute. For example:
     elements.each('addClass', 'marked');
     elements.each('onClick', function() {});
 
-    var ids = elements.map('id');
-    var classes = elements.map('className').map('split', /\s+/).flatten().uniq();
+    var ids = elements.map('get', 'id');
+    var classes = elements.map('get', 'className').map('split', /\s+/).flatten().uniq();
 
     var visible_elements = elements.filter('visible');
     var marked_elements  = elements.filter('hasClass', 'marked');
@@ -209,7 +209,25 @@ that pass the condition in the lambda function:
     // -> ['anny', 'manny', 'banny'];
 
     strings.filter('match', /[a-z]ann/);
-    // -> ['manny', 'banny']
+    // -> ['anny', 'manny', 'banny']
+
+
+### #reject
+
+    reject(Function lambda[, Object scope]) -> Array new
+    reject(String name[, argument, ...])    -> Array new
+
+An opposite to the {#filter} method
+
+    var strings = ['anny', 'manny', 'banny', 'bob'];
+
+    strings.reject(function(string, i) {
+      return string.length > (i+1);
+    });
+    // -> ['bob'];
+
+    strings.reject('match', /[a-z]ann/);
+    // -> ['bob']
 
 
 ### #walk
@@ -381,3 +399,29 @@ boolean value:
 
     ['foo', 'bar'].some('match', 'bar') // -> true
     ['foo', 'boo'].some('match', 'bar') // -> false
+
+
+### #min
+
+    min() -> number minimal
+
+Returns a minimal number in the array
+
+    [1, 2, 3].min(); // -> 1
+
+### #max
+
+    max() -> number maximal
+
+Returns a maximal number in the array
+
+    [1, 2, 3].max(); // -> 3
+
+### #sum
+
+    sum() -> number sum
+
+Returns a sum of all numbers in the array
+
+    [1, 2, 3].sum(); // -> 6
+

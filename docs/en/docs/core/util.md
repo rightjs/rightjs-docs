@@ -11,10 +11,12 @@ interfaces.
     $(String element_id) -> Element
     $(Element element)   -> Element
 
-Finds an element by its ID or prepares an existing element.
+Finds an element by its ID or wraps a raw dom element with a dom-wrapper
 
     $('some-id');
     $(element);
+    $(window);
+    $(document);
 
 
 ### $$
@@ -73,22 +75,6 @@ If the third argument is `true`, it skips all the overlapping keys.
     $ext(o, {2:4, 3:3}, true); // -> {1:1, 2:2, 3:3}
 
 
-### $try
-
-    $try(Function function[, Function function, ...]) -> mixed result
-
-Evaluates the argument functions one by one and returns the result of the
-first one that _does not_ raise an exception.
-
-    var result = $try(
-      function() { throw 'error'; },
-      function() { return 1; },
-      function() { return 2; }
-    );
-
-    result // -> 1
-
-
 ### $eval
 
     $eval(String code) -> void
@@ -136,7 +122,7 @@ Creates the first object property aliases.
 
     defined(mixed value) -> boolean check result
 
-Checks if the given value is equal to `undefined`.
+Checks if the given value is not equal to `undefined`.
 
     var object = {
       foo: 'foo'

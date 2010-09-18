@@ -67,7 +67,8 @@ You can specify several modules by using arrays:
       extend:  [Module1, Module2, ...]
     });
 
-You can also define class-level methods in-line with all the rest of the class:
+You can also define class-level methods in-line with all the rest of the
+class:
 
     var Klass = new Class({
       extend: {
@@ -80,7 +81,8 @@ You can also define class-level methods in-line with all the rest of the class:
       // instance level methods
     });
 
-And you can call the `include()` and `extend()` methods after a class was defined:
+And you can call the `include()` and `extend()` methods after a class was
+defined:
 
     var Klass = new Class({
       // ....
@@ -100,9 +102,9 @@ the class.
 ## Mixin Callbacks
 
 As RightJS monkeys the modules system from [Ruby][], it also supports the post
-injection callbacks the same way [Ruby][] does. The names of the callback methods
-are similar: `selfIncluded` and `selfExtended`. Or in their underscored version
-`self_included` and `self_extened`.
+injection callbacks the same way [Ruby][] does. The names of the callback
+methods are similar: `selfIncluded` and `selfExtended`. Or in their
+underscored version `self_included` and `self_extened`.
 
     var Module = {
       selfIncluded: function(klass) {

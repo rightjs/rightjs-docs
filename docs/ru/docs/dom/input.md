@@ -1,8 +1,7 @@
 # Поля ввода
 
-Все элементы форм, такие как поля ввода, чекбоксы и пр. имеют в RightJS
-несколько дополнительных методов для того чтобы сделать работу с ни ми более
-комфортной и вписывающуюся в общую концепцию библиотеки.
+{Input} это базовый класс dom-оберток для работы с различными полями ввода.
+Он унаследован от класса {Element} и имеет общий с ним интерфейс.
 
 ## События
 
@@ -16,8 +15,8 @@
 * change
 
 Эти события обрабатываются точно так же как и все прочие, для них существуют
-сокращения вроде `onFocus`, `onBlur`, и вы можете подключать их любым стандартным
-способом.
+сокращения вроде `onFocus`, `onBlur`, и вы можете подключать их любым
+стандартным способом.
 
 
 
@@ -32,6 +31,37 @@
     });
 
     $('my_input').myMethod();
+
+
+### #initialize
+
+    initialize(raw_dom_element) -> Input
+    initialize(Object options)  -> Input
+
+Базовый конструктор, может получать чистый dom-объект поля ввода или набор
+стандартных опций, тот же что и в случае класса {Element}, плюс опцию `type`
+которая может быть одной из стандартных для тэга `INPUT` или одно из следующих
+
+ * `textarea`
+ * `select`
+ * `multi-select`
+
+`text` - значение по умолчанию
+
+    new Input();                  // -> input#text
+    new Input({type: 'radio'})    // -> input#radio
+    new Input({type: 'textarea'}) // -> textarea
+    new Input({type: 'select'})   // -> selectbox
+
+
+### #form
+
+    form() -> Form
+
+Возвращает обернутый объект формы ({Form}) которой принадлежит данное поле
+ввода
+
+    $(input).form().submit();
 
 
 
@@ -57,6 +87,17 @@
     $('select').setValue(1);
     $('textarea').setValue('text');
     $('multi-select').setValue([1,2,3]);
+
+
+### #value
+
+    value()      -> mixed the current value
+    value(value) -> Input self
+
+Двунаправленый метод для работы со значениями полей ввода
+
+    $(input).value('something');
+    $(input).value(); // -> 'something'
 
 
 ### #disable
@@ -102,5 +143,31 @@
 Убирает фокус с данного элемента
 
     $('input').blur();
+
+
+### #disabled
+
+    disabled() -> boolean
+    disabled(value) -> Input self
+
+Двунаправленый метод для работы с атрибутом `disabled`
+
+    $(input).disabled(true);
+    $(input).disabled(); // -> true
+    $(input).disabled(false);
+    $(input).disabled(); // -> false
+
+
+### #checked
+
+    checked() -> boolean
+    checked(value) -> Input self
+
+Двунаправленый метод для работы с атрибутом `checked`
+
+    $(input).checked(true);
+    $(input).checked(); // -> true
+    $(input).checked(false);
+    $(input).checked(); // -> false
 
 

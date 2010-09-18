@@ -1,16 +1,22 @@
 # Window
 
-The `window` object has its own portion of extensions in RightJS which
-help you to deal with sizes and scrolls in a cross-browser way.
+{Window} is the standard dom-wrapper for the window elements.
 
+
+### #size
+
+    size() -> Object {x: NN , y: NN }
+
+Returns the internal space size of the window.
+
+    window.size();
 
 ### #sizes
 
     sizes() -> Object {x: NN , y: NN }
 
-Returns the internal space sizes of the window.
+__DEPRECATED__: please, use {#size} instead
 
-    window.sizes();
 
 ### #scrolls
 
@@ -28,8 +34,8 @@ Returns the scroll offsets for the window.
     scrollTo(Element element)         -> window self
     scrollTo(String element_id)       -> window self
 
-Handles the main scrollbars of the window. Can scroll the window to any position
-or element.
+Handles the main scrollbars of the window. Can scroll the window to any
+position or element.
 
     window.scrollTo(123, 123);
     window.scrollTo({x: 123, y: 123});

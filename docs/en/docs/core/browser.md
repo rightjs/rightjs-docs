@@ -15,7 +15,7 @@ OLD           | an internal marker for IE 6 and 7   |
 
 Usage is pretty much straight forward:
 
-    if (Browser.IE) {
+    if (Browser.OLD) {
       alert("Welcome to the hell");
     }
 

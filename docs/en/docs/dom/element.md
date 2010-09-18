@@ -1,20 +1,6 @@
 # Element
 
-The DOM element unit in RightJS is called `Element` and it handles all the
-DOM element extensions.
-
-
-## Additional Methods
-
-If you use RightJS' own methods and functions to navigate around elements,
-all the extensions on selected elements will be available automatically and
-immediately.
-
-The only exceptions are cases when you take an element from outside the
-RightJS stack, say you assign an event handler directly in an element
-attribute or you receive a DOM element that was found by another script.
-In these cases you need to call the `$()` function on those elements at
-least once to make all the additional methods available.
+{Element} is the basic dom-wrapper for all dom-elements.
 
 
 ## Set Methods and Chains
@@ -42,7 +28,7 @@ filter the result.
 
 __NOTE__: RightJS doesn't use any special interfaces to process node lists
 but uses simple {Array} instances. And as they support calls by name, you
-can take advantage of this working with DOM elements:
+can take advantage of them when work with DOM elements:
 
     $('some-list').select('li')
       .filter('hasClass', 'marked')
@@ -51,7 +37,7 @@ can take advantage of this working with DOM elements:
 
 ## Events Processing
 
-The `Element` unit has all the standard {Observer} unit interface and handles
+The {Element} unit has all the standard {Observer} unit interface and handles
 events binding in the same exact way.
 
     $('some-element').on('click', function() {
@@ -71,15 +57,13 @@ events binding in the same exact way.
 There are also shortcuts for all the standard DOM events. And you can use the
 name references for callbacks as well:
 
-    $('element').onClick('addClass', 'marked');
+    $(element).onClick('addClass', 'marked');
+    $(element).onKeypress('radioClass', 'typing');
 
 Finally, you can trigger any event handler manually like this:
 
-    element.onClick('addClass', 'clicked');
-    element.onKeypress('radioClass', 'typing');
-
-    element.fire('click',    { button: 3 });
-    element.fire('keypress', { keyCode: 12 });
+    $(element).fire('click',    { button: 3 });
+    $(element).fire('keypress', { keyCode: 12 });
 
 
 ## Custom events
@@ -87,8 +71,11 @@ Finally, you can trigger any event handler manually like this:
 At the interface level, there is no difference between standard
 and custom events in RightJS. All of them are handled the exact same way:
 
-    element.on('my-event', function() {....});
-    element.fire('my-event');
+    $(element).on('my-event', function() {....});
+    $(element).fire('my-event');
+
+__NOTE__: all the events you fire, normal and custom, all of them will bubble
+up to document object as they do when you a browser triggers them.
 
 
 ### .include
@@ -115,7 +102,6 @@ the following keys to preset your element properties on instance:
 * 'html'    - a source code to fill up the innerHTML property
 * 'class'   - CSS class name(s) for the element
 * 'style'   - a hash (or string) of styles to be preset
-* 'observe' - a hash of events to observe
 * 'on'      - same as `'observe'`
 
 Everything will be handled in one flow.
@@ -127,7 +113,7 @@ Everything will be handled in one flow.
       style: {
         padding: '10pt'
       },
-      observe: {
+      on: {
         mouseover: function() { ... }
       }
     });
@@ -213,7 +199,6 @@ __NOTE__: Checks both element styles as well as the computed (CSS) styles.
 
     visible() -> boolean
 
-
 Checks if the element is visible. See the {#hidden} method for more details.
 
     $('some-element').visible();
@@ -270,6 +255,22 @@ specified, the effect will be used to perform the showing.
     $('some-element').radio('slide');
     $('some-element').radio('slide', {duration: 'long'});
 
+### #window
+
+    window() -> Window window
+
+Returns a wrapped {Window} object to which this element belongs to
+
+    $(element).window().size();
+
+### #document
+
+    document() -> Document document
+
+Returns a wrapped {Document} object to which this element belongs to
+
+    $(element).document().find('div.class');
+
 ### #parent
 
     parent([String css_rule]) -> Element parent or null
@@ -293,8 +294,8 @@ first one that matches the rule.
 
     parents([String css_rule]) -> Array of elements
 
-Returns the list of parent nodes of the element (from bottom up). If a CSS rule
-was specified, the list will be filtered by that rule
+Returns the list of parent nodes of the element (from bottom up). If a CSS
+rule was specified, the list will be filtered by that rule
 
     /*
       <div id="one">
@@ -308,9 +309,9 @@ was specified, the list will be filtered by that rule
     $('three').parents('#one'); // -> [div#one]
 
 
-### #subNodes
+### #children
 
-    subNodes([String css_rule]) -> Array of elements
+    children([String css_rule]) -> Array of elements
 
 Returns a list of the immediate descendants from the element, optionally
 filtered by the given CSS rule.
@@ -322,8 +323,15 @@ filtered by the given CSS rule.
       </div>
     */
 
-    $('one').subNodes();       // -> [div#two, div#three]
-    $('one').subNodes('#two'); // -> [div#two]
+    $('one').children();       // -> [div#two, div#three]
+    $('one').children('#two'); // -> [div#two]
+
+
+### #subNodes
+
+    subNodes([String css_rule]) -> Array of elements
+
+__DEPRECATED__: Use {#children} instead
 
 
 ### #siblings
@@ -442,11 +450,11 @@ CSS rule.
     $('one').first('#three'); // -> div#three
 
 
-### #select
+### #find
 
-    select(String css_rule) -> Array of elements
+    find(String css_rule) -> Array of elements
 
-Selects all matching elements from the internal structure of the element.
+Finds all matching elements from the internal structure of the element.
 
     /*
       <div id="one">
@@ -456,9 +464,14 @@ Selects all matching elements from the internal structure of the element.
       </div>
     */
 
-    $('one').select('div');    // -> [div#two, div#three]
-    $('one').select('#three'); // -> [div#three]
+    $('one').find('div');    // -> [div#two, div#three]
+    $('one').find('#three'); // -> [div#three]
 
+### #select
+
+    select(String css_rule) -> Array of elements
+
+__DEPRECATED__: use {#find} instead
 
 ### #match
 
@@ -492,7 +505,6 @@ The content can be one of the following:
 * an element instance
 * a string with HTML code (scripts will be evaluated)
 * a list of elements (array, or NodeList or something iterable)
-* a hash like {position: content}
 
 Position can be one of the following:
   top / bottom / before / after / instead
@@ -507,12 +519,20 @@ The `bottom` value is used by default.
 
     element.insert([element1, element2, element3], 'before');
 
-    element.insert({
-      before: element1,
-      after:  element2,
-      top:    element3
-    });
+### #append
 
+    append(element1[, elment2, ...]) -> Element self
+
+A shortcut to insert several elements to the bottom of the current one
+
+    element.append(
+      $('element-1'), $('element-2'), $('element-3')
+    );
+
+    // same as
+    element.insert([
+      $('element-1'), $('element-2'), $('element-3')
+    ], 'bottom');
 
 ### #insertTo
 
@@ -526,7 +546,7 @@ position.
 
     element1.insertTo(element2, 'top');
 
-    element2.firstChild === element1;
+    element2.first() === element1;
 
 
 ### #replace
@@ -538,7 +558,7 @@ Replaces the current element with the given content.
     // <div id="one"><div id="two"></div></div>
 
     $('two').replace('boo boo boo');
-    $('one').innerHTML == 'boo boo boo';
+    $('one').html() === 'boo boo boo';
 
 
 ### #update
@@ -553,7 +573,18 @@ __NOTE__: All scripts will be evaluated _after_ the update.
 
     $('one').update('something else');
 
-    $('one').innerHTML == 'something else';
+    $('one').html() === 'something else';
+
+
+### #html
+
+    html()               -> String innerHTML
+    html(mixed content); -> Element self
+
+A bidirectional method to work with the element's `innerHTML` property.
+
+    $('element').html('bla bla bla');
+    $('element').html(); // -> 'bla bla bla'
 
 
 ### #wrap
@@ -566,7 +597,7 @@ Wraps the current element with the given one.
 
     $('two').wrap(new Element('div', {id: 'three'}));
 
-    $('one').innerHTML == '<div id="three"><div id="two"></div></div>';
+    $('one').html() == '<div id="three"><div id="two"></div></div>';
 
 
 ### #clean
@@ -576,6 +607,7 @@ Wraps the current element with the given one.
 Removes all child nodes from the element.
 
     $('element').clean();
+    $('element').html(); // -> ''
 
 
 ### #empty
@@ -586,6 +618,19 @@ Checks if the element has no internal text or elements.
 
     $('element').empty();
 
+
+### #clone
+
+    clone() -> Element new
+
+Creates a complete clone of the current element with the same content
+
+    var element = $('element');
+    var clone   = element.clone();
+
+    element        != clone;
+    element._      != clone._;
+    element.html() == clone.html();
 
 
 ### #setStyle
@@ -626,13 +671,11 @@ __NOTE__: Checks both element styles as well as the computed (CSS) styles.
 
 Checks if the element is assigned to the given CSS class name.
 
-    var element = $('element');
+    $(element.setClass('foo bar');
 
-    element.className = 'foo bar';
-
-    element.hasClass('foo'); // -> true
-    element.hasClass('bar'); // -> true
-    element.hasClass('boo'); // -> false
+    $(element).hasClass('foo'); // -> true
+    $(element).hasClass('bar'); // -> true
+    $(element).hasClass('boo'); // -> false
 
 
 ### #setClass
@@ -641,12 +684,12 @@ Checks if the element is assigned to the given CSS class name.
 
 Replaces all the element CSS class names with the given one.
 
+    var element = document.getElementById('element');
     element.className = 'foo bar';
 
-    element.setClass('boo');
+    $(element).setClass('boo');
 
     element.className; // -> 'boo'
-
 
 
 ### #addClass
@@ -655,9 +698,10 @@ Replaces all the element CSS class names with the given one.
 
 Adds the given CSS class name to the element class names list.
 
+    var element = document.getElementById('element');
     element.className = 'foo';
 
-    element.addClass('bar');
+    $(element).addClass('bar');
 
     element.className; // -> 'foo bar'
 
@@ -669,9 +713,10 @@ Adds the given CSS class name to the element class names list.
 
 Removes the given CSS class name from the element class names list.
 
+    var element = document.getElementById('element');
     element.className = 'foo bar';
 
-    element.removeClass('bar');
+    $(element).removeClass('bar');
 
     element.className; // -> 'foo'
 
@@ -682,12 +727,13 @@ Removes the given CSS class name from the element class names list.
 
 Toggles the CSS class name presence on the element class names list.
 
+    var element = document.getElementById('element');
     element.className = 'foo';
 
-    element.toggleClass('bar')
+    $(element).toggleClass('bar')
     element.className; // -> 'foo bar';
 
-    element.toggleClass('bar')
+    $(element).toggleClass('bar')
     element.className; // -> 'foo';
 
 
@@ -699,31 +745,6 @@ Removes the CSS class name from all siblings of the element and adds it to
 the element.
 
     $('element').radioClass('boo');
-
-
-### #observe
-
-    observe(String eventName, Function listener)             -> Element self
-    observe(String eventName, String method[, argument,...]) -> Element self
-    observe(String eventName, Array list_list_of_callbacks)  -> Element self
-    observe(Object event_listeners_hash)                     -> Element self
-
-Binds an event listener to the element.
-
-__DEPRECATED__: Use the {#on} method instead.
-
-    $('element').observe('click', function() {
-      // do something about it
-    });
-
-    $('element').observe('click', 'addClass', 'clicked');
-
-    $('element').observe('click', [function1, function2]);
-
-    $('element').observe({
-      click: function1,
-      dblclick: function2
-    });
 
 
 ### #on
@@ -771,8 +792,8 @@ a general check or against a specific event name.
     listeners(String name) -> Array of functions
 
 
-Returns a list of element event listeners which can optionally be narrowed down
-by an event name scope.
+Returns a list of element event listeners which can optionally be narrowed
+down by an event name scope.
 
     var func = function() {};
 
@@ -786,9 +807,8 @@ by an event name scope.
 
 ### #stopObserving
 
-    stopObserving(String name)           -> Element self
-    stopObserving(Function listener)     -> Element self
-    stopObserving(String name, listener) -> Element self
+    stopObserving(Function listener)       -> Element self
+    stopObserving(String name[, listener]) -> Element self
 
 Unsubscribes the event listener. This can be done globally for a particular
 event name, for some particular listener or for some particular listener and
@@ -805,14 +825,78 @@ event name.
     $('element').stopObserving('click', listner);
 
 
+### #delegate
+
+    delegate(String event, String css_rule, Function callback) -> Element self
+    delegate(String event, String css_rule, String callback)   -> Element self
+    delegate(String event, Object css_rules_and_callbacks)     -> Element self
+
+Delegates events handling to subelements that match the given css-rule.
+
+__NOTE__: Callbacks will be called in the context of _matching_ elements
+
+    $(element).delegate('click', 'div.blue',  func_1);
+    $(element).delegate('click', 'div.green', func_2);
+
+    $(element).delegate('click', 'div.blue',  'addClass', 'was-blue');
+    $(element).delegate('click', 'div.green', 'addClass', 'was-green');
+
+    $(element).delegate('click', {
+      'div.blue':  func_1,
+      'div.green': func_2
+    });
+
+
+### #delegates
+
+    delegates(String event[, String css_rule[, Function callback]]) -> boolean
+    delegates(String event[, Object rules_and_callback])            -> boolean
+
+Checks if this element delegates certain events to certain types of
+sub-elements
+
+    $(element).delegates('click');
+    $(element).delegates('click', 'div.red');
+    $(element).delegates('click', 'div.red', callback);
+
+    $(element).delegates('click', {
+      'div.red':  callback_1,
+      'div.blue': callback_2
+    });
+
+
+### #undelegate
+
+    undelegate(String event[, String css_rule[, Function callback]]) -> Element
+    undelegate(String event[, Object rules_and_callback])            -> Element
+
+Switches off events delegation attached by the {#delegate} method.
+
+    $(element).undelegate('click');
+    $(element).undelegate('click', 'div.blue');
+    $(element).undelegate('click', 'div.blue', callback);
+
+    $(element).undelegate('click', {
+      'div.red':  callback_1,
+      'div.blue': callback_2
+    });
+
+
+### #size
+
+    size() -> Object {x: NN , y: NN}
+
+Returns the element sizes hash.
+
+    var width  = $('element').size().x;
+    var height = $('element').size().y;
+
+
 ### #sizes
 
     sizes() -> Object {x: NN , y: NN}
 
-Returns the element sizes hash.
-
-    var width  = $('element').sizes().x;
-    var height = $('element').sizes().y;
+__DEPRECATED__: Use {#size} instead
 
 
 ### #position
@@ -865,8 +949,8 @@ existing paddings and borders so the end result will be exactly as requested.
 
     element.setWidth(100);
 
-    element.offsetWidth; // -> 100
-    element.style.width; // -> 80px
+    element._.offsetWidth; // -> 100
+    element._.style.width; // -> 80px
 
 
 
@@ -888,8 +972,8 @@ existing paddings and borders so the end result will be exactly as requested.
 
     element.setWidth(100);
 
-    element.offsetWidth; // -> 100
-    element.style.width; // -> 80px
+    element._.offsetWidth; // -> 100
+    element._.style.width; // -> 80px
 
 ### #resize
 
@@ -910,10 +994,10 @@ paddings and borders so the end result will be exactly as requested.
 
     element.resize(100, 100);
 
-    element.offsetHeight; // -> 100
-    element.offsetWidth;  // -> 100
-    element.style.width;  // -> 80px
-    element.style.height; // -> 80px
+    element._.offsetHeight; // -> 100
+    element._.offsetWidth;  // -> 100
+    element._.style.width;  // -> 80px
+    element._.style.height; // -> 80px
 
 
 ### #moveTo

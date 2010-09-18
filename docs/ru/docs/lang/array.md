@@ -16,8 +16,8 @@ RightJS расширяет функциональность класса `Array`
     elements.each('addClass', 'marked');
     elements.each('onClick', function() {});
 
-    var ids = elements.map('id');
-    var classes = elements.map('className').map('split', /\s+/).flatten().uniq();
+    var ids = elements.map('get', 'id');
+    var classes = elements.map('get', 'className').map('split', /\s+/).flatten().uniq();
 
     var visible_elements = elements.filter('visible');
     var marked_elements  = elements.filter('hasClass', 'marked');
@@ -218,6 +218,25 @@ RightJS расширяет функциональность класса `Array`
     // -> ['manny', 'banny']
 
 
+### #reject
+
+    reject(Function lambda[, Object scope]) -> Array new
+    reject(String name[, argument, ...])    -> Array new
+
+Противоположный метод для {#filter}
+
+    var strings = ['anny', 'manny', 'banny', 'bob'];
+
+    strings.reject(function(string, i) {
+      return string.length > (i+1);
+    });
+    // -> ['bob'];
+
+    strings.reject('match', /[a-z]ann/);
+    // -> ['bob']
+
+
+
 ### #walk
 
     walk(Function lambda[, Object scope]) -> Array self
@@ -384,3 +403,27 @@ RightJS расширяет функциональность класса `Array`
     ['foo', 'bar'].some('match', 'bar') // -> true
     ['foo', 'boo'].some('match', 'bar') // -> false
 
+
+### #min
+
+    min() -> number minimal
+
+Возвращает наименьше число в массиве
+
+    [1, 2, 3].min(); // -> 1
+
+### #max
+
+    max() -> number maximal
+
+Возвращает наибольшее число в массиве
+
+    [1, 2, 3].max(); // -> 3
+
+### #sum
+
+    sum() -> number sum
+
+Возвращает сумму чисел в массиве
+
+    [1, 2, 3].sum(); // -> 6

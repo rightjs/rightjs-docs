@@ -1,19 +1,6 @@
 # Элемент
 
-Класс для DOM-элементов в RigthJS называется `Element`, он определяет базовый
-интерфейс и является ответственным за обработку большинства dom-операций
-
-
-## Дополнительные методы
-
-Если вы используете собственные методы RightJS для навигации по элементам
-страниц, то все расширения становятся доступны сразу.
-
-Исключение составляют случаи когда вы принимаете элемент извне контекста
-RightJS, например назначаете обработчик события внутри атрибута, или вам
-необходимо обработать элемент найденный другим скриптом. В таких случаях,
-для того чтобы, все расширения работали правильно, необходимо вызвать на
-этих элементах функцию `$()` хотя бы один раз.
+{Element} - базовый класс dom-оберток для работы dom-элементами
 
 
 ## Мутирующие методы и последовательности вызовов
@@ -77,9 +64,6 @@ __ВНИМАНИЕ__: RightJS не имеет специального инте�
 
 Вы так же можете запускать любые события вручную, если это необходимо
 
-    element.onClick('addClass', 'clicked');
-    element.onKeypress('radioClass', 'typing');
-
     element.fire('click',    { button: 3 });
     element.fire('keypress', { keyCode: 12 });
 
@@ -91,6 +75,10 @@ __ВНИМАНИЕ__: RightJS не имеет специального инте�
 
     element.on('my-event', function() {....});
     element.fire('my-event');
+
+__ВНИМАНИЕ__: все события, стандартные и нестандартные, будут всплывать по
+дереву документа точно так же как если бы они были инциированы самим
+браузером.
 
 
 ### .include
@@ -117,7 +105,6 @@ __ВНИМАНИЕ__: RightJS не имеет специального инте�
 * 'html'    - исходный код HTML для установки в innerHTML
 * 'class'   - css-класс нового элемента
 * 'style'   - хэш или строка со стилями
-* 'observe' - хэш с обработчиками событий
 * 'on'      - сокращение для `'observe'`
 
 Все ключи будут обработаны в одном потоке.
@@ -129,7 +116,7 @@ __ВНИМАНИЕ__: RightJS не имеет специального инте�
       style: {
         padding: '10pt'
       },
-      observe: {
+      on: {
         mouseover: function() { ... }
       }
     });
@@ -156,9 +143,9 @@ __ВНИМАНИЕ__: RightJS не имеет специального инте�
 
 Считывает значение атрибута элемента
 
-    // <div id="div" title="some title"></div>
+    // <div id="div" title="какой-то тайтл"></div>
 
-    $('div').get('title'); // -> 'some title'
+    $('div').get('title'); // -> 'какой-то тайтл'
 
 
 ### #has
@@ -274,6 +261,25 @@ _показа_ данного элемента
     $('some-element').radio('slide');
     $('some-element').radio('slide', {duration: 'long'});
 
+
+### #window
+
+    window() -> Window window
+
+Возвращает обернутый {Window} объект окна которому принадлежит данный элемент
+
+    $(element).window().size();
+
+### #document
+
+    document() -> Document document
+
+Возвращает обернутый {Document} объект документа которому принадлежит данный
+элемент
+
+    $(element).document().find('div.class');
+
+
 ### #parent
 
     parent([String css_rule]) -> Element parent or null
@@ -312,9 +318,9 @@ _показа_ данного элемента
     $('three').parents('#one'); // -> [div#one]
 
 
-### #subNodes
+### #children
 
-    subNodes([String css_rule]) -> Array of elements
+    children([String css_rule]) -> Array of elements
 
 Возвращает список под-элементов первого уровня. Опционально отфильтрованный
 согласно указанному правилу.
@@ -326,9 +332,15 @@ _показа_ данного элемента
       </div>
     */
 
-    $('one').subNodes();       // -> [div#two, div#three]
-    $('one').subNodes('#two'); // -> [div#two]
+    $('one').children();       // -> [div#two, div#three]
+    $('one').children('#two'); // -> [div#two]
 
+
+### #subNodes
+
+    subNodes([String css_rule]) -> Array of elements
+
+__УСТАРЕВШЕЕ__: пожалуйста, используйте метод {#children}
 
 ### #siblings
 
@@ -354,7 +366,8 @@ _показа_ данного элемента
     nextSiblings([String css_rule]) -> Array of elements
 
 Возвращает список элементов находящихся на одном уровне с данным элементом
-и следующих после него. Опционально отфильтрованный согласно указанному правилу.
+и следующих после него. Опционально отфильтрованный согласно указанному
+правилу.
 
     /*
       <div>
@@ -446,9 +459,9 @@ _показа_ данного элемента
     $('one').first('#three'); // -> div#three
 
 
-### #select
+### #find
 
-    select(String css_rule) -> Array of elements
+    find(String css_rule) -> Array of elements
 
 Возвращает список всех внутренних элементов данного элемента подпадающих
 под указанное правило.
@@ -461,9 +474,15 @@ _показа_ данного элемента
       </div>
     */
 
-    $('one').select('div');    // -> [div#two, div#three]
-    $('one').select('#three'); // -> [div#three]
+    $('one').find('div');    // -> [div#two, div#three]
+    $('one').find('#three'); // -> [div#three]
 
+
+### #select
+
+    select(String css_rule) -> Array of elements
+
+__УСТАРЕВШЕЕ__: пожалуйста, используйте метод {#find}
 
 ### #match
 
@@ -497,7 +516,6 @@ _показа_ данного элемента
 * dom-элемент
 * строка с HTML кодом (скрипты будут выполнены)
 * Список dom-элементов
-* хэш вида {position: content}
 
 В качестве позиции может выступать одно из следующих
   top/bottom/before/after/instead
@@ -512,11 +530,20 @@ _показа_ данного элемента
 
     element.insert([element1, element2, element3], 'before');
 
-    element.insert({
-      before: element1,
-      after:  element2,
-      top:    element3
-    });
+### #append
+
+    append(element1[, elment2, ...]) -> Element self
+
+Сокращение для вставки нескольких элементов одновременно
+
+    element.append(
+      $('element-1'), $('element-2'), $('element-3')
+    );
+
+    // same as
+    element.insert([
+      $('element-1'), $('element-2'), $('element-3')
+    ], 'bottom');
 
 
 ### #insertTo
@@ -530,7 +557,7 @@ _показа_ данного элемента
 
     element1.insertTo(element2, 'top');
 
-    element2.firstChild === element1;
+    element2.first() === element1;
 
 
 ### #replace
@@ -542,7 +569,7 @@ _показа_ данного элемента
     // <div id="one"><div id="two"></div></div>
 
     $('two').replace('boo boo boo');
-    $('one').innerHTML == 'boo boo boo';
+    $('one').html() == 'boo boo boo';
 
 
 ### #update
@@ -558,7 +585,19 @@ __ВНИМАНИЕ__: в случае строкового контента, д�
 
     $('one').update('something else');
 
-    $('one').innerHTML == 'something else';
+    $('one').html() == 'something else';
+
+
+### #html
+
+    html()               -> String innerHTML
+    html(mixed content); -> Element self
+
+Двунаправленый метод для работы со свойством `innerHTML`
+
+    $('element').html('bla bla bla');
+    $('element').html(); // -> 'bla bla bla'
+
 
 
 ### #wrap
@@ -571,7 +610,7 @@ __ВНИМАНИЕ__: в случае строкового контента, д�
 
     $('two').wrap(new Element('div', {id: 'three'}));
 
-    $('one').innerHTML == '<div id="three"><div id="two"></div></div>';
+    $('one').html() == '<div id="three"><div id="two"></div></div>';
 
 
 ### #clean
@@ -581,6 +620,7 @@ __ВНИМАНИЕ__: в случае строкового контента, д�
 Удаляет все содержимое данного элемента
 
     $('element').clean();
+    $('element').html();  // -> ''
 
 
 ### #empty
@@ -591,6 +631,18 @@ __ВНИМАНИЕ__: в случае строкового контента, д�
 
     $('element').empty();
 
+### #clone
+
+    clone() -> Element new
+
+Создает полный клон текущего элемента с точно тем же контентом
+
+    var element = $('element');
+    var clone   = element.clone();
+
+    element        != clone;
+    element._      != clone._;
+    element.html() == clone.html();
 
 
 ### #setStyle
@@ -631,9 +683,7 @@ __ВНИМАНИЕ__: Проверяет оба, собственные стил
 
 Проверяет если данный элемент имеет указанный css-класс
 
-    var element = $('element');
-
-    element.className = 'foo bar';
+    $(element.setClass('foo bar');
 
     element.hasClass('foo'); // -> true
     element.hasClass('bar'); // -> true
@@ -646,9 +696,10 @@ __ВНИМАНИЕ__: Проверяет оба, собственные стил
 
 Устанавливает указанный css-класс для данного элемента
 
+    var element = document.getElementById('element');
     element.className = 'foo bar';
 
-    element.setClass('boo');
+    $(element).setClass('boo');
 
     element.className; // -> 'boo'
 
@@ -660,9 +711,10 @@ __ВНИМАНИЕ__: Проверяет оба, собственные стил
 
 Добавляет указанный css-класс в список классов данного элемента
 
+    var element = document.getElementById('element');
     element.className = 'foo';
 
-    element.addClass('bar');
+    $(element).addClass('bar');
 
     element.className; // -> 'foo bar'
 
@@ -674,9 +726,10 @@ __ВНИМАНИЕ__: Проверяет оба, собственные стил
 
 Удаляет указанный css-класс из списка классов данного элемента
 
+    var element = document.getElementById('element');
     element.className = 'foo bar';
 
-    element.removeClass('bar');
+    $(element).removeClass('bar');
 
     element.className; // -> 'foo'
 
@@ -688,12 +741,13 @@ __ВНИМАНИЕ__: Проверяет оба, собственные стил
 Переключает наличие данного css-класса в списке классов данного элемента.
 (добавляет если отсутствует и удаляет если присутствует)
 
+    var element = document.getElementById('element');
     element.className = 'foo';
 
-    element.toggleClass('bar')
+    $(element).toggleClass('bar')
     element.className; // -> 'foo bar';
 
-    element.toggleClass('bar')
+    $(element).toggleClass('bar')
     element.className; // -> 'foo';
 
 
@@ -705,31 +759,6 @@ __ВНИМАНИЕ__: Проверяет оба, собственные стил
 текущему элементу
 
     $('element').radioClass('boo');
-
-
-### #observe
-
-    observe(String eventName, Function listener)             -> Element self
-    observe(String eventName, String method[, argument,...]) -> Element self
-    observe(String eventName, Array list_list_of_callbacks)  -> Element self
-    observe(Object event_listeners_hash)                     -> Element self
-
-Назначет обработчик событий
-
-__УСТАРЕВШЕЕ__: пожалуйста используйте более короткий метод {#on}
-
-    $('element').observe('click', function() {
-      // сделать что-либо по этому поводу
-    });
-
-    $('element').observe('click', 'addClass', 'clicked');
-
-    $('element').observe('click', [function1, function2]);
-
-    $('element').observe({
-      click: function1,
-      dblclick: function2
-    });
 
 
 ### #on
@@ -808,14 +837,79 @@ __УСТАРЕВШЕЕ__: пожалуйста используйте более
     $('element').stopObserving('click', listner);
 
 
+### #delegate
+
+    delegate(String event, String css_rule, Function callback) -> Element self
+    delegate(String event, String css_rule, String callback)   -> Element self
+    delegate(String event, Object css_rules_and_callbacks)     -> Element self
+
+Делегирует обработку событий внутренним элементам по указанному css-правилу
+
+__NOTE__: все функции обратного вызова будут выполнены в контексте элеметнов
+подходящих под правило.
+
+    $(element).delegate('click', 'div.blue',  func_1);
+    $(element).delegate('click', 'div.green', func_2);
+
+    $(element).delegate('click', 'div.blue',  'addClass', 'was-blue');
+    $(element).delegate('click', 'div.green', 'addClass', 'was-green');
+
+    $(element).delegate('click', {
+      'div.blue':  func_1,
+      'div.green': func_2
+    });
+
+
+### #delegates
+
+    delegates(String event[, String css_rule[, Function callback]]) -> boolean
+    delegates(String event[, Object rules_and_callback])            -> boolean
+
+Проверяет если данный элемент делегирует те или иные события внутренним
+элементам
+
+    $(element).delegates('click');
+    $(element).delegates('click', 'div.red');
+    $(element).delegates('click', 'div.red', callback);
+
+    $(element).delegates('click', {
+      'div.red':  callback_1,
+      'div.blue': callback_2
+    });
+
+
+### #undelegate
+
+    undelegate(String event[, String css_rule[, Function callback]]) -> Element
+    undelegate(String event[, Object rules_and_callback])            -> Element
+
+Отключает делегацию событий подключенную методом {#delegate}.
+
+    $(element).undelegate('click');
+    $(element).undelegate('click', 'div.blue');
+    $(element).undelegate('click', 'div.blue', callback);
+
+    $(element).undelegate('click', {
+      'div.red':  callback_1,
+      'div.blue': callback_2
+    });
+
+
+### #sizes
+
+    size() -> Object {x: NN , y: NN}
+
+Возвращает размеры элемента в виде хэша
+
+    var width  = $('element').size().x;
+    var height = $('element').size().y;
+
 ### #sizes
 
     sizes() -> Object {x: NN , y: NN}
 
-Возвращает размеры элемента в виде хэша
+__УСТАРЕВШЕЕ__: пожалуйста используйте метод {#size}
 
-    var width  = $('element').sizes().x;
-    var height = $('element').sizes().y;
 
 
 ### #position
@@ -869,8 +963,8 @@ __ВНИМАНИЕ__: данный метод автоматически под�
 
     element.setWidth(100);
 
-    element.offsetWidth; // -> 100
-    element.style.width; // -> 80px
+    element._.offsetWidth; // -> 100
+    element._.style.width; // -> 80px
 
 
 
@@ -893,8 +987,8 @@ __ВНИМАНИЕ__: данный метод автоматически под�
 
     element.setWidth(100);
 
-    element.offsetWidth; // -> 100
-    element.style.width; // -> 80px
+    element._.offsetWidth; // -> 100
+    element._.style.width; // -> 80px
 
 ### #resize
 
@@ -917,10 +1011,10 @@ __ВНИМАНИЕ__: данный метод автоматически под�
 
     element.resize(100, 100);
 
-    element.offsetHeight; // -> 100
-    element.offsetWidth;  // -> 100
-    element.style.width;  // -> 80px
-    element.style.height; // -> 80px
+    element._.offsetHeight; // -> 100
+    element._.offsetWidth;  // -> 100
+    element._.style.width;  // -> 80px
+    element._.style.height; // -> 80px
 
 
 ### #moveTo

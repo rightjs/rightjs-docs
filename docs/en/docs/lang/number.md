@@ -113,3 +113,23 @@ stop number:
     });
 
     numbers; // [8,7,6,5,4]
+
+
+### #min
+
+    min(number limit) -> number
+
+Limits current number but the given one
+
+    4..min(2);  // -> 4
+    1..min(2);  // -> 2
+
+
+### #max
+
+    max(number limit) -> number
+
+Limits current number but the given one
+
+    4..min(6);  // -> 4
+    8..min(6);  // -> 6

@@ -28,8 +28,9 @@ You can specify any standard {Xhr} options as well.
       }
     });
 
-If your form has an element with the CSS class `spinner`, it will be automatically
-used as a spinner for your form submission. You don't need to define it explicitly.
+If your form has an element with the CSS class `spinner`, it will be
+automatically used as a spinner for your form submission. You don't need to
+define it explicitly.
 
 
 ### .include
@@ -51,8 +52,8 @@ Registers additional methods for the `Form` elements.
     initialize([Object options])
 
 Basic constructor which receives all the common {Element} unit options plus a
-boolean one named `remote` which tells whether you want the form to be submitted
-via a {Xhr} request by default.
+boolean one named `remote` which tells whether you want the form to be
+submitted via a {Xhr} request by default.
 
     var form = new Form({
       method: 'post',
@@ -60,13 +61,20 @@ via a {Xhr} request by default.
     });
 
 
+### #elements
+
+    elements() -> Array of elements
+
+Returns the form elements list in an array.
+
+    var form_elements = $('form').elements();
+
+
 ### #getElements
 
     getElements() -> Array of elements
 
-Returns the form elements list in an array.
-
-    var form_elements = $('form').getElements();
+__DEPRECATED__: please, use {#elements} instead
 
 
 ### #inputs
@@ -176,3 +184,27 @@ Undoes the {#remotize} method changes.
     $('form').submit(); // the form goes via usual HTTP request
 
 
+### #input
+
+    input(String name) -> Input with that name
+
+Returns a wrapped input field by it's name attribute
+
+    $('form').input('username');
+    $('form').input('password');
+
+### #submit
+
+    submit() -> Form self
+
+Just a tunnel for the native `submit` method
+
+    $('form').submit();
+
+### #reset
+
+    reset() -> Form self
+
+A tunnel for the native `reset` method
+
+    $('form').reset();
