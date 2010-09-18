@@ -1,6 +1,6 @@
 # Пособие по расширению RightJS
 
-В случае если вы пожелаете написать некое расширение для RightJS, 
+В случае если вы пожелаете написать некое расширение для RightJS,
 например плагин или просто небольшую библиотеку организующую рутинные операции
 в вашем приложении, публикуем небольшое пособие по данному вопросу.
 
@@ -25,17 +25,17 @@
       myMethod1: function() { return 1; },
       myMethod2: function() { return 2; }
     });
-    
+
     [1,2,3,4].myMethod1(); // -> 1
     [1,2,3,4].myMethod2(); // -> 2
-    
-    
+
+
     String.include({
       hasBoo: function() {
         return this.includes('boo');
       }
     });
-    
+
     "moo".hasBoo(); // -> false
     "boo".hasBoo(); // -> true
 
@@ -52,13 +52,13 @@ RightJS использует язык Ruby в качестве модели, п�
     Xhr.include({
       myMethod: function() {}
     });
-    
+
     new Xhr('/some/url').myMethod();
-    
+
     Xhr.extend({
       MY_CONSTANT: 1
     })
-    
+
     if (Xhr.MY_CONSTANT) {
       new Xhr('/some/url');
     }
@@ -81,7 +81,7 @@ RightJS использует язык Ruby в качестве модели, п�
       myMethod1: function() {},
       myMehtod2: function() {}
     });
-    
+
     $('my-element').myMethod1();
     $$('*').each('myMethod2');
 
@@ -108,13 +108,13 @@ RightJS использует язык Ruby в качестве модели, п�
 
     $ext(SomeClass.prototype, (function(class_prototype) {
       var old_method = class_prototype.someMethod;
-  
+
       return {
         someMethod: function() {
           var result = old_method.apply(this, arguments);
-    
+
           // do something more
-    
+
           return result;
         }
       };
@@ -128,22 +128,22 @@ RightJS использует язык Ruby в качестве модели, п�
 
     Xhr.include(function(xhr_prototype) {
       var old_send = xhr_prototype.send;
-  
+
       return {
         send: function() {
           this.fancyStuff();
-      
+
           return old_send.apply(this, arguments);
         },
-    
+
         // дополнительный хитрый метод
         fancyStuff: function() {
         }
       };
-    
+
     })(Xhr.prototype));
 
-В случае работы с классами уровня DOM, все дополнительные методы хранятся в переменных 
+В случае работы с классами уровня DOM, все дополнительные методы хранятся в переменных
 с именем `Methods`, например `Element.Methods`, `Form.Methods`, `Event.Methods`. Вы можете
 использовать их вместо прототипов классов при перегрузке методов
 
@@ -151,16 +151,16 @@ RightJS использует язык Ruby в качестве модели, п�
 об изменениях на странице.
 
     var call_mommy = function(element) {...};
-    
+
     Element.include((function(old_methods) {
       var old_insert = old_methods.insert;
-  
+
       return {
         insert: function() {
           var result = old_insert.apply(this, arguments);
-      
+
           call_mommy(this);
-      
+
           return result;
         }
       };

@@ -60,9 +60,9 @@ RightJS расширяет функциональность класса `Array`
         return [this.clone(), this.clone()];
       }
     });
-    
+
     [1].double(); // -> [[1], [1]]
- 
+
 
 
 ### #indexOf
@@ -93,9 +93,9 @@ RightJS расширяет функциональность класса `Array`
 прошедший проверку в данной функции
 
     [1,2,3,4].first() // -> 1
-    
+
     [1,2,3,4].first(function(i) { return i > 1; }) // -> 2
-    
+
     ['bar', 'foo', 'moo'].first('match', 'oo') // -> 'foo'
 
 
@@ -111,9 +111,9 @@ RightJS расширяет функциональность класса `Array`
 прошедший проверку в данной функции
 
     [1,2,3,4].last() // -> 4
-    
+
     [1,2,3,4].last(function(i) { return i < 4; }) // -> 3
-    
+
     ['foo', 'moo', 'bar'].first('match', 'oo') // -> 'moo'
 
 
@@ -126,7 +126,7 @@ RightJS расширяет функциональность класса `Array`
 ### #size
 
     size() -> Integer
-  
+
 Возвращает размер списка
 
     [1,2,3].size(); // -> 3
@@ -159,7 +159,7 @@ RightJS расширяет функциональность класса `Array`
 контексте
 
     var elements = some_html_elements_list;
-    
+
     elements.each(function(element, i) {
       if (i % 2 == 0) {
         element.hide();
@@ -167,12 +167,12 @@ RightJS расширяет функциональность класса `Array`
         element.show();
       }
     });
-  
+
     // вызовет метод toggle() на каждом элементе
-    elements.each('toggle'); 
-    
+    elements.each('toggle');
+
     // добавит класс 'marked' для каждого элемента
-    elements.each('addClass', 'marked'); 
+    elements.each('addClass', 'marked');
 
 
 ### #map
@@ -183,21 +183,21 @@ RightJS расширяет функциональность класса `Array`
 Создает массив результатов вызова данной функции на каждом элементе в списке
 
     var strings = ['anny', 'banny', 'manny'];
-    
+
     strings.map(function(string, i) {
       return (i+1)+'. '+string;
     });
-    
+
     // -> ['1. anny', '2. banny', '3. manny'];
-    
+
     strings.map('capitalize');
-    
+
     // -> ['Anny', 'Banny', 'Manny'];
-    
+
     strings.map('replace', 'nn', 'b');
-    
+
     // -> ['aby', 'baby', 'maby'];
-  
+
 
 ### #filter
 
@@ -208,12 +208,12 @@ RightJS расширяет функциональность класса `Array`
 которые прошли проверку в даной функции
 
     var strings = ['anny', 'manny', 'banny', 'bob'];
-    
+
     strings.filter(function(string, i) {
       return string.length > (i+1);
     });
     // -> ['anny', 'manny', 'banny'];
-    
+
     strings.filter('match', /[a-z]ann/);
     // -> ['manny', 'banny']
 
@@ -226,19 +226,19 @@ RightJS расширяет функциональность класса `Array`
 Заменяет каждый элемент в массиве результатом работы данной функции
 
     var names = ['anny', 'manny', 'banny', 'bob'];
-    
+
     names.walk(function(name, i) {
       return (i+1)+'. '+name;
     });
-    
+
     // -> ['1. anny', '2. manny', '3. banny', '4. bob'];
-    
+
     names.walk('split', '. ');
-    
+
     // [['1', 'anny'], ['2', 'manny'], ['3', 'banny'], ['4', 'bob']];
-    
+
     names.walk('last').walk('capitalize');
-    
+
     // ['Anny', 'Manny', 'Banny', 'Bob'];
 
 
@@ -248,11 +248,11 @@ RightJS расширяет функциональность класса `Array`
 
 Создает новый массив содержащий все элементы текущего массива и элементы из
 полученных списков которые в нем не присутствуют
-  
+
     [0,1,2,3].merge([2,3,4], [3,4,5], [1,5,6]);
-    
+
     // -> [0,1,2,3,4,5,6];
-  
+
 
 ### #flatten
 
@@ -261,7 +261,7 @@ RightJS расширяет функциональность класса `Array`
 Конвертирует многомерный массив в одномерный
 
     [0,1,[2,3,[4,5,[6,7],8],9]].flatten();
-    
+
     // -> [0,1,2,3,4,5,6,7,8,9];
 
 
@@ -273,7 +273,7 @@ RightJS расширяет функциональность класса `Array`
 из оригинального массива
 
     [null, 0, undefined, 1, 2, 3, null].compact();
-    
+
     // -> [0, 1, 2, 3];
 
 
@@ -284,7 +284,7 @@ RightJS расширяет функциональность класса `Array`
 Создает новый массив содержащий только уникальные элемент из оригинала
 
     [0,1,1,2,0,1,2,3,3].uniq();
-    
+
     // -> [0,1,2,3];
 
 
@@ -306,11 +306,11 @@ RightJS расширяет функциональность класса `Array`
 ### #without
 
     without(mixed value[, mixed value, ...]) -> Array new
-  
+
 Создает новый массив _без_ указанных значений
 
     [0,1,2,3].without(1,3);
-    
+
     // -> [0,2];
 
 
@@ -321,9 +321,9 @@ RightJS расширяет функциональность класса `Array`
 Сортирует элементы массива в случайном порядке
 
     [0,1,2,3,4].shuffle();
-    
+
     // -> [3, 4, 0, 1, 2]
-  
+
 ### #sortBy
 
     sortBy(Function lambda[, scope])      -> Array new
@@ -334,13 +334,13 @@ RightJS расширяет функциональность класса `Array`
     [{t:3}, {t:2}, {t:1}].sortBy(function(item) {
       return item.t;
     });
-    
+
     // -> [{t:1}, {t:2}, {t:3}]
-    
+
     [{t:3}, {t:2}, {t:1}].sortBy('t');
-    
+
     // -> [{t:1}, {t:2}, {t:3}]
-  
+
 ### #every
 
     every()                                -> boolean
@@ -355,13 +355,13 @@ RightJS расширяет функциональность класса `Array`
 
     [1,2,3,4].every() // -> true
     [0,1,2,3].every() // -> false
-    
+
     [1,2,3].every(function(i) { return i > 0}) // -> true
     [0,1,2].every(function(i) { return i > 0}) // -> false
-    
+
     ['moo', 'foo', 'boo'].every('match', 'oo') // -> true
     ['moo', 'foo', 'bar'].every('match', 'oo') // -> false
-  
+
 
 ### #some
 
@@ -377,10 +377,10 @@ RightJS расширяет функциональность класса `Array`
 
     [0,false,1].some()    // -> true
     [0,false,null].some() // -> false
-    
+
     [0,1,2].some(function(i) { return i == 0; }) // -> true
     [1,2,3].some(function(i) { return i == 0; }) // -> false
-    
+
     ['foo', 'bar'].some('match', 'bar') // -> true
     ['foo', 'boo'].some('match', 'bar') // -> false
 

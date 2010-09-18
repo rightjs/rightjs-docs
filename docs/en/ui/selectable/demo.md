@@ -115,7 +115,7 @@ out of the [RightJS UI](/ui) library.
     <li>Three</li>
     <li>Four</li>
   </ul>
-  
+
   <input type="text" id="input-1" />
 </p>
 <p>
@@ -126,7 +126,7 @@ out of the [RightJS UI](/ui) library.
     <li id="three-3">Three</li>
     <li id="four-4">Four</li>
   </ul>
-  
+
   <input type="text" id="input-2" />
 </p>
 <p>
@@ -137,7 +137,7 @@ out of the [RightJS UI](/ui) library.
     <li id="three-3">Three</li>
     <li id="four-4">Four</li>
   </ul>
-  
+
   <input type="text" id="input-3" />
 </p>
 <p>
@@ -148,7 +148,7 @@ out of the [RightJS UI](/ui) library.
     <li id="three-3">Three</li>
     <li id="four-4">Four</li>
   </ul>
-  
+
   <input type="text" id="input-4" />
 </p>
 
@@ -175,19 +175,19 @@ out of the [RightJS UI](/ui) library.
     'option-3': 'Three',
     'option-4': 'Four'
   };
-  
+
   new Selectable({
     options: Object.values(keys),
     selected: 2,
     multiple: false
   }).insertTo($E('p').insertTo('generated-selects'));
-  
+
   new Selectable({
     options: keys,
     selected: [0,2],
     multiple: true
   }).insertTo($E('p').insertTo('generated-selects'));
-  
+
   new Selectable({
     options: keys,
     selected: [0,2]

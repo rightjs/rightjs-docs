@@ -42,9 +42,9 @@ PHP, когда вы смотрите на интерфейсы RightJS, вы н
 что когда вы видите кусок кода вроде этого
 
     $(element).update('with text').highlight();
-    
+
     $(element).onClick('addClass', 'clicked');
-    
+
     $$('li').each('onClick', 'toggleClass', 'marked');
 
 Вам не нужно быть гением семи пядей во лбу или читать какую бы то ни было документацию,

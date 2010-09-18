@@ -37,7 +37,7 @@ a reference to your input element and specify some options
     new Autocompleter('my-input', {
       local: $w('mommy daddy sonny doggy kitty')
     });
-    
+
 Autocompleter expects your server send back usual list of `UL/LI` tags,
 with any content inside of the items
 
@@ -46,12 +46,12 @@ with any content inside of the items
       <li>two</li>
       <li>three</li>
     </ul>
-    
+
 
 ## Auto-Discovery Feature, :discovery
 
 As all the other widgets out of the RightJS UI library the autocompleters
-have ability to be automatically discovered and initialized. For that 
+have ability to be automatically discovered and initialized. For that
 purpose you might use a `'rel'` attribute like this.
 
     <input type="text" rel="autocompleter[/your/url/goes/here]" />
@@ -115,12 +115,12 @@ specify the `'param'` and `'url'` options as the default and usual approach.
 
     /*
       In this case the autocompleter will hit urls like this.
- 
+
       /my/url?search=a
       /my/url?search=as
       /my/url?search=asd
       /my/url?search=asdf
-  
+
     */
 
 You also might want to have more caching friendly urls without the parameters
@@ -132,12 +132,12 @@ in this case you might use the `'%{search}'` placeholder in your url. Like this
 
     /*
       In this case the autocompleter will hit urls like this
-  
+
       /my/url/a.js
       /my/url/as.js
       /my/url/asd.js
       /my/url/asdf.js
-  
+
     */
 
 This will let you to drop the search results in static files on the server side.

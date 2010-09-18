@@ -133,14 +133,14 @@ mediaHeight     | 350     | video player height
 
     <div class="lightbox">
       <div class="lightbox-locker"></div>
-      
+
       <div class="lightbox-dialog">
         <div class="lightbox-caption"></div>
-        
+
         <div class="lightbox-body-wrap">
           <div class="lightbox-body">
             <div class="lightbox-body-content"></div>
-            
+
             <div class="lightbox-body-lock">
               <div class="lightbox-body-lock-spinner">
                 <div></div><div></div><div></div>
@@ -149,7 +149,7 @@ mediaHeight     | 350     | video player height
             </div>
           </div>
         </div>
-        
+
         <div class="lightbox-close-button"></div>
         <div class="lightbox-prev-link"></div>
         <div class="lightbox-next-link"></div>

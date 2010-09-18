@@ -1,7 +1,7 @@
 # Form
 
 RightJS inherits forms from the common {Element} unit, which means you can do
-everything you can do with any other element plus several additional features 
+everything you can do with any other element plus several additional features
 which make the work with forms a lot easier
 
 ## Ajax handling
@@ -27,7 +27,7 @@ You can specify any standard {Xhr} options as well.
         $('notices').update(r.responseText);
       }
     });
-    
+
 If your form has an element with the CSS class `spinner`, it will be automatically
 used as a spinner for your form submission. You don't need to define it explicitly.
 
@@ -82,7 +82,7 @@ Returns a list of all the form input elements _except_ the buttons.
 
     focus() -> Form self
 
-Tries to put the focus on the first visible and not disabled input element 
+Tries to put the focus on the first visible and not disabled input element
 of the form.
 
     $('form').focus();
@@ -140,12 +140,12 @@ URL query string.
 
 Remotely submits the form via a {Xhr} request. The argument may contain
 any standard {Xhr} object options.
-  
+
 __NOTE__: Works with file uploads too!
 
 
     $('form').send();
-    
+
     $('form').send({
       spinner:    $('spinner'),
       onComplete: call_the_function
@@ -160,7 +160,7 @@ Marks the form to be automatically send via a {Xhr} request when submitted.
 Optionally presets any standard {Xhr} object options.
 
     $('form').remotize({spinner: $('some-image')});
-    
+
     $('form').submit();  // the form goes remotely
 
 
@@ -172,7 +172,7 @@ Undoes the {#remotize} method changes.
 
     $('form').remotize();
     $('form').unremotize();
-    
+
     $('form').submit(); // the form goes via usual HTTP request
 
 

@@ -60,7 +60,7 @@ attribute and HTML5 style option attributes like that
 ## Options List, :options
 
 You might use the following options to customize your sortables
-  
+
 Name      | Default    | Description
 ----------|------------|---------------------------------------------------------------------
 direction | 'auto'     | 'auto', 'vertical', 'horizontal', 'x', 'y'

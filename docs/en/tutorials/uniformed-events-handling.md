@@ -14,33 +14,33 @@ So when you see a list of supported by a unit events, like say [Draggable](/plug
 you can use them right away like this
 
     new Draggable().on('start', function() {....});
-    
+
     // you can use hashes
     new Draggable().on({
       start: function1,
       drag:  function2,
       drop:  function3
     });
-    
+
     // you also can use self-references like that
     new Draggable().on('start', 'revert');
-    
+
     // and lists of callbacks
     new Draggable().on('start', [function1, function2]);
     new Draggable().on({
       start: [function1, function2],
       stop:  [function3, function4]
     });
-    
+
     // and you can pre-bind some values for your callbacks too
     new Draggable().on('start', func1, val1, val2, ...);
 
 Pretty much the same for any DOM element
 
     $('my-id').on('click', function() {...});
-    
+
     $('my-id').on('click', 'addClass', 'marked');
-    
+
     $('my-id').on({
       click:     func1,
       mouseover: 'highlight',
@@ -51,7 +51,7 @@ Then for predefined events list and the most common dom-events there will be sho
 named like `on[Event]`. Note each of them returns the object back so you can write chains like that
 
     new Draggable().onStart(func1).onStop(func2).onDrag('revert');
-    
+
     $('my-id').onClick(function(){}).onMouseover('addClass', 'hovered');
 
 For the predefined events, with all the units, you can send your callbacks along with any options
@@ -63,7 +63,7 @@ using the same names as the shortcut methods
       onStart: function1,
       onStop:  function2
     });
-    
+
     new Autocompleter('my-element', {
       url: '/some/url',
       onShow:   function1,
@@ -87,12 +87,12 @@ In our system there is no difference between custom and predefined list of event
 and trigger your own events on fly, just like that
 
     var calendar = new Calendar();
-    
+
     // assign it
     calendar.on('my-event', function(one, two, three) {
       // do something about it
     });
-    
+
     // fire it up
     calendar.fire('my-event', 1,2,3);
 

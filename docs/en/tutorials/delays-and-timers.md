@@ -16,10 +16,10 @@ with a delay in milliseconds and you're good to go
     var callback = function() {
       // .....
     };
-    
+
     // delay the call at 1 second
     callback.delay(1000);
-    
+
     // call it periodically every 2 seconds
     callback.periodical(2000);
 
@@ -28,7 +28,7 @@ You also can use currying with your delays and periodical calls
     var timer = function(message) {
       console.log(message);
     };
-    
+
     timer.delay(100, '100 ms passed');
     timer.delay(200, '200 ms passed');
     timer.delay(300, '300 ms passed');
@@ -43,22 +43,22 @@ The same way as `window.setInterval` and `window.setTimeout`, {#delay} and
 delayed or periodical calls.
 
     var marker = my_function.delay(100);
-    
+
     window.clearTimeout(marker);
-    
+
     var marker = my_function.periodical(100);
-    
+
     window.clearInterval(marker);
 
 But in RightJS markers are also objects and have nice methods to cancel delays
 and stop periodical calls, like that:
 
     var timer = my_function.delay(100);
-    
+
     timer.cancel();
-    
+
     var timer = my_function.periodical(100);
-    
+
     timer.stop();
 
 This way it is much more readable and easier to handle.

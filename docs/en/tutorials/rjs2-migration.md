@@ -13,7 +13,7 @@ summarize the things in a simple pre-flight check
 
 ## 1. Update Builds, :builds
 
-First of all for sure, go to the [Downloads](/download) page and grab new 
+First of all for sure, go to the [Downloads](/download) page and grab new
 builds, save them instead of the old ones. You also will need fresh builds
 of all [UI](/ui) and [Plugins](/plugins). And also don't forget to update
 the [i18n modules](http://github.com/rightjs/rightjs-ui/tree/master/i18n/) if
@@ -30,16 +30,16 @@ the new ones
 This is the most painful part of migration. Because we switching from direct
 elements access to dom-wrappers, you don't have immediate access to elements
 properties and need to use the {Element#set} and {Element#get} methods.
-    
+
     # old
     element.id;
-    
+
     # new
     element.get('id');
-    
+
     # old
     element.id = 'my-id';
-    
+
     # new
     element.set('id', 'my-id');
 
@@ -49,7 +49,7 @@ property, which refers directly to the raw dom-object.
     element._.id;
     element._.id = 'my-id';
 
-It's perfectly legit, so don't hesitate, use it. To work with the `innerHTML` 
+It's perfectly legit, so don't hesitate, use it. To work with the `innerHTML`
 property use the {Element#html} method, it work both ways
 
     element.html(); // -> returns the innerHTML property
@@ -73,7 +73,7 @@ We don't extend the dom-elements anymore. Any of them.
 ## 4. Events Delegation, :ujs
 
 UJS support in RightJS 2 was cleaned up, updated and extended. The sweet
-{String#on} method is still in place, but the `Event.delegate` hacks were 
+{String#on} method is still in place, but the `Event.delegate` hacks were
 removed in favor of the {Element#delegate} and {Element#undelegate} methods.
 
 If you used `Event.delegate`, check those. They have pretty close API and
@@ -99,11 +99,11 @@ and easier to use.
  1. The css class names prefix was changed from `right-` to `rui-`. It is less
     arrogant and fun, but have less chances to interrupt with the user's
     classes.
- 
+
  2. Automatic UI initialization was changed from all sorts of classes and
     attributes to standard HTML5 attributes with names like
     `data-[widget-name]`
-    
+
  3. All widgets are elements now, and therefore the events system was changed
     a bit, instead of feeding your listeners with all sorts of arguments,
     widgets now fire custom dom-events and all the data is attached to the

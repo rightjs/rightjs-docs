@@ -11,7 +11,7 @@
 #
 # Browse:
 #   http://localhost:3000
-# 
+#
 # Copyright (C) 2010 Nikolay Nemshilov
 #
 
@@ -51,56 +51,56 @@ end
 
 helpers do
   def image_tag(path, options={})
-    "<img src=\"http://rightjs.org/images/#{path}\"#{options.collect{|k,v| " #{k}=\"#{v}\""}.join('')} />"    
+    "<img src=\"http://rightjs.org/images/#{path}\"#{options.collect{|k,v| " #{k}=\"#{v}\""}.join('')} />"
   end
-  
+
   def link_to(text, url, options={})
     "<a href='#{url}'#{options.collect{|k,v| " #{k}=\"#{v}\""}.join('')}>#{text}</a>"
   end
-  
+
   def menu_link_to(*args)
     "<li>#{link_to(*args)}</li>"
   end
-  
+
   def javascript_include_tag(*args)
     args.collect{ |path|
       "<script type='text/javascript' src='http://rightjs.org#{path}'></script>"
     }.join("\n")
   end
-  
+
   def stylesheet_link_tag(*args)
     args.collect{ |path|
       "<link rel='stylesheet' type='text/css' href='http://rightjs.org/stylesheets/#{path}.css' />"
     }.join("\n")
   end
-  
+
   def content_for(name, content)
     @content_for ||= {}
     @content_for[name] ||= ''
     @content_for[name] += "\n"+ content
   end
-  
+
   def check_box_tag(name, value, checked=nil)
     "<input type='checkbox' name='#{name}' id='#{name.gsub('[','_').gsub(']', '')
       }' value='#{value}'#{' checked="true"' if checked} />"
   end
-  
+
   def label_tag(key, name)
     "<label for='#{key}'>#{name}</label>"
   end
-  
+
   def builds_path
     "/builds"
   end
-  
+
   def custom_builds_path
     "http://rightjs.org/builds/custom"
   end
-  
+
   def tutorial_path(name)
     "/tutorials/#{name}"
   end
-  
+
   def plugins_list
     PLUGINS_LIST.collect do |key|
       {
@@ -110,7 +110,7 @@ helpers do
       }
     end.sort_by{|i| i[:name]}
   end
-  
+
   def ui_list
     UIS_LIST.sort.collect do |key|
       {
@@ -120,19 +120,19 @@ helpers do
       }
     end.sort_by{|i| i[:name]}
   end
-  
+
   def plugins_modules_menu
     "<ul>\n"+
       plugins_list.collect{ |obj| "<li><a href=\"#{obj[:url]}\">#{obj[:name]}</a></li>" }.join("\n")+
     "</ul>"
   end
-  
+
   def ui_modules_menu
     "<ul>\n"+
       ui_list.collect{ |obj| "<li><a href=\"#{obj[:url]}\">#{obj[:name]}</a></li>" }.join("\n")+
     "</ul>"
   end
-  
+
   def right_js_classes_menu
     "<ul>"+
       API_PACKS.collect{ |package|
@@ -146,23 +146,23 @@ helpers do
       }.join("\n")+
     "</ul>"
   end
-  
+
   def set_unit_scope(name)
     @unit = name
   end
-  
+
   def contact_email
     "<a href='mailto:info@rightjs.org'>info@rightjs.org</a>"
   end
-  
+
   def chapter(name, key)
     "<h2>#{name}, :#{key}</h2>"
   end
-  
+
   def anchors_index
     "<h2>Index will be here</h2>"
   end
-  
+
   def partial(name, *args)
     if name[0,1] == '/'
       els = name.split('/')
@@ -171,7 +171,7 @@ helpers do
     else
       filename = "com/#{@path}/_#{name}.html"
     end
-    
+
     if args.first && args.first[:collection]
       args.first[:collection].collect{ |value|
         args.first[:locals] = {}
@@ -191,7 +191,7 @@ class String
   def t
     self.split('.').last
   end
-  
+
   def underscore
     self.gsub('-', '_')
   end
@@ -201,10 +201,10 @@ end
 # Patched maruku parser
 #
 class Shmaruku < Maruku
-  def self.to_html(string) 
+  def self.to_html(string)
     self.new(string.gsub(/\{([a-z\.#]+)\}/im, "#{KEY}\\1#{KEY}")).to_html
   end
-  
+
   def to_html
     html = super
     PATCHES.each{ |patch| html.gsub! *patch }
@@ -251,7 +251,7 @@ end
 
 get %r{/ui/autocompleter/languages/(.+?).js} do |search|
   regexp = /(#{Regexp.escape(search)})/i
-  
+
   '<ul>'+
     LANGUAGES.select{|l| l =~ regexp }.map{ |lang|
       "<li>#{lang.gsub(regexp, '<strong>\\1</strong>')}</li>"
@@ -262,59 +262,59 @@ end
 get %r{/(.*)} do |path|
   @path = path == '' ? 'index' : path
   @path = @path.gsub('/dnd', '/drag-and-drop')
-  
+
   @languages = {
     'en' => 'English',
     'ru' => 'Русский'
   }
 
   @lang = session[:lang] || 'en'
-  
+
   @directory = "#{File.dirname(__FILE__)+"/docs"}"
-  
+
   @filename = "#{@directory}/#{@lang}/#{@path}.md"
   @filename = "#{@directory}/com/#{@path}.html.erb" unless File.exists?(@filename)
   @filename = "#{@directory}/#{@lang}/not-found.md" unless File.exists?(@filename)
-  
+
   @content = File.read(@filename)
-  
+
   if @filename[@filename.size - 8, @filename.size] == 'html.erb'
     erb @content, :layout => false
   else
     @content = Shmaruku.to_html(erb(@content))
     @content.gsub!(/('|")\/(images|builds\/ui|builds\/plugins|builds\/current)\//, '\\1http://rightjs.org/\\2/')
-    
+
     # joining the cross-references
     @content.gsub! /([^%#])\{([a-z\.#]+[a-z])\}/i do |match|
       start = $1.dup
       desc  = $2.dup
-      
+
       unit = desc =~ /\.|#/ ? desc.slice(0, desc.rindex(/\.|#[a-z]+$/i)) : desc
       unit = @unit if unit == ''
-      
+
       package = !unit ? nil : API_PACKS.detect{ |name|
         File.exists? "#{@directory}/#{@lang}/docs/#{name}/#{unit.downcase}.md"
       }
-      
+
       method = desc =~ /\.|#/ ? desc.slice(desc.rindex(/\.|#[a-z]+$/i)+1, desc.size) : ''
-      
+
       match = if package && unit && unit != ''
         "<a href='/docs/#{package}/#{unit.downcase}#{method == '' ? '' : ('#'+method.downcase)}' class='api-ref'>#{
           unit == @unit ? '' : unit
-        }#{ method != '' ? 
+        }#{ method != '' ?
           (unit == @unit ? '' : desc.include?('#') ? '#' : '.') + method : ''
         }</a>"
       else
         desc
       end
-      
+
       "#{start}#{match}"
     end
-    
+
     title = @content.match(/\A<h1>(.+?)<\/h1>/)
-    
+
     @title = title ? title[1] : "/"
-    
+
     erb :page
   end
 end
@@ -387,7 +387,7 @@ __END__
           </div>
         <% end %>
         </div>
-        
+
         <div id="info">
           <%= @content %>
         </div>

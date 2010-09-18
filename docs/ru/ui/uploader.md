@@ -31,7 +31,7 @@
 элементу нужной формы
 
     <script src=".../right-uploader.js"></script>
-    
+
     <form class="with-progress" ...>
       ....
     </form>
@@ -46,7 +46,7 @@
 
     <form class="with-progress">
       <div class="right-progress-bar"></div>
-      
+
       <p>
         <input type="file" name="picture" />
         <input type="submit" value="Отправить" />

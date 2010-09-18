@@ -1,6 +1,6 @@
 # Наблюдатель
 
-`Observer` - это совместно используемый модуль для организации шаблона 
+`Observer` - это совместно используемый модуль для организации шаблона
 "наблюдатель". Он использован во многих местах библиотеки и предоставляет
 общий интерфейс и принципы работы для всех случаев где необходима обработка
 событий.
@@ -14,7 +14,7 @@
     observer.on('something', function() {....});
     //....
     observer.fire('something');
-    
+
     var MyObserver = new Class(Observer, {
       // ....
     });
@@ -29,15 +29,15 @@
         Observer.create(this);
       }
     });
-    
+
     var klass = new Klass();
     klass.on('something', function() {....});
-    
-    
+
+
     // или даже так
     var object = {....};
     Observer.create(object);
-    
+
     object.on('something', function() {.....});
 
 ## Сокращения
@@ -51,11 +51,11 @@ RightJS найдет эту переменную и автоматически �
     var Klass = new Class(Observer, {
       EVENTS: $w('start stop')
     });
-    
+
     var klass = new Klass();
     klass.onStart(function() {....});
 
-__ВНИМАНИЕ:__ если ваш класс имеет методы пересекающиеся со списком 
+__ВНИМАНИЕ:__ если ваш класс имеет методы пересекающиеся со списком
 сокращений, то скрипт просто их пропустит.
 
 
@@ -72,14 +72,14 @@ __ВНИМАНИЕ:__ если ваш класс имеет методы пер�
         alert(message);
       }
     });
-    
+
     var kid = new Kid();
-    
+
     kid.on('troubles', 'callMommy', 'Mommy!');
-    
+
     // запускаем событие
     kid.fire('troubles');
-  
+
     // класс автоматически вызовет метод 'callMommy' с сообщением 'Mommy!'
 
 
@@ -104,9 +104,9 @@ __ВНИМАНИЕ:__ если ваш класс имеет методы пер�
 Создает список сокращенных методов для событий
 
     var observer = new Observer();
-    
+
     Observer.createShortcuts(observer, ['start', 'stop']);
-    
+
     observer.onStart(function() {...});
 
 ### #initialize
@@ -126,7 +126,7 @@ __ВНИМАНИЕ__: если вы создаете подкласс наблю
       onStart: function() {},
       onFinish: 'clear'
     });
-  
+
 ### #observe
 
     observe(String name, Function callback[, arguments])  -> Observer self
@@ -139,21 +139,21 @@ __ВНИМАНИЕ__: если вы создаете подкласс наблю
 __УСТАРЕВШЕЕ__: используйте более короткий метод {#on}
 
     var observer = new Observer();
-    
+
     observer.observe('something', function() {...});
-    
+
     // или по имени
     observer.observe('something', 'observer_method_name', arg1, arg2);
-    
+
     // или несколько списком
     observer.observe('something', [func1, func2, func3, ...]);
-    
+
     // или несколько хэшем
     observer.observe({
       one: function() {},
       two: 'something'
     })
-  
+
 
 ### #on
 
@@ -165,22 +165,22 @@ __УСТАРЕВШЕЕ__: используйте более короткий м�
 Регистрирует слушателя события
 
     var observer = new Observer();
-    
+
     observer.on('something', function() {...});
-    
+
     // или по имени
     observer.on('something', 'observer_method_name', arg1, arg2);
-    
+
     // или несколько списком
     observer.on('something', [func1, func2, func3, ...]);
-    
+
     // или несколько хэшем
     observer.on({
       one: function() {},
       two: 'something'
     });
-    
-  
+
+
 
 ### #observes
 
@@ -192,17 +192,17 @@ __УСТАРЕВШЕЕ__: используйте более короткий м�
 
     var observer = new Observer();
     var callback = function() {};
-    
+
     observer.on('event', callback);
-    
+
     observer.observes('event');             // -> true
     observer.observes(callback);            // -> true
     observer.observes('event', callback);   // -> true
-    
+
     observer.observes('another_event');     // -> false
     observer.observes(another_calback);     // -> false
     observer.observes('another', callback); // -> false
-  
+
 
 ### #stopObserving
 
@@ -215,14 +215,14 @@ __УСТАРЕВШЕЕ__: используйте более короткий м�
 
     var observer = new Observer();
     var callback = function() {};
-    
+
     observer.on('event', callback);
-    
+
     observer.stopObserving('event');
-    
+
     observer.observes('event');           // -> false
     observer.observes(callback);          // -> false
-  
+
 
 ### #fire
 
@@ -231,13 +231,13 @@ __УСТАРЕВШЕЕ__: используйте более короткий м�
 Инициирует событие
 
     var observer = new Observer();
-    
+
     observer.on('something', function() {});
-    
+
     observer.fire('something');
-    
+
     // подключенная функция была вызвана
-  
+
 
 ### #listeners
 
@@ -247,8 +247,8 @@ __УСТАРЕВШЕЕ__: используйте более короткий м�
 
     var observer = new Observer();
     var callback = function() {};
-    
+
     observer.on('something', callback);
-    
+
     observer.listeners('something'); // -> [callback]
-  
+

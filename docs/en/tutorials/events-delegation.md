@@ -1,6 +1,6 @@
 # Unobtrusive Programming And Events Delegation
 
-This article describes how you can write unobtrusive scripts in RightJS using 
+This article describes how you can write unobtrusive scripts in RightJS using
 the events delegation technique
 
 <%= anchors_index %>
@@ -49,7 +49,7 @@ you handle your events on the cells level, then you'll need to take care of
 proper event listeners attachment the same time you add new cells, which might
 overcomplicate your application logic. But if you attach your listener to
 the table level, then all new cells will get handled automatically with all the
-others. No need to initialize them specifically. 
+others. No need to initialize them specifically.
 
 And the third case is known as the unobtrusive scripting approach. The idea
 is that you can describe the application logic unobtrusively at the document
@@ -86,7 +86,7 @@ and refer callbacks by name.
         this.toggleClass('marked');
       }
     });
-    
+
     // with a list of handlers
     "#todos li".on('click', [
       function1, function2, function3
@@ -110,7 +110,7 @@ events. For example.
     var handlers = Event.behave("#todos li", "click", function() {
       this.toggleClass('marked');
     });
-    
+
     // now we can switch it off like that
     document.stopObserving(handlers);
 
@@ -120,7 +120,7 @@ delegated event handlers and attach them to the levels different from the
 `document`.
 
 For example you have a table with the `THEAD` and `TBODY` sections, and you
-want that when the user clicks a cell in the header to highlight a column, and 
+want that when the user clicks a cell in the header to highlight a column, and
 when the user clicks a cell in the body, then highlight a row. You can do it
 like that
 
@@ -128,7 +128,7 @@ like that
       'thead td': function() {
         // highlight the column in here
       },
-      
+
       'tbody td': function() {
         // highlight the row in here
       }
@@ -148,7 +148,7 @@ some other event listener between the target and the receiver, stopped the
 event. For example
 
     "#todos li".on("click", "toggleClass", "marked");
-    
+
     $('todos').onClick(function(event) {
       event.stop();
     });

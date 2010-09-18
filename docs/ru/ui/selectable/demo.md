@@ -115,7 +115,7 @@
     <li>Три</li>
     <li>Четыре</li>
   </ul>
-  
+
   <input type="text" id="input-1" />
 </p>
 <p>
@@ -126,7 +126,7 @@
     <li id="three-3">Три</li>
     <li id="four-4">Четыре</li>
   </ul>
-  
+
   <input type="text" id="input-2" />
 </p>
 <p>
@@ -137,7 +137,7 @@
     <li id="three-3">Три</li>
     <li id="four-4">Четыре</li>
   </ul>
-  
+
   <input type="text" id="input-3" />
 </p>
 <p>
@@ -148,7 +148,7 @@
     <li id="three-3">Три</li>
     <li id="four-4">Четыре</li>
   </ul>
-  
+
   <input type="text" id="input-4" />
 </p>
 
@@ -176,19 +176,19 @@
     'option-3': 'Три',
     'option-4': 'Четыре'
   };
-  
+
   new Selectable({
     options: Object.values(keys),
     selected: 2,
     multiple: false
   }).insertTo($E('p').insertTo('generated-selects'));
-  
+
   new Selectable({
     options: keys,
     selected: [0,2],
     multiple: true
   }).insertTo($E('p').insertTo('generated-selects'));
-  
+
   new Selectable({
     options: keys,
     selected: [0,2]

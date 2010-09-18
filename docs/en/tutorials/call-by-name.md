@@ -1,13 +1,13 @@
 # Call By Name
 
-_Call By Name_ is one of the major features of RightJS and works in 
+_Call By Name_ is one of the major features of RightJS and works in
 many places all over the framework.
 
-The idea is really simple. It brings the dynamic functions involvement 
-similar to the method `invoke` in some programming languages. 
+The idea is really simple. It brings the dynamic functions involvement
+similar to the method `invoke` in some programming languages.
 
     ['foo', 'boo', 'moo'].invoke('replace', 'oo', 'aa');
-    
+
     // -> ['faa', 'baa', 'maa']
 
 You just pass a method name and some optional arguments into the `invoke` method
@@ -36,33 +36,33 @@ use cases.
     var trimmed    = strings.map('trim');
     var blanks     = strings.filter('blank');
     var replaced   = strings.map('replace', 'some', 'another');
-    
+
     // collecting the element ids
     var ids = elements.map('id');
-    
+
     // disabling all the elements
     elements.each('disable');
-    
+
     // adding a class to every element
     elements.each('addClass', 'marked');
-    
+
     // attaching an event listener by name
     element.onClick('toggleClass', 'marked');
-    
+
     // attaching event listener to every element in a list
     elements.each('onClick', 'toggleClass', 'marked');
-    
+
 
 ## Why Do That?, :why
 
-If you still didn't get it try to read the piece of code above. Just as a 
+If you still didn't get it try to read the piece of code above. Just as a
 plain English text. The feature is really natural. There are many
 of cases like those, when you simply need to call a method or grab an attribute
 of every item in a collection, or attach an object method to an event.
 
-Instead of writing dummy functions you just  feed the generic methods with a 
+Instead of writing dummy functions you just  feed the generic methods with a
 name and RightJS do all the rest for you. As the result you write more
-compact and readable code. And more compact code means fewer misprints and 
+compact and readable code. And more compact code means fewer misprints and
 bugs.
 
 

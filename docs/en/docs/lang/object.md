@@ -10,7 +10,7 @@ which provide frequently used functionalities to process objects.
 Collects the object keys into an array.
 
     Object.keys({'a':1, 'b':2, 'c':3})
-    
+
     // -> ['a', 'b', 'c']
 
 
@@ -21,9 +21,9 @@ Collects the object keys into an array.
 Collects the object values into an array.
 
     Object.values({'a':1, 'b':2, 'c':3})
-    
+
     // -> [1, 2, 3]
-  
+
 
 ### .empty
 
@@ -42,7 +42,7 @@ Creates a copy of the object without the specified key-value pairs in it.
 
     var object = {'a': 1, 'b': 2, 'c': 3};
     Object.without(object, 'b');
-    
+
     // -> {'a': 1, 'c': 3}
 
 ### .only
@@ -53,7 +53,7 @@ Creates a copy of the object with only the specified key-value paris in it.
 
     var object = {'a': 1, 'b': 2, 'c': 3};
     Object.only(object, 'b', 'c');
-    
+
     // -> {'b': 2, 'c': 3}
 
 ### .merge
@@ -64,7 +64,7 @@ Creates a new object that contains all the key-value pairs of the given
 objects.
 
     Object.merge({'a': 1, 'b': 2}, {'c': 3});
-    
+
     // -> {'a': 1, 'b': 2, 'c': 3}
 
 ### .toQueryString
@@ -74,5 +74,5 @@ objects.
 Converts the object into a URL options string
 
     Object.toQueryString({a:'a', b:'b', c:'%#?'}));
-    
+
     // -> 'a=a&b=b&c=%25%23%3F'

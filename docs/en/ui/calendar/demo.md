@@ -59,13 +59,13 @@ You can use the keyboard buttons like arrows, escape and enter buttons to naviga
   new Calendar({
     minDate: min_date, maxDate: max_date
   }).assignTo('date-with-limits');
-  
+
   new Calendar({listYears: true}).assignTo('date-with-years');
-  
+
   new Calendar({
     timePeriod: 15, format: "%Y-%m-%d %H:%M"
   }).assignTo('date-with-15-minutes-period');
-  
+
   new Calendar({
     timePeriod: 180, format: "%Y-%m-%d %H:%M"
   }).assignTo('date-with-3-hours-period');
@@ -132,7 +132,7 @@ attribute on the trigger element.
 For example:
 
     <input type="text" rel="calendar" />
-  
+
     <input type="text" id="input-field" />
     <input type="image" rel="calendar[input-field]" />
 

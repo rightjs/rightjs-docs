@@ -17,33 +17,33 @@ RightJS имеет совместно используемый модуль {Obs
 вы можете сразу начать их использовать, со всеми доступными методами наблюдателя
 
     new Draggable().on('start', function() {....});
-    
+
     // в виде хэша
     new Draggable().on({
       start: function1,
       drag:  function2,
       drop:  function3
     });
-    
+
     // использовать ссылки по имени
     new Draggable().on('start', 'revert');
-    
+
     // использовать коллекции слушателей
     new Draggable().on('start', [function1, function2]);
     new Draggable().on({
       start: [function1, function2],
       stop:  [function3, function4]
     });
-    
+
     // и вы можете предустановить дополнительные аргументы
     new Draggable().on('start', func1, val1, val2, ...);
 
 Все точно тоже верно и для DOM элементов
 
     $('my-id').on('click', function() {...});
-    
+
     $('my-id').on('click', 'addClass', 'marked');
-    
+
     $('my-id').on({
       click:     func1,
       mouseover: 'highlight',
@@ -54,7 +54,7 @@ RightJS имеет совместно используемый модуль {Obs
 сокращенные методы вида `on[Event]`.
 
     new Draggable().onStart(func1).onStop(func2).onDrag('revert');
-    
+
     $('my-id').onClick(function(){}).onMouseover('addClass', 'hovered');
 
 Так же для предустановленного набора событий, вы можете указывать ваших слушателей совместно
@@ -66,7 +66,7 @@ RightJS имеет совместно используемый модуль {Obs
       onStart: function1,
       onStop:  function2
     });
-    
+
     new Autocompleter('my-element', {
       url:      '/some/url',
       onShow:   function1,
@@ -88,16 +88,16 @@ RightJS имеет совместно используемый модуль {Obs
 ## Нестандартные события, :custom
 
 В нашей системе нет никакой разницы между стандартными и нестандартными событиями. Вы можете
-назначать слушателей и инициировать любые нестандартные события точно тем же способом что 
+назначать слушателей и инициировать любые нестандартные события точно тем же способом что
 и стандартные. Единственно не будут доступны сокращенные методы и опции для конструктора.
 
     var calendar = new Calendar();
-    
+
     // назначаем слушателя нестандартного события
     calendar.on('my-event', function(one, two, three) {
       // делаем что-то по этому поводу
     });
-    
+
     // инициируем нестандартное событие
     calendar.fire('my-event', 1,2,3);
 

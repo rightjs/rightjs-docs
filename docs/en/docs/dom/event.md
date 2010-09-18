@@ -10,7 +10,7 @@ might need to call the {Event.ext} method on your events.
 
 ## Internet Explorer Fixes
 
-Instead of providing some mediative interface for the DOM events, RightJS fixes 
+Instead of providing some mediative interface for the DOM events, RightJS fixes
 IE events by creating W3C style attributes for the events in order for you to
 work with them in IE as if it were a normal browser.
 
@@ -21,20 +21,20 @@ The list of fake attributes is:
 * `currentTarget` - the bounding (listener) element reference
 * `relatedTarget` - the related element for the over and out mouse events
 * `pageX`, `pageY` - the cursor position relative to the document
- 
+
 ### .ext
 
     Event.ext(Event event) -> Event extended
 
 Extends the event object with additional methods.
-  
+
     $('element').attachEvent('onclick', function(event) {
       Event.ext(event);
-      
+
       event.stop();
     });
 
-    
+
 ### .include
 
     Event.include(Object methods[, boolean dont_rewrite])
@@ -73,7 +73,7 @@ of the element that _triggered_ the event
       ".green":   ['addClass', 'was-green'],
       ".hide-me": 'hide'
     });
-    
+
 
 ### .behave
 
@@ -123,7 +123,7 @@ Stops the event from further bubbling and cancels default handling.
     preventDefault() -> void
 
 Prevents the event defaults.
-  
+
 
 ### #stopPropagation
 

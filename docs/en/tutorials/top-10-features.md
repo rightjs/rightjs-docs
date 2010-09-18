@@ -28,7 +28,7 @@ method, you specify the callback method name as a string, for example
 
     // the same thing with calling by name
     $('element').onClick('hide');
-    
+
     // or with some arguments
     $('element').onClick('addClass', 'clicked');
     $('element').onClick('update', 'with some text');
@@ -37,14 +37,14 @@ This feature also works with {Array} instances and really helpful for example
 in case of element collections processing.
 
     $$('#my-form textarea').each('disable');
-    
+
     $$('div.title').each('update', 'with some text');
-    
+
     // filtering and collecting
     var enabled = $$('input').filter('enabled');
     var classes = $$('div').map('className');
     var some_id = $$('div').map('id').compact().first();
-    
+
     // you also can combine this with events processing
     $$('ul#todos li').each('onClick', 'toggleClass', 'marked');
 
@@ -63,7 +63,7 @@ that are specified in later JavaScript/ECMAScript version, things like
 support them, some old don't and will not.
 
 RightJS fixes the situation and adds those methods to browsers that don't
-have them, this way you can have all the advantages of the technology 
+have them, this way you can have all the advantages of the technology
 advancement without worrying if some browser supports those features.
 
 
@@ -118,7 +118,7 @@ automatically find them and use as spinners.
     Xhr.load('/url.html', {
       spinner: 'my-spinner'
     });
-    
+
     $('my-form').send({
       spinner: 'that-spinner-element'
     });
@@ -138,7 +138,7 @@ collecting data, displaying/hiding spinners, and so one.
 
 More of that, if your form has files to upload, RightJS will automatically
 try to submit your form via a hidden IFrame element. The API in this case
-won't change at all. This way for you as a developer there is no 
+won't change at all. This way for you as a developer there is no
 difference if you have or have no files on your form.
 
 
@@ -147,18 +147,18 @@ difference if you have or have no files on your form.
 
 RightJS is a multi-paradigm framework with an extensive object-programming
 features support. {Class} in RightJS supports everything you need to write
-serious OO applications. It has inheritance, functionality injection, 
+serious OO applications. It has inheritance, functionality injection,
 shared modules and so one.
 
     var Klass = new Class(AnotherClass, {
       include: Module1,
       extend:  Module2,
-      
+
       initialize: function() {
         //....
       }
     });
-    
+
 [Read more about OOP in RightJS](/tutorials/object-oriented-programming)
 
 
@@ -192,7 +192,7 @@ applications and make them consistent with RightJS main code and interfaces.
 
 There are few reasons of doing that and all of them are simple. First of all
 you don't need to learn anything and can count on all the same interfaces no
-matter what are you working with, some third party code, a plugin or a 
+matter what are you working with, some third party code, a plugin or a
 dom-element.
 
 Secondly it makes all the code around consistent with each other, and if

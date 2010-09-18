@@ -1,9 +1,9 @@
-<% 
+<%
 
 @title_text = 'Welcome Home!'
 
 @promo_texts = {
-  
+
   :friendly => {
     :title    => "It's Friendly",
     :subtitle => "Easy to read syntax",
@@ -15,14 +15,14 @@
       </p>
       <p>
         On one side RightJS has a really nice and simple, easy to write and read syntax
-        that makes it a snap to use an extend even for noobs. An on the other, it 
+        that makes it a snap to use an extend even for noobs. An on the other, it
         supports multiple paradigms, has extensive OOP and FP abilities along with other
         features that will make any tough professional happy.
       </p>
     },
     :more     => "Getting started"
   },
-  
+
   :compact => {
     :title    => "It's Compact",
     :subtitle => "Weighs only 30k!",
@@ -42,7 +42,7 @@
     },
     :more     => "Custom builds page"
   },
-  
+
   :fast => {
     :title    => "It's Fast",
     :subtitle => "Possibly THE Fastest!",
@@ -61,7 +61,7 @@
     },
     :more     => "Benchmarks page"
   }
-  
+
 }
 
 @hots_block = {

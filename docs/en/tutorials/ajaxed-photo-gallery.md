@@ -28,7 +28,7 @@ but we will use a kind of mixed approach. We will start with a standard working 
 and basic functionality and then create a JavaScript wrap up over it.
 
 The target is to implement a transparent ajax functionality the way that the original one was still
-available, so that the user could always hit the right mouse button and choose to open the links in 
+available, so that the user could always hit the right mouse button and choose to open the links in
 new tab or window or simply give a link for another user to edit or create new pictures in the gallery.
 
 We also aim to make a great deal of the original templates re-usage and javascript code simplicity.
@@ -58,7 +58,7 @@ look something like this
     // _picture.html.erb
     &lt;% div_for picture do %>
       &lt;%= link_to image_tag(picture.thmb_url), picture.full_url %>
-    
+
       &lt;%= link_to 'Edit', edit_picture_path(picture) %>
       &lt;%= link_to 'Destroy', picture, :confirm => 'Are you sure?', :method => :delete %>
     &lt;% end %>
@@ -116,7 +116,7 @@ Okay now lets highjack the event
       $$('#pictures a.delete').each(function(link) {
         link.onclick = function(event) {
           event.stop();
-      
+
           if (confirm("Are you sure?")) {
             Xhr.load(this.href+".js", { method: 'delete' });
           }
@@ -180,7 +180,7 @@ be able to call the link context menu, open the address in new tab|window and ha
 basic maintenance as usual.
 
 Then below those elements we will need a piece of JavaScript code that will convert the form
-into a remote form. Conventionally the new picture form in ruby-on-rails will have the 
+into a remote form. Conventionally the new picture form in ruby-on-rails will have the
 `new_picture` id. So we use it.
 
     function remotize_form(id) {
@@ -214,7 +214,7 @@ explanations and marks for the issues, if the upload was successful then we will
 
     &lt;% unless @picture.new_record? %>
       insert_picture("&lt;%= escape_javascript(render(@picture)) %>");
-  
+
       &lt;% @picture = Picture.new # resetting the instance to have a clean form %>
     &lt;% end %>
 
@@ -301,7 +301,7 @@ clicks. Exactly how we did it with the pictures deleting feature.
     // index.html.erb
     function hijack_links() {
       // delete links processing in here
-  
+
       $$("#pictures a.edit").each(function(link) {
         link.onclick = function(event) {
           event.stop();
@@ -321,7 +321,7 @@ add another function that will handle the things on the page
     // index.html.erb
     function show_edit_form(id, source) {
       $$('form.edit_picture').each('remove'); // nuking any old forms
-  
+
       remotize_form(
         $('picture_'+id).insert(source)
           .first('form.edit_picture').show('fade')
@@ -332,7 +332,7 @@ The script is simple. It just removes any possibly hanging around old popups.
 Then we add the received form source to the picture block, find our form, make
 it nicely appear and finally make it remote.
 
-That's all we need to load and show the remote form. Now lets catch the form 
+That's all we need to load and show the remote form. Now lets catch the form
 submissions, just like we did in the new pictures uploading. We define the `.js`
 response handler in the `update` method in our controller
 
@@ -358,7 +358,7 @@ called `update_picture` that will handle the things.
     // index.html.erb
     function update_picture(id, source) {
       $('picture_'+id).replace(source);
-  
+
       hijack_links();
     };
 

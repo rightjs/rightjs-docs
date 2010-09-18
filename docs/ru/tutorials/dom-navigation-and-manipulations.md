@@ -53,9 +53,9 @@ RightJS так же предоставляет набор методов для 
     */
     $('third-1').parent();       // -> div#second-1
     $('third-1').parent('#top'); // -> div#top
-    
+
     $('top').select('div');      // -> все под элементы с тэгом DIV
-    
+
     $('top').first('div');       // -> div#second-1
 
 
@@ -86,9 +86,9 @@ RightJS так же предоставляет набор методов для 
     $('element').insert('<div>some html code</div>');
 
     $('element').insert(another_element, 'top');
-    
+
     $('element').insert([element1, element2], 'after');
-    
+
     $('element').insert(anther_element.childNodes, 'before');
 
 Дополнительно вы можете указать хэш элементов для вставки
@@ -117,8 +117,8 @@ RightJS так же предоставляет набор методов для 
 Несколько примеров
 
     var element = $E('div').insertTo(document.body).update('some html');
-    
+
     element.empty();         // -> false
     element.clean().empty(); // -> true
-    
+
     element.replace('тут был тот элемент');

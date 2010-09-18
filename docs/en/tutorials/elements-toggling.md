@@ -19,10 +19,10 @@ you has changed an element style then hidden it and then shown again, the elemen
 original `display` value.
 
     $(element).style.display = 'inline-block';
-    
+
     $(element).hide();
     $(element).show();
-    
+
     $(element).style.display; // -> 'inline-block'
 
 Secondly as all the methods in RightJS that change an object, those methods return reference
@@ -47,7 +47,7 @@ The usage of them is pretty straight forward:
         <li>three</li>
       </ul>
     */
- 
+
     $('some-menu').select('li').each('onClick', 'radioClass', 'marked');
 
 
@@ -60,7 +60,7 @@ By default they will automatically determine an element current state and work t
 the opposite one. It is an fx equivalent of the {Element#toggle} method if you will.
 
     $(element).style.display = 'none';
-    
+
     $(element).fade(); // -> shows
     $(element).fade(); // -> hides
 
@@ -89,5 +89,5 @@ like this:
 
 In this case, if there is the {Fx} library then the element will be processed with the
 specified visual effect and if the {Fx} library is not available, then the element will
-get simply hidden/shown immediately. 
+get simply hidden/shown immediately.
 

@@ -14,7 +14,7 @@
     <input type="file" disabled="true" />
     <input type="button" value="Send" disabled="true" />
   </p>
-  
+
   <div class="right-progress-bar" id="demo-progress-bar">
     <div class="bar"></div>
     <div class="num">0%</div>
@@ -28,10 +28,10 @@
   var num = element.first('.num');
   var counter = 0;
   var steps   = 11;
-  
+
   (function() {
     var value = (counter / steps  * 100).round() + '%';
-    
+
     if (counter == 0) {
       num.innerHTML = value;
       bar.style.width = value;
@@ -41,7 +41,7 @@
         num.innerHTML = value;
       }).delay(200);
     }
-    
+
     if (counter == steps) {
       counter = 0;
       var timeout = 4000;
@@ -49,9 +49,9 @@
       counter ++;
       var timeout = 1000;
     }
-    
+
     arguments.callee.delay(timeout);
   })();
-  
+
 // ]]>
 </script>

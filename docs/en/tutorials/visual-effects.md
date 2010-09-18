@@ -29,8 +29,8 @@ colors in rgb form, or any of the 12 standard color names. Dimensions might be i
 but it's better if you keep them consistent, say in pixels or points. And yes you can
 use the one-line definitions like `border: 10px solid yellow` or `margin: 1px 2px 3px 4px`
 
-You can specify as much styles as you want for this effect it will process all of them 
-simultaneously 
+You can specify as much styles as you want for this effect it will process all of them
+simultaneously
 
 ## Options List, :options
 
@@ -78,9 +78,9 @@ In the default package RightJS provides several frequently used visual effects
 All of them are subclasses of the {Fx.Morph} effect and have the same exact interface
 
     new Fx.Highlight('element').start();
-    
+
     new Fx.Fade('element').start();
-    
+
     new Fx.Slide('element').start();
 
 
@@ -108,7 +108,7 @@ automatically, but you can specify the direction manually if you need.
 ## DOM Level Visual Effect Shortcuts, :shortcuts
 
 There are several shortcuts, which let you run visual effects directly from the dom-element
-instances, without manual effects instantiating and getting dirty with the classes 
+instances, without manual effects instantiating and getting dirty with the classes
 
 * {Fx.Element#morph}(mixed style[, Object fx_options])
 * {Fx.Element#highlight}([end_color[, start_color[, Object fx_options]]])
@@ -150,7 +150,7 @@ could safely define an element effects chain from your code like that.
     // etc.
 
 But if you need two or more effects were running simultaneously, you can specify the option
-`queue: false` with your effect options and then this effect won't get queued and will start immediately. 
+`queue: false` with your effect options and then this effect won't get queued and will start immediately.
 
     new Fx.Morph('element').start({width: '400px'});
     new Fx.Highlight('element', {queue: false}).start();
@@ -192,7 +192,7 @@ effect class and add your custom code. For example that build calculator visual 
 
       render: function(delta) {
         var size = this.startSize + (this.endSize - this.startSize) * delta;
-    
+
         $('calc-num').update((size/100).round()/10 + 'k');
 
         this.$super(delta);

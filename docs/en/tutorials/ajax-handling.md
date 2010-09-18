@@ -30,7 +30,7 @@ spinnerFx    | 'fade'  | spinner handling visual effect
 params       | null    | default parameters
 
 
-You can send any of the options in a hash as the second argument of the 
+You can send any of the options in a hash as the second argument of the
 {Xhr} constructor, or you can set them up globally for all the {Xhr}
 requests by changing the {Xhr.Options} variable. When you do so all the
 following {Xhr} requests will take the new options.
@@ -43,7 +43,7 @@ following {Xhr} requests will take the new options.
 
 {Xhr} class provides the standard {Observer} functionality and supports the
 following events.
-  
+
 * create
 * request
 * complete
@@ -57,7 +57,7 @@ You can send your callbacks along with the constructor options or handle by
     new Xhr('/some/url', {onFinish: function() {...}}).send();
     new Xhr('/some/url').on('finish', function() {...}).send();
     new Xhr('/some/url').onFinish(function() {...}).send();
-    
+
     var xhr = new Xhr('/some/url');
     xhr.onComplete(some_function);
     xhr.stopObserving(some_function);
@@ -65,14 +65,14 @@ You can send your callbacks along with the constructor options or handle by
 Surely you can add your own events if you need so
 
     var xhr = new Xhr('/some/url');
-    
+
     xhr.on('my-event', function() {...});
     xhr.checkMyEvent = function() {
       if (this.something) {
         this.fire('my-event');
       }
     };
-    
+
     xhr.onComplete('checkMyEvent');
 
 __NOTE__: all the callbacks will be called in the
@@ -83,7 +83,7 @@ Additionally you can use the {Xhr} class level {Observer} interface to
 attach global event listeners for all the xhr requests.
 
     Xhr.onCreate(call_that_function);
-    
+
     new Xhr('/some/url').send(); // <- will automatically call that function
 
 
@@ -98,7 +98,7 @@ spinners per request.
 
     Xhr.Options.spinner = $('spinner');
     Xhr.Options.spinner = 'global-spinner-id';
-    
+
     // or per request
     new Xhr('/some/url', {spinner: 'custom-spinner'}).send();
 
@@ -121,16 +121,16 @@ If you specify the parameters on several levels, they will be merged with the
 'last win' strategy.
 
     Xhr.Options.params = 'my_cite_key=123234';
-    
+
     var xhr = new Xhr('/some/url', {params: 'request=params'});
-    
+
     xhr.send('some_more=params&send=options');
 
 Parameters might be url-encoded strings or hashes. Hashes will be converted
 into strings and url-encoded if necessary.
 
     new Xhr('/some.url').send('some=params&more=options');
-    
+
     // or like this
     new Xhr('/some.url').send({some: 'params', more: 'options'});
 
@@ -180,7 +180,7 @@ calling the {Element#load} method. This will initiate applicable xhr
 request and update the element content when the request is complete
 
     $('element').load('/some/url');
-    
+
     $('element').load('/some/url', {method: 'get'});
 
 End eventually you can submit your forms via ajax requests directly from the

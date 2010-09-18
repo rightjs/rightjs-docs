@@ -17,7 +17,7 @@
       initialize: function() {
         // конструктор
       },
-  
+
       method1: function() {},
       method2: function() {}
     });
@@ -38,7 +38,7 @@
         return "привет";
       }
     });
-    
+
     var FancyGirl = new Class(Girl, {
       sayHello: function() {
         return "Ну "+ this.$super() +" красавчег!";
@@ -56,21 +56,21 @@ RightJS не имеет никакой специальной функциона
 образом
 
     var MyClass = new Class((function() {
-  
+
       var private_method = function() {
         // секретный код, недоступный снаружи
       };
-      
+
     return {
-      
+
         publicMethod: function() {
           // вы можете вызвать его как простую функцию
           private_method('bla', 'bla', 'bla');
-          
+
           // или в контектсе объекта, как метод
           private_method.call(this, 'bla', 'bla', 'bla');
         }
-    
+
     }})());
 
 Идея очень проста, вы изолируете приватные методы во временной функции, которая возвращает
@@ -88,15 +88,15 @@ RightJS имитирует данную возможность и точно т�
     var Module1 = {
       method1: function() {}
     };
-    
+
     var Module2 = {
       method2: function() {}
     };
-    
+
     var MyClass = new Class({
       include: Module1,
       extend:  Module2
-    
+
       // дальше идут сами методы класса
     });
 
@@ -116,9 +116,9 @@ RightJS имитирует данную возможность и точно т�
       extend: {
         CLASS_LEVEL_CONST_1: 1,
         CLASS_LEVEL_CONST_2: 2,
-      
+
         classLevelMethod: function() {
-      
+
         }
       }
     });
@@ -127,7 +127,7 @@ RightJS имитирует данную возможность и точно т�
 класс был создан
 
     var MyClass = new Class({});
-    
+
     MyClass.include(Module1, Module2, ...);
     MyClass.extend(Module3, Module4, ...);
 
@@ -146,12 +146,12 @@ RightJS имитирует данную возможность и точно т�
 
     var MyClass = new Class({
       include: Module,
-  
+
       method: function() {
         return "метод класса";
       }
     });
-    
+
     new MyClass().method(); // -> "метод класса"
 
 Но когда вы используете методы `include`/`extend` уже _после_ того как класс
@@ -161,18 +161,18 @@ RightJS имитирует данную возможность и точно т�
     var Module = {
       method: function() { return "метод модуля"; }
     };
-    
+
     var MyClass = new Class({
       method: function() {
         return "метод класса";
       }
     });
-    
+
     MyClass.include(Module);
 
-    new MyClass.method(); // -> "метод модуля"  
-    
-    
+    new MyClass.method(); // -> "метод модуля"
+
+
 
 ## Обратные вызовы, :callbacks
 
@@ -188,7 +188,7 @@ RightJS имитирует данную возможность и точно т�
       self_included: function(klass) {
         klass.prototype.boo = 'boo';
       },
-    
+
       self_extended: function(klass) {
         klass.BOO = 'BOO';
       }
@@ -198,7 +198,7 @@ RightJS имитирует данную возможность и точно т�
       include: Module,
       extend:  Module
     });
-    
+
     MyClass.prototype.boo; // -> 'boo'
     MyClass.BOO;           // -> 'BOO'
 

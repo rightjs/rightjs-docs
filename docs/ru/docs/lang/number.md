@@ -19,7 +19,7 @@ RightJS расширяет класс `Number` для того чтобы раб
         return this * 2;
       }
     });
-    
+
     2..double(); // -> 4
 
 
@@ -61,7 +61,7 @@ RightJS расширяет класс `Number` для того чтобы раб
 
     2.2.round();    // -> 2
     8.8.round();    // -> 8
-    
+
     4.444.round(1); // -> 4.4
     4.444.round(2); // -> 4.44
     4.444.round(3); // -> 4.444
@@ -72,12 +72,12 @@ RightJS расширяет класс `Number` для того чтобы раб
     times(Function lambda[, Object scope]) -> number self
 
 Вызывает указанную функцию число раз, равное текущему числу
-    
+
     var numbers = [];
     4..times(function(i) {
       numbers.push(i);
     });
-    
+
     numbers; // -> [0,1,2,3]
 
 
@@ -90,11 +90,11 @@ RightJS расширяет класс `Number` для того чтобы раб
 вверх до указанного числа
 
     var numbers = [];
-    
+
     4..upto(8, function(i) {
       numbers.push(i);
     });
-    
+
     numbers; // -> [4,5,6,7,8]
 
 
@@ -107,9 +107,9 @@ RightJS расширяет класс `Number` для того чтобы раб
 вниз до указанного числа
 
     var numbers = [];
-    
+
     8..downto(4, function(i) {
       numbers.push(i);
     });
-    
+
     numbers; // [8,7,6,5,4]

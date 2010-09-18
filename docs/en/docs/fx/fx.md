@@ -1,7 +1,7 @@
 # Fx Basics
 
-By default RightJS comes with the basic visual effects package. It has one base 
-(abstract) class `Fx`, which defines the common visual effects interface and is used 
+By default RightJS comes with the basic visual effects package. It has one base
+(abstract) class `Fx`, which defines the common visual effects interface and is used
 as the basis for all the other effect classes.
 
 ## Events
@@ -11,9 +11,9 @@ as the basis for all the other effect classes.
 * start
 * finish
 * cancel
- 
-In line with the general events handling convention this means that you can 
-use all the common `on`, `stopObserving` etc methods as well as `onStart`, 
+
+In line with the general events handling convention this means that you can
+use all the common `on`, `stopObserving` etc methods as well as `onStart`,
 `onFinish`, `onCancel` shortcuts.
 
 ## Options
@@ -57,7 +57,7 @@ The default transition `Sin` is a good choice in most cases.
     initialize([Element element[, Object options]])
 
 The basic constructor
-  
+
 
 ### #start
 
@@ -101,8 +101,8 @@ Resumes a paused effect.
 ### #prepare
 
     prepare([....]) -> void
-    
-Abstract method which gets called with the same arguments as the {#start} 
+
+Abstract method which gets called with the same arguments as the {#start}
 method when the visual effects queue reaches this effect.
 
 
@@ -110,6 +110,6 @@ method when the visual effects queue reaches this effect.
 
     render(Float position) -> void
 
-Abstract protected method where the actual effect rendering is supposed to 
+Abstract protected method where the actual effect rendering is supposed to
 happen. During the effect run it receives float numbers from `0` to `1` that
 represent the position of the effect from the beginning to the end.

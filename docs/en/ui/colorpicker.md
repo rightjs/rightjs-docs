@@ -21,24 +21,24 @@ First, copy in place one of the files above, as you usually do. Then copy
 server. (check the [styles section](#styles) for more options on this regard)
 
 After that the usage principles are pretty much the same as for the
-[Calendar](/ui/calendar) widget. You can use it as an inline widget by 
+[Calendar](/ui/calendar) widget. You can use it as an inline widget by
 inserting it at any place on your page
 
     <div id="my-element"></div>
-    
+
     new Colorpicker().insertTo('my-element');
 
 Or you can assign it to an input element to make it work in pair with it
 
     <input type="text" id="my-field" />
-    
+
     new Colorpicker().assignTo('my-field');
 
 You also can use an input-field and a trigger pair like that
 
     <input type="text" id="my-field" />
     <input type="image" id="trigger" />
-    
+
     new Colorpicker().assignTo('my-field', 'trigger');
 
 And you can let the script automatically initialize and assign pickers by
@@ -46,7 +46,7 @@ using the `rel="colorpicker"` references.
 
     // a single inputfield with colorpicker
     <input type="text" rel="colorpcker" />
-    
+
     // an input field with a trigger
     <input type="text" id="my-field" />
     <input type="image" rel="colorpicker[my-field]" />
@@ -69,7 +69,7 @@ fxDuration | 'short' | the visual effect duration
 cssRule    | '\*\[rel^=colorpicker\]' | the auto discovery feature css-rule
 
 As usual you can use any of those options with the `Colorpicker` class
-constructor or use the `data-colorpicker-options` HTML5 attribute to set 
+constructor or use the `data-colorpicker-options` HTML5 attribute to set
 options for the automatically initialized fields
 
 
@@ -113,22 +113,22 @@ The colorpicker widget has the following HTML structure
       <div class="field">
         <div class="field-pointer"></div>
       </div>
-      
+
       <div class="colors">
         <div class="field-pointer"></div>
       </div>
-      
+
       <div class="controls">
         <div class="preview"></div>
-        
+
         <input type="text" class="display" />
-        
+
         <div class="rgb-display">
           <div><label>R:</label><input /></div>
           <div><label>G:</label><input /></div>
           <div><label>B:</label><input /></div>
         </div>
-        
+
         <input type="button" class="right-ui-button" />
       </div>
     </div>
@@ -143,5 +143,5 @@ one in your CSS layer like that
     div.right-colorpicker div.colors-pointer {
       background-image: url(/my/image.png);
     }
-    
+
 

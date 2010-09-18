@@ -39,9 +39,9 @@ There are just a few key features in RightJS you need to know to start working w
 Well, you even don't need to know them either, because when you see things like that
 
     $(element).update('with text').highlight();
-    
+
     $(element).onClick('addClass', 'clicked');
-    
+
     $$('li').each('onClick', 'toggleClass', 'marked');
 
 You don't need to be a genius or read any documentation to figure out what's going on.
@@ -51,7 +51,7 @@ JavaScript development.
 ## And It's Highly Hackable!
 
 RightJS might look like a simple and cute thing, but it is very hackable too. We've
-put lots of thoughts, tries, tests and years of experience in the internal structures 
+put lots of thoughts, tries, tests and years of experience in the internal structures
 development in order to bring in the JavaScript development the joy of dynamic
 languages programming.
 

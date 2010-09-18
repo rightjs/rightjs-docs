@@ -23,7 +23,7 @@ Runs the {Fx.Morph} effect on the element.
 Runs the {Fx.Highlight} effect on the element.
 
     $(element).highlight();
-    
+
     $(element).highlight('blue');
     $(element).highlight({onFinish: function() {}});
 
@@ -35,7 +35,7 @@ Runs the {Fx.Highlight} effect on the element.
 Runs the {Fx.Fade} effect on the element.
 
     $(element).fade();
-    
+
     $(element).fade('out');
     $(element).fade('in', {onFinish: function() {}});
 
@@ -47,7 +47,7 @@ Runs the {Fx.Fade} effect on the element.
 Runs the {Fx.Slide} effect on the element.
 
     $(element).slide();
-    
+
     $(element).slide('out');
     $(element).slide({onFinish: function() {}});
 
@@ -61,6 +61,6 @@ Smoothly scrolls to the given position.
     $(element).scroll({x: 100});
     $(element).scroll({y: 200});
     $(element).scroll({x: 10, y: 20});
-    
+
     $(element).scroll({x: 100}, {duration: 'long'});
-    
+

@@ -31,7 +31,7 @@
         <li><a href="#tab-1">Tab 1</a></li>
         <li><a href="#tab-2">Tab 2</a></li>
       </ul>
-  
+
       <li id="tab-1">Tab 1 Content</li>
       <li id="tab-2">Tab 2 Content</li>
     </ul>
@@ -43,7 +43,7 @@
         <li><a href="#tab-1">Tab 1</a></li>
         <li><a href="#tab-2">Tab 2</a></li>
       </ul>
-  
+
       <div id="tab-1">Tab 1 Content</div>
       <div id="tab-2">Tab 2 Content</div>
     </div>
@@ -54,7 +54,7 @@
     //...
     new Tabs('my-tabs');
 
-Вы так же можете просто назначить класс `right-tabs` на вашем элементе, и 
+Вы так же можете просто назначить класс `right-tabs` на вашем элементе, и
 скрипт автоматически найдет и проинициализирует виджет когда страница загрузится
 
     <ul class="right-tabs">
@@ -113,7 +113,7 @@ css-класс `right-tabs-carousel`.
         <li><a href="#tab-1">Tab 1</a></li>
         <li><a href="#tab-2">Tab 2</a></li>
       </ul>
-    </ul>  
+    </ul>
     // ...
     new Tabs('my-tabs', {url: '/content/%{id}.html'});
 
@@ -146,7 +146,7 @@ css-класс `right-tabs-carousel`.
 Приоритет выбора текущего таба следующий
 
     URL -> Cookie -> CSS Class -> First
-    
+
 
 ## Список опций, :options
 
@@ -258,7 +258,7 @@ stopLoop()                       | останавливает слайдшоу
           </ul>
         </div>
       </div>
-  
+
       // ....
     </ul>
 
@@ -268,7 +268,7 @@ stopLoop()                       | останавливает слайдшоу
       <ul class="right-tabs-list">
         // ...
       </ul>
-  
+
       <li class="right-tabs-panel">
         <div class="right-tabs-panel-locker">
           <div class="right-tabs-panel-locker-spinner">

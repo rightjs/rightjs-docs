@@ -16,7 +16,7 @@ your code and organize all of them on the CSS level. It also allows you to gradu
 any CSS class from the list
 
 The `start()` method receives two arguments: Firstly the class to add and secondly
-the class to remove. Furthermore, there is the `morphToClass()` method which is the 
+the class to remove. Furthermore, there is the `morphToClass()` method which is the
 element level shortcut for this effect
 
     new Fx.CSS('my-element').start('new-class');           // adds the class
@@ -87,7 +87,7 @@ The `run()` method is the element level shortcut for this effect.
 
 This effect is supposed to attract the user's attention by letting an element jump.
 
-There are two additional options to customize this effect. The `direction` argument 
+There are two additional options to customize this effect. The `direction` argument
 defines in which direction the element should bounce and can be any of the following:
 
 * `'top'` (default)
@@ -95,7 +95,7 @@ defines in which direction the element should bounce and can be any of the follo
 * `'right'`
 * `'bottom'`
 
-The second argument `value` sets the number of pixels the element should move, by 
+The second argument `value` sets the number of pixels the element should move, by
 default `16` pixels.
 
 The `bounce()` method is the element level shortcut for this effect.
@@ -113,7 +113,7 @@ The `bounce()` method is the element level shortcut for this effect.
 This bidirectional effect shows/hides an element by zooming and fading at the same
 time.
 
-The additional `size` option lets you control how big the element should grow before 
+The additional `size` option lets you control how big the element should grow before
 it disappears. The default value is `1.4` times as big.
 
 The `puff()` method is the element level shortcut for this effect.
@@ -129,11 +129,11 @@ The `puff()` method is the element level shortcut for this effect.
 
 ## Fx.Zoom, :Zoom
 
-This visual effect lets you gradually increase/decrease the size of an element. It 
-simultaneously processes all available attributes such as height, width, font-size, 
+This visual effect lets you gradually increase/decrease the size of an element. It
+simultaneously processes all available attributes such as height, width, font-size,
 border-size or margins and keeps the proportions of the element intact.
 
-The additional `from` option allows you to define which direction the element should 
+The additional `from` option allows you to define which direction the element should
 grow towards. It can be any of the following:
 
 * `'top'`

@@ -31,7 +31,7 @@ and then prepare your tabs element as the following structure.
         <li><a href="#tab-1">Tab 1</a></li>
         <li><a href="#tab-2">Tab 2</a></li>
       </ul>
-  
+
       <li id="tab-1">Tab 1 Content</li>
       <li id="tab-2">Tab 2 Content</li>
     </ul>
@@ -43,7 +43,7 @@ You also can use the jQuery's original structure with DIVs
         <li><a href="#tab-1">Tab 1</a></li>
         <li><a href="#tab-2">Tab 2</a></li>
       </ul>
-  
+
       <div id="tab-1">Tab 1 Content</div>
       <div id="tab-2">Tab 2 Content</div>
     </div>
@@ -60,7 +60,7 @@ and our script will automatically find and instantiate it when the page's loaded
     <ul class="right-tabs">
       // ...
     </ul>
-    
+
 The HTML5 style options attribute is available too
 
     <ul class="right-tabs" data-tabs-options="{select:2}">
@@ -110,7 +110,7 @@ specify a common url-address with an `%{id}` placeholder as an option, like this
         <li><a href="#tab-1">Tab 1</a></li>
         <li><a href="#tab-2">Tab 2</a></li>
       </ul>
-    </ul>  
+    </ul>
     // ...
     new Tabs('my-tabs', {url: '/content/%{id}.html'});
 
@@ -136,7 +136,7 @@ You also can use the `selected` option with the constructor or the custom `data-
 attribute. Then you can activate the `Cookie` option and the script will keep the current tab index in cookies
 
 And eventually the engine watches the url-address hash and if there is one it will check
-it against the available tab hash names. Once a match is found it will automatically 
+it against the available tab hash names. Once a match is found it will automatically
 activate the tab. This way you can refer a specific tab via an url-address.
 
 The priority of the current tab checks is the following
@@ -253,7 +253,7 @@ to create the scrollbar
           </ul>
         </div>
       </div>
-  
+
       // ....
     </ul>
 
@@ -263,7 +263,7 @@ Then, for the remote tabs it will be using a textual spinner with the following 
       <ul class="right-tabs-list">
         // ...
       </ul>
-  
+
       <li class="right-tabs-panel">
         <div class="right-tabs-panel-locker">
           <div class="right-tabs-panel-locker-spinner">

@@ -22,11 +22,11 @@ RightJS спроектирован таким образом, что кажды�
 цепочки вызовов и легко понятные предложения из кода.
 
     var classes = elements.map('className').map('split', ' ').flatten().uniq();
-    
+
     elements.each('enable').each('onClick', 'radioClass', 'marked');
-    
+
     new Xhr('/url').setOptions({..}).send({..}).cancel();
-    
+
     new Fx.Morph('element').start({...}).pause().resume().cancel();
 
 Думаю вы поняли идею.

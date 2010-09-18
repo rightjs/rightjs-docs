@@ -34,13 +34,13 @@ simply define an HTML structure like that
     </div>
 
 In this case RightJS will use lazy initialization of the widget on demand.
-Or you can turn any element on your page into resizable widget 
+Or you can turn any element on your page into resizable widget
 programmatically like that.
 
     <div id="my-element">
       // Some content in here
     </div>
-    
+
     $('my-element').makeResizable();
 
 In this case RightJS will initialize a resizable unit instantly. To switch the
@@ -51,16 +51,16 @@ And finally you can use the `Resizable` unit as a class
     var resizable = new Resizable('my-element', {
       direction: 'bottom'
     });
-    
+
     resizable.setSize(200, 200);
-    
+
     resizable.destroy(); // the destructor
 
 
 ## Defining Directions, :directions
 
-By default your resizables will be bidirectional, with a handle at the right 
-bottom corner. But this widget can work with any of the four directions 
+By default your resizables will be bidirectional, with a handle at the right
+bottom corner. But this widget can work with any of the four directions
 specifically.
 
 If you create your resizable as a HTML structure, then simply use css classes,
@@ -79,7 +79,7 @@ It will automatically assign necessary classes for you.
 
 ## Defining Boundaries, :boundaries
 
-This widget will automatically respect your CSS level settings like 
+This widget will automatically respect your CSS level settings like
 `min-width`, `max-height`, etc.
 
     <div class="right-resizable" style="min-width: 10em">
@@ -110,7 +110,7 @@ maxWidth  | null | maximal width limit
 minHeight | null | minimal height limit
 maxHeight | null | maximal height limit
 
-As usual you can use any of those options with constructor, the 
+As usual you can use any of those options with constructor, the
 `makeResizable` method or with the `data-resizable-options` HTML5 attribute.
 
 
@@ -143,7 +143,7 @@ or let the script to create it for you
     </div>
 
 __NOTE:__ this widget has an image dependency which is used as the background
-for the handle elements. You can grab it 
+for the handle elements. You can grab it
 [over here](/images/rightjs-ui/resizable.png) and save to the same location
 on your server. Or you can use your own image and define it in your CSS layer
 like that

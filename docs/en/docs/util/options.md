@@ -9,29 +9,29 @@ property of the instance.
 
     var Steake = new Class({
       include: Options,
-      
+
       Options: {
         cooked: 'well done',
         sauce:  'pepper',
         wedges: 'salad',
         garner: 'cheeps'
       }
-      
+
       initialize: function(options) {
         this.setOptions(options);
       }
     });
-  
+
     // without options it will has all the defaults
     var stake = new Stake();
     stake.options == Stake.Options;
-    
+
     // with some options it will merge them with the defaults
     var stake = new Stake({
       cooked: 'rare',
       sauce:  'chilly'
     });
-  
+
     stake.options == {
       cooked: 'rare',
       sauce:  'chilly',
@@ -47,27 +47,27 @@ the instance up to the top ancestor class and uses the first one found.
 
     var Klass = new Class({
       include: Options,
-    
+
       Options: {....}
     });
-  
-    // or 
+
+    // or
     var Klass = new Class({
       include: Options,
       extend: {
         Options: {....}
       }
     });
-  
-    // or 
+
+    // or
     var Klass1 = new Class({
       include: Options,
-    
+
       extend: {
         Options: {....}
       }
     });
-  
+
     var Klass2 = new Class(Klass1, {
       initialize: function(options) {
         this.setOptions(options);
@@ -79,9 +79,9 @@ constant) or `'Options'` (like an object):
 
     var Klass = new Class({
       include: Options,
-    
+
       OPTIONS: {.....},
-    
+
       // or
       Options: {.....}
     });
@@ -93,23 +93,23 @@ constant) or `'Options'` (like an object):
 Assigns the given options to the instance.
 
     var object = new ClassWithOptions();
-    
+
     object.setOptions({a: 1});
-    
+
     object.options == {a: 1};
 
 
 ### #cutOptions
-  
+
     cutOptions(arguments) -> Array of arguments without options
 
 Cuts off a trailing options hash from the list of arguments, sets the
-options up using the {#setOptions} method and then returns a new list 
+options up using the {#setOptions} method and then returns a new list
 without the trailing options hash.
 
     var Klass = new Class({
       include: Options,
-    
+
       /**
        * This constructor can take various numbers of arguments
        * with an options hash as the last argument.
@@ -118,8 +118,8 @@ without the trailing options hash.
         var args = this.cutOptions(arguments);
       }
     });
-  
+
     var o = new Klass(1, {opts:1});
     var o = new Klass(1, 2, {opts:1});
     var o = new Klass(1, 2, 3, {opts:1});
-  
+

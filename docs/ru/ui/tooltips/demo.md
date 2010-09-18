@@ -18,7 +18,7 @@
 скобки на соответствующие HTML символы.
 
     <li title="&lt;b&gt;Какой-то&lt;/b&gt; &lt;u&gt;html&lt;/u&gt;">...</li>
-    
+
 <p>
   <ul class="tooltiped">
     <li title="&lt;b&gt;Какой-то&lt;/b&gt; &lt;u&gt;html&lt;/u&gt; код" rel="tooltip">Этот элемент имеет тултип с HTML кодом</li>

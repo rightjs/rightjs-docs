@@ -16,7 +16,7 @@ Starts the element highlighting effect. May take the highlight and final
 color arguments:
 
     var fx = new Fx.Highlight('element');
-    
+
     fx.start();
     fx.start('blue');
     fx.start('blue', 'pink');

@@ -15,7 +15,7 @@ or Mootools. There is a unit called {Class}, which you use in the following way.
       initialize: function() {
         // constructor
       },
-  
+
       method1: function() {},
       method2: function() {}
     });
@@ -36,7 +36,7 @@ access it in a more natural way by referring it with the `this.$super` variable.
         return "Hello there";
       }
     });
-    
+
     var FancyGirl = new Class(Girl, {
       sayHello: function() {
         return "Well, "+ this.$super() +"!";
@@ -53,21 +53,21 @@ RightJS doesn't have any special features to handle private methods, because you
 that. You always can create private methods with the following trick.
 
     var MyClass = new Class((function() {
-  
+
       var private_method = function() {
         // some secret stuff in here
       };
-      
+
     return {
-      
+
         publicMethod: function() {
           // you can call it like a plain function in here
           private_method('bla', 'bla', 'bla');
-          
+
           // or you can call it in the context of the object
           private_method.call(this, 'bla', 'bla', 'bla');
         }
-    
+
     }})());
 
 The idea is simple, you isolate your private methods in a temporary function that returns
@@ -85,15 +85,15 @@ RightJS tries to monkey this feature and allows you to share your modules the sa
     var Module1 = {
       method1: function() {}
     };
-    
+
     var Module2 = {
       method2: function() {}
     };
-    
+
     var MyClass = new Class({
       include: Module1,
       extend:  Module2
-    
+
       // rest of the class definition
     });
 
@@ -113,9 +113,9 @@ And you can use hashes directly, like that
       extend: {
         CLASS_LEVEL_CONST_1: 1,
         CLASS_LEVEL_CONST_2: 2,
-      
+
         classLevelMethod: function() {
-      
+
         }
       }
     });
@@ -124,7 +124,7 @@ And finally you can call the `include` and `extend` methods after a class
 was initialized
 
     var MyClass = new Class({});
-    
+
     MyClass.include(Module1, Module2, ...);
     MyClass.extend(Module3, Module4, ...);
 
@@ -141,12 +141,12 @@ class definition properties will have priority over the mixed in modules.
 
     var MyClass = new Class({
       include: Module,
-  
+
       method: function() {
         return "my class thing";
       }
     });
-    
+
     new MyClass().method(); // -> "my class thing"
 
 
@@ -156,18 +156,18 @@ defined, then the modules will have priorities over existing methods.
     var Module = {
       method: function() { return "the module thing"; }
     };
-    
+
     var MyClass = new Class({
       method: function() {
         return "my class thing";
       }
     });
-    
+
     MyClass.include(Module);
 
-    new MyClass.method(); // -> "the module thing"  
-    
-    
+    new MyClass.method(); // -> "the module thing"
+
+
 
 ## Mixin Callbacks, :callbacks
 
@@ -183,7 +183,7 @@ take related class as an argument
       self_included: function(klass) {
         klass.prototype.boo = 'boo';
       },
-    
+
       self_extended: function(klass) {
         klass.BOO = 'BOO';
       }
@@ -193,7 +193,7 @@ take related class as an argument
       include: Module,
       extend:  Module
     });
-    
+
     MyClass.prototype.boo; // -> 'boo'
     MyClass.BOO;           // -> 'BOO'
 

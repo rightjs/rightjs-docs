@@ -11,30 +11,30 @@ use them for dom-events processing. This means you can attach events listeners i
       mouseover: func2,
       mouseout:  func3
     });
-    
+
     // listeners by name work too
     $('element').on('click', 'addClass', 'clicked');
-    
-    
+
+
 Then for all the standard dom-events there are nice shortcut methods for event listeners attachment
 
     $('element').onClick(function() {})
     $('element').onMouseover('addClass', 'hovered');
     $('element').onMouseout('removeClass', 'hovered');
-    
+
     $('form').onSubmit(function() {});
-    
+
     $('input').onChange(function() {});
-  
+
 And you can check and unsubscribe listeners the same way too
 
     $('element').stopObserving('click');
     $('element').stopObserving(function_1);
     $('element').stopObserving('click', function_2);
-    
+
     $('element').observes('click');
     $('element').observes(function_1);
-    
+
     // ....
 
 See the description of the {Observer} unit and {Element} methods, like {#on}, {#stopObserving}, {#observes}, {#listeners}
@@ -52,7 +52,7 @@ the dom-event instance as the first argument.
       if (this.hasClass('marked'))
         event.stop(); // or something
     });
-    
+
 You also can bind some arguments that should be sent along with the event to your listeners, so that you don't have
 to use any sort of currying/binding manually in such cases
 
@@ -90,16 +90,16 @@ If you use RightJS own interfaces to bind your event listeners, then all the ext
 
     $('element').onContextmenu(function(event) {
       event.stop();
-      
+
       $('context-menu').moveTo(event.position()).show('slide');
     });
-    
+
 But in case if you have attached your event listener via the IE native interfaces, then you can call the
 {Event.ext} method to extend your events
 
     element.attachEvent('onclick', function(event) {
       Event.ext(event);
-      
+
       event.stop();
     });
 
@@ -110,10 +110,10 @@ Every event in RightJS can be triggered manually, which is a bit naughty but som
 all you need is to call the `fire` method with the event name and possibly some options
 
     $('element').onClick(function() { alert('boo'); });
-    
+
     $('element').fire('click'); // you'll see the 'boo'
-    
-    
+
+
     // or say you can trigger a keyboard event like that
     $('element').fire('keypress', {keyCode: 27});
 
@@ -127,7 +127,7 @@ Basically, for RightJS, there is no difference between standard and custom event
 the same exact way.
 
     $('element').on('my-event', function() {...});
-    
+
     $('element').onClick(function() {
       if (something)
         this.fire('my-event', {with: 'options'});

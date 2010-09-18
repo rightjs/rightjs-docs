@@ -1,7 +1,7 @@
 # Number
 
 RightJS extends the `Number` unit in order to make it support the {Math}
-module methods in a more natural, object-oriented way. And it adds the 
+module methods in a more natural, object-oriented way. And it adds the
 handy Ruby style loop methods as well.
 
 ### .include
@@ -17,7 +17,7 @@ If the second argument is `true`, then the method _will skip_ already existing m
         return this * 2;
       }
     });
-    
+
     2..double(); // -> 4
 
 
@@ -60,7 +60,7 @@ retained.
 
     2.2.round();    // -> 2
     8.8.round();    // -> 8
-    
+
     4.444.round(1); // -> 4.4
     4.444.round(2); // -> 4.44
     4.444.round(3); // -> 4.444
@@ -72,12 +72,12 @@ retained.
 
 Call the given lambda function as many times times as specified by the
 current number:
-    
+
     var numbers = [];
     4..times(function(i) {
       numbers.push(i);
     });
-    
+
     numbers; // -> [0,1,2,3]
 
 
@@ -86,15 +86,15 @@ current number:
 
     upto(number stop, Function lambda[, Object scope]) -> number self
 
-Iterates the given lambda function from the current number up to the given 
+Iterates the given lambda function from the current number up to the given
 stop number:
 
     var numbers = [];
-    
+
     4..upto(8, function(i) {
       numbers.push(i);
     });
-    
+
     numbers; // -> [4,5,6,7,8]
 
 
@@ -103,13 +103,13 @@ stop number:
 
     downto(number end, Function lambda[, Object scope]) -> number self
 
-Iterates the given lambda function from the current number down to the given 
+Iterates the given lambda function from the current number down to the given
 stop number:
 
     var numbers = [];
-    
+
     8..downto(4, function(i) {
       numbers.push(i);
     });
-    
+
     numbers; // [8,7,6,5,4]

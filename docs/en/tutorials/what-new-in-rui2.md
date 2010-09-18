@@ -14,12 +14,12 @@ instead of direct dom-elements access. And one of the most interesting part
 of it is that dom-wrappers in RightJS essentially are classes and you are
 allowed to create as much of your own types as you pleased.
 
-Because of that, all the widgets in RightJS UI 2 are private wrappers and 
-therefore eventually inherited from the {Element} unit. This means that now 
+Because of that, all the widgets in RightJS UI 2 are private wrappers and
+therefore eventually inherited from the {Element} unit. This means that now
 you can treat any widget as a normal element of the page
 
     var calendar = new Calendar();
-    
+
     calendar
       .insertTo('my-element', 'top')
       .set('id', 'my-calendar')
@@ -53,7 +53,7 @@ Firstly, it means that all the callbacks you attach to any widget will be
 called in the context of the widget itself, like you normally do with elements
 
     var slider = new Slider();
-    
+
     slider.onChange(function() {
       this.getValue(); // returns the current value
     });
@@ -63,7 +63,7 @@ the listeners, now all the related data will be attached to the event object,
 for example:
 
     var slider = new Slider();
-    
+
     slider.onChange(function(event) {
       event.target; // -> refers back to the slider
       event.value;  // -> gives you the value

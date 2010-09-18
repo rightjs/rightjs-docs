@@ -52,9 +52,9 @@ will skip elements until find the first one that matches the rule.
     */
     $('third-1').parent();       // -> div#second-1
     $('third-1').parent('#top'); // -> div#top
-    
+
     $('top').select('div');      // -> all the subdivs
-    
+
     $('top').first('div');       // -> div#second-1
 
 
@@ -85,9 +85,9 @@ And the `position` argument might be one of the following
     $('element').insert('<div>some html code</div>');
 
     $('element').insert(another_element, 'top');
-    
+
     $('element').insert([element1, element2], 'after');
-    
+
     $('element').insert(anther_element.childNodes, 'before');
 
 Additionally, you can send to the method a hash where the keys will be the position and the values are the content
@@ -116,8 +116,8 @@ Method             | Description
 Some examples
 
     var element = $E('div').insertTo(document.body).update('some html');
-    
+
     element.empty();         // -> false
     element.clean().empty(); // -> true
-    
+
     element.replace('here was that element');

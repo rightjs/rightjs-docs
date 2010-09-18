@@ -24,7 +24,7 @@
 Вызывает {Fx.Highlight} визуальный эффект
 
     $(element).highlight();
-    
+
     $(element).highlight('blue');
     $(element).highlight({onFinish: function() {}});
 
@@ -36,7 +36,7 @@
 Вызывает {Fx.Fade} визуальный эффект
 
     $(element).fade();
-    
+
     $(element).fade('out');
     $(element).fade('in', {onFinish: function() {}});
 
@@ -48,7 +48,7 @@
 Вызывает {Fx.Slide} визуальный эффект
 
     $(element).slide();
-    
+
     $(element).slide('out');
     $(element).slide({onFinish: function() {}});
 
@@ -62,6 +62,6 @@
     $(element).scroll({x: 100});
     $(element).scroll({y: 200});
     $(element).scroll({x: 10, y: 20});
-    
+
     $(element).scroll({x: 100}, {duration: 'long'});
-    
+

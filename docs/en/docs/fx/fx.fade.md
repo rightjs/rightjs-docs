@@ -9,7 +9,7 @@ depending on the current state of the element.
     start([String how]) -> Fx.Fade self
 
 Starts the effect. May take the following arguments:
-  
+
 * 'in'
 * 'out'
 * 'toggle'
@@ -17,6 +17,6 @@ Starts the effect. May take the following arguments:
 `toggle` is the default value.
 
     new Fx.Fade(element).start();
-    
+
     new Fx.Fade(element).start('in');
     new Fx.Fade(element).start('out');

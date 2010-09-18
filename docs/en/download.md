@@ -1,7 +1,7 @@
 # Download
 
-By default RightJS comes in two files. One of them is the actual core, which works 
-for all the modern browsers while the other one is a dynamically loadable module 
+By default RightJS comes in two files. One of them is the actual core, which works
+for all the modern browsers while the other one is a dynamically loadable module
 with patches for old browsers (older than IE8, FF 3.5, Opera 10.10 and all Konqs).
 
 <%= partial 'options' %>
@@ -21,7 +21,7 @@ directory.
 
         right[bla-bla-bla].js
        right-olds[bla-bla-bla].js
-        
+
 
 # Hot Link
 
@@ -35,8 +35,8 @@ updated over the time. The second link always points to _that exact_ version of 
 
 # Custom Build
 
-By default RightJS comes with several plugins like advanced form handling, cookies 
-and so on already baked in. You can switch things you don't use off and thus reduce 
+By default RightJS comes with several plugins like advanced form handling, cookies
+and so on already baked in. You can switch things you don't use off and thus reduce
 the build size down to 18k.
 
 Furthermore, there are a number of plugins from the [RightJS Plugins](/plugins) project

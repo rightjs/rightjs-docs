@@ -7,7 +7,7 @@ _Вызов по имени_ это одна из основополагающи
 языках программирования
 
     ['foo', 'boo', 'moo'].invoke('replace', 'oo', 'aa');
-    
+
     // -> ['faa', 'baa', 'maa']
 
 Вы просто указываете имя метода и несколько необходимых аргументов. Далее метод
@@ -37,22 +37,22 @@ RightJS единообразно работает как с методами, т
     var trimmed    = strings.map('trim');
     var blanks     = strings.filter('blank');
     var replaced   = strings.map('replace', 'some', 'another');
-    
+
     // собираем все ID элементов
     var ids = elements.map('id');
-    
+
     // блокируем все элементы списка
     elements.each('disable');
-    
+
     // добавляем класс 'marked' для каждого элемента
     elements.each('addClass', 'marked');
-    
+
     // указываем обработчик события по имени
     element.onClick('toggleClass', 'marked');
-    
+
     // подключаем слушателя события для каждого элемента
     elements.each('onClick', 'toggleClass', 'marked');
-    
+
 
 ## Зачем это делать?, :why
 

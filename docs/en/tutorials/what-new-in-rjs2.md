@@ -1,7 +1,7 @@
 # What's New in RightJS 2
 
 RightJS 2 is not just a regular functionality update, but a giant leap and
-basically a complete restart of the framework. We took everything you loved 
+basically a complete restart of the framework. We took everything you loved
 about RightJS 1 and brought it to the completely new level.
 
 Let's get through the changes, shall we?
@@ -25,7 +25,7 @@ the code will look just the same way
       this.addClass('marked');
       event.stop();
     });
-    
+
     $('element').onClick('toggleClass', 'marked');
     $$('div.class').each('onClick', 'addClass', 'marked');
 
@@ -35,7 +35,7 @@ methods
 
     $('element-id').id;        // -> null
     $('element-id').get('id'); // -> 'element-id'
-    
+
     $('element').title;        // -> null
     $('element').set('title', 'Boo!');
     $('element').title;        // -> still null
@@ -46,7 +46,7 @@ And you also will need to access the `document` and `window` objects via the
 
     window.sizes;       // -> null
     $(window).sizes;    // -> function
-    
+
     document.onReady    // -> null
     $(document).onReady // -> function
 
@@ -87,7 +87,7 @@ those extensions if you need by simply passing your variables through the
 
     "Boo hoo!".endsWith;          // -> null
     RightJS("Boo hoo!").endsWith; // -> function
-    
+
     (4).times;                    // -> null
     RightJS(4).times;             // -> function
 
@@ -114,7 +114,7 @@ like `submit`, `focus`, `blur`, `change`, etc. Some of them bubble some of
 them don't, some of them bubble in different ways, which obviously doesn't
 make the developer's live easier.
 
-RightJS is here to help. Now we catch, fix and patch all those events and then 
+RightJS is here to help. Now we catch, fix and patch all those events and then
 bubble them manually through the tree, so that you don't need to worry about
 those things at all. There are no special names, no special arguments, no
 special nothing, just write your code as all the events were one happy family
@@ -127,14 +127,14 @@ special nothing, just write your code as all the events were one happy family
     });
 
 More of that, in RightJS 2 all custom events bubble too, just the same way as
-any other event does. You can have as much events of your own as you're 
+any other event does. You can have as much events of your own as you're
 pleased, all of them will be handled the same exact way.
 
 
 
 ## New Events Delegation API, :events-delegation
 
-The latest versions of RightJS 1.5 already had some elements of events 
+The latest versions of RightJS 1.5 already had some elements of events
 delegation handling, now RightJS 2 takes over with the new, nice and cool API.
 
 First of all the {String} class now has all the same API for events handling
@@ -143,17 +143,17 @@ now you have a whole bunch of things to play with
 
     // it has shortcuts for standard events
     "div.class".onClick(function() {...});
-    
+
     // it works with troubled events
     "div.class".onFocus('addClass', 'hovered');
     "div.class".onBlur('removeClass', 'hovered');
-    
+
     // it works with custom events
     "div.class".on('my-event', 'addClass', 'my-class');
-    
+
     // you can check if something is observed
     "div.class".observes('click');   // -> true
-    
+
     // and you can remove listeners the same way
     "div.class".stopObserving('click');
 
@@ -166,10 +166,10 @@ delegation not only at the document level, but at any level you like
       'li.incomplete': incomplete_items_handler,
       ...
     });
-    
+
     // and you can check if an element delegates events
     $('my-list').delegates('click'); // -> true
-    
+
     // and certainly you can make it stop
     $('my-list').undelegate('click');
 
@@ -179,7 +179,7 @@ For more information see the [API Documentation](/docs/element#delegate) and
 
 ## Cross-Frame Safe, :frames
 
-Because of all the DOM-Wrappers and safe-mode changes, RightJS is now 
+Because of all the DOM-Wrappers and safe-mode changes, RightJS is now
 officially cross-frame safe. It all works pretty much transparently for the
 API, and you can navigate through other frames the same way you work with the
 main document
@@ -283,9 +283,9 @@ contexts, you always need to bind them manually to the instances, like that
         alert(this.name);
       }
     });
-    
+
     var inst = new Klass();
-    
+
     $('element').onClick(inst.alert.bind(inst));
 
 It is quite annoying and sometimes you forget it, which leads to all sorts of
@@ -299,7 +299,7 @@ automatically prebind specified methods on instance, like that
 After that you can use those methods as is and they will be automatically
 called in the context of the instance they belong to.
 
-Check the [OOP Tutorial](/tutorials/object-oriented-programming) for more 
+Check the [OOP Tutorial](/tutorials/object-oriented-programming) for more
 info about classes in RightJS.
 
 
@@ -314,8 +314,8 @@ events binding. Somewhere it is more noticeable, somewhere less, but judging
 by the latest versions of FF and Opera it is about 25% boost comparing to
 RightJS 1.5.6
 
-Elements construction got faster by about 30% in Opera. And because we 
-don't extend dom-elements anymore the speed of construction and elements 
+Elements construction got faster by about 30% in Opera. And because we
+don't extend dom-elements anymore the speed of construction and elements
 access went sky-rocketing in the IE6 and IE7 browsers.
 
 Check the very popular [benchmarks page](/benchmarks) for more details.

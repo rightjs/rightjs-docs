@@ -4,7 +4,7 @@
 [Ruby]:      http://www.ruby-lang.org
 
 RightJS - объектно-ориентированная библиотека, и соотетственно
-предоставляет расширенные возможности для объектно-ориентированного 
+предоставляет расширенные возможности для объектно-ориентированного
 программирования. Классы в RightJS представляют собой смесь идей из
 библиотеки [Prototype][] и языка программирования [Ruby][].
 
@@ -18,7 +18,7 @@ RightJS - объектно-ориентированная библиотека, 
       initialize: function() {
         // constructor
       },
-      
+
       method1: function() {},
       method2: function() {}
     });
@@ -36,7 +36,7 @@ RightJS - объектно-ориентированная библиотека, 
         return "Hello there";
       }
     });
-    
+
     var SexyGirl = new Class(Girl, {
       sayHello: function() {
         return "Well "+ this.$super() + "!";
@@ -57,11 +57,11 @@ JavaScript
     var Module = {
       method: function() {}
     };
-    
+
     var Klass = new Class({
       include: Module, // <- добавить модуль на уровень объекта
       extend:  Module, // <- добавить модуль на уровень класса
-      
+
       // остальные методы класса
     });
 
@@ -69,7 +69,7 @@ JavaScript
 
     var Klass = new Class({
       include: [Module1, Module2, ...],
-      
+
       // или на уровне класса
       extend:  [Module1, Module2, ...]
     });
@@ -82,10 +82,10 @@ JavaScript
       extend: {
         CLASS_LEVEL_CONST_1: 1,
         CLASS_LEVEL_CONST_2: 2,
-        
+
         classLevelMethod: function() {}
       },
-      
+
       // методы уровня объекта
     });
 
@@ -95,15 +95,15 @@ JavaScript
     var Klass = new Class({
       // ....
     });
-    
+
     Klass.include(Module, Module, ...);
     Klass.extend(Module, Module, ...);
-    
+
 __ВНИМАНИЕ:__ приоритет вставляемых модулей в RightJS работает точно в том же
 порядке, как это происходит в языке программирования [Ruby][]. Т.е. если вы
 вставили модуль во время определения класса, то собственные методы класса
 будут иметь приоритет над методами модуля. Но если вы вставляете модуль,
-используя методы `include()` и `extend()`, _после_ того как класс был 
+используя методы `include()` и `extend()`, _после_ того как класс был
 инициализирован, то методы модулей будут установлены поверх методов класса.
 
 
@@ -119,17 +119,17 @@ RightJS, аналогичным образом, дает возможность 
       selfIncluded: function(klass) {
         klass.prototype.foo = 'bar';
       },
-      
+
       selfExtended: function(klass) {
         klass.FOO = 'BAR';
       }
     };
-    
+
     var Klass = new Class({
       include: Module,
       extend:  Module
     });
-    
+
     Klass.prototype.foo; // -> 'bar'
     Klass.FOO;           // -> 'BAR'
 

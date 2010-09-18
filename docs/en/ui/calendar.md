@@ -32,7 +32,7 @@ are good to go. Right Calendar does not require any images and all the styles ar
 After that you will have the `Calendar` unit available
 
     new Calendar({format: 'US'}).insertTo('that-element');
-    
+
     new Calendar({showTime: true}).assignTo('that-input');
 
 
@@ -53,7 +53,7 @@ element, like an image, that will show the calendar up.
 
 And you can specify custom options for those inputs with the HTML5 style attribute like this
 
-    <input type="text" rel="calendar" 
+    <input type="text" rel="calendar"
       data-calendar-options="{format: 'US'}" />
 
 
@@ -172,7 +172,7 @@ Or you can translate the interface by simply altering the `Calendar.i18n` object
       Prev:  'Предыдущий месяц',
       NextYear: 'Следующий год',
       PrevYear: 'Предыдущий год',
-  
+
       dayNames:        $w('Вокскресенье Понедельник Вторник Среда Четверг Пятница Суббота'),
       dayNamesShort:   $w('Вск Пнд Втр Срд Чтв Птн Сбт'),
       dayNamesMin:     $w('Вс Пн Вт Ср Чт Пт Сб'),
@@ -195,7 +195,7 @@ elements structure description as a guidance.
 
           <div class="right-calendar-month">
             <div class="right-calendar-month-caption"></div>
-        
+
             <table>
               <thead>
                 <tr>

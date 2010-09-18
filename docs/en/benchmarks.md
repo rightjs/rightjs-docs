@@ -12,7 +12,7 @@ The following browsers were used
 
 <%= partial 'browsers' %>
 
-If you feel uncomfortable with these test results, there is 
+If you feel uncomfortable with these test results, there is
 [another test](http://st-on-it.blogspot.com/2009/12/meet-shakker-mano-mano-javascript.html)
 available that was done with a different testing utility.
 

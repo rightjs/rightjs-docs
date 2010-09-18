@@ -7,7 +7,7 @@ JavaScript frameworks.
 ## Disclaimer
 
 Besides the obvious purpose of brainwashing and making you use RightJS,
-this article is meant to give you an idea where RightJS is situated (or 
+this article is meant to give you an idea where RightJS is situated (or
 supposed to be situated) relatively to other JavaScript frameworks.
 
 And I have the humble hope that you understand this as the author's
@@ -17,17 +17,17 @@ people's reality and therefore should not be trusted.
 
 ## RightJS vs. jQuery
 
-Both are quite small, modular and rely on plugins and extensions. Both have 
+Both are quite small, modular and rely on plugins and extensions. Both have
 quite a lot of short and handy methods. And both help you write compact code.
 
 The main difference is that jQuery is more oriented towards procedural and
-functional approaches. RightJS on the other hand provides basic functional and 
+functional approaches. RightJS on the other hand provides basic functional and
 procedural programming features too, but it's more object-oriented and designed
 to be familiar to server-side developers who work with dynamic languages like Ruby
 and Python.
 
-Another major difference is that jQuery isolates all its processes 
-inside of an own scope whereas RightJS extends the JavaScript unit prototypes 
+Another major difference is that jQuery isolates all its processes
+inside of an own scope whereas RightJS extends the JavaScript unit prototypes
 and thus provides instant and more semantic access to most of its features.
 
 
@@ -46,11 +46,11 @@ and thus provides instant and more semantic access to most of its features.
 
 ## RightJS vs. Prototype/Scriptaculous
 
-Prototype and RightJS have quite a lot in common and are based on the same principle 
+Prototype and RightJS have quite a lot in common and are based on the same principle
 of `prototype` extensions. Moreover, RightJS inherited the naming principles and many
 method and class names from what you might see in Prototype.
 
-The differences are that RightJS is a modular framework with a small simple core and 
+The differences are that RightJS is a modular framework with a small simple core and
 plugins, whereas Prototype is more of a monolithic all-in-one framework. And RightJS
 mostly aims at modern browsers keeping all the old browsers support in a separate
 module with patches. Prototype on the other hand has a special public API for faster
@@ -72,13 +72,13 @@ elements processing on old browsers.
 
 ## RightJS vs. Mootools
 
-RightJS and Mootools are pretty similar too. Both started with the goal of making 
-a better Prototype and as a matter of fact RightJS cherry-picked quite a few 
+RightJS and Mootools are pretty similar too. Both started with the goal of making
+a better Prototype and as a matter of fact RightJS cherry-picked quite a few
 interesting things from Mootools.
 
-But there are several differences between them as well. Mootools brings quite a lot 
-of functional features like carrying and call-chains. And it tends to mix them with 
-the object-oriented approach which provides some interesting features and its own 
+But there are several differences between them as well. Mootools brings quite a lot
+of functional features like carrying and call-chains. And it tends to mix them with
+the object-oriented approach which provides some interesting features and its own
 way of doing things. Having said that, RightJS is a simpler tool. It has both functional
 and object-oriented features, but RightJS keeps them separated in order to allow the
 developer to choose how he wants to deal with things.

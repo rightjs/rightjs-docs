@@ -17,7 +17,7 @@ Fx.Highlight - это стандартный эффект подсветки э�
 цвета подсветки
 
     var fx = new Fx.Highlight('element');
-    
+
     fx.start();
     fx.start('blue');
     fx.start('blue', 'pink');

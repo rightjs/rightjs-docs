@@ -51,11 +51,11 @@ In additional the {Number} class supports the Ruby language style loops for the 
     4..times(function(i) {
       // ....
     });
-    
+
     4..downto(2, function(i) {
       // ....
     });
-    
+
     4..upto(8, function(i) {
       // ....
     });
@@ -67,9 +67,9 @@ By default the {Math.random} method returns float numbers between 0 and 1. Rigth
 and makes it generate integer numbers in a given range, if specified.
 
     Math.random();    // a Float    between 0 and 1
-    
+
     Math.random(8);   // an Integer between 0 and 8
-    
+
     Math.random(1,4); // an Integer between 1 and 4
 
 <p>&nbsp;</p>

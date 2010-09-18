@@ -3,7 +3,7 @@
 RightJS 1 was a pretty simple system, we extended native dom-units directly
 and always worked with actual dom-elements. That a pretty convenient approach
 but sadly it is pretty naughty and risky business, because first of all it
-doesn't leave any space for other scripts on the page and can be easily 
+doesn't leave any space for other scripts on the page and can be easily
 screwed by browser updates.
 
 And as RightJS is known for setting the things right, with the version 2.0.0
@@ -24,7 +24,7 @@ page interact with the same elements without even noticing the presence of
 your extensions.
 
 With dom-wrappers, you also provide a long term stability for your scripts,
-because as all your extensions are in a separated space, any new native 
+because as all your extensions are in a separated space, any new native
 methods that browsers might add couple of years later, will not affect your
 proxy objects.
 
@@ -40,21 +40,21 @@ RightJS 1, and because of that it looks and feels exactly the same way, like
 nothing happened
 
     $('element').addClass('marked');
-    
+
     $('element').onClick(function(event) {
       event.stop();
       this.toggleClass('marked');
     });
-    
+
     $$('div.class').each(function(element) {
       element.addClass('my-element');
       // .....
     });
-    
+
     $(raw_dom_element).removeClass('marked');
 
 It all practically the same as it was before, except the fact that instead of
-the actual dom-element you work now with proxy objects. And as the result, 
+the actual dom-element you work now with proxy objects. And as the result,
 most of your code should be in working condition after you switch to
 RightJS 2.
 
@@ -64,7 +64,7 @@ use the {Element#get} and {Element#set} methods.
 
     $('element-id').id;        // -> null
     $('element-id').get('id'); // -> 'element-id'
-    
+
     $('element').title;        // -> null
     $('element').set('title', 'Boo!');
     $('element').title;        // -> still null
@@ -76,7 +76,7 @@ extensions
 
     window.sizes;       // -> null
     $(window).sizes;    // -> function
-    
+
     document.onReady    // -> null
     $(document).onReady // -> function
 
@@ -101,7 +101,7 @@ dom-object it wraps.
     $('my-div')._  // -> DIV element
     $(window)._    // -> window object
     $(document)._  // -> document object
-    
+
     $(element).onClick(function(event) {
       event._      // -> the dom-event object
     });
@@ -115,7 +115,7 @@ like it.
 Now to the good parts. Because we have them.
 
 All dom-wrappers in RightJS are created by the {Wrapper} unit, which is
-essentially the same good old {Class}, just tuned a bit for the task of 
+essentially the same good old {Class}, just tuned a bit for the task of
 dom-objects wrapping. Which means that first of all we have normal types
 
     $('my-div') instanceof Element
@@ -130,26 +130,26 @@ and it all works correctly when you check the object types
     $('my-div') instanceof Element; // true
     $('my-div') instanceof Input;   // false
     $('my-div') instanceof Form;    // false
-    
+
     $('my-form') instanceof Element; // true
     $('my-form') instanceof Input;   // false
     $('my-form') instanceof Form;    // true
-    
+
     $('my-input') instanceof Element; // true
     $('my-input') instanceof Input;   // true
     $('my-input') instanceof Form;    // false
 
-You can extend each of the classes separately using functionality 
+You can extend each of the classes separately using functionality
 injection and the extensions will correctly apply to the inheritance structure
 
     Element.include({
       global_method: function () {}
     });
-    
+
     Input.include({
       inputs_only_method: function() {}
     });
-    
+
     Form.include({
       forms_only_method: function() {}
     });
@@ -169,13 +169,13 @@ you can add the `TABLE` elements specific wrapper like so
       sort: function() {
         // sort your table in here
       },
-      
+
       load: function() {
         // overloading the Element#load
         // so it updated the TBODY part only
       }
     });
-    
+
     // registering the wrapper in the system
     Element.Wrappers.TABLE = Table;
 
@@ -203,13 +203,13 @@ that's cool with RightJS
         this.$super('table', {'class': 'table-1'});
       }
     });
-    
+
     var Table2 = new Wrapper(Element, {
       initialize: function() {
         this.$super('table', {'class': 'table-2'});
       }
     });
-    
+
     var t1 = new Table1();
     var t2 = new Table2();
 
@@ -220,14 +220,14 @@ an element inside, kinda like that
     var MyWidget = new Class(Observer, {
       initialize: function() {
         this.element = new Element();
-        
+
         this.element.onClick(this._clicked.bind(this));
       },
-      
+
       insertTo: function(element, position) {
         this.element(element, position)
       },
-      
+
       _clicked: function() {
         // do something about the click
         this.element.addClass('clicked');
@@ -247,7 +247,7 @@ your widget as another private wrapper, just like that
         this.$super('div', {'class': 'my-widget'});
         this.onClick(this._clicked);
       },
-      
+
       _clicked: function() {
         this.addClass('clicked');
       }
@@ -260,7 +260,7 @@ by default and the users can manipulate with your widget just the same way
 they manipulate with any other elements on the page
 
     var widget = new MyWidget();
-    
+
     widget.addClass('custompization');
     widget.insertTo(document.body, 'top');
     widget.onClick(my_additional_handler);
@@ -282,10 +282,10 @@ in any way.
     var widget = new MyWidget();
     widget.set('id', 'my-widget');
     widget.insertTo(document.body);
-    
+
     // now you can access the element by id
     $('my-widget') instanceof MyWidget; // true
-    
+
     // or any other way, for example
     $$('div.my-widget').last();         // -> MyWidget
     $(document.body).children().last(); // -> MyWidget
@@ -296,9 +296,9 @@ element with any wrapper, or remove the cache by an UID key.
 
     var widget = new MyWidget();
     widget.set('id', 'my-widget');
-    
+
     $('my-widget') instanceof MyWidget; // true
-    
+
     // replace the cache by instatiation
     widget = new Element(widget._);
     $('my-widget') instanceof MyWidget; // false

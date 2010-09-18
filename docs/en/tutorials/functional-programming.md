@@ -17,14 +17,14 @@ A classical example. Say you have a function that multiply two numbers
     var multiply = function(x, y) {
       return x * y;
     };
-    
+
     multiply(2, 3); // -> 6
 
 Now basing on this function you can create another function that will always
 preset the first argument as `2` and as the result double incoming numbers
 
     var double = multiply.curry(2);
-    
+
     double(2); // -> 4
     double(3); // -> 6
     double(4); // -> 8
@@ -32,11 +32,11 @@ preset the first argument as `2` and as the result double incoming numbers
 Or you can create another function that will triple the things
 
     var triple = multiply.curry(3);
-    
+
     triple(3); // -> 9
 
 The main idea in here is that you have one basic function that contains the
-actual logic and then can have several other functions whose only purpose is 
+actual logic and then can have several other functions whose only purpose is
 to keep some arguments and create different versions of the basic logic.
 
 
@@ -53,11 +53,11 @@ A dummy example. Say you have some menu, and a function that logs a number.
       <li>Two</li>
       <li>Three</li>
     </ul>
-    
+
     var log_index = function(index) {
       console.log(index);
     };
-    
+
 Now you want to attach this log function to every item on the list the way
 that when the user clicks any of them the function logged the index of the
 item on the list.
@@ -86,18 +86,18 @@ your values on the right side of the list. For example:
     var minus = function(x, y) {
       return x - y;
     };
-    
+
     minus(4, 2); // -> 2
-    
+
     // left currying
     var four_minus = minus.curry(4);
-    
+
     four_minus(2); // -> 2
     four_minus(3); // -> 1
-    
+
     // right currying
     var minus_four = minus.rcurry(4);
-    
+
     minus_four(6); // -> 2
     minus_four(5); // -> 1
 
@@ -120,7 +120,7 @@ that builds and logs a person's full name.
       console.log(this.firstName + " " + this.lastName);
     };
 
-Note, that the function refers to `this` as it was an actual part of any of 
+Note, that the function refers to `this` as it was an actual part of any of
 those objects. Then in JavaScript you can call this `log_name` function in the
 context of  any of those objects, like that
 
@@ -146,7 +146,7 @@ will be called in the specified context.
 
 ## Binding + Currying, :binding_and_currying
 
-Binding and currying often go alongside and in RightJS you can use them 
+Binding and currying often go alongside and in RightJS you can use them
 together at the same time.
 
 Say you have the same two 'Karl' and 'Bill' buttons.
@@ -194,7 +194,7 @@ But when you bind it using currying at the same time, your callback will
 receive the currying string value as the first argument instead of the dom
 event object.
 
-To handle such cases {Function} has another method called 
+To handle such cases {Function} has another method called
 {#bindAsEventListener}. When you bind a callback with this method the new
 function will always treat the first argument as an event object, collecting
 and bypassing it where it should be.
@@ -216,9 +216,9 @@ method
     var first  = function() { console.log(1); };
     var second = function() { console.log(2); };
     var third  = function() { console.log(3); };
-    
+
     var chain = first.chain(second).chain(third);
-    
+
     chain(); // -> 1, 2, 3
 
 The idea is that you create a new function that calls another function after
@@ -229,9 +229,9 @@ your functions will be called in that exact order.
 You also can use chains and currying at the same time, like that
 
     var log_num = function(num) { console.log(num); };
-    
+
     var chain = log_num.chain(log_num, 2).chain(log_num, 3);
-    
+
     chain(1);  // -> 1, 2, 3
 
 In this case we have one function and we chain it after itself twice, each

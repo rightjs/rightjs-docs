@@ -22,11 +22,11 @@ you end up with some data, there are almost no methods that return
 you want.
 
     var classes = elements.map('className').map('split', ' ').flatten().uniq();
-    
+
     elements.each('enable').each('onClick', 'radioClass', 'marked');
-    
+
     new Xhr('/url').setOptions({..}).send({..}).cancel();
-    
+
     new Fx.Morph('element').start({...}).pause().resume().cancel();
 
 Think you've got the idea.

@@ -11,7 +11,7 @@ __NOTE__: this module uitilizes browser's _native_ JSON format support if it is 
 The basic JSON import/export works through the standard interface like this.
 
     JSON.stringify([1,2,3]); // -> '[1,2,3]'
-    
+
     JSON.parse('[1,2,3]');   // -> [1,2,3]
 
 The `JSON.stringify` method also watches if an object provides the `toJSON` method and if so
@@ -19,7 +19,7 @@ then uses it to export given object into a json string. There are also two alias
 for those methods, that used in some other libraries
 
     JSON.encode([1,2,3]);    // -> '[1,2,3]'
-    
+
     JSON.decode('[1,2,3]');  // -> [1,2,3]
 
 

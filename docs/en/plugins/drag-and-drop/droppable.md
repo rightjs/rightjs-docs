@@ -3,9 +3,9 @@
 `Droppable` is the standard droppable units handling class from the
 [drag-and-drop](/plugins/drag-and-drop) library.
 
-The public API consists of only two methods: constructor and destructor. The 
-constructor receives a reference to an element and the options hash while the 
-destructor is just a method which detaches all the events handling from the 
+The public API consists of only two methods: constructor and destructor. The
+constructor receives a reference to an element and the options hash while the
+destructor is just a method which detaches all the events handling from the
 element thus rendering it not droppable anymore.
 
     // Make 'my-element' droppable ...
@@ -16,7 +16,7 @@ element thus rendering it not droppable anymore.
 
 
 You can also use the auto-discovery feature and the {Element} level shortcuts to
-create droppables. See the main [drag-and-drop](/plugins/drag-and-drop) page for 
+create droppables. See the main [drag-and-drop](/plugins/drag-and-drop) page for
 more details.
 
 <%= anchors_index %>

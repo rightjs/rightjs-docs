@@ -3,7 +3,7 @@
 RightJS comes with a collection of utility functions for the most common
 JavaScript development operations. Most of them might be seen in other
 frameworks like [Prototype](http://prototypejs.org) or
-[Mootools](http://mootools.net), in RightJS they have the same meaning and 
+[Mootools](http://mootools.net), in RightJS they have the same meaning and
 interfaces.
 
 ### $
@@ -64,12 +64,12 @@ A shortcut for `new Element`
     $ext(Object first, Object second[, boolean dont_overwrite]) -> Object first
 
 Extends the first object with data from the second one.
-  
+
 If the third argument is `true`, it skips all the overlapping keys.
 
     var o = {1:1};
     $ext(o, {2:2}); // -> {1:1, 2:2}
-    
+
     $ext(o, {2:4, 3:3}, true); // -> {1:1, 2:2, 3:3}
 
 
@@ -77,7 +77,7 @@ If the third argument is `true`, it skips all the overlapping keys.
 
     $try(Function function[, Function function, ...]) -> mixed result
 
-Evaluates the argument functions one by one and returns the result of the 
+Evaluates the argument functions one by one and returns the result of the
 first one that _does not_ raise an exception.
 
     var result = $try(
@@ -85,7 +85,7 @@ first one that _does not_ raise an exception.
       function() { return 1; },
       function() { return 2; }
     );
-    
+
     result // -> 1
 
 
@@ -93,11 +93,11 @@ first one that _does not_ raise an exception.
 
     $eval(String code) -> void
 
-Evaluates the given piece of JavaScript code in the context of the current 
+Evaluates the given piece of JavaScript code in the context of the current
 window.
 
     $eval('var foo = "bar";');
-    
+
     window['foo']; // -> 'bar'
 
 
@@ -111,7 +111,7 @@ Initiates a manual break in case of callback based iterations.
       if (i > 1) $break();
       return i * 2;
     });
-    
+
     // [2,4,3,4]
 
 
@@ -124,11 +124,11 @@ Creates the first object property aliases.
     var object = {
       foo: function() {};
     };
-    
+
     $alias(object, {
       bar: 'foo'
     });
-    
+
     // now 'foo' and 'bar' both refer to the same function
 
 
@@ -141,7 +141,7 @@ Checks if the given value is equal to `undefined`.
     var object = {
       foo: 'foo'
     };
-    
+
     defined(object.foo); // -> true
     defined(object.bar); // -> false
 
@@ -200,7 +200,7 @@ Checks if the given value is a {Number}.
     isNumber('1'); //  -> false
     isNumber(111); //  -> true
     isNumber(1.1); //  -> true
-  
+
 
 
 ### isElement
@@ -221,6 +221,6 @@ Checks if the given value is a DOM node (both TextNode or HTMLElement).
 
     isNode(document.createTextNode('boo')); // -> true
     isNode(document.createElement('div'));  // -> true
-    
+
     isNode('foo'); // -> false
 

@@ -24,17 +24,17 @@ as simple as that
       myMethod1: function() { return 1; },
       myMethod2: function() { return 2; }
     });
-    
+
     [1,2,3,4].myMethod1(); // -> 1
     [1,2,3,4].myMethod2(); // -> 2
-    
-    
+
+
     String.include({
       hasBoo: function() {
         return this.includes('boo');
       }
     });
-    
+
     "moo".hasBoo(); // -> false
     "boo".hasBoo(); // -> true
 
@@ -52,13 +52,13 @@ by itself.
     Xhr.include({
       myMethod: function() {}
     });
-    
+
     new Xhr('/some/url').myMethod();
-    
+
     Xhr.extend({
       MY_CONSTANT: 1
     })
-    
+
     if (Xhr.MY_CONSTANT) {
       new Xhr('/some/url');
     }
@@ -80,7 +80,7 @@ For this reason RightJS provides the {Element.include} feature, which might be u
       myMethod1: function() {},
       myMehtod2: function() {}
     });
-    
+
     $('my-element').myMethod1();
     $$('*').each('myMethod2');
 
@@ -108,13 +108,13 @@ extensions, and then you instantly call it with the unit you extend, like this:
 
     $ext(SomeClass.prototype, (function(class_prototype) {
       var old_method = class_prototype.someMethod;
-  
+
       return {
         someMethod: function() {
           var result = old_method.apply(this, arguments);
-    
+
           // do something more
-    
+
           return result;
         }
       };
@@ -127,19 +127,19 @@ For example, say I want that the {Xhr} instances did some fancy stuff before sen
 
     Xhr.include(function(xhr_prototype) {
       var old_send = xhr_prototype.send;
-  
+
       return {
         send: function() {
           this.fancyStuff();
-      
+
           return old_send.apply(this, arguments);
         },
-    
+
         // my additional method with the fancy stuff
         fancyStuff: function() {
         }
       };
-    
+
     })(Xhr.prototype));
 
 In case of the dom-level units, all the additional methods are stored at constants called `Methods`,
@@ -149,16 +149,16 @@ prototypes in the overloading process.
 For example I would like to know when something on the page was changed.
 
     var call_mommy = function(element) {...};
-    
+
     Element.include((function(old_methods) {
       var old_insert = old_methods.insert;
-  
+
       return {
         insert: function() {
           var result = old_insert.apply(this, arguments);
-      
+
           call_mommy(this);
-      
+
           return result;
         }
       };

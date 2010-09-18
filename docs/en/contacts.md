@@ -21,7 +21,7 @@ We manage our tickets over at the [Lighthouse](<%= RIGHTJS_TICKETS_TRACKER_URL %
 
 # Participate
 
-If you wish to participate in the project, have spotted a bug or would like to offer some 
+If you wish to participate in the project, have spotted a bug or would like to offer some
 enhancements, simply fork the source code, which is freely available on Github.
 
 <http://github.com/rightjs>

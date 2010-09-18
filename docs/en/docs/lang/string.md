@@ -1,6 +1,6 @@
 # String
 
-RightJS extends the native String class with some additional powerful methods 
+RightJS extends the native String class with some additional powerful methods
 to make your life easier.
 
 
@@ -17,7 +17,7 @@ If the second argument is `true`, then the method _will skip_ already existing m
         return this + ' ' + this;
       }
     });
-    
+
     'boo'.double(); // -> 'boo boo'
 
 
@@ -70,19 +70,19 @@ Removes all tags from the string.
 
 Strips all JavaScript tags from the string.
 
-This method takes several possible arguments. If a boolean `true` is passed 
+This method takes several possible arguments. If a boolean `true` is passed
 then the scripts will be evaluated after extraction. If a function is passed
 every script body will be tossed into the function.
 
     var string = 'asdf<script>alert('bla');</script>';
-    
+
     string.stripScripts();     // -> 'asdf'
     string.stripScripts(true); // -> 'asdf' and you'll see the alert
-    
+
     string.stripScripts(function(script) {
       // do something with the script in here
     });
-    
+
     // will return 'asdf'
 
 
@@ -90,11 +90,11 @@ every script body will be tossed into the function.
 
     extractScripts() -> String scripts
 
-Extracts the bodies of every JavaScript tag in the string and returns them 
+Extracts the bodies of every JavaScript tag in the string and returns them
 as a single string.
 
     var string = 'asdf <script>alert(1);</script>asdf<script>alert(2);</script>';
-    
+
     string.extractScripts(); // -> 'alert(1);alert(2);'
 
 
@@ -107,7 +107,7 @@ Evals scripts in the string.
 __NOTE:__ This method will not remove the scripts from the string.
 
     var string = 'asdf <script>alert(1);</script>';
-    
+
     string.evalScripts(); // 'asdf <script>alert(1);</script>' and you'll see the alert
 
 
@@ -164,7 +164,7 @@ Checks if the string contains the given substring.
 Checks if the string starts with the given substring.
 
     'onSomething'.startsWith('on');           // -> true
-    
+
     'onSomething'.startsWith('onsome');       // -> false
     'onSomething'.startsWith('onsome', true); // -> true
 
@@ -177,7 +177,7 @@ Checks if the string starts with the given substring.
 Checks if the string ends with the given substring.
 
     'image.gif'.endsWith('.gif');       // -> true
-    
+
     'image.gif'.endsWith('.GIF');       // -> false
     'image.gif'.endsWith('.GIF', true); // -> true
 
@@ -199,7 +199,7 @@ Converts the string to an Integer number.
 
 Converts the string to a float number.
 
-__NOTE:__ Processes dashes and commas as decimal markers unless you 
+__NOTE:__ Processes dashes and commas as decimal markers unless you
 pass the argument `true`.
 
     '123.45'.toFloat(); // -> 123.45
@@ -212,17 +212,17 @@ pass the argument `true`.
     on(String event, Function callback)              -> void
     on(String event, String callback[, arg, arg...]) -> void
     on(Object events_hash)                           -> void
-    
+
 Attaches a document level events delegation listener.
 
     // simple case
     "div.red".on('click', function() {
       alert("That's red")
     });
-    
+
     // by name reference
     "div.red".on('click', 'addClass', 'that-was-red');
-    
+
     // several event callbacks attachment
     "div.red".on({
       mouseover: function() { this.addClas('that-was-red')},

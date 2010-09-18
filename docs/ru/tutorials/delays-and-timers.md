@@ -16,10 +16,10 @@
     var callback = function() {
       // .....
     };
-    
+
     // отложить вызов на 1 секунду
     callback.delay(1000);
-    
+
     // вызывать перодически каждые 2 секунды
     callback.periodical(2000);
 
@@ -28,7 +28,7 @@
     var timer = function(message) {
       console.log(message);
     };
-    
+
     timer.delay(100, '100 ms прошло');
     timer.delay(200, '200 ms прошло');
     timer.delay(300, '300 ms прошло');
@@ -40,27 +40,27 @@
 ## Отмена таймеров, :cancel
 
 Точно так же, как и встроенные функции `window.setInterval` и
-`window.setTimeout`, методы {#delay} и {#periodical} возвращают маркеры 
+`window.setTimeout`, методы {#delay} и {#periodical} возвращают маркеры
 таймеров которые вы можете использовать для отмены отложенных и периодических
 вызовов.
 
     var marker = my_function.delay(100);
-    
+
     window.clearTimeout(marker);
-    
+
     var marker = my_function.periodical(100);
-    
+
     window.clearInterval(marker);
 
-Но в отличии от встроенных методов, маркеры в RightJS так же являются 
+Но в отличии от встроенных методов, маркеры в RightJS так же являются
 объектами и имеют специальные методы для их отмены:
 
     var timer = my_function.delay(100);
-    
+
     timer.cancel();
-    
+
     var timer = my_function.periodical(100);
-    
+
     timer.stop();
 
 Такой подход позволяет создавать гораздо более компактный и удобочитаемый код.

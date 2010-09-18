@@ -18,7 +18,7 @@ If you need to put some html code into your tooltip, then just assign the escape
 to the `title` attribute, it will work.
 
     <li title="&lt;b&gt;Some&lt;/b&gt; &lt;u&gt;html&lt;/u&gt;">...</li>
-    
+
 <p>
   <ul class="tooltiped">
     <li title="&lt;b&gt;Some&lt;/b&gt; &lt;u&gt;html&lt;/u&gt; code" rel="tooltip">This has some html tooltip</li>

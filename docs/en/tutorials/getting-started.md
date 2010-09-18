@@ -23,7 +23,7 @@ RightJS mostly inherits the dom-navigation principles from the Prototype and Moo
 That means you have two top level functions `$(id)` and `$$(css_rule)`
 
     $('element-id');     // -> Element
-    
+
     $$('div > div.boo'); // -> Array
 
 
@@ -32,7 +32,7 @@ Then, every {Element} instance has a number of methods to navigate around its ne
 or can receive a string css-rule that will filter the result.
 
     element.select('div.boo span.foo'); // all levels descendants
-    
+
     element.parent();        // the first parent
     element.parent('div');   // the first DIV parent
 
@@ -43,15 +43,15 @@ RigthJS supports all the standard CSS3 selectors on all browsers.
 ## Working With Collections, :collections
 
 To keep it simple RightJS doesn't have any specific interfaces to process dom-elements collections,
-instead of that it offers something nicer and more generic. You can process {Array}s by specifying 
+instead of that it offers something nicer and more generic. You can process {Array}s by specifying
 property/method name and optional attributes just like that.
 
     var ids = $$('div').map('id');
     var classes = $$('div').map('className').map('split', /\s+/).flatten();
-    
+
     $$('input').each('disable');
     $$('input').filter('disabled');
-    
+
     $$('div').each('update', 'with the text');
     $$('div').each('addClass', 'marked');
     $$('div').each('onClick', 'addClass', 'marked');
@@ -69,11 +69,11 @@ standard dom-events
     element.on('click', function() {});
     element.on({click: function(){}, mouseover: function() {} });
     element.on('click', [func1, func2, func3, func4]);
-    
+
     // standard event shortcuts
     element.onClick(function() {});
     element.onMouseover(function() {});
-    
+
     // it also supports the by-name event handlers
     element.onClick('addClass', 'marked');
     element.onClick('morph', {background: 'green'});
@@ -88,16 +88,16 @@ technique. In a simple case it looks like that
     "#todos li".on('click', function() {
       this.toggleClass('marked');
     });
-    
+
     // you also can use hashes
     "#todos li".on({
       mouseover: function() { this.addClass('hovered');    },
       mouseout:  function() { this.removeClass('hovered'); }
     });
-    
+
     // by-name references are also available
     "#todos li".on('click', 'toggleClass', 'marked');
-    
+
 See the [events delegation article](/tutorials/events-delegation) for more
 information.
 
@@ -111,9 +111,9 @@ any dom-element to any style, plus there are a number of standard effects like `
 You can do both, use them in an OOP way like Scriptaculous, or use dom-level methods like jQuery.
 
     new Fx.Morph('element').start({background: 'green'});
-    
+
     $('element').morph({background: 'green', fontSize: '20px'});
-    
+
     $('element').fade().slide().highlight();
 
 You can see the visual effects demo [over here](/fx-demo), and read more about them
@@ -128,7 +128,7 @@ it as a class like in Prototype, or you can use it in a procedural way like in j
 
     new Xhr('/url').send();
     new Xhr('/url', {method: 'get'}).update('element');
-    
+
     Xhr.load('/url');
     $('element').load('/url', {method: 'get'});
 
@@ -139,7 +139,7 @@ Hey, we have a backed in spinners handling in there!
 And we can send forms via ajax just like that (including forms with files to upload)
 
     $('my-form').send({onFinish: callback});
-    
+
     // or like that
     $('my-form').remotize();
     $('my-form').submit();
@@ -158,11 +158,11 @@ In a basic case it looks like Prototype classes.
       initialize: function() {
         // constructor
       },
-      
+
       method1: function() {},
       method2: function() {}
     });
-  
+
 But classes in RightJS also support inheritance and Ruby-style modules sharing. Read
 [this article](/tutorials/object-oriented-programming) for more
 information on this topic.

@@ -29,7 +29,7 @@ The usage of the script is super easy, all you need is to include this script
 on your page and add the `with-progress` css-class to your form.
 
     <script src=".../right-uploader.js"></script>
-    
+
     <form class="with-progress" ...>
       ....
     </form>
@@ -44,13 +44,13 @@ how you want it
 
     <form class="with-progress">
       <div class="right-progress-bar"></div>
-      
+
       <p>
         <input type="file" name="picture" />
         <input type="submit" value="Send" />
       </p>
     </form>
-    
+
 You can either create it empty or with some standard content as described
 in the [style alterations](#styles) section. In any case the script will find
 it and use as the uploading progress bar widget.

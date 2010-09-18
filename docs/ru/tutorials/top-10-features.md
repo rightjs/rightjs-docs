@@ -28,10 +28,10 @@ RightJS старается не изобретать никаких новых �
     $('element').onClick(function() {
       this.hide();
     });
-    
+
     // тоже самое с вызовом по имени
     $('element').onClick('hide');
-    
+
     // можно так же указывать аргументы
     $('element').onClick('addClass', 'clicked');
     $('element').onClick('update', 'with some text');
@@ -40,14 +40,14 @@ RightJS старается не изобретать никаких новых �
 необходимости обработки коллекций однородных элементов
 
     $$('#my-form textarea').each('disable');
-    
+
     $$('div.title').each('update', 'with some text');
-    
+
     // фильтрация и коллекционирование
     var enabled = $$('input').filter('enabled');
     var classes = $$('div').map('className');
     var some_id = $$('div').map('id').compact().first();
-    
+
     // вы так же можете комбиниовать коллекции и события
     $$('ul#todos li').each('onClick', 'toggleClass', 'marked');
 
@@ -128,7 +128,7 @@ AJAX, в RightJS вы можете указать ссылку на элемен
     Xhr.load('/url.html', {
       spinner: 'my-spinner'
     });
-    
+
     $('my-form').send({
       spinner: 'that-spinner-element'
     });
@@ -165,12 +165,12 @@ RightJS поддерживают все неoбходимое для напис�
     var Klass = new Class(AnotherClass, {
       include: Module1,
       extend:  Module2,
-      
+
       initialize: function() {
         //....
       }
     });
-    
+
 [Статья по ООП RightJS](/tutorials/object-oriented-programming)
 
 

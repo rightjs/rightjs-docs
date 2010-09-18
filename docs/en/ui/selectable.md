@@ -96,7 +96,7 @@ You also can create selectables with groups of options. For that case use the st
         </ul>
       </dd>
     </dl>
-    
+
 You can use the list with groups with the single-select boxes as well.
 
 
@@ -107,20 +107,20 @@ You can do that by using the `assignTo()` method or with the `update` option, li
 
     <form ...>
       <input id="the-value" type="hidden" />
-  
+
       // programmatically
       new Selectable({...}).assignTo('the-value');
-  
+
       // with automatic initialization
       <ul class="right-selectable"
         data-selectable-options="{update: 'the-value'}">
         ....
       </ul>
-  
+
     </form>
 
 
-__NOTE:__ those assignments work both ways, when you change the selectbox it will change the input 
+__NOTE:__ those assignments work both ways, when you change the selectbox it will change the input
 field value, and when you change the input field, it will change the selectbox.
 
 There are several ways you can specify the actual values to be used for the output.
@@ -186,7 +186,7 @@ to be used as the result value.
     </ul>
 
     selectable.getValue(); // -> [1, 2]
-    
+
 
 
 ## Options List, :options

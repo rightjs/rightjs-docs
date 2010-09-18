@@ -1,7 +1,7 @@
 # Рейтинг
 
 `Rater` - это простой виджет RightJS для создания полей рейтингов. Он может работать
-как независимый виджет, может отсылать результаты голосований через {Xhr} запросы, а 
+как независимый виджет, может отсылать результаты голосований через {Xhr} запросы, а
 так же может работать в составе форм.
 
 <%= partial '/ui/head', :locals => {:name => 'rater'} %>
@@ -49,17 +49,17 @@
 
     <form ...>
       <input type="hidden" id="the-rating" name="rating" />
-  
+
       // для автоматически инициализируемого элемента
       <div class="right-rater"
         data-rater-options="{update:'the-rating}">
         ...
       </div>
-  
+
       // с опциями конструктора
       new Rater({update: 'the-rating'})
         .insertTo('the-rating', 'after');
-  
+
       // или напрямую методом
       new Rater().insertTo('the-rating', 'after')
         .assignTo('the-rating');

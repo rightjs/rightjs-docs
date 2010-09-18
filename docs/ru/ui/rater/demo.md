@@ -85,7 +85,7 @@
   <div class="right-rater" data-rater-options="{url:'test', Xhr:{evalScripts:true,spinner:'rate-spinner'}}">
     <div class="right-rater-glow">&#9733;</div><div>&#9733;</div><div>&#9733;</div><div>&#9733;</div><div>&#9733;</div>
   </div>
-  
+
   <%= image_tag 'spinner.gif', :id => 'rate-spinner', :style => "display:none" %>
   <span id="remote-rater-output"> </span>
 </p>

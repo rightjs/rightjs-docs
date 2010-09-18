@@ -46,17 +46,17 @@ You can do that with the `update` option or by the `assignTo()` method
 
     <form ...>
       <input type="hidden" id="the-rating" name="rating" />
-  
+
       // with auto-discovery feature
       <div class="right-rater"
         data-rater-options="{update:'the-rating}">
         ...
       </div>
-  
+
       // or in script with options
       new Rater({update: 'the-rating'})
         .insertTo('the-rating', 'after');
-  
+
       // or like that
       new Rater().insertTo('the-rating', 'after')
         .assignTo('the-rating');

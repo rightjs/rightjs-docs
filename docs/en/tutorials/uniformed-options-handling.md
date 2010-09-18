@@ -47,7 +47,7 @@ You can feed each constructor with any of those options like that
       format:  'US',
       firstDay: 0
     });
-    
+
     calendar.options.format   // -> 'US'
     calendar.options.firstDay // -> 0
 
@@ -57,7 +57,7 @@ Or you can alter the `Calendar.Options` object and change behavior of all the cl
       format:  'US',
       firstDay: 0
     });
-    
+
     // after that
     var calendar = new Calendar();
     calendar.options.format   // -> 'US'
@@ -82,11 +82,11 @@ set your options inside it in a JSON format. For example
 
     // a calendar field
     <input rel="calendar" data-calendar-options="{format:'US'}" />
-    
+
     // autocompleter
     <input type="text" rel="autocompleter"
       data-autocompleter-options="{url:'/my/url'}">
-      
+
     // or a lightbox link
     <a rel="lightbox" data-lightbox-options="{blockContent: true}">
       <img src="/.../..." />

@@ -10,12 +10,12 @@ via ajax {Form#send}, which in a simple case looks like that
     <form id="my-form" ...>
       // ...
     </form>
-    
+
     $('my-form').send();
 
 This method does all the routine operations automatically, it grabs the form
 attributes, like the `url` and `method`, then collects all the data on the
-form, serializes, escapes, then creates an {Xhr} request, sends it, receives 
+form, serializes, escapes, then creates an {Xhr} request, sends it, receives
 and handles the response. It also will automatically block the form during the
 request to the server.
 
@@ -27,28 +27,28 @@ no matter when and how it was submitted. For such cases use the method
 {Form#remotize}, it will do exactly that.
 
     $('my-form').remotize();
-    
+
     $('my-form').submit(); // -> goes via ajax
-    
+
 After this, when the user or your script submits the form in any way, it will
 be automatically sent via ajax. To bring the form back and undo the changes,
 use the method {Form#unremotize}
 
     $('my-form').unremotize();
-    
+
     $('my-form').submit(); // -> goes via http
 
-You also can use the `remote` option when you create your form 
+You also can use the `remote` option when you create your form
 programmatically, in this case it will be marked as remote by default
 
     var form = new Form({remote: true, action: '/url'});
-    
+
     form.submit(); // -> goes via ajax
 
 
 ## Specifying Options, :options
 
-Ajax forms in RightJS work entirely through the {Xhr} class interface. 
+Ajax forms in RightJS work entirely through the {Xhr} class interface.
 Therefore you can use all the same options with the {Form#send} method
 
     $('my-form').send({
@@ -102,12 +102,12 @@ because `XmlHTTPRequest` objects simply don't support this feature. So, when
 you need to submit a form with a file on it, you use a hidden `IFrame` element
 instead of an `XmlHTTPRequest` object to send your form to the server.
 
-RightJS does it all automatically in the background, so you don't need to 
-worry about that, but as we use the `IFrame` element there are some 
+RightJS does it all automatically in the background, so you don't need to
+worry about that, but as we use the `IFrame` element there are some
 limitations and tricks.
 
 First of all, the only type of responses from the server that you can use with
-`IFrame` elements is plain html. Otherwise, if you say send back a piece of 
+`IFrame` elements is plain html. Otherwise, if you say send back a piece of
 JavaScript, IE browsers will offer the user to save it on his disk.
 Secondly, all your response will be handled in the context of that hidden
 frame element. Thirdly any pieces of text or HTML will be transformed by the

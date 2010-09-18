@@ -55,7 +55,7 @@ Or you can have usual instances of the Lightbox class
 
 ## Links Automatic Processing, :links
 
-When you pass a link node into the `show` method, Lightbox will automatically grab its url address and title, then load the 
+When you pass a link node into the `show` method, Lightbox will automatically grab its url address and title, then load the
 content referred by the link, show it and set the link's title on the box.
 
     // <a href="/some/url" title="Some Content" id="the-link">click me</a>
@@ -133,14 +133,14 @@ elements structure description as a guidance.
 
     <div class="lightbox">
       <div class="lightbox-locker"></div>
-      
+
       <div class="lightbox-dialog">
         <div class="lightbox-caption"></div>
-        
+
         <div class="lightbox-body-wrap">
           <div class="lightbox-body">
             <div class="lightbox-body-content"></div>
-            
+
             <div class="lightbox-body-lock">
               <div class="lightbox-body-lock-spinner">
                 <div></div><div></div><div></div>
@@ -149,7 +149,7 @@ elements structure description as a guidance.
             </div>
           </div>
         </div>
-        
+
         <div class="lightbox-close-button"></div>
         <div class="lightbox-prev-link"></div>
         <div class="lightbox-next-link"></div>

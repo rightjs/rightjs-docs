@@ -49,7 +49,7 @@ RightJS имеет свой собственный способ для един�
       format:  'EUR',
       firstDay: 1
     });
-    
+
     calendar.options.format   // -> 'EUR'
     calendar.options.firstDay // -> 1
 
@@ -60,7 +60,7 @@ RightJS имеет свой собственный способ для един�
       format:  'EUR',
       firstDay: 1
     });
-    
+
     // после этого
     var calendar = new Calendar();
     calendar.options.format   // -> 'EUR'
@@ -87,11 +87,11 @@ RightJS имеет свой собственный способ для един�
 
     // поле с календарем
     <input rel="calendar" data-calendar-options="{format:'EUR'}" />
-    
+
     // поле с автоподстановками
     <input type="text" rel="autocompleter"
       data-autocompleter-options="{url:'/my/url'}">
-      
+
     // ссылка на лайтбокс
     <a rel="lightbox" data-lightbox-options="{blockContent: true}">
       <img src="/.../..." />

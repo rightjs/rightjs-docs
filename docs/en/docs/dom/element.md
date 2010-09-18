@@ -36,12 +36,12 @@ used as are, or they can receive an optional CSS selector rule which will
 filter the result.
 
     var element = $('some-element');
-    
+
     element.siblings();      // all the siblings
     element.siblings('div'); // all the siblings with tag 'div'
 
 __NOTE__: RightJS doesn't use any special interfaces to process node lists
-but uses simple {Array} instances. And as they support calls by name, you 
+but uses simple {Array} instances. And as they support calls by name, you
 can take advantage of this working with DOM elements:
 
     $('some-list').select('li')
@@ -57,13 +57,13 @@ events binding in the same exact way.
     $('some-element').on('click', function() {
       call_that_function();
     });
-  
+
     $('another-element').on({
       click:     click_handler,
       mouseover: mouseover_handler,
       mouseout:  mouseout_handler
     });
-    
+
     $('that-element').on('click', [
       function1, function2, function3
     ]);
@@ -77,7 +77,7 @@ Finally, you can trigger any event handler manually like this:
 
     element.onClick('addClass', 'clicked');
     element.onKeypress('radioClass', 'typing');
-  
+
     element.fire('click',    { button: 3 });
     element.fire('keypress', { keyCode: 12 });
 
@@ -92,17 +92,17 @@ and custom events in RightJS. All of them are handled the exact same way:
 
 
 ### .include
-  
+
     Element.include(Object methods[, boolean don_rewrite])
 
 Registers additional methods for the DOM elements on the page.
-    
+
     Element.include({
       myMethod: function() {....}
     });
 
     $('my_element').myMethod();
-    
+
 
 ### #initialize
 
@@ -111,7 +111,7 @@ Registers additional methods for the DOM elements on the page.
 The standard constructor which takes two arguments, the tag name and options.
 Options are generally the element attributes and additionally you can send
 the following keys to preset your element properties on instance:
-  
+
 * 'html'    - a source code to fill up the innerHTML property
 * 'class'   - CSS class name(s) for the element
 * 'style'   - a hash (or string) of styles to be preset
@@ -141,7 +141,7 @@ Everything will be handled in one flow.
 Assigns the given attribute(s) to the element.
 
     $('element').set('title', 'some title');
-  
+
     $('element').set({
       title: 'some title',
       id:    'some-id'
@@ -155,7 +155,7 @@ Assigns the given attribute(s) to the element.
 Reads an element attribute. Returns null if the attribute is not set.
 
     // <div id="div" title="some title"></div>
-  
+
     $('div').get('title'); // -> 'some title'
 
 
@@ -166,7 +166,7 @@ Reads an element attribute. Returns null if the attribute is not set.
 Checks if an element has a non-empty attribute with that name.
 
     // <div id="div" title="some title"></div>
-  
+
     $('div').has('title'); // -> true
     $('div').has('rel');   // -> false
 
@@ -178,11 +178,11 @@ Checks if an element has a non-empty attribute with that name.
 Erases the attribute with the given name from an element.
 
     // <div id="div" title="some title"></div>
-    
+
     $('div').has('title');   // -> true
-    
+
     $('div').erase('title');
-    
+
     $('div').has('title');   // -> false
 
 
@@ -191,19 +191,19 @@ Erases the attribute with the given name from an element.
     hidden() -> boolean
 
 Checks if the element has style 'display' set to 'none'.
-  
+
 __NOTE__: Checks both element styles as well as the computed (CSS) styles.
 
     /*
       <style type="text/css">
         #second { display: none }
       </style>
-      
+
       <div id="first" style="display: none"></div>
       <div id="second"></div>
       <div id="third"></div>
     */
-   
+
     $('first').hidden();  // -> true
     $('second').hidden(); // -> true
     $('third').hidden();  // -> false
@@ -227,7 +227,7 @@ Hides the element. If a valid effect name was specified and the {Fx}
 module is available, the effect will be used to perform the hiding.
 
     $('some-element').hide();
-    
+
     $('some-element').hide('slide');
     $('some-element').hide('slide', {duration: 'long'});
 
@@ -236,11 +236,11 @@ module is available, the effect will be used to perform the hiding.
 
     show([String effect[, Object options]]) -> Element self
 
-Shows (un-hides) the element. If a valid effect name was specified and 
+Shows (un-hides) the element. If a valid effect name was specified and
 the {Fx} module is available, the effect will be used to perform the showing.
 
     $('some-element').show();
-  
+
     $('some-element').show('slide');
     $('some-element').show('slide', {duration: 'long'});
 
@@ -253,7 +253,7 @@ Toggles the element's visibility status. If a valid effect name was specified,
 the effect will be used to perform the toggling.
 
     $('some-element').toggle();
-    
+
     $('some-element').toggle('slide');
     $('some-element').toggle('slide', {duration: 'long'});
 
@@ -266,7 +266,7 @@ Hides all the sibling elements and shows itself. If a valid effect name was
 specified, the effect will be used to perform the showing.
 
     $('some-element').radio();
-    
+
     $('some-element').radio('slide');
     $('some-element').radio('slide', {duration: 'long'});
 
@@ -284,7 +284,7 @@ first one that matches the rule.
         </div>
       </div>
     */
-    
+
     $('three').parent();       // -> div#two
     $('three').parent('#one'); // -> div#one
 
@@ -303,7 +303,7 @@ was specified, the list will be filtered by that rule
         </div>
       </div>
     */
-    
+
     $('three').parents();       // -> [div#two, div#one]
     $('three').parents('#one'); // -> [div#one]
 
@@ -321,16 +321,16 @@ filtered by the given CSS rule.
         <div id="three"></div>
       </div>
     */
-  
+
     $('one').subNodes();       // -> [div#two, div#three]
     $('one').subNodes('#two'); // -> [div#two]
 
 
 ### #siblings
-  
+
     siblings([String css_rule]) -> Array of eleemnts
 
-Returns a list of the siblings, optionally filtered by the given 
+Returns a list of the siblings, optionally filtered by the given
 CSS rule.
 
     /*
@@ -340,7 +340,7 @@ CSS rule.
         <div id="three"></div>
       </div>
     */
-  
+
     $('two').siblings();       // -> [div#one, div#three]
     $('two').siblings('#one'); // -> [div#one]
 
@@ -360,7 +360,7 @@ CSS rule.
         <div id="three"></div>
       </div>
     */
-    
+
     $('one').nextSiblings();         // -> [div#two, div#three]
     $('one').nextSiblings('#three'); // -> [div#three]
 
@@ -380,7 +380,7 @@ css-rule.
         <div id="some"></div>
       </div>
     */
-    
+
     $('three').nextSiblings();       // -> [div#two, div#one]
     $('three').nextSiblings('#one'); // -> [div#one]
 
@@ -399,7 +399,7 @@ next sibling that matches the rule.
         <div id="three"></div>
       </div>
     */
-    
+
     $('one').next();         // -> div#two
     $('one').next('#three'); // -> div#three
 
@@ -408,7 +408,7 @@ next sibling that matches the rule.
 
     prev([String css_rule]) -> Element or null
 
-Returns the previous sibling of the element or if a CSS rule is specified 
+Returns the previous sibling of the element or if a CSS rule is specified
 the previous sibling that matches the rule.
 
     /*
@@ -418,7 +418,7 @@ the previous sibling that matches the rule.
         <div id="three"></div>
       </div>
     */
-    
+
     $('three').prev();       // -> div#two
     $('three').prev('#one'); // -> div#one
 
@@ -437,7 +437,7 @@ CSS rule.
         </div>
       </div>
     */
-    
+
     $('one').first('div');    // -> div#two
     $('one').first('#three'); // -> div#three
 
@@ -455,7 +455,7 @@ Selects all matching elements from the internal structure of the element.
         </div>
       </div>
     */
-    
+
     $('one').select('div');    // -> [div#two, div#three]
     $('one').select('#three'); // -> [div#three]
 
@@ -467,7 +467,7 @@ Selects all matching elements from the internal structure of the element.
 Checks if the element matches the given CSS rule.
 
     // <div id="some-element"></div>
-    
+
     $('some-element').match('div');  // -> true
     $('some-element').match('span'); // -> false
 
@@ -486,27 +486,27 @@ Removes the element from its parent element.
     insert(mixed content[, String position]) -> Element self
 
 Inserts the given content into the element at the given position.
-  
+
 The content can be one of the following:
-  
+
 * an element instance
 * a string with HTML code (scripts will be evaluated)
 * a list of elements (array, or NodeList or something iterable)
 * a hash like {position: content}
-  
+
 Position can be one of the following:
   top / bottom / before / after / instead
-    
+
 The `bottom` value is used by default.
 
     var element = $('some-element');
-    
+
     element.insert(new Element('div', {html: 'new-div'}));
-    
+
     element.insert(new Element('div'), 'top');
-    
+
     element.insert([element1, element2, element3], 'before');
-    
+
     element.insert({
       before: element1,
       after:  element2,
@@ -518,14 +518,14 @@ The `bottom` value is used by default.
 
     insertTo(Element destination[, String position]) -> Element self
 
-Inserts the current element into the given one, optionally at the given 
+Inserts the current element into the given one, optionally at the given
 position.
 
     var element1 = $('element1');
     var element2 = $('element2');
-    
+
     element1.insertTo(element2, 'top');
-    
+
     element2.firstChild === element1;
 
 
@@ -536,7 +536,7 @@ position.
 Replaces the current element with the given content.
 
     // <div id="one"><div id="two"></div></div>
-    
+
     $('two').replace('boo boo boo');
     $('one').innerHTML == 'boo boo boo';
 
@@ -550,9 +550,9 @@ Replaces the internal structure of the element with the given content.
 __NOTE__: All scripts will be evaluated _after_ the update.
 
     // <div id="one">foo bar</div>
-    
+
     $('one').update('something else');
-    
+
     $('one').innerHTML == 'something else';
 
 
@@ -563,9 +563,9 @@ __NOTE__: All scripts will be evaluated _after_ the update.
 Wraps the current element with the given one.
 
     // <div id="one"><div id="two"></div></div>
-    
+
     $('two').wrap(new Element('div', {id: 'three'}));
-    
+
     $('one').innerHTML == '<div id="three"><div id="two"></div></div>';
 
 
@@ -597,12 +597,12 @@ Checks if the element has no internal text or elements.
 Assigns a style to the element.
 
     $('element').setStyle('display', 'block');
-    
+
     $('element').setStyle({
       display: 'block',
       border:  '1px solid gray'
     });
-  
+
     $('element').setStyle('display:block;color:red');
 
 
@@ -613,10 +613,10 @@ Assigns a style to the element.
 Requests the element style by name. Supports both camelized and dasherized
 names.
 
-__NOTE__: Checks both element styles as well as the computed (CSS) styles.  
+__NOTE__: Checks both element styles as well as the computed (CSS) styles.
 
     $('element').hide();
-    
+
     $('element').getStyle('dispaly'); // -> 'none'
 
 
@@ -627,9 +627,9 @@ __NOTE__: Checks both element styles as well as the computed (CSS) styles.
 Checks if the element is assigned to the given CSS class name.
 
     var element = $('element');
-    
+
     element.className = 'foo bar';
-    
+
     element.hasClass('foo'); // -> true
     element.hasClass('bar'); // -> true
     element.hasClass('boo'); // -> false
@@ -642,9 +642,9 @@ Checks if the element is assigned to the given CSS class name.
 Replaces all the element CSS class names with the given one.
 
     element.className = 'foo bar';
-    
+
     element.setClass('boo');
-    
+
     element.className; // -> 'boo'
 
 
@@ -656,9 +656,9 @@ Replaces all the element CSS class names with the given one.
 Adds the given CSS class name to the element class names list.
 
     element.className = 'foo';
-    
+
     element.addClass('bar');
-    
+
     element.className; // -> 'foo bar'
 
 
@@ -670,9 +670,9 @@ Adds the given CSS class name to the element class names list.
 Removes the given CSS class name from the element class names list.
 
     element.className = 'foo bar';
-    
+
     element.removeClass('bar');
-    
+
     element.className; // -> 'foo'
 
 
@@ -683,10 +683,10 @@ Removes the given CSS class name from the element class names list.
 Toggles the CSS class name presence on the element class names list.
 
     element.className = 'foo';
-    
+
     element.toggleClass('bar')
     element.className; // -> 'foo bar';
-    
+
     element.toggleClass('bar')
     element.className; // -> 'foo';
 
@@ -715,11 +715,11 @@ __DEPRECATED__: Use the {#on} method instead.
     $('element').observe('click', function() {
       // do something about it
     });
-    
+
     $('element').observe('click', 'addClass', 'clicked');
-    
+
     $('element').observe('click', [function1, function2]);
-    
+
     $('element').observe({
       click: function1,
       dblclick: function2
@@ -738,11 +738,11 @@ Binds an event listener to the element.
     $('element').on('click', function() {
       // do something about it
     });
-    
+
     $('element').on('click', 'addClass', 'clicked');
 
     $('element').on('click', [function1, function2]);
-  
+
     $('element').on({
       click: function1,
       dblclick: function2
@@ -758,9 +758,9 @@ Checks if the given listener observers the element events. You can do either
 a general check or against a specific event name.
 
     var func = function() {};
-    
+
     element.on('click', func);
-    
+
     element.observes(func);              // -> true
     element.observes('mouseover', func); // -> false
 
@@ -775,9 +775,9 @@ Returns a list of element event listeners which can optionally be narrowed down
 by an event name scope.
 
     var func = function() {};
-    
+
     element.on('click', func);
-    
+
     element.listeners();            // -> [func]
     element.listeners('click');     // -> [func]
     element.listeners('mouseover'); // -> []
@@ -795,13 +795,13 @@ event name, for some particular listener or for some particular listener and
 event name.
 
     var listener = function() {};
-    
+
     $('element').on('click', listener);
-    
+
     $('element').stopObserving('click');
-    
+
     $('element').stopObserving(listner);
-    
+
     $('element').stopObserving('click', listner);
 
 
@@ -841,7 +841,7 @@ Returns the scroll values of the element in a hash.
     dimensions() -> Object
 
 Returns the dimensions of the element in a single hash. Includes the
-`width`, `height`, `top` and `left` positions as well as `scrollLeft` and 
+`width`, `height`, `top` and `left` positions as well as `scrollLeft` and
 `scrollTop` values.
 
     $('element').dimensions();
@@ -862,9 +862,9 @@ existing paddings and borders so the end result will be exactly as requested.
         padding: '10px'
       }
     });
-    
+
     element.setWidth(100);
-    
+
     element.offsetWidth; // -> 100
     element.style.width; // -> 80px
 
@@ -885,9 +885,9 @@ existing paddings and borders so the end result will be exactly as requested.
         padding: '10px'
       }
     });
-  
+
     element.setWidth(100);
-    
+
     element.offsetWidth; // -> 100
     element.style.width; // -> 80px
 
@@ -897,7 +897,7 @@ existing paddings and borders so the end result will be exactly as requested.
     resize({x: number, y: number})      -> Element self
 
 Sets the size of the element.
-  
+
 __NOTE__: This method will automatically adjust the actual style for existing
 paddings and borders so the end result will be exactly as requested.
 
@@ -907,9 +907,9 @@ paddings and borders so the end result will be exactly as requested.
         padding: '10px'
       }
     });
-    
+
     element.resize(100, 100);
-    
+
     element.offsetHeight; // -> 100
     element.offsetWidth;  // -> 100
     element.style.width;  // -> 80px
@@ -952,16 +952,16 @@ Scrolls the window to the element.
 
 This method loads the given URL and updates the innerHTML property of
 the element with the response body.
-  
+
 Takes all the standard {Xhr} class options as the second parameter.
-  
+
 If there is any JavaScript code in the response, it will by default be
 automatically evaluated after the element body was updated.
-  
+
 __NOTE__: Will perform a `GET` request by default.
 
     element.load('/something');
-    
+
     element.load('/something', {
       method: 'post',
       spinner: 'spinner-id'
@@ -974,4 +974,4 @@ __NOTE__: Will perform a `GET` request by default.
 Immediately stops and cancels all active visual effects on the element
 
     $('element').slide().fade().stop();
-    
+

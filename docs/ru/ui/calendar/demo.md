@@ -59,13 +59,13 @@
   new Calendar({
     minDate: min_date, maxDate: max_date
   }).assignTo('date-with-limits');
-  
+
   new Calendar({listYears: true}).assignTo('date-with-years');
-  
+
   new Calendar({
     timePeriod: 15, format: "%Y-%m-%d %H:%M"
   }).assignTo('date-with-15-minutes-period');
-  
+
   new Calendar({
     timePeriod: 180, format: "%Y-%m-%d %H:%M"
   }).assignTo('date-with-3-hours-period');
@@ -126,7 +126,7 @@
 вы хотите показывать/скрывать календарь специальной кнопкой:
 
     <input type="text" rel="calendar" />
-  
+
     <input type="text" id="input-field" />
     <input type="image" rel="calendar[input-field]" />
 
