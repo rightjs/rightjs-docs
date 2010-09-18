@@ -48,7 +48,7 @@ The usage of them is pretty straight forward:
       </ul>
     */
 
-    $('some-menu').select('li').each('onClick', 'radioClass', 'marked');
+    $('some-menu').find('li').each('onClick', 'radioClass', 'marked');
 
 
 ## Visibility Toggling With Visual Effects, :effects

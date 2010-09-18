@@ -30,7 +30,7 @@ __NOTE__: RightJS doesn't use any special interfaces to process node lists
 but uses simple {Array} instances. And as they support calls by name, you
 can take advantage of them when work with DOM elements:
 
-    $('some-list').select('li')
+    $('some-list').find('li')
       .filter('hasClass', 'marked')
       .each('onClick', function() {...});
 

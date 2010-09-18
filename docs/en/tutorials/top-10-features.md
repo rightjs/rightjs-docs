@@ -42,8 +42,8 @@ in case of element collections processing.
 
     // filtering and collecting
     var enabled = $$('input').filter('enabled');
-    var classes = $$('div').map('className');
-    var some_id = $$('div').map('id').compact().first();
+    var classes = $$('div').map('get', 'className');
+    var some_id = $$('div').map('get', 'id').compact().first();
 
     // you also can combine this with events processing
     $$('ul#todos li').each('onClick', 'toggleClass', 'marked');

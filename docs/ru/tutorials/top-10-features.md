@@ -45,8 +45,8 @@ RightJS старается не изобретать никаких новых �
 
     // фильтрация и коллекционирование
     var enabled = $$('input').filter('enabled');
-    var classes = $$('div').map('className');
-    var some_id = $$('div').map('id').compact().first();
+    var classes = $$('div').map('get', 'className');
+    var some_id = $$('div').map('get', 'id').compact().first();
 
     // вы так же можете комбиниовать коллекции и события
     $$('ul#todos li').each('onClick', 'toggleClass', 'marked');

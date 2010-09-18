@@ -38,7 +38,7 @@ use cases.
     var replaced   = strings.map('replace', 'some', 'another');
 
     // collecting the element ids
-    var ids = elements.map('id');
+    var ids = elements.map('get', 'id');
 
     // disabling all the elements
     elements.each('disable');

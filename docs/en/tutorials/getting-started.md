@@ -28,10 +28,10 @@ That means you have two top level functions `$(id)` and `$$(css_rule)`
 
 
 Then, every {Element} instance has a number of methods to navigate around its neighborhood, like
-`select`, `subNodes`, `siblings`, etc. Each of them can be used as is
+`find`, `children`, `siblings`, etc. Each of them can be used as is
 or can receive a string css-rule that will filter the result.
 
-    element.select('div.boo span.foo'); // all levels descendants
+    element.find('div.boo span.foo'); // all levels descendants
 
     element.parent();        // the first parent
     element.parent('div');   // the first DIV parent
@@ -46,8 +46,8 @@ To keep it simple RightJS doesn't have any specific interfaces to process dom-el
 instead of that it offers something nicer and more generic. You can process {Array}s by specifying
 property/method name and optional attributes just like that.
 
-    var ids = $$('div').map('id');
-    var classes = $$('div').map('className').map('split', /\s+/).flatten();
+    var ids = $$('div').map('get', 'id');
+    var classes = $$('div').map('get', 'className').map('split', /\s+/).flatten();
 
     $$('input').each('disable');
     $$('input').filter('disabled');
@@ -85,7 +85,7 @@ See the [dom-event basics](/tutorials/dom-events-handling) for more information
 RightJS supports unobtrusive programming using the events delegation
 technique. In a simple case it looks like that
 
-    "#todos li".on('click', function() {
+    "#todos li".onClick(function() {
       this.toggleClass('marked');
     });
 
@@ -96,7 +96,7 @@ technique. In a simple case it looks like that
     });
 
     // by-name references are also available
-    "#todos li".on('click', 'toggleClass', 'marked');
+    "#todos li".onClick('toggleClass', 'marked');
 
 See the [events delegation article](/tutorials/events-delegation) for more
 information.

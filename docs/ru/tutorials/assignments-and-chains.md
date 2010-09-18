@@ -21,7 +21,7 @@ RightJS спроектирован таким образом, что кажды�
 либо ссылку на сам объект, что дает вам возможность создавать удобные
 цепочки вызовов и легко понятные предложения из кода.
 
-    var classes = elements.map('className').map('split', ' ').flatten().uniq();
+    var classes = elements.map('get', 'className').map('split', ' ').flatten().uniq();
 
     elements.each('enable').each('onClick', 'radioClass', 'marked');
 

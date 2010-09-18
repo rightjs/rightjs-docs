@@ -21,7 +21,7 @@ you end up with some data, there are almost no methods that return
 `void`, and this gives you an opportunity to queue just anything
 you want.
 
-    var classes = elements.map('className').map('split', ' ').flatten().uniq();
+    var classes = elements.map('get', 'className').map('split', ' ').flatten().uniq();
 
     elements.each('enable').each('onClick', 'radioClass', 'marked');
 

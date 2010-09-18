@@ -26,14 +26,14 @@ Method                 | Description
 -----------------------|-----------------------------------------------------------
 {Element#parent}       | the parent element
 {Element#parents}      | all the parent elements from bottom to top
-{Element#subNodes}     | first level descendants
+{Element#children}     | first level descendants
 {Element#siblings}     | all the siblings
 {Element#nextSiblings} | next siblings
 {Element#prevSiblings} | previous siblings
 {Element#next}         | next sibling
 {Element#prev}         | previous sibling
 {Element#first}        | first matching descendant at any level
-{Element#select}       | all the matching descendants at any levels
+{Element#find}         | all the matching descendants at any levels
 
 
 All the methods can receive a css-rule as an argument. If a css-rule was specified
@@ -53,7 +53,7 @@ will skip elements until find the first one that matches the rule.
     $('third-1').parent();       // -> div#second-1
     $('third-1').parent('#top'); // -> div#top
 
-    $('top').select('div');      // -> all the subdivs
+    $('top').find('div');        // -> all the subdivs
 
     $('top').first('div');       // -> div#second-1
 

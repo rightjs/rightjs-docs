@@ -39,7 +39,7 @@ RightJS единообразно работает как с методами, т
     var replaced   = strings.map('replace', 'some', 'another');
 
     // собираем все ID элементов
-    var ids = elements.map('id');
+    var ids = elements.map('get', 'id');
 
     // блокируем все элементы списка
     elements.each('disable');
