@@ -4,8 +4,6 @@ Right Sortable is the sortable lists feature for RightJS
 
 <%= partial '/ui/head', :locals => {:name => 'sortable'} %>
 
-__NOTE:__ This module requires the  [drag-and-drop](/plugins/drag-and-drop) library
-
 <%= anchors_index %>
 
 
@@ -15,8 +13,10 @@ Right Sortable has the following features:
 
 * RESTful design friendly urls processing
 * Automatic vertical/horizontal direction recognition
-* Auto-Discovery feature support
-* Tiny size of less than 2k
+* Auto-Initialization feature support
+* Allows to drag items between lists
+* Tiny size of less than 2k gzipped
+* Has no dependency from the drag-n-drop library
 
 
 ## Usage Basics, :usage
@@ -26,32 +26,18 @@ class directly inside your JavaScript code
 
     new Sortable('todos', { url: '/todos' });
 
-Secondly you might use the {Element} level shortcut called `'makeSortable'`
-
-    $('todos').makeSortable({ url: '/todos' });
-
-You also can destroy the sortable functionality by calling the `'undoSortable()'` method on
-your element, or by calling the `'destroy'` method on a sortable instance.
-
-    new Sortable('todos', { url: '/todos' }).destroy();
-
-    $('todos').makeSortable({ url: '/todos' }).undoSortable();
-
-
-## Auto-Discoverable Sortables, :discovery
-
-As many the other widgets in the RightJS UI library, sortables can be defined using the `rel`
-attribute and HTML5 style option attributes like that
+Then, as most of the RightJS UI widgets, you can initialize sortables using
+standard for RightJS HTML 5 attribute `data-sortable`
 
     // simple sortable
-    <ul rel="sortable">
+    <ul data-sortable="">
       <li>Item 1</li>
       <li>Item 2</li>
     </ul>
 
 
     // remote sortable
-    <ul rel="sortable" data-sortable-options="{url: '/todos'}">
+    <ul data-sortable="{url: '/todos'}">
       <li id="item_1">Feed the fish</li>
       <li id="item_2">Call mommy</li>
     </ul>
@@ -63,7 +49,6 @@ You might use the following options to customize your sortables
 
 Name      | Default    | Description
 ----------|------------|---------------------------------------------------------------------
-direction | 'auto'     | 'auto', 'vertical', 'horizontal', 'x', 'y'
 tags      | 'li'       | the list items tag name
 url       | null       | the Xhr requests url address, might contain the '%{id}' placeholder
 method    | 'put'      | the Xhr requests method
@@ -71,16 +56,20 @@ Xhr       | {}         | additional Xhr options
 idParam   | 'id'       | the url id value name
 posParam  | 'position' | the url position value name
 parseId   | true       | if the id attribute should be converted into an integer before sending
-cssRule   | '\[rel^=sortable\]' | the auto-discoverable elements marker
+accept    | null       | reference or a list of references for interchangeable sortables
+minLength | 1          | minimal count of items that allowed to be left in a list
+cssRule   | '\*\[data-sortable\]' | the auto-initializable elements marker
 
 
 ## Events List, :events
 
-There is just one event name for this unit and it's called `'update'`. Callbacks for this event will receive
-the moved list item element and its new position index in the list.
+There is just one event name for this unit and it's called `'change'`.
 
     new Sortable('todos', {
-      onUpdate: function(element, position) {
+      onChange: function(event) {
+        event.list;
+        event.item;
+        event.index;
         // ....
       }
     });

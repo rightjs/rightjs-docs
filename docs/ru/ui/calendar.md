@@ -15,8 +15,8 @@
 * Поддержка таблиц из нескольких месяцев
 * Поддержка минимальных/максимальных дат
 * Может работать как независимый виджет
-* Авто-инициализация через `rel="calendar"` атрибут
-* Маленький (всего 10k) размер
+* Авто-инициализация через HTML5 атрибут
+* Маленький (всего 6k gzipped) размер
 * Никаких зависимых файлов css или картинок
 * Поддержка интернационализации
 
@@ -35,26 +35,22 @@
 
 
 
-## Авто-инициализация, :discovery
+## Авто-инициализация, :initialization
 
-Для виджета календаря доступна стандартная для RightJS возможность автоматической
-инициализации. Все что для этого требуется, это указать атрибут `rel="calendar"` на
-нужном поле ввода. Скрипт автоматически проинциализирует все нужные объекты и события
-и покажет календарик, когда пользователь попытается воспользоваться полем ввода.
+Виджет календаря так же может автоматически инициализироваться на полях ввода
+через стандартный для RightJS HTML5 атрибут `data-calendar`
 
-    <input type="text" rel="calendar" />
+    <input type="text" data-calendar="" />
 
-Вы так же можете использовать атрибут `rel="calendar[input_field_id]"`, если
-вы хотите чтобы календарь появлялся только по клику на специальном элементе.
+    <input type="text" data-calendar="{format: 'US'}" />
+
+Так же можно указывать отдельный триггер для календаря, скажем иконку
 
     <input type="text" id="my-input" />
-    <img src="calendar.png" rel="calendar[my-input]" />
+    <img src="calendar.png" data-calendar="{update: 'my-input'}" />
 
-И дополнительно, вы можете использовать атрибуты в стиле HTML5 для указания
-специфических опций, как в следующем примере
-
-    <input type="text" rel="calendar"
-      data-calendar-options="{format: 'EUR'}" />
+В любом случае инциализация просиходит только тогда когда пользователь начинает
+непосредственно взаимодействовать с помеченными элементами
 
 
 ## Список опций, :options
@@ -76,7 +72,9 @@ numberOfMonths | 1          | число месяцев на календаре,
 fxName         | 'fade'     | имя визуального эффекта или `null` чтобы отключить
 fxDuration     | 'short'    | длительность визуального эффекта
 hideOnPick     | false      | флаг чтобы скрывать календарь после того как пользователь выберет дату
-cssRule        | '\[rel^=calendar\]' | css-правило для автоматически инициализируемых полей
+update         | null       | поле ввода которое нужно обновлять когда пользователь выбирает дату
+trigger        | null       | ссылка на элемент внешнего триггера для всплывающего календаря
+cssRule        | '\*\[data-calendar\]' | css-правило для автоматически инициализируемых полей
 
 Вы можете использовать любые из перечисленных опций совместно с каждым отдельно взятым виджетом
 или же изменить настройки глобально в переменной `Calendar.Options`.
@@ -141,43 +139,17 @@ done   | пользователь нажимает кнопку "Готово"
 
 ## API Документация, :api
 
-Виджет календаря имеет простой API интерфейс
+Виджет календаря имеет тот же самый интерфейс что и любой объект класса {Element} плюс
+несколько своих методов
 
 Метод                       | Описание
 ----------------------------|----------------------------------------------------------------------
 setDate(date)               | устанавливает дату, это может быть объект даты или строка
 getDate()                   | возвращает текущую дату в виде объекта даты
+setValue(String date)       | устанавливает дату
+getValue()                  | возвращает дату в виде строки
 format(\[String format\])   | возвращает текущую дату в виде строки
-insertTo(element)           | вставляет элемент календаря в указанный элемент
 assignTo(element\[,trigger\]) | назначает календарь работать с указанным полем ввода. можно так же указать элемент по клику на котором календарь будет показываться/скрываться
-hide()                      | скрывает элемент календаря
-show()                      | показывает элемент календаря
-showAt(Element)             | показывает элемент календаря ниже указанного элемента и назначает его на совместную с ним работу
-
-
-
-## Интернационализация, :i18n
-
-Вы можете найти модуль интернационализации для нужного вам языка в github репозитории
-
-<http://github.com/rightjs/rightjs-ui/tree/master/i18n/>
-
-Или же вы можете произвести перевод вручную, изменив объект `Calendar.i18n` следующим образом
-
-    Calendar.i18n = {
-      Done:            'Готово',
-      Now:             'Сейчас',
-      Next:            'Следующий месяц',
-      Prev:            'Предыдущий месяц',
-      NextYear:        'Следующий год',
-      PrevYear:        'Предыдущий год',
-
-      dayNames:        $w('Вокскресенье Понедельник Вторник Среда Четверг Пятница Суббота'),
-      dayNamesShort:   $w('Вск Пнд Втр Срд Чтв Птн Сбт'),
-      dayNamesMin:     $w('Вс Пн Вт Ср Чт Пт Сб'),
-      monthNames:      $w('Январь Февраль Март Аперль Май Инюнь Июль Август Сентябрь Октябрь Ноябрь Декабрь'),
-      monthNamesShort: $w('Янв Фев Мар Апр Май Инь Иль Авг Сен Окт Ноя Дек')
-    };
 
 
 ## Настройки стилей, :styles
@@ -186,43 +158,39 @@ showAt(Element)             | показывает элемент календа
 вашему дизайну, вы можете использовать следующее описание структуры элементов, как
 руководство к действию.
 
-    <div class="right-calendar">
-      <div class="right-ui-button right-calendar-next-button">&lsaquo;</div>
-      <div class="right-ui-button right-calendar-prev-button">&rsaquo;</div>
+    <div class="rui-calendar rui-panel">
+      <div class="swaps">
+        <div class="rui-button next-month">&lsaquo;</div>
+        <div class="rui-button prev-month">&rsaquo:</div>
+      </div>
 
-      <table class="right-calendar-greed">
+      <table class="greed">
         <tr><td>
 
-          <div class="right-calendar-month">
-            <div class="right-calendar-month-caption"></div>
-
-            <table>
-              <thead>
-                <tr>
-                  <th>Mo<th>Tu<th>...
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="right-calendar-day-blank">
-                  <td class="right-calendar-day-selected">
-                  <td class="right-calendar-day-disabled">
-                  <td><td><td><td>...
-                </tr>
-                .....
-              </tbody>
-            </table>
-          </div>
+          <table class="month">
+            <caption>January</caption>
+            <thead><tr>
+              <th>Mo<th>Tu<th>...
+            </tr></thead>
+            <tbody>
+              <tr>
+                <td class="blank">
+                <td class="selected">
+                <td class="disabled">
+                <td><td><td><td>...
+              .....
+            </tbody>
+          </table>
 
         </td></tr>
       </table>
 
-      <div class="right-calendar-time">
+      <div class="timepicker">
         <select></select> : <select></select>
       </div>
 
-      <div class="right-ui-buttons right-calendar-buttons">
-        <input type="button" value="Done" class="right-ui-button right-calendar-done-button" />
-        <input type="button" value="Now" class="right-ui-button right-calendar-now-button" />
+      <div class="buttons">
+        <div class="rui-button">Now</div>
+        <div class="rui-button">Done</div>
       </div>
     </div>

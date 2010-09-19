@@ -15,7 +15,7 @@
 * Поддерживает ссылки на видео ресурсы
 * Работает с коллекциями/галлереями
 * Автоматическая инициализация по атрибуту `rel="lightbox"`
-* Все упаковано в один маленький (8.5k) файл
+* Все упаковано в один маленький (4k gzipped) файл
 * Не имеет зависимостей от других файлов css или картинок
 * Поддержка интернационализации
 
@@ -95,10 +95,10 @@ fxDuration      | 200        | длительность визуальных э�
 hideOnEsc       | true       | флаг, если нужно закрывать лайтбокс по кнопке Esc
 hideOnOutClick  | true       | флаг, если лайтбокс должен закрываться по клику вне бокса
 showCloseButton | true       | флаг, если кнопка закрытия должна быть видна
-blockContent    | false      | если `true` то контент будет заблокирован прозрачным DIV элементом
-cssRule         | "a\[rel^=lightbox\]" | css-правило для автоматически инициалзируемых ссылок
-mediaWidth      | 425     | video player width
-mediaHeight     | 350     | video player height
+group           | null       | имя группы для работы с галлереями
+cssRule         | "a\[data-lightbox\]" | css-правило для автоматически инициалзируемых ссылок
+mediaWidth      | 425        | video player width
+mediaHeight     | 350        | video player height
 
 Вы можете указать любые из них с конструктором, или изменить глобально в переменной `Lightbox.Options`
 
@@ -110,48 +110,34 @@ mediaHeight     | 350     | video player height
     hard_box.setTitle('Fill It Up');
     hard_box.show('some required form');
 
-
-## Интернационализация, :i18n
-
-Вы можете найти модуль интернационализации для необходимого вам языка на сервере github
-
-<http://github.com/rightjs/rightjs-ui/tree/master/i18n/>
-
-Или перевести все надписи вручную изменив переменную `Ligthbox.i18n`
-
-    Lightbox.i18n = {
-      CloseTitle: 'Закрыть',
-      PrevTitle:  'Предыдущая',
-      NextTitle:  'Следующая'
-    };
-
-
 ## Настройки стилей, :styles
 
 Если вам потребуется изменить настройки стилей, используйте следующее описание
 структуры элементов как руководство.
 
-    <div class="lightbox">
-      <div class="lightbox-locker"></div>
+    <div class="rui-lightbox">
+      <div class="rui-lightbox-locker"></div>
 
-      <div class="lightbox-dialog">
-        <div class="lightbox-caption"></div>
+      <div class="rui-lightbox-dialog">
+        <div class="rui-lightbox-title"></div>
 
-        <div class="lightbox-body-wrap">
-          <div class="lightbox-body">
-            <div class="lightbox-body-content"></div>
-
-            <div class="lightbox-body-lock">
-              <div class="lightbox-body-lock-spinner">
-                <div></div><div></div><div></div>
-                <div class="glow"></div>
+        <div class="rui-lightbox-body">
+          <div class="rui-lightbox-body-inner">
+            <div class="rui-lightbox-body-locker">
+              <div class="rui-spinner"></div>
+            </div>
+            <div class="rui-lightbox-scroller">
+              <div class="rui-lightbox-content">
+                Your content in here
               </div>
             </div>
           </div>
         </div>
 
-        <div class="lightbox-close-button"></div>
-        <div class="lightbox-prev-link"></div>
-        <div class="lightbox-next-link"></div>
+        <div class="rui-lightbox-nav">
+          <div class="close">&times;</div>
+          <div class="prev">&larrow;</div>
+          <div class="next">&rarrow;</div>
+        </div>
       </div>
     </div>

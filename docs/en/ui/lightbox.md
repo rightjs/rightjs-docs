@@ -10,14 +10,13 @@ Lightbox is the standard lightbox-popup feature for RightJS
 
 Right Lightbox has the following features
 
-* Support of any html content displaying
-* Support of content loading via ajax requests
-* Support of links to video streams
-* Road trips support
-* Content auto discovery via the `rel="lightbox"` attribute
-* It has really tiny size of just 8.5k and doesn't need any images
-* Everything is included in a single file
-* i18n support
+* Can display any html content you need
+* Supports content loading via ajax
+* Supports links to video streams
+* Groups and collections support
+* Content auto initialization via the `rel="lightbox"` attribute
+* It has really tiny size of just 4k gzipped and doesn't need any images
+* Everything is included in one single file
 
 
 ## Usage Basics, :usage
@@ -99,8 +98,8 @@ fxDuration      | 200     | the visual effects duration
 hideOnEsc       | true    | should the lightbox be closed on the Esc button
 hideOnOutClick  | true    | should the lightbox be closed on click outside of the box
 showCloseButton | true    | should the close button be available
-blockContent    | false   | if true, content will be blocked by a transparent DIV
-cssRule         | "a\[rel^=lightbox\]" | css-rule for automatically processable lightbox links
+group           | null    | a name of a group for galleries
+cssRule         | "a\[data-lightbox\]" | css-rule for automatically processable lightbox links
 mediaWidth      | 425     | video player width
 mediaHeight     | 350     | video player height
 
@@ -111,47 +110,34 @@ You can pass those options as a hash for the constructor, or change them globall
     hard_box.show('some required form');
 
 
-## Internationalization, :i18n
-
-You might find a translation module for your language at the github repository.
-
-<http://github.com/rightjs/rightjs-ui/tree/master/i18n/>
-
-Or you can translate the interface by simply altering the `Ligthbox.i18n` object like that
-
-    Lightbox.i18n = {
-      CloseTitle: 'Закрыть',
-      PrevTitle:  'Предыдущая',
-      NextTitle:  'Следующая'
-    };
-
-
 ## Style Adjustments, :styles
 
 If you need to alter the lightbox view to make it fit your design, please use the following
 elements structure description as a guidance.
 
-    <div class="lightbox">
-      <div class="lightbox-locker"></div>
+    <div class="rui-lightbox">
+      <div class="rui-lightbox-locker"></div>
 
-      <div class="lightbox-dialog">
-        <div class="lightbox-caption"></div>
+      <div class="rui-lightbox-dialog">
+        <div class="rui-lightbox-title"></div>
 
-        <div class="lightbox-body-wrap">
-          <div class="lightbox-body">
-            <div class="lightbox-body-content"></div>
-
-            <div class="lightbox-body-lock">
-              <div class="lightbox-body-lock-spinner">
-                <div></div><div></div><div></div>
-                <div class="glow"></div>
+        <div class="rui-lightbox-body">
+          <div class="rui-lightbox-body-inner">
+            <div class="rui-lightbox-body-locker">
+              <div class="rui-spinner"></div>
+            </div>
+            <div class="rui-lightbox-scroller">
+              <div class="rui-lightbox-content">
+                Your content in here
               </div>
             </div>
           </div>
         </div>
 
-        <div class="lightbox-close-button"></div>
-        <div class="lightbox-prev-link"></div>
-        <div class="lightbox-next-link"></div>
+        <div class="rui-lightbox-nav">
+          <div class="close">&times;</div>
+          <div class="prev">&larrow;</div>
+          <div class="next">&rarrow;</div>
+        </div>
       </div>
     </div>

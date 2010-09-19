@@ -13,7 +13,7 @@ Our in-place editors plugin has the following features:
 * Works with text inputs, files, passwords and textarea fields
 * Can automatically hide/show additional elements, like trigger links
 * Super easy usage interface
-* Comes in a single tiny file (just 2.6k)
+* Comes in a single tiny file (just 1.7k gzipped)
 
 ## Usage basics, :usage
 
@@ -84,11 +84,11 @@ update | when the script received the server response and updated the element
 
 In case you need to alter the styles on the form, there's basic structure of elements we use
 
-    <form class="right-in-edit">
-      <input class="right-in-edit-field" />
-      <input type="submit" class="right-in-edit-submit" />
-      <a href="" class="right-in-edit-cancel">Cancel</a>
-      <div class="right-in-edit-spinner">
+    <form class="rui-in-edit">
+      <input class="rui-in-edit-field" />
+      <input type="submit" class="rui-in-edit-submit" />
+      <div class="rui-in-edit-spinner">
         <div class="glow"></div><div></div><div></div><div></div>
       </div>
+      <a href="" class="rui-in-edit-cancel">Cancel</a>
     </form>

@@ -39,22 +39,24 @@ the script
       local: <%= PagesController::LANGUAGES.slice(0,4).to_json %>
     });
 
-## Auto-Discovered Fields, :auto
+## Auto-Initialized Fields, :auto
 
-You might have the same result as above with auto discovered fields like this
+You might have the same result as above with auto initialized fields like this
 
-<input type="text" rel="autocompleter[/ui/autocompleter/languages/%{search}.js]" class="demo-field" />
+<input type="text" data-autocompleter="{url: '/ui/autocompleter/languages/%{search}.js'}" class="demo-field" />
 
 the script
 
-    <input type="text" rel="autocompleter[/ui/autocompleter/languages/%{search}.js]" />
+    <input type="text" class="demo-field"
+      data-autocompleter="{url: '/ui/autocompleter/languages/%{search}.js'}" />
 
 the same thing with a list of local options
 
-<input type="text" rel="autocompleter<%= PagesController::LANGUAGES.to_json.gsub('"', "'") %>" class="demo-field" />
+<input type="text" data-autocompleter="{local: <%= PagesController::LANGUAGES.to_json.gsub('"', "'") %>}" class="demo-field" />
 
 source code
 
-    <input type="text" rel="autocompleter<%= PagesController::LANGUAGES.slice(0,4).to_json.gsub('"', "'") %>" />
+    <input type="text" class="demo-field"
+      data-autocompleter="{local: <%= PagesController::LANGUAGES.slice(0,4).to_json.gsub('"', "'") %>}" />
 
 <div style="height: 10em"> </div>

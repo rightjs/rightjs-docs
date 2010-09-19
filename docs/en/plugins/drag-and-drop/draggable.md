@@ -14,7 +14,7 @@ the element thus making it not draggable anymore.
     // ... and remove the dragging ability again
     draggable.destroy();
 
-You can also use the auto-discovery feature and the {Element} level shortcuts to
+You can also use the auto-initialization feature and the {Element} level shortcuts to
 create draggables. See the main [drag-and-drop](/plugins/drag-and-drop) page for
 more details.
 
@@ -38,7 +38,7 @@ scroll            | true        | should draggables automatically scroll the win
 scrollSensitivity | 32          | scrolling area size in pixels
 zIndex            | 10000000    | initial elements z-index (gets incremented during drags)
 moveOut           | false       | should the draggable be moved out of its context? (for overflown elements)
-relName           | 'draggable' | the auto-discovery feature key
+relName           | 'draggable' | the auto-initialization feature key
 
 As usual you can specify them as initialization options for every particular draggable unit or
 customize the `Draggable.Options` in order to change the global settings.

@@ -12,14 +12,14 @@
 
 <%= partial '/plugins/download', :locals => {:name => 'dnd'} %>
 
-## Автоматическая инициализация, :discovery
+## Автоматическая инициализация, :initialization
 
 Данный модель предоставляет стандартную для RightJS возможность авто-инициализации
 по специальному атрибуту `'rel'` и атрибутам с опциями в стиле HTML5:
 
-    <div rel="draggable" data-draggable-options="{revert: false}">Куда тащите?</div>
+    <div rel="draggable" data-draggable="{revert: false}">Куда тащите?</div>
 
-    <div rel="droppable" data-droppable-options="{accept: '.sinner'}">Вот сюда</div>
+    <div rel="droppable" data-droppable="{accept: '.sinner'}">Вот сюда</div>
 
 ## Методы уровня элементов, :methods
 

@@ -1,5 +1,5 @@
 # Демо календаря
-<% content_for :modules, javascript_include_tag('/builds/ui/right-calendar-min.js') %>
+<% content_for :modules, javascript_include_tag('/builds/ui/right-calendar.js') %>
 
 Несколько стандартных примеров использования виджета [календаря](/ui/calendar).
 Вы можете использовать клавиши клавиатуры для навигации
@@ -125,19 +125,19 @@
 нужном поле ввода. Или атрибут вида `rel="calendar[input_field_id]"` если
 вы хотите показывать/скрывать календарь специальной кнопкой:
 
-    <input type="text" rel="calendar" />
+    <input type="text" data-calendar="{}" />
 
     <input type="text" id="input-field" />
-    <input type="image" rel="calendar[input-field]" />
+    <input type="image" data-calendar="{update: 'input-field'}" />
 
 <p>
   <label>Простой календарь:</label>
-  <input type="text" rel="calendar" class="demo-field" />
+  <input type="text" data-calendar="{}" class="demo-field" />
 </p>
 <p>
   <label>Календарь с триггером:</label>
   <input type="text" id="input-field" class="demo-field" />
-  <input type="image" rel="calendar[input-field]" src="/images/calendar.png" />
+  <input type="image" data-calendar="{update: 'input-field'}" src="/images/calendar.png" />
 </p>
 
 ## Встроенные календари, :inline

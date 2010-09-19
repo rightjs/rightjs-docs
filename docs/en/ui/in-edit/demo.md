@@ -1,5 +1,5 @@
 # In Place Editors Demo
-<% content_for :modules, javascript_include_tag('/builds/ui/right-in-edit-min.js') %>
+<% content_for :modules, javascript_include_tag('/builds/ui/right-in-edit.js') %>
 
 Here are some simple [in-place editor](/ui/in-edit) examples
 

@@ -1,5 +1,5 @@
 # Демо полей выбора
-<% content_for :modules, javascript_include_tag('/builds/ui/right-selectable-min.js') %>
+<% content_for :modules, javascript_include_tag('/builds/ui/right-selectable.js') %>
 <style type="text/css">
   dl.right-selectable dt {
     font-size: 1em;
@@ -13,7 +13,7 @@
 ## Простой случай, :simple
 
 <p>
-  <ul class="right-selectable">
+  <ul class="rui-selectable">
     <li>Раз</li>
     <li>Два</li>
     <li>Три</li>
@@ -28,7 +28,7 @@
 ## Поля с группами, :groups
 
 <p>
-  <dl class="right-selectable">
+  <dl class="rui-selectable">
     <dt>Первая группа</dt>
     <dd>
       <ul>
@@ -53,7 +53,7 @@
 ## Поле с единичным выбором, :single
 
 <p>
-  <ul class="right-selectable right-selectable-single">
+  <ul class="rui-selectable right-selectable-single">
     <li>Раз</li>
     <li>Два</li>
     <li>Три</li>
@@ -68,7 +68,7 @@
 ## Поле с единичным выбором и группами, :single-groups
 
 <p>
-  <dl class="right-selectable right-selectable-single">
+  <dl class="rui-selectable right-selectable-single">
     <dt>Первая группа</dt>
     <dd>
       <ul>
@@ -93,7 +93,7 @@
 ## С заблокированными позициями, :disabled
 
 <p>
-  <ul class="right-selectable" data-selectable-options="{disabled:[1,4]}">
+  <ul class="rui-selectable" data-selectable="{disabled:[1,4]}">
     <li>Раз</li>
     <li>Два</li>
     <li>Три</li>
@@ -109,7 +109,7 @@
 
 <p>
   Это поле работает с простыми индексами
-  <ul class="right-selectable" data-selectable-options="{update: 'input-1'}">
+  <ul class="rui-selectable" data-selectable="{update: 'input-1'}">
     <li>Раз</li>
     <li>Два</li>
     <li>Три</li>
@@ -120,7 +120,7 @@
 </p>
 <p>
   Это поле использует атрибут ID позиций
-  <ul class="right-selectable" data-selectable-options="{update: 'input-2'}">
+  <ul class="rui-selectable" data-selectable="{update: 'input-2'}">
     <li id="one-1">Раз</li>
     <li id="two-2">Два</li>
     <li id="three-3">Три</li>
@@ -131,7 +131,7 @@
 </p>
 <p>
   Это поле автоматически выделяет цифры из ID атрибутов
-  <ul class="right-selectable" data-selectable-options="{update: 'input-3', parseIds: true}">
+  <ul class="rui-selectable" data-selectable="{update: 'input-3', parseIds: true}">
     <li id="one-1">Раз</li>
     <li id="two-2">Два</li>
     <li id="three-3">Три</li>
@@ -142,7 +142,7 @@
 </p>
 <p>
   С единичным выбором и атрибутами ID
-  <ul class="right-selectable" data-selectable-options="{update: 'input-4', multiple: false}">
+  <ul class="rui-selectable" data-selectable="{update: 'input-4', multiple: false}">
     <li id="one-1">Раз</li>
     <li id="two-2">Два</li>
     <li id="three-3">Три</li>
@@ -155,7 +155,7 @@
 ## С ограничением на количество элементов, :limited
 <p>
   Вы можете выбрать только три позиции в данном списке
-  <ul class="right-selectable" data-selectable-options="{limit: 3}">
+  <ul class="rui-selectable" data-selectable="{limit: 3}">
     <li>Раз</li>
     <li>Два</li>
     <li>Три</li>

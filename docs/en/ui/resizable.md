@@ -13,7 +13,7 @@ page what can be resized by the user.
 * Easy and flexible usage
 * Can work with any direction
 * Fully CSS based design
-* Tiny (3.6k) build file
+* Tiny (2k gzipped) build file
 * No drag-n-drop dependencies
 
 
@@ -26,11 +26,11 @@ server. (check the [styles section](#styles) for more options on this regard)
 After that you have three ways to create resizable blocks. First, you can
 simply define an HTML structure like that
 
-    <div class="right-resizable">
-      <div class="right-resizable-content">
+    <div class="rui-resizable">
+      <div class="rui-resizable-content">
         // your content goes in here
       </div>
-      <div class="right-resizable-handle"></div>
+      <div class="rui-resizable-handle"></div>
     </div>
 
 In this case RightJS will use lazy initialization of the widget on demand.
@@ -64,9 +64,9 @@ bottom corner. But this widget can work with any of the four directions
 specifically.
 
 If you create your resizable as a HTML structure, then simply use css classes,
-like `right-resizable-right`, `right-resizable-bottom`, and so one.
+like `rui-resizable-right`, `rui-resizable-bottom`, and so one.
 
-    <div class="right-resizable-bottom">
+    <div class="rui-resizable-bottom">
       // the rest of the stuff in here
     </div>
 
@@ -82,7 +82,7 @@ It will automatically assign necessary classes for you.
 This widget will automatically respect your CSS level settings like
 `min-width`, `max-height`, etc.
 
-    <div class="right-resizable" style="min-width: 10em">
+    <div class="rui-resizable" style="min-width: 10em">
       // the rest of the construction in here
     </div>
 
@@ -104,14 +104,14 @@ previous two chapters
 
 Name      | Default | Description
 ----------|---------|-----------------------------------------------------
-direction | null | `top`, `left`, `right`, `bottom` or `null` for bidirectional
-minWidth  | null | minimal width limit
-maxWidth  | null | maximal width limit
-minHeight | null | minimal height limit
-maxHeight | null | maximal height limit
+direction | null    | `top`, `left`, `right`, `bottom` or `null` for bidirectional
+minWidth  | null    | minimal width limit
+maxWidth  | null    | maximal width limit
+minHeight | null    | minimal height limit
+maxHeight | null    | maximal height limit
 
 As usual you can use any of those options with constructor, the
-`makeResizable` method or with the `data-resizable-options` HTML5 attribute.
+`makeResizable` method or with the `data-resizable` HTML5 attribute.
 
 
 ## Events List, :options
@@ -123,11 +123,6 @@ Name       | Description
 start      | when the resize starts
 resize     | when the widget is resized by the user
 release    | when the resize ends
-initialize | when the widget is initialized
-destroy    | when the widget is destroyed
-
-All the event listeners will receive two arguments: current resizable unit
-instance and a reference to the dom-event that caused the event
 
 
 ## Style Alterations, :styles
@@ -135,11 +130,11 @@ instance and a reference to the dom-event that caused the event
 Resizables have a pretty simple structure, which you can create by yourself
 or let the script to create it for you
 
-    <div class="right-resizable">
-      <div class="right-resizable-content">
+    <div class="rui-resizable">
+      <div class="rui-resizable-content">
         // your content goes in here
       </div>
-      <div class="right-resizable-handle"></div>
+      <div class="rui-resizable-handle"></div>
     </div>
 
 __NOTE:__ this widget has an image dependency which is used as the background
@@ -148,7 +143,7 @@ for the handle elements. You can grab it
 on your server. Or you can use your own image and define it in your CSS layer
 like that
 
-    .right-resizable-handle {
+    .rui-resizable-handle {
       background-image: url(/url/to/my-image.png);
     }
 

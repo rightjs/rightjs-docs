@@ -12,14 +12,14 @@ for each of them, plus you might take a look at some simple demo page
 
 <%= partial '/plugins/download', :locals => {:name => 'dnd'} %>
 
-## Auto-Discovery Feature, :discovery
+## Auto-Initialization Feature, :initialization
 
-This library provides the standard for RightJS auto-discovery feature
+This library provides the standard for RightJS auto-initialization feature
 using by the `'rel'` attribute, and also the HTML5 style option attributes like this:
 
-    <div rel="draggable" data-draggable-options="{revert: false}">Drag Me To Hell</div>
+    <div rel="draggable" data-draggable="{revert: false}">Drag Me To Hell</div>
 
-    <div rel="droppable" data-droppable-options="{accept: '.sinner'}">The Hell</div>
+    <div rel="droppable" data-droppable="{accept: '.sinner'}">The Hell</div>
 
 ## Element Level Methods, :methods
 

@@ -54,25 +54,25 @@
     //...
     new Tabs('my-tabs');
 
-Вы так же можете просто назначить класс `right-tabs` на вашем элементе, и
+Вы так же можете просто назначить класс `rui-tabs` на вашем элементе, и
 скрипт автоматически найдет и проинициализирует виджет когда страница загрузится
 
-    <ul class="right-tabs">
+    <ul class="rui-tabs">
       // ...
     </ul>
 
 Опции с использование атрибутов в стиле HMTL5 так же доступны
 
-    <ul class="right-tabs" data-tabs-options="{select:2}">
+    <ul class="rui-tabs" data-tabs="{select:2}">
       // ...
     </ul>
 
 ## Различные варианты, :variants
 
 Для того что-бы создать виджет карусели, просто добавьте к вашему элементу
-css-класс `right-tabs-carousel`.
+css-класс `rui-tabs-carousel`.
 
-    <ul id="my-carousel" class="right-tabs-carousel">
+    <ul id="my-carousel" class="rui-tabs-carousel">
       // ...
     </ul>
 
@@ -127,12 +127,12 @@ css-класс `right-tabs-carousel`.
 
 Существует несколько способов для указания таба который пользователь увидит по умолчанию.
 
-Вы можете просто добавить css-класс `right-tabs-current` на нужном элементе списка табов.
+Вы можете просто добавить css-класс `rui-tabs-current` на нужном элементе списка табов.
 
     <ul id="my-tabs">
       <ul>
         <li><a href="#tab-1">Tab 1</a></li>
-        <li class="right-tabs-current"><a href="#tab-2">Tab 2</a></li>
+        <li class="rui-tabs-current"><a href="#tab-2">Tab 2</a></li>
       </ul>
     </ul>
 
@@ -178,9 +178,9 @@ Cookie          | null      | {Cookie} опции, если необходимо
       Xhr: {spinner: 'spinner'}
     });
 
-Или вы можете использовать HTML5 атрибут `data-tabs-options` непосредственно на ваших элементах
+Или вы можете использовать HTML5 атрибут `data-tabs` непосредственно на ваших элементах
 
-    <ul data-tabs-options="{idPrefix:'my-', selected:4}">
+    <ul data-tabs="{idPrefix:'my-', selected:4}">
       // ...
     </ul>
 
@@ -190,7 +190,7 @@ Cookie          | null      | {Cookie} опции, если необходимо
 
 Имя     | Описание
 --------|------------------------------------------------
-show    | когда таб был показан
+select  | когда таб был показан
 hide    | когда таб был скрыт
 click   | когда пользователь кликает по табу
 load    | когда удаленный таб был загружен
@@ -231,47 +231,45 @@ stopLoop()                       | останавливает слайдшоу
 В наиболее простом случае, после того как объект табов был создан, он назначит
 следующие css-классы на элементы струтуры
 
-    <ul class="right-tabs">
-      <ul class="right-tabs-list">
-        <li class="right-tabs-tab"><a href="#tab-1">Tab 1</a></li>
-        <li class="right-tabs-tab"><a href="#tab-2">Tab 2</a></li>
+    <ul class="rui-tabs">
+      <ul class="rui-tabs-list">
+        <li class="rui-tabs-tab rui-tabs-current"><a href="#">Tab 1</a></li>
+        <li class="rui-tabs-tab"><a href="#">Tab 2</a></li>
       </ul>
 
-      <li id="tab-1" class="right-tabs-panel">Tab 1 Content</li>
-      <li id="tab-2" class="right-tabs-panel">Tab 2 Content</li>
+      <li class="rui-tabs-panel rui-tabs-current">Content 1</li>
+      <li class="rui-tabs-panel">Content 2</li>
     </ul>
 
-Скрипт так же будет использовать css-классы `right-tabs-current` и `right-tabs-disabled`
+Скрипт так же будет использовать css-классы `rui-tabs-current` и `rui-tabs-disabled`
 для текущих и заблокированных табов соответственно.
 
 Виджет карусели и табы с прокруткой, будут немного трансформированы для создания
 соответствующих элементов управления
 
-    <ul class="right-tabs">
-      <div class="right-tabs-scroller">
-        <div class="right-tabs-scroll-left">&laquo;</div>
-        <div class="right-tabs-scroll-right">&raquo;</div>
-        <div class="right-tabs-scroll-body">
-          <ul class="right-tabs-list">
-            <li class="right-tabs-tab"><a href="#tab-1">Tab 1</a></li>
-            <li class="right-tabs-tab"><a href="#tab-2">Tab 2</a></li>
-          </ul>
-        </div>
+    <ul class="rui-tabs">
+      <div class="rui-tabs-scroller">
+        <div class="rui-tabs-scroller-prev">&laquo;</div>
+        <div class="rui-tabs-scroller-next">&raquo;</div>
+
+        <ul class="rui-tabs-list">
+          ..........
+        </ul>
       </div>
 
-      // ....
+      ............
     </ul>
 
 Далее, для табов загружаемых с сервера, скрипт будет использовать блокирующий элемент следующей структуры
 
-    <ul class="right-tabs">
-      <ul class="right-tabs-list">
+    <ul class="rui-tabs">
+      <ul class="rui-tabs-list">
         // ...
       </ul>
 
-      <li class="right-tabs-panel">
-        <div class="right-tabs-panel-locker">
-          <div class="right-tabs-panel-locker-spinner">
+      <li class="rui-tabs-panel">
+        <div class="rui-tabs-panel-locker">
+          <div class="rui-spinner">
             <div class="glow"></div><div></div><div></div><div></div>
           </div>
         </div>
@@ -281,8 +279,8 @@ stopLoop()                       | останавливает слайдшоу
 Виджет гармошки, не претерпит никаких структурных изменений, за исключением того что
 для его элементов будут назначенные те же самые css-классы
 
-    <dl class="right-tabs">
-      <dt class="right-tabs-tab">Tab 1</dt>
-      <dd class="right-tabs-panel">Tab Content</dd>
+    <dl class="rui-tabs">
+      <dt class="rui-tabs-tab">Tab 1</dt>
+      <dd class="rui-tabs-panel">Tab Content</dd>
       // ...
     </dl>

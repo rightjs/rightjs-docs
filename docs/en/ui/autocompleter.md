@@ -12,13 +12,13 @@ Right `Autocompleter` is the official autocompletion feature for RightJS
 Right `Autocompleter` has the following features:
 
 * Works with ajax requests or a local options list
-* RESTful design and server side caching friendly urls
-* Responses caching feature
-* Comes in a single tiny file (less than 4k)
+* Supports RESTful design and server side caching friendly urls
+* Have responses caching
+* Comes in a single tiny file (less than 3k gzipped)
 * No css or image dependencies
-* Has basic styles in the box
+* Has basic styles out of the box
 * Has a basic textual spinner by default
-* The autocompletion fields auto-discovery feature
+* Has autocompletion fields auto-initialization feature
 
 
 ## Usage Basics, :usage
@@ -48,25 +48,18 @@ with any content inside of the items
     </ul>
 
 
-## Auto-Discovery Feature, :discovery
+## Auto-Initialization Feature, :initialization
 
 As all the other widgets out of the RightJS UI library the autocompleters
-have ability to be automatically discovered and initialized. For that
-purpose you might use a `'rel'` attribute like this.
+have ability to be automatically initialized by using the standard
+`data-autocompleter` HTML5 field, like that:
 
-    <input type="text" rel="autocompleter[/your/url/goes/here]" />
+    <input type="text" data-autocompleter="{url:'/your/url'}" />
 
-You also might define a local options list like this
+    <input type="text" data-autocompleter="{local:['mommy','daddy','sonny']}" />
 
-    <input type="text" rel="autocompleter['mommy','daddy','sonny']"/>
-
-You also can use the HTML5 style attributes for options like this
-
-    <input type="text" rel="autocompleter[/url]"
-      data-autocompleter-options="{spinner: 'spinner'}"/>
-
-Once the page is loaded the script will sniff through your page and initialize
-those inputs automatically.
+Once you've done that, when the user will starts to interact with the field it
+will be automatically initialized with options specified in the attribute.
 
 
 ## Options List, :options
@@ -86,7 +79,7 @@ local      | null              | an optional local search results list
 fxName     | 'slide'           | visual effects name, use 'null' to disable fx
 fxDuration | 'short'           | the visual effect duration
 spinner    | 'native'          | spinner element reference
-cssRule    | '\[rel^=autocompleter\]'   | the auto-discoverable autocompleters css-rule
+cssRule    | 'input\[data-autocompleter\]'   | the auto-initializable autocompleters css-rule
 
 
 ## Events List, :events
@@ -123,7 +116,7 @@ specify the `'param'` and `'url'` options as the default and usual approach.
 
     */
 
-You also might want to have more caching friendly urls without the parameters
+You also might want to have more caching friendly urls without any parameters,
 in this case you might use the `'%{search}'` placeholder in your url. Like this
 
     new Autocompleter('my-input', {
@@ -140,24 +133,21 @@ in this case you might use the `'%{search}'` placeholder in your url. Like this
 
     */
 
-This will let you to drop the search results in static files on the server side.
+This will allow you to drop the search results in static files on the server side.
 
 
 ## Style Alterations, :styles
 
 If you need to alter some styles, here's how the autocompleter HTML source looks like
 
-    <div class="autocompleter">
-      <ul>
-        <li>boo</li>
-        <li>boo</li>
-        <li>boo</li>
-      </ul>
-    </div>
-    <div class="autocompleter-spinner">
-      <div class="dot-1">&raquo;</div>
-      <div class="dot-2">&raquo;</div>
-      <div class="dot-3">&raquo;</div>
+    <ul class="rui-autocompleter rui-dd-menu">
+      <li>boo</li>
+      <li>boo</li>
+      <li>boo</li>
+    </ul>
+
+    <div class="rui-autocompleter-spinner rui-spinner">
+      <div class="glow"></div><div></div>....
     </div>
 
 

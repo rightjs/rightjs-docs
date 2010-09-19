@@ -43,18 +43,20 @@
 
 Тот же самый пример что и выше, но с использованием автоматической инициализации
 
-<input type="text" rel="autocompleter[/ui/autocompleter/languages/%{search}.js]" class="demo-field" />
+<input type="text" data-autocompleter="{url: '/ui/autocompleter/languages/%{search}.js'}" class="demo-field" />
 
 Исходный код выглядит следующим образом
 
-    <input type="text" rel="autocompleter[/ui/autocompleter/languages/%{search}.js]" />
+    <input type="text" class="demo-field"
+      data-autocompleter="{url: '/ui/autocompleter/languages/%{search}.js'}" />
 
 Тоже самое с локальным списком подстановок
 
-<input type="text" rel="autocompleter<%= PagesController::LANGUAGES.to_json.gsub('"', "'") %>" class="demo-field" />
+<input type="text" data-autocompleter="{local: <%= PagesController::LANGUAGES.to_json.gsub('"', "'") %>}" class="demo-field" />
 
 исходный код
 
-    <input type="text" rel="autocompleter<%= PagesController::LANGUAGES.slice(0,4).to_json.gsub('"', "'") %>" />
+    <input type="text" class="demo-field"
+      data-autocompleter="{local: <%= PagesController::LANGUAGES.slice(0,4).to_json.gsub('"', "'") %>}" />
 
 <div style="height: 10em"> </div>

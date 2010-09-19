@@ -7,8 +7,8 @@ There are some use cases for the [tooltips](/ui/tooltips) widget
 
 <p>
   <ul class="tooltiped">
-    <li title="Some tooltip" rel="tooltip">This element has a simple tooltip</li>
-    <li title="Another tooltip" rel="tooltip">And this element has simple tooltip</li>
+    <li title="Some tooltip" data-tooltip="">This element has a simple tooltip</li>
+    <li title="Another tooltip" data-tooltip="">And this element has simple tooltip</li>
   </ul>
 </p>
 
@@ -21,8 +21,8 @@ to the `title` attribute, it will work.
 
 <p>
   <ul class="tooltiped">
-    <li title="&lt;b&gt;Some&lt;/b&gt; &lt;u&gt;html&lt;/u&gt; code" rel="tooltip">This has some html tooltip</li>
-    <li title="&lt;s&gt;Another&lt;/s&gt; &lt;i&gt;html&lt;/i&gt; code" rel="tooltip">So does this one</li>
+    <li title="&lt;b&gt;Some&lt;/b&gt; &lt;u&gt;html&lt;/u&gt; code" data-tooltip="">This has some html tooltip</li>
+    <li title="&lt;s&gt;Another&lt;/s&gt; &lt;i&gt;html&lt;/i&gt; code" data-tooltip="">So does this one</li>
   </ul>
 </p>
 
@@ -31,8 +31,8 @@ to the `title` attribute, it will work.
 Images can has tooltips too. You can use ether `title` or `alt` attribute to keep the tooltip text.
 
 <p>
-  <img src="/images/test/1-thmb.jpg" rel="tooltip" title="Watson's Bay" />
-  <img src="/images/test/2-thmb.jpg" rel="tooltip" alt="Some boats at Coogie" />
+  <img src="/images/test/1-thmb.jpg" data-tooltip="" title="Watson's Bay" />
+  <img src="/images/test/2-thmb.jpg" data-tooltip="" alt="Some boats at Coogie" />
 </p>
 
 ## Customized Tooltips, :customized
@@ -42,8 +42,8 @@ but with the `-tooltip` suffix, so you can customize them separately.
 
 <p>
   <ul class="tooltiped">
-    <li title="Blue Tooltip" rel="tooltip" id="blue">This one has blue tooltip</li>
-    <li title="Green Tooltip" rel="tooltip" id="green">This one has green tooltip</li>
-    <li title="Red Tooltip" rel="tooltip" id="red">This one has red tooltip</li>
+    <li title="Blue Tooltip" data-tooltip="" id="blue">This one has blue tooltip</li>
+    <li title="Green Tooltip" data-tooltip="" id="green">This one has green tooltip</li>
+    <li title="Red Tooltip" data-tooltip="" id="red">This one has red tooltip</li>
   </ul>
 </p>

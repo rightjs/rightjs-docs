@@ -77,21 +77,20 @@ calendar over an input field like that
 
 But in case you need some customization for that kind of elements there is a conventional way of doing that.
 
-All you need is to create a custom HTML5 style attribute that named like `data-[unit-name-here]-options` and
+All you need is to create a custom HTML5 style attribute that named like `data-[unit-name-here]` and
 set your options inside it in a JSON format. For example
 
     // a calendar field
-    <input rel="calendar" data-calendar-options="{format:'US'}" />
+    <input rel="calendar" data-calendar="{format:'US'}" />
 
     // autocompleter
-    <input type="text" rel="autocompleter"
-      data-autocompleter-options="{url:'/my/url'}">
+    <input type="text" data-autocompleter="{url:'/my/url'}">
 
     // or a lightbox link
-    <a rel="lightbox" data-lightbox-options="{blockContent: true}">
+    <a data-lightbox="{blockContent: true}">
       <img src="/.../..." />
     </a>
 
 When a script will process your element it will automatically check the attributes and try to use them as options.
 
-This principle works with all auto-discoverable units out of the [UI](/ui) and [Plugins](/plugins) libraries
+This principle works with all auto-initializable units out of the [UI](/ui) and [Plugins](/plugins) libraries

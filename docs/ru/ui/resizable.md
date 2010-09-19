@@ -27,11 +27,11 @@
 После этого у вас будет несколько способом воздавать блоки с изменяемым
 размером. Во-первых вы можете просто создать следующую HTML структуру
 
-    <div class="right-resizable">
-      <div class="right-resizable-content">
+    <div class="rui-resizable">
+      <div class="rui-resizable-content">
         // ваш контент тут
       </div>
-      <div class="right-resizable-handle"></div>
+      <div class="rui-resizable-handle"></div>
     </div>
 
 В данном случае RightJS будет использовать ленивую инициализацию по
@@ -66,10 +66,10 @@
 расположить элемент управления.
 
 Если вы используете HTML структуру, то просто укажите css класс с
-соответствующим суффиксом, как-то: `right-resizable-right`,
-`right-resizable-bottom` и т.п.
+соответствующим суффиксом, как-то: `rui-resizable-right`,
+`rui-resizable-bottom` и т.п.
 
-    <div class="right-resizable-bottom">
+    <div class="rui-resizable-bottom">
       // остальная структура тут
     </div>
 
@@ -87,7 +87,7 @@
 укажите на CSS уровне с использованием атрибутов, как `min-width`,
 `max-height` и т.п.
 
-    <div class="right-resizable" style="min-width: 10em">
+    <div class="rui-resizable" style="min-width: 10em">
       // остальная часть структуры
     </div>
 
@@ -116,7 +116,7 @@ minHeight | null      | минимальная высота
 maxHeight | null      | максимальная высота
 
 Как обычно вы можте использовать любые из этих опций с конструктором, с
-методом `makeResizable` или с HTML5 атрибутом `data-resizable-options`.
+методом `makeResizable` или с HTML5 атрибутом `data-resizable`.
 
 
 ## Список событий, :options
@@ -128,29 +128,24 @@ maxHeight | null      | максимальная высота
 start      | когда изменение размера начинается
 resize     | когда пользователь меняет размер
 release    | когда пользователь отпускает элемент управления
-initialize | когда виджет инициализируется
-destroy    | когда виджет уничтожается
-
-Все слушатели данных событий будут получать два аргумента: ссылку на объект
-виджета и ссылку на оригинальное dom-событие
 
 
 ## Настройки стилей, :styles
 
 Блоки с изменяемым размером имеют следующую простую структуру
 
-    <div class="right-resizable">
-      <div class="right-resizable-content">
+    <div class="rui-resizable">
+      <div class="rui-resizable-content">
         // ваш контент тут
       </div>
-      <div class="right-resizable-handle"></div>
+      <div class="rui-resizable-handle"></div>
     </div>
 
 __ВНИМАНИЕ:__ данный виджет использует вот эту
 [картинку](/images/rightjs-ui/resizable.png) в стилях. Вы можете просто
 сохранить ее в том же месте на вашем сервере или же использовать вашу собственную картинку, указав ее в CSS следующим образом
 
-    .right-resizable-handle {
+    .rui-resizable-handle {
       background-image: url(/url/to/my-image.png);
     }
 

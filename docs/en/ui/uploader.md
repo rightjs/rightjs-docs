@@ -18,7 +18,7 @@ This script is designed to work with standard web-server modules, for more
 information on how to install and configure them, please take a look
 by the following links
 
-* [Apache](http://drogomir.com/blog/2008/6/18/upload-progress-bar-with-mod_passenger-and-apache)
+* [Apache](http://piotrsarnacki.com/2008/06/18/upload-progress-bar-with-mod_passenger-and-apache)
 * [Lighttpd](http://upload.lighttpd.net)
 * [Nginx](http://wiki.nginx.org/NginxHttpUploadProgressModule)
 
@@ -26,11 +26,11 @@ by the following links
 ## Usage Basics, :usage
 
 The usage of the script is super easy, all you need is to include this script
-on your page and add the `with-progress` css-class to your form.
+on your page and add the `data-uploader` HTML5 attribute to your form.
 
     <script src=".../right-uploader.js"></script>
 
-    <form class="with-progress" ...>
+    <form data-uploader="" ...>
       ....
     </form>
 
@@ -42,8 +42,8 @@ If you need the progress bar to be in any other place on your form or have
 additional styles, you can create the progress-bar element manually where and
 how you want it
 
-    <form class="with-progress">
-      <div class="right-progress-bar"></div>
+    <form data-uploader="">
+      <div class="rui-uploader"></div>
 
       <p>
         <input type="file" name="picture" />
@@ -71,7 +71,7 @@ class
 There is the following simple list of options, which you can use in any
 standard for RigthJS way: by altering them globally at the `Uploader.Options`
 variable, with the `Uploader` class constructor, or by specifying a custom
-form element attribute named `data-uploader-options`
+form element attribute named `data-uploader`
 
 Name        | Default          | Description
 ------------|------------------|----------------------------------------------
@@ -80,7 +80,7 @@ param       | 'X-Progress-ID'  | The uploading ID parameter name
 timeout     | 1000             | Timeout in ms between status updates
 round       | 0                | How many numbers after coma should be left
 fxDuration  | 400              | The status update fx duration. Set to `0` to switch it off
-formCssRule | '.with-progress' | Css-rule that identifies a form with progress bar
+formCssRule | '\[data-uploader\]' | Css-rule that identifies a form with progress bar
 
 
 ## Events List, :events
@@ -102,13 +102,13 @@ from the server.
 
 Uploader is a really simple widget that has the following structure:
 
-    <div class="right-progress-bar">
+    <div class="rui-uploader rui-progress-bar">
       <div class="bar"></div>
       <div class="num">0%</div>
     </div>
 
 If an uploading was interrupted with an error this element will also receive
-the `right-progress-bar-failed` css-class.
+the `rui-progress-bar-failed` css-class.
 
 
 

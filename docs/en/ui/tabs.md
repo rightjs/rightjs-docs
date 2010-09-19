@@ -12,7 +12,7 @@ usual tabs, and also carousel and harmonica widgets, joining them under a single
 Right Tabs are served with the following features:
 
 * An uniformed three in one (tabs, carousel, harmonica) package
-* Everything is included in a single tiny (~10k) file
+* Everything is included in a single tiny (~5k gzipped) file
 * Pure CSS design, and no image dependencies
 * Simple and easy usage
 * Remote content loading via ajax
@@ -54,25 +54,25 @@ After that you'll need to instantiate the tabs object, with a simple javascript 
     //...
     new Tabs('my-tabs');
 
-Or as a variant you can assign the `right-tabs` css class for your tabs element
+Or as a variant you can assign the `rui-tabs` css class for your tabs element
 and our script will automatically find and instantiate it when the page's loaded
 
-    <ul class="right-tabs">
+    <ul class="rui-tabs">
       // ...
     </ul>
 
 The HTML5 style options attribute is available too
 
-    <ul class="right-tabs" data-tabs-options="{select:2}">
+    <ul class="rui-tabs" data-tabs="{select:2}">
       // ...
     </ul>
 
 ## Variants Definition, :variants
 
-To create a carousel widget simply add the `right-tabs-carousel` css-class
+To create a carousel widget simply add the `rui-tabs-carousel` css-class
 to your tabs element and the engine will know that you want a carousel.
 
-    <ul id="my-carousel" class="right-tabs-carousel">
+    <ul id="my-carousel" class="rui-tabs-carousel">
       // ...
     </ul>
 
@@ -123,16 +123,16 @@ In this case the script will use the tab hash names as the ids and hit urls like
 
 There are several ways how you can specify the tab that the user will see by default.
 
-First of all you can specify the `right-tabs-current` css-class on your current tab.
+First of all you can specify the `rui-tabs-current` css-class on your current tab.
 
     <ul id="my-tabs">
       <ul>
         <li><a href="#tab-1">Tab 1</a></li>
-        <li class="right-tabs-current"><a href="#tab-2">Tab 2</a></li>
+        <li class="rui-tabs-current"><a href="#tab-2">Tab 2</a></li>
       </ul>
     </ul>
 
-You also can use the `selected` option with the constructor or the custom `data-tabs-options`
+You also can use the `selected` option with the constructor or the custom `data-tabs`
 attribute. Then you can activate the `Cookie` option and the script will keep the current tab index in cookies
 
 And eventually the engine watches the url-address hash and if there is one it will check
@@ -173,9 +173,9 @@ You can send any of those options as the constructor options, like this
       Xhr: {spinner: 'spinner'}
     });
 
-Or you can use the HTML5 like attribute called `data-tabs-options` directly on your tabs element
+Or you can use the HTML5 like attribute called `data-tabs` directly on your tabs element
 
-    <ul data-tabs-options="{idPrefix:'my-', selected:4}">
+    <ul data-tabs="{idPrefix:'my-', selected:4}">
       // ...
     </ul>
 
@@ -185,9 +185,8 @@ This script provides you an access to the following events
 
 Name    | Description
 --------|------------------------------------------------
-show    | when a tab was shown
+select  | when a tab was selected
 hide    | when a tab gets hidden
-click   | when the user clicks on a tab
 load    | when a remote tab is loaded
 disable | when a tab gets disabled
 enable  | when a tab gets enabled
@@ -226,47 +225,45 @@ The `add` method can receive options with the following keys
 In the most basic case after a tabs module is instantiated it will assign css-classes
 for your tabs-element, like this
 
-    <ul class="right-tabs">
-      <ul class="right-tabs-list">
-        <li class="right-tabs-tab"><a href="#tab-1">Tab 1</a></li>
-        <li class="right-tabs-tab"><a href="#tab-2">Tab 2</a></li>
+    <ul class="rui-tabs">
+      <ul class="rui-tabs-list">
+        <li class="rui-tabs-tab rui-tabs-current"><a href="#">Tab 1</a></li>
+        <li class="rui-tabs-tab"><a href="#">Tab 2</a></li>
       </ul>
 
-      <li id="tab-1" class="right-tabs-panel">Tab 1 Content</li>
-      <li id="tab-2" class="right-tabs-panel">Tab 2 Content</li>
+      <li class="rui-tabs-panel rui-tabs-current">Content 1</li>
+      <li class="rui-tabs-panel">Content 2</li>
     </ul>
 
-It will use the `right-tabs-current` and `right-tabs-disabled` classes
+It will use the `rui-tabs-current` and `rui-tabs-disabled` classes
 at the tab-elements to paint the current and disabled tabs.
 
 For the carousel widget and scrollable tabs the script will transform the structure
 to create the scrollbar
 
-    <ul class="right-tabs">
-      <div class="right-tabs-scroller">
-        <div class="right-tabs-scroll-left">&laquo;</div>
-        <div class="right-tabs-scroll-right">&raquo;</div>
-        <div class="right-tabs-scroll-body">
-          <ul class="right-tabs-list">
-            <li class="right-tabs-tab"><a href="#tab-1">Tab 1</a></li>
-            <li class="right-tabs-tab"><a href="#tab-2">Tab 2</a></li>
-          </ul>
-        </div>
+    <ul class="rui-tabs">
+      <div class="rui-tabs-scroller">
+        <div class="rui-tabs-scroller-prev">&laquo;</div>
+        <div class="rui-tabs-scroller-next">&raquo;</div>
+
+        <ul class="rui-tabs-list">
+          ..........
+        </ul>
       </div>
 
-      // ....
+      ............
     </ul>
 
 Then, for the remote tabs it will be using a textual spinner with the following structure
 
-    <ul class="right-tabs">
-      <ul class="right-tabs-list">
+    <ul class="rui-tabs">
+      <ul class="rui-tabs-list">
         // ...
       </ul>
 
-      <li class="right-tabs-panel">
-        <div class="right-tabs-panel-locker">
-          <div class="right-tabs-panel-locker-spinner">
+      <li class="rui-tabs-panel">
+        <div class="rui-tabs-panel-locker">
+          <div class="rui-spinner">
             <div class="glow"></div><div></div><div></div><div></div>
           </div>
         </div>
@@ -275,8 +272,8 @@ Then, for the remote tabs it will be using a textual spinner with the following 
 
 The harmonica widget will remain the same structure with a similar css-class assignments
 
-    <dl class="right-tabs">
-      <dt class="right-tabs-tab">Tab 1</dt>
-      <dd class="right-tabs-panel">Tab Content</dd>
+    <dl class="rui-tabs">
+      <dt class="rui-tabs-tab">Tab 1</dt>
+      <dd class="rui-tabs-panel">Tab Content</dd>
       // ...
     </dl>

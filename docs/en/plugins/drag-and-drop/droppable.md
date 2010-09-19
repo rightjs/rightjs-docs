@@ -15,7 +15,7 @@ element thus rendering it not droppable anymore.
     droppable.destroy();
 
 
-You can also use the auto-discovery feature and the {Element} level shortcuts to
+You can also use the auto-initialization feature and the {Element} level shortcuts to
 create droppables. See the main [drag-and-drop](/plugins/drag-and-drop) page for
 more details.
 
@@ -33,7 +33,7 @@ overlap     | null              | `x/y/horizontal/vertical/both` draggable - dro
 overlapSize | 0.5               | the overlapping level, 0 for nothing 1 for the whole thing
 allowClass  | 'droppable-allow' | CSS class for elements that should accept draggables
 denyClass   | 'droppable-deny'  | CSS class for elements that shouldn't accept a draggables
-relName     | 'droppable'       | automatically discovered items feature key
+relName     | 'droppable'       | automatically initialized items feature key
 
 As usual you can specify them as initialization options for every particular droppable unit or
 customize the `Draggable.Options` in order to change the global settings.

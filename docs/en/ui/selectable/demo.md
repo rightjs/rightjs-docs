@@ -1,5 +1,5 @@
 # Selectable Demo
-<% content_for :modules, javascript_include_tag('/builds/ui/right-selectable-min.js') %>
+<% content_for :modules, javascript_include_tag('/builds/ui/right-selectable.js') %>
 <style type="text/css">
   dl.right-selectable dt {
     font-size: 1em;
@@ -13,7 +13,7 @@ out of the [RightJS UI](/ui) library.
 ## Simple Selectable, :simple
 
 <p>
-  <ul class="right-selectable">
+  <ul class="rui-selectable">
     <li>One</li>
     <li>Two</li>
     <li>Three</li>
@@ -28,7 +28,7 @@ out of the [RightJS UI](/ui) library.
 ## Selectable With Groups, :groups
 
 <p>
-  <dl class="right-selectable">
+  <dl class="rui-selectable">
     <dt>First Group</dt>
     <dd>
       <ul>
@@ -53,7 +53,7 @@ out of the [RightJS UI](/ui) library.
 ## With A Single Option, :single
 
 <p>
-  <ul class="right-selectable right-selectable-single">
+  <ul class="rui-selectable right-selectable-single">
     <li>One</li>
     <li>Two</li>
     <li>Three</li>
@@ -68,7 +68,7 @@ out of the [RightJS UI](/ui) library.
 ## With A Single Option And Groups, :single-groups
 
 <p>
-  <dl class="right-selectable right-selectable-single">
+  <dl class="rui-selectable right-selectable-single">
     <dt>First Group</dt>
     <dd>
       <ul>
@@ -93,7 +93,7 @@ out of the [RightJS UI](/ui) library.
 ## With Disabled Options, :disabled
 
 <p>
-  <ul class="right-selectable" data-selectable-options="{disabled:[1,4]}">
+  <ul class="rui-selectable" data-selectable="{disabled:[1,4]}">
     <li>One</li>
     <li>Two</li>
     <li>Three</li>
@@ -109,7 +109,7 @@ out of the [RightJS UI](/ui) library.
 
 <p>
   This one works with indexes
-  <ul class="right-selectable" data-selectable-options="{update: 'input-1'}">
+  <ul class="rui-selectable" data-selectable="{update: 'input-1'}">
     <li>One</li>
     <li>Two</li>
     <li>Three</li>
@@ -120,7 +120,7 @@ out of the [RightJS UI](/ui) library.
 </p>
 <p>
   This one works with IDs
-  <ul class="right-selectable" data-selectable-options="{update: 'input-2'}">
+  <ul class="rui-selectable" data-selectable="{update: 'input-2'}">
     <li id="one-1">One</li>
     <li id="two-2">Two</li>
     <li id="three-3">Three</li>
@@ -131,7 +131,7 @@ out of the [RightJS UI](/ui) library.
 </p>
 <p>
   This one automatically parses number out of IDs
-  <ul class="right-selectable" data-selectable-options="{update: 'input-3', parseIds: true}">
+  <ul class="rui-selectable" data-selectable="{update: 'input-3', parseIds: true}">
     <li id="one-1">One</li>
     <li id="two-2">Two</li>
     <li id="three-3">Three</li>
@@ -142,7 +142,7 @@ out of the [RightJS UI](/ui) library.
 </p>
 <p>
   With a single select and IDs
-  <ul class="right-selectable" data-selectable-options="{update: 'input-4', multiple: false}">
+  <ul class="rui-selectable" data-selectable="{update: 'input-4', multiple: false}">
     <li id="one-1">One</li>
     <li id="two-2">Two</li>
     <li id="three-3">Three</li>
@@ -155,7 +155,7 @@ out of the [RightJS UI](/ui) library.
 ## With Limited Number Of Options To Select, :limited
 <p>
   You can pick only 3 items on the list
-  <ul class="right-selectable" data-selectable-options="{limit: 3}">
+  <ul class="rui-selectable" data-selectable="{limit: 3}">
     <li>One</li>
     <li>Two</li>
     <li>Three</li>

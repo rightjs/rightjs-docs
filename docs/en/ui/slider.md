@@ -9,24 +9,23 @@ to any element, which it will update.
 
 ## Features List, :features
 
-* Comes in a single tiny (3k) file
+* Comes in a single tiny (2k gzipped) file
 * Works as standalone widget or can be assigned to another element
 * Can be generated or initialized on existing elements
 * Pure CSS based design, comes with basic styles
 * Supports both, vertical and horizontal sliders
+* Has no drag-n-drop dependency
 
 ## Usage Basics, :usage
-
-__NOTE__: This widget uses the [drag-and-drop](/plugins/drag-and-drop) module. Include it onto your page along
-with one of the files above, then create your slider like that
 
     new Slider({min: 0, max: 100, value: 20})
       .insertTo('my-element').assignTo('my-input');
 
 You can go even simpler and just create a tags structure with your options like that
 
-    <div class="right-slider" data-slider-options="{min:0,max:100,update:'my-input'}">
-      <div class="right-slider-handle"></div>
+    <div class="rui-slider" data-slider="{min:0,max:100,update:'my-input'}">
+      <div class="level"></div>
+      <div class="handle"></div>
     </div>
 
 When the page is loaded our script will automatically find and initialize your slider
@@ -49,19 +48,20 @@ element it will move the slider.
 
 ## Vertical Sliders, :vertical
 
-For vertical sliders use the `direction` option or a css-class `right-slider-vertical` like that
+For vertical sliders use the `direction` option or a css-class `rui-slider-vertical` like that
 
     new Slider({direction:'y', ....})
 
     // or with a html structure
-    <div class="right-slider right-slider-vertical" ...>
-      <div class="right-slider-handle"></div>
+    <div class="rui-slider right-slider-vertical" ...>
+      <div class="level"></div>
+      <div class="handle"></div>
     </div>
 
 
 ## Options List, :options
 
-You can use the following list of options with the `Slider` constructor or the `data-slider-options` attribute
+You can use the following list of options with the `Slider` constructor or the `data-slider` attribute
 
 Name      | Default | Description
 ----------|---------|----------------------------------------------------------------
@@ -87,8 +87,6 @@ Name              | Description
 ------------------|----------------------------------------------------------------
 setValue(value)   | the value assignment method
 getValue()        | current value getter
-reset()           | resets the value to the defaults
-insertTo(element) | inserts this slider into the element
 assignTo(element) | assign this slider to update the element
 
 
@@ -97,11 +95,13 @@ assignTo(element) | assign this slider to update the element
 The tags structure for this widget is as simple as it is.
 
     // horizontal slider
-    <div class="right-slider">
-      <div class="right-slider-handle"></div>
+    <div class="rui-slider">
+      <div class="level"></div>
+      <div class="handle"></div>
     </div>
 
     // vertical slider
-    <div class="right-slider right-slider-vertical">
-      <div class="right-slider-handle"></div>
+    <div class="rui-slider rui-slider-vertical">
+      <div class="level"></div>
+      <div class="handle"></div>
     </div>

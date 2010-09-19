@@ -1,5 +1,5 @@
 # Right Calendar Demo
-<% content_for :modules, javascript_include_tag('/builds/ui/right-calendar-min.js') %>
+<% content_for :modules, javascript_include_tag('/builds/ui/right-calendar.js') %>
 
 There are some standard use cases for the [Calendar](/ui/calendar) widget.
 You can use the keyboard buttons like arrows, escape and enter buttons to navigate through the calendars
@@ -119,31 +119,28 @@ The code of the fields initiation looks like this:
       timePeriod: 180, format: "%Y-%m-%d %H:%M"
     }).assignTo('date-with-3-hours-period');
 
-## Fields Auto-Discovery, :auto
+## Fields Auto-Initialization, :auto
 
 In simple cases you don't need to assign calendar instances to the input fields manually.
-All you need to specify the `rel="calendar"` attribute on your input-text field and
-the right calendar will do all the assignments automatically when the page is loaded.
-
-
-You also can specify an input-trigger pair with the `rel="calendar[input_field_id]"`
-attribute on the trigger element.
+All you need is to specify the `data-calendar` attribute on your input-text field and
+the right calendar will do all the assignments automatically when the user tries to
+interact with the field.
 
 For example:
 
-    <input type="text" rel="calendar" />
+    <input type="text" data-calendar="{}" />
 
     <input type="text" id="input-field" />
-    <input type="image" rel="calendar[input-field]" />
+    <input type="image" data-calendar="{update: 'input-field'}" />
 
 <p>
   <label>Simple Date:</label>
-  <input type="text" rel="calendar" class="demo-field" />
+  <input type="text" data-calendar="{}" class="demo-field" />
 </p>
 <p>
   <label>With Trigger:</label>
   <input type="text" id="input-field" class="demo-field" />
-  <input type="image" rel="calendar[input-field]" src="/images/calendar.png" />
+  <input type="image" data-calendar="{update: 'input-field'}" src="/images/calendar.png" />
 </p>
 
 ## Inlined Calendars, :inline

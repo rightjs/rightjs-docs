@@ -1,5 +1,5 @@
 # Лайтбокс демо
-<% content_for :modules, javascript_include_tag('/builds/ui/right-lightbox-min.js') %>
+<% content_for :modules, javascript_include_tag('/builds/ui/right-lightbox.js') %>
 
 Несколько общих примеров использования виджета [Lightbox](/ui/lightbox)
 

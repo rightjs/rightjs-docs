@@ -1,5 +1,5 @@
 # Демо редактирования на месте
-<% content_for :modules, javascript_include_tag('/builds/ui/right-in-edit-min.js') %>
+<% content_for :modules, javascript_include_tag('/builds/ui/right-in-edit.js') %>
 
 Несколько примеров использования плагина [редактирования на месте](/ui/in-edit)
 

@@ -43,14 +43,15 @@
 
     new Colorpicker().assignTo('my-field', 'trigger');
 
-Автоматическая инициализация по атрибутам `rel="colorpicker"` так же доступна.
+Автоматическая инициализация по атрибутам `data-colorpicker` так же доступна.
 
     // отдельное поле ввода с диалогом
-    <input type="text" rel="colorpcker" />
+    <input type="text" data-colorpcker="" />
+    <input type="text" data-colorpcker="{format: 'rgb'}" />
 
     // поле ввода со специальным триггером
     <input type="text" id="my-field" />
-    <input type="image" rel="colorpicker[my-field]" />
+    <input type="image" data-colorpicker="{update: 'my-field'}" />
 
 __ВНИМАНИЕ__: вы можете использовать любые элементы в качестве триггеров, это
 не обязательно должен быть элемент INPUT.
@@ -65,13 +66,14 @@ __ВНИМАНИЕ__: вы можете использовать любые эл
 format     | 'hex'     | формат цвета, `'hex'` или `'rgb'`
 update     | null      | поле ввода для автоматического обновления
 updateBg   | null      | элемент цвет которого будет автоматически обновляться
+trigger    | null      | элемент триггера для всплывающего диалога
 fxName     | 'fade'    | визуальный эффект для диалогового окна
 fxDuration | 'short'   | длительность визуального эффекта
-cssRule    | '\*\[rel^=colorpicker\]' | css-правило для автоматической инициализации
+cssRule    | '\*\[data-colorpicker\]' | css-правило для автоматической инициализации
 
 Как обычно, вы можете использовать любые из данных опций совместно с
 конструктором класса `Colorpicker`, а так же в HTML5 атрибутах с именем
-`data-colorpicker-options` для автоматически инициализируемых полей
+`data-colorpicker` для автоматически инициализируемых полей
 
 
 ## Список событий, :events
@@ -91,7 +93,7 @@ __ВНИМАНИЕ__: слушатели события `change` будут по
 
 ## API методы, :api
 
-У данного виджета есть несколько публично доступных методов
+У данного виджета есть несколько дополнительных публично доступных методов
 
 Название          | Описание
 ------------------|-------------------------------------------------------
@@ -99,38 +101,30 @@ setValue(color)   | устанавливает текущий цвет, може
 getValue()        | возвращает текущий цвет отформатированный согласно опциям
 toRgb()           | возвращает текущий цвет в RGB формате
 toHex()           | возвращает текущий цвет в HEX формате
-insertTo(element\[, position\]) | показывает виджет как элемент страницы
 assignTo(element\[, trigger\])  | назначает виджет для работы в паре с полeм ввода
 updateBg(element) | заставляет виджет автоматически обновлять цвет указанного элемента
-show(\[element\]) | показывает диалоговое окно виджета, опционально под указанным элементом
-hide()            | скрывает диалоговое окно виджета
 
 
 ## Настройки стилей, :styles
 
 Виджет `Colorpicker` имеет следующую структуру HTML элементов
 
-    <div class="right-colorpicker right-ui-panel">
+    <div class="rui-colorpicker rui-panel">
       <div class="field">
-        <div class="field-pointer"></div>
+        <div class="pointer"></div>
       </div>
-
       <div class="colors">
-        <div class="field-pointer"></div>
+        <div class="pointer"></div>
       </div>
-
       <div class="controls">
         <div class="preview"></div>
-
         <input type="text" class="display" />
-
         <div class="rgb-display">
-          <div><label>R:</label><input /></div>
-          <div><label>G:</label><input /></div>
-          <div><label>B:</label><input /></div>
+          <div><label>R:</label><input type="text" /></div>
+          <div><label>G:</label><input type="text" /></div>
+          <div><label>B:</label><input type="text" /></div>
         </div>
-
-        <input type="button" class="right-ui-button" />
+        <input type="button" class="rui-button" />
       </div>
     </div>
 
@@ -139,10 +133,10 @@ __ВНИМАНИЕ__: Этот виджет использует
 ее в то же самое место на вашем проекте, либо указать другое в ваших CSS
 файлах следующим способом
 
-    div.right-colorpicker div.field,
-    div.right-colorpicker div.field-pointer,
-    div.right-colorpicker div.colors,
-    div.right-colorpicker div.colors-pointer {
+    div.rui-colorpicker div.field,
+    div.rui-colorpicker div.field div.pointer,
+    div.rui-colorpicker div.colors,
+    div.rui-colorpicker div.colors div.pointer {
       background-image: url(/my/image.png);
     }
 

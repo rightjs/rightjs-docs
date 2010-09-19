@@ -11,13 +11,12 @@ Right Calendar is the standard calendar/datepicker feature for RightJS
 
 Right Calendar has the following features:
 
-* Dates and times picking
-* Multiple months and greed support
-* Date limits support
-* Inline displaying support
-* Auto-appearance at input elements
-* Auto-initialization by the `rel="calendar"` attribute
-* Tiny (just 10k) size, no image dependencies, fully css-based design
+* Allows to pick dates and times
+* Supports multiple months in a greed
+* Supports date/time limits
+* Can be used as an inline widget
+* Can automatically initialize on input fields as a helper
+* Tiny (just 6k gzipped) file, no image or css dependencies
 * Everything is included in a single file
 * i18n support
 
@@ -37,54 +36,52 @@ After that you will have the `Calendar` unit available
 
 
 
-## Inputs Auto-Discovery, :discovery
+## Inputs Auto-Initialization, :initialization
 
-If you like, you can use the auto-initialization feature. Simply specify the `rel="calendar"`
-attribute on your `INPUT` element and the script will automatically initialize the autocompletion
-feature on this element when it needed.
+Calendars can automatically initialize on input fields as popup helpers. For that
+simply use the standard HTML5 attribute `data-calendar`, like that:
 
-    <input type="text" rel="calendar" />
+    <input type="text" data-calendar="" />
 
-You also can use the `rel="calendar[input_field_id]"` attribute if you want to use a trigger
-element, like an image, that will show the calendar up.
+    <input type="text" data-calendar="{format: 'US'}" />
+
+You also can specify the external trigger element, like an icon.
 
     <input type="text" id="my-input" />
-    <img src="calendar.png" rel="calendar[my-input]" />
+    <img src="calendar.png" data-calendar="{update: 'my-input'}" />
 
-And you can specify custom options for those inputs with the HTML5 style attribute like this
-
-    <input type="text" rel="calendar"
-      data-calendar-options="{format: 'US'}" />
+All the initialization happens on demand when the user starts to interact with the fields
 
 
 ## Options List, :options
 
-There are several options you can pass into the `Calendar` constructor or use with the auto-discovery feature
+There are several options you can pass into the `Calendar` constructor or use with the auto-initialization feature
 
 Name           | Default    | Description
 ---------------|------------|-------------------------------------------------------------------
 format         | 'ISO'      | one of the predefined formats name or a format string
 showTime       | null       | a marker if the time picker should be displayed
-twentyFourHour | null       | a marker if the 24 or 12 hours time picker should be used
-timePeriod     | 1          | the time picker min time quantity in minutes
 showButtons    | false      | a marker if the bottom buttons should be displayed
 minDate        | null       | the minimum date you can select
 maxDate        | null       | the maximum date you can select
-listYears      | false      | show the year switching buttons
-firstDay       | 1          | 1 for Monday, 0 for Sunday
-numberOfMonths | 1          | a number of month to display, or a \[x,y\] months greed definition
 fxName         | 'fade'     | the visual effect name, use `null` if you don't want any fx
 fxDuration     | 'short'    | the visual effects duration
+firstDay       | 1          | 1 for Monday, 0 for Sunday
+numberOfMonths | 1          | a number of month to display, or a \[x,y\] months greed definition
+timePeriod     | 1          | the time picker min time quantity in minutes
+twentyFourHour | null       | a marker if the 24 or 12 hours time picker should be used
+listYears      | false      | show the year switching buttons
 hideOnPick     | false      | a marker if the popup should get hidden when user picks a date
-cssRule        | '\[rel^=calendar\]' | the auto-discoverable calendar elements css-rule
-
+update         | null       | an input field that should be updated when the user picks a date
+trigger        | null       | a trigger element reference for calendar helpers
+cssRule        | '\*\[data-calendar\]' | the auto-initializable calendar elements css-rule
 
 
 You also can alter the `Calendar.Options` object to make the changes global.
 
 The `showTime` and `twentyFourHour` options have `null` value by default, which means that those options
-will be automatically determined depending on the specified time format option. You also might specify a boolean value to
-enforce those options.
+will be automatically determined depending on the specified time format option. You also might specify
+a boolean value to enforce those options.
 
 
 ## Dates Formatting, :formatting
@@ -133,52 +130,25 @@ Name   | Description
 -------|-------------------------------------------------
 show   | the calendar element was shown
 hide   | the calendar element was hidden
-select | user selects a date or time
+change | user selects a date or time
 done   | user hits the 'done' button
 
-You can use any standard {Observer} methods to process those events. Shortcuts like `onSelect`,
+You can use any standard {Observer} methods to process those events. Shortcuts like `onChange`,
 `onDone` are also available.
 
 
 ## API Reference, :api
 
-Right Calendar has a simple interface:
+Right Calendar has all the same API as {Element} plus the following methods:
 
 Method                      | Description
 ----------------------------|----------------------------------------------------------------------
 setDate(date)               | sets the date, the date might be a Date instance or a String
 getDate()                   | returns the current date
+setValue(String date)       | sets the date by a string value
+getValue()                  | returns the date as a formatted string
 format(\[String format\])   | returns a string representation of the current date
-insertTo(element)           | makes the calendar inlined into the element
 assignTo(element\[,trigger\]) | assigns the calendar to auto appear at the element; if the trigger is specified a calendar will appear only by clicking on the trigger element
-hide()                      | hides the calendar block
-show()                      | shows the calendar block
-showAt(Element)             | assigns the calendar to work with the element and shows it at the bottom of the element
-
-
-
-## Internationalization, :i18n
-
-You might find a translation module for your language at the github repository
-
-<http://github.com/rightjs/rightjs-ui/tree/master/i18n/>
-
-Or you can translate the interface by simply altering the `Calendar.i18n` object like that
-
-    Calendar.i18n = {
-      Done:  'Готово',
-      Now:   'Сейчас',
-      Next:  'Следующий месяц',
-      Prev:  'Предыдущий месяц',
-      NextYear: 'Следующий год',
-      PrevYear: 'Предыдущий год',
-
-      dayNames:        $w('Вокскресенье Понедельник Вторник Среда Четверг Пятница Суббота'),
-      dayNamesShort:   $w('Вск Пнд Втр Срд Чтв Птн Сбт'),
-      dayNamesMin:     $w('Вс Пн Вт Ср Чт Пт Сб'),
-      monthNames:      $w('Январь Февраль Март Аперль Май Инюнь Июль Август Сентябрь Октябрь Ноябрь Декабрь'),
-      monthNamesShort: $w('Янв Фев Мар Апр Май Инь Иль Авг Сен Окт Ноя Дек')
-    };
 
 
 ## Style Alterations, :styles
@@ -186,43 +156,39 @@ Or you can translate the interface by simply altering the `Calendar.i18n` object
 If you need to alter the calendar view to make it fit your design, please use the following
 elements structure description as a guidance.
 
-    <div class="right-calendar">
-      <div class="right-ui-button right-calendar-next-button">&lsaquo;</div>
-      <div class="right-ui-button right-calendar-prev-button">&rsaquo;</div>
+    <div class="rui-calendar rui-panel">
+      <div class="swaps">
+        <div class="rui-button next-month">&lsaquo;</div>
+        <div class="rui-button prev-month">&rsaquo:</div>
+      </div>
 
-      <table class="right-calendar-greed">
+      <table class="greed">
         <tr><td>
 
-          <div class="right-calendar-month">
-            <div class="right-calendar-month-caption"></div>
-
-            <table>
-              <thead>
-                <tr>
-                  <th>Mo<th>Tu<th>...
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="right-calendar-day-blank">
-                  <td class="right-calendar-day-selected">
-                  <td class="right-calendar-day-disabled">
-                  <td><td><td><td>...
-                </tr>
-                .....
-              </tbody>
-            </table>
-          </div>
+          <table class="month">
+            <caption>January</caption>
+            <thead><tr>
+              <th>Mo<th>Tu<th>...
+            </tr></thead>
+            <tbody>
+              <tr>
+                <td class="blank">
+                <td class="selected">
+                <td class="disabled">
+                <td><td><td><td>...
+              .....
+            </tbody>
+          </table>
 
         </td></tr>
       </table>
 
-      <div class="right-calendar-time">
+      <div class="timepicker">
         <select></select> : <select></select>
       </div>
 
-      <div class="right-ui-buttons right-calendar-buttons">
-        <input type="button" value="Done" class="right-ui-button right-calendar-done-button" />
-        <input type="button" value="Now" class="right-ui-button right-calendar-now-button" />
+      <div class="buttons">
+        <div class="rui-button">Now</div>
+        <div class="rui-button">Done</div>
       </div>
     </div>

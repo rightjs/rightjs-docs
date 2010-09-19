@@ -1,67 +1,67 @@
 # Rater Demo
-<% content_for :modules, javascript_include_tag('/builds/ui/right-rater-min.js') %>
+<% content_for :modules, javascript_include_tag('/builds/ui/right-rater.js') %>
 
 There are some basic use-cases for the [Rater](/ui/rater) widget out of the [RightJS UI](/ui) library.
 
 ## Simple Raters, :simple
 
 <p>
-  <div class="right-rater">
+  <div class="rui-rater">
     <div>&#9733;</div><div>&#9733;</div><div>&#9733;</div><div>&#9733;</div><div>&#9733;</div>
   </div>
 </p>
 <p>
-  <div class="right-rater">
-    <div class="right-rater-glow">&#9733;</div><div>&#9733;</div><div>&#9733;</div><div>&#9733;</div><div>&#9733;</div>
+  <div class="rui-rater">
+    <div class="active">&#9733;</div><div>&#9733;</div><div>&#9733;</div><div>&#9733;</div><div>&#9733;</div>
   </div>
 </p>
 <p>
-  <div class="right-rater">
-    <div class="right-rater-glow">&#9733;</div>
-    <div class="right-rater-glow">&#9733;</div>
+  <div class="rui-rater">
+    <div class="active">&#9733;</div>
+    <div class="active">&#9733;</div>
     <div>&#9733;</div><div>&#9733;</div><div>&#9733;</div>
   </div>
 </p>
 <p>
-  <div class="right-rater">
-    <div class="right-rater-glow">&#9733;</div>
-    <div class="right-rater-glow">&#9733;</div>
-    <div class="right-rater-glow">&#9733;</div>
+  <div class="rui-rater">
+    <div class="active">&#9733;</div>
+    <div class="active">&#9733;</div>
+    <div class="active">&#9733;</div>
     <div>&#9733;</div><div>&#9733;</div>
   </div>
 </p>
 <p>
-  <div class="right-rater">
-    <div class="right-rater-glow">&#9733;</div>
-    <div class="right-rater-glow">&#9733;</div>
-    <div class="right-rater-glow">&#9733;</div>
-    <div class="right-rater-glow">&#9733;</div><div>&#9733;</div>
+  <div class="rui-rater">
+    <div class="active">&#9733;</div>
+    <div class="active">&#9733;</div>
+    <div class="active">&#9733;</div>
+    <div class="active">&#9733;</div><div>&#9733;</div>
   </div>
 </p>
 <p>
-  <div class="right-rater">
-    <div class="right-rater-glow">&#9733;</div>
-    <div class="right-rater-glow">&#9733;</div>
-    <div class="right-rater-glow">&#9733;</div>
-    <div class="right-rater-glow">&#9733;</div>
-    <div class="right-rater-glow">&#9733;</div>
+  <div class="rui-rater">
+    <div class="active">&#9733;</div>
+    <div class="active">&#9733;</div>
+    <div class="active">&#9733;</div>
+    <div class="active">&#9733;</div>
+    <div class="active">&#9733;</div>
   </div>
 </p>
 
 ## Disabled Raters, :disabled
 
 <p>
-  <div class="right-rater" data-rater-options="{disabled:true}">
-    <div class="right-rater-glow">&#9733;</div>
-    <div class="right-rater-glow">&#9733;</div>
+  <div class="rui-rater" data-rater="{disabled:true}">
+    <div class="active">&#9733;</div>
+    <div class="active">&#9733;</div>
     <div>&#9733;</div><div>&#9733;</div><div>&#9733;</div>
   </div>
   This rater is disabled
 </p>
 <p>
-  <div class="right-rater" data-rater-options="{disableOnVote:true}">
-    <div class="right-rater-glow">&#9733;</div>
-    <div class="right-rater-glow">&#9733;</div>
+  <div class="rui-rater" data-rater="{disableOnVote:true}">
+    <div class="active">&#9733;</div>
+    <div class="active">&#9733;</div>
     <div>&#9733;</div><div>&#9733;</div><div>&#9733;</div>
   </div>
   This rater will get disabled once you click on it
@@ -70,9 +70,9 @@ There are some basic use-cases for the [Rater](/ui/rater) widget out of the [Rig
 ## Assigned Rater, :assigned
 
 <p>
-  <div class="right-rater" data-rater-options="{update:'the-field'}">
-    <div class="right-rater-glow">&#9733;</div>
-    <div class="right-rater-glow">&#9733;</div>
+  <div class="rui-rater" data-rater="{update:'the-field'}">
+    <div class="active">&#9733;</div>
+    <div class="active">&#9733;</div>
     <div>&#9733;</div><div>&#9733;</div><div>&#9733;</div>
   </div>
   <input type="text" id="the-field" size="1" value="2" />
@@ -81,8 +81,8 @@ There are some basic use-cases for the [Rater](/ui/rater) widget out of the [Rig
 ## Remote Rater, :remote
 
 <p>
-  <div class="right-rater" data-rater-options="{url:'test', Xhr:{evalScripts:true,spinner:'rate-spinner'}}">
-    <div class="right-rater-glow">&#9733;</div><div>&#9733;</div><div>&#9733;</div><div>&#9733;</div><div>&#9733;</div>
+  <div class="rui-rater" data-rater="{url:'test', Xhr:{evalScripts:true,spinner:'rate-spinner'}}">
+    <div class="active">&#9733;</div><div>&#9733;</div><div>&#9733;</div><div>&#9733;</div><div>&#9733;</div>
   </div>
 
   <%= image_tag 'spinner.gif', :id => 'rate-spinner', :style => "display:none" %>

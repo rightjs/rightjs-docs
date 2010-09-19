@@ -7,8 +7,8 @@
 
 <p>
   <ul class="tooltiped">
-    <li title="Какой-то текст" rel="tooltip">Этот элемент имеет тултип</li>
-    <li title="Какой-то другой текст" rel="tooltip">И этот элемент имеет тултип</li>
+    <li title="Какой-то текст" data-tooltip="">Этот элемент имеет тултип</li>
+    <li title="Какой-то другой текст" data-tooltip="">И этот элемент имеет тултип</li>
   </ul>
 </p>
 
@@ -21,8 +21,8 @@
 
 <p>
   <ul class="tooltiped">
-    <li title="&lt;b&gt;Какой-то&lt;/b&gt; &lt;u&gt;html&lt;/u&gt; код" rel="tooltip">Этот элемент имеет тултип с HTML кодом</li>
-    <li title="&lt;s&gt;Другой&lt;/s&gt; &lt;i&gt;html&lt;/i&gt; код" rel="tooltip">И этот тоже</li>
+    <li title="&lt;b&gt;Какой-то&lt;/b&gt; &lt;u&gt;html&lt;/u&gt; код" data-tooltip="">Этот элемент имеет тултип с HTML кодом</li>
+    <li title="&lt;s&gt;Другой&lt;/s&gt; &lt;i&gt;html&lt;/i&gt; код" data-tooltip="">И этот тоже</li>
   </ul>
 </p>
 
@@ -31,8 +31,8 @@
 Картинки так же могут иметь тултипы. В данном случае поддерживаются оба `title` и `alt` атрибуты.
 
 <p>
-  <img src="/images/test/1-thmb.jpg" rel="tooltip" title="Бухта Ватсона" />
-  <img src="/images/test/2-thmb.jpg" rel="tooltip" alt="Лодки не далеко от Coogie" />
+  <img src="/images/test/1-thmb.jpg" data-tooltip="" title="Бухта Ватсона" />
+  <img src="/images/test/2-thmb.jpg" data-tooltip="" alt="Лодки не далеко от Coogie" />
 </p>
 
 ## Специфические тултипы, :customized
@@ -42,8 +42,8 @@
 
 <p>
   <ul class="tooltiped">
-    <li title="Синий тултип" rel="tooltip" id="blue">Этот элемент имеет тултип с синей полоской</li>
-    <li title="Зеленый тултип" rel="tooltip" id="green">Этот элемент имеет тултип с зеленой полоской</li>
-    <li title="Красный тултип" rel="tooltip" id="red">А этот элемент имеет тултип с красной полоской</li>
+    <li title="Синий тултип" data-tooltip="" id="blue">Этот элемент имеет тултип с синей полоской</li>
+    <li title="Зеленый тултип" data-tooltip="" id="green">Этот элемент имеет тултип с зеленой полоской</li>
+    <li title="Красный тултип" data-tooltip="" id="red">А этот элемент имеет тултип с красной полоской</li>
   </ul>
 </p>
