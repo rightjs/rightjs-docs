@@ -31,16 +31,14 @@ This is the most painful part of migration. Because we switching from direct
 elements access to dom-wrappers, you don't have immediate access to elements
 properties and need to use the {Element#set} and {Element#get} methods.
 
-    # old
+    // old
     element.id;
-
-    # new
+    // new
     element.get('id');
 
-    # old
+    //old
     element.id = 'my-id';
-
-    # new
+    // new
     element.set('id', 'my-id');
 
 But you can cheat in here and access your elements directly via the `_`
