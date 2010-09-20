@@ -37,10 +37,7 @@ updated over the time. The second link always points to _that exact_ version of 
 
 By default RightJS comes with several plugins like advanced form handling, cookies
 and so on already baked in. You can switch things you don't use off and thus reduce
-the build size down to 18k.
-
-Furthermore, there are a number of plugins from the [RightJS Plugins](/plugins) project
-which can  be embedded into your build as well.
+the size of build.
 
 [Custom Build Page](<%= builds_path %>)
 
