@@ -1,7 +1,7 @@
-<% content_for :modules, javascript_include_tag('/builds/ui/right-tabs-min.js') %>
+<% content_for :modules, javascript_include_tag('/builds/ui/right-tabs.js') %>
 <% content_for :modules, stylesheet_link_tag('landing-page') %>
 
-<ul id="promo" class="rui-tabs">
+<ul id="promo" class="right-tabs">
   <ul>
     <li id="friendly-tab"><a href="#friendly"><h1><%= @promo_texts[:friendly][:title] %></h1><i><%= @promo_texts[:friendly][:subtitle] %></i></a></li>
     <li id="compact-tab"><a href="#compact"><h1><%= @promo_texts[:compact][:title] %></h1><i><%= @promo_texts[:compact][:subtitle] %></i></a></li>
@@ -30,7 +30,7 @@
 
 <h1><%= @hots_block[:title] %></h1>
 
-<dl id="features" class=rui-tabs">
+<dl id="features" class="right-tabs">
   <dt><a href="#ui"><h2>RightJS UI</h2><i><%= @hots_block[:ui] %></i></a></dt>
   <dd id="ui"><%= ui_modules_menu %></dd>
 
@@ -53,6 +53,6 @@
 <script type="text/javascript">
   // <![CDATA[
     new Tabs('promo');
-    new Tabs('features').element.setStyle('height:auto');
+    new Tabs('features').setStyle('height:auto');
   // ]]>
 </script>
