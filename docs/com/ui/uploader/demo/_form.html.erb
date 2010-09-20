@@ -33,12 +33,12 @@
     var value = (counter / steps  * 100).round() + '%';
 
     if (counter == 0) {
-      num.innerHTML = value;
-      bar.style.width = value;
+      num.html(value);
+      bar.setStyle('width:'+value);
     } else {
       bar.morph({width: value});
       (function() {
-        num.innerHTML = value;
+        num.html(value);
       }).delay(200);
     }
 

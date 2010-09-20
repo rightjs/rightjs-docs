@@ -53,7 +53,7 @@ out of the [RightJS UI](/ui) library.
 ## With A Single Option, :single
 
 <p>
-  <ul class="rui-selectable right-selectable-single">
+  <ul class="rui-selectable rui-selectable-single">
     <li>One</li>
     <li>Two</li>
     <li>Three</li>
@@ -68,7 +68,7 @@ out of the [RightJS UI](/ui) library.
 ## With A Single Option And Groups, :single-groups
 
 <p>
-  <dl class="rui-selectable right-selectable-single">
+  <dl class="rui-selectable rui-selectable-single">
     <dt>First Group</dt>
     <dd>
       <ul>

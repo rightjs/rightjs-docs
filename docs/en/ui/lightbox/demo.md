@@ -55,10 +55,10 @@ Lightbox also supports links to the most common video streaming resources, with 
 
 To display any html content, strings, dom-nodes, node-lists, arrays of elements, etc. Just pass it to the `show` method
 
-    Lightbox.show($('lorem-block').innerHTML, {width: '20em'});
+    Lightbox.show($('lorem-block').html()).resize({width:'20em'});
 
 <p>
-  <a href="" onclick="Lightbox.show($('lorem-block').innerHTML,{width:'20em'}); return false;">Click me to show the text below in the lightbox</a>
+  <a href="" onclick="Lightbox.show($('lorem-block').html()).resize({width:'20em'}); return false;">Click me to show the text below in the lightbox</a>
 </p>
 <p id="lorem-block">
   Lorem ipsum dolor <u>sit</u> amet, consectetur adipisicing elit, <b>sed</b> do eiusmod tempor incididunt ut labore et dolore <i>magna</i> aliqua. Ut enim ad minim veniam, quis nostrud <u>exercitation</u> ullamco laboris nisi ut aliquip ex ea commodo <b>consequat</b>. Duis aute irure dolor in <i>reprehenderit</i> in voluptate velit esse cillum <u>dolore</u> eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non <b>proident</b>, sunt in culpa qui <i>officia</i> deserunt mollit anim id est laborum.
@@ -80,8 +80,8 @@ You can also pass any standard {Xhr} class options as the second argument.
 If you send a dom-node of a link into the `show` method, lightbox will automatically grab
 the link url address, load it via an ajax request and then show it in the lightbox with the same title the link has.
 
-    Lightbox.show($('some-link'));
+    Lightbox.load($('some-link'));
 
 <p>
-  <a href="/ui/lightbox/lorem" title="Loaded By Link" onclick="Lightbox.show(this); return false;">Try it right here</a>
+  <a href="/ui/lightbox/lorem" title="Loaded By Link" onclick="Lightbox.load($(this)); return false;">Try it right here</a>
 </p>

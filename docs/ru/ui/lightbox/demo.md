@@ -52,10 +52,10 @@
 
 Для показа любого контента (строки, элементы страниц и их массивы). Просто пошлите их в метод `show`
 
-    Lightbox.show($('lorem-block').innerHTML, {width: '20em'});
+    Lightbox.show($('lorem-block').html()).resize({width:'20em'});
 
 <p>
-  <a href="" onclick="Lightbox.show($('lorem-block').innerHTML,{width:'20em'}); return false;">Кликни меня чтобы показать нижеследующий текст в лайтбоксе</a>
+  <a href="" onclick="Lightbox.show($('lorem-block').html()).resize({width:'20em'}); return false;">Кликни меня чтобы показать нижеследующий текст в лайтбоксе</a>
 </p>
 <p id="lorem-block">
   Lorem ipsum dolor <u>sit</u> amet, consectetur adipisicing elit, <b>sed</b> do eiusmod tempor incididunt ut labore et dolore <i>magna</i> aliqua. Ut enim ad minim veniam, quis nostrud <u>exercitation</u> ullamco laboris nisi ut aliquip ex ea commodo <b>consequat</b>. Duis aute irure dolor in <i>reprehenderit</i> in voluptate velit esse cillum <u>dolore</u> eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non <b>proident</b>, sunt in culpa qui <i>officia</i> deserunt mollit anim id est laborum.
@@ -80,5 +80,5 @@
     Lightbox.show($('some-link'));
 
 <p>
-  <a href="/ui/lightbox/lorem" title="Loaded By Link" onclick="Lightbox.show(this); return false;">Попробуйте сами</a>
+  <a href="/ui/lightbox/lorem" title="Loaded By Link" onclick="Lightbox.show($(this)); return false;">Попробуйте сами</a>
 </p>

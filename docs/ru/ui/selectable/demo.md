@@ -53,7 +53,7 @@
 ## Поле с единичным выбором, :single
 
 <p>
-  <ul class="rui-selectable right-selectable-single">
+  <ul class="rui-selectable rui-selectable-single">
     <li>Раз</li>
     <li>Два</li>
     <li>Три</li>
@@ -68,7 +68,7 @@
 ## Поле с единичным выбором и группами, :single-groups
 
 <p>
-  <dl class="rui-selectable right-selectable-single">
+  <dl class="rui-selectable rui-selectable-single">
     <dt>Первая группа</dt>
     <dd>
       <ul>
