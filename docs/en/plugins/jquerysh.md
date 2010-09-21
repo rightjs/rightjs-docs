@@ -10,7 +10,7 @@ users got used to
 First of all it changes a bit the way you navigate through the pages
 
     $('#element-id'); // -> Element
-    $('div.css#rule); // -> Array of Elements
+    $('div.css#rule'); // -> Array of Elements
 
 Unlike jQuery, RightJS differs access to a separated element and a group of
 elements, but general feeling is about the same.

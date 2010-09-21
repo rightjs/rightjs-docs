@@ -205,7 +205,7 @@ our users. So the {Element#on} function was changed a bit and now when you
 `return false` in your listener, RightJS will understand that you actually
 want your event to be stopped and it will stop that sneaky bastard for you.
 
-    $('my-element).onClick(function() {
+    $('my-element').onClick(function() {
       return false; // will effectivly stop the event
     });
 
