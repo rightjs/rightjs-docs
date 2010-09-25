@@ -117,9 +117,6 @@ all you need is to call the `fire` method with the event name and possibly some 
     // or say you can trigger a keyboard event like that
     $('element').fire('keypress', {keyCode: 27});
 
-__NOTE__: RightJS _will not_ trigger a real event in this case. It will simply call every subscribed
-listener with a _fake_ event that will have the options you specify.
-
 
 ## Custom Events, :custom
 
