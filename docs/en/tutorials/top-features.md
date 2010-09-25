@@ -15,7 +15,7 @@ names will be familiar to you. And if you also know Ruby and/or Python there wil
 be practically nothing to learn, you'll be able to jump in almost immediately.
 
 
-## Calls By Name
+## Calls By Name, :calls-by-name
 
 Calls by name is a fancy way of specifying callbacks in RightJS. The idea is
 pretty simple, instead of writing some dummy function that calls the actual
@@ -55,7 +55,43 @@ compacter and more readable.
 [Read more about this feature](/tutorials/call-by-name)
 
 
-## Later JavaScript Specs Support
+## OO DOM-Wrappers, :wrappers
+
+Since version 2.0.0 RightJS uses dom-wrappers to work with dom units. But
+dom-wrappers in RightJS are not just some passive interface, they are classes,
+you can define your own if you like
+
+    var Table = new Wrapper(Element, {
+      sort: function(column) {
+        // sort the table by the column
+      }
+    });
+
+After that all your tables (and only tables) will have this new method. We
+also support inheritance, functionality-injection, allow you to create any
+number of your own private types and so one. It is a big and pretty thing
+
+[Read more about dom-wrappers](/tutorials/dom-wrappers)
+
+
+## Safe-Mode Support, :safe-mode
+
+RightJS 2 also brought the safe-mode support in which RightJS does not extend
+anything and can be transparently used with any other scripts on the page.
+
+Safe mode in RightJS has all the same features as the normal mode, you just
+refer to everything via the `RightJS.` object
+
+    var div = new RightJS.Element('div', {id: 'my-div'});
+
+    RightJS.$('element-id');
+    RgihtJS.$$('div.class');
+    ...
+
+[Read more about safe-mode](/tutorials/safe-mode)
+
+
+## Later JavaScript Specs Support, :new-js
 
 There are several new methods for {Array}, {String} and {Function} classes,
 that are specified in later JavaScript/ECMAScript version, things like
@@ -67,7 +103,7 @@ have them, this way you can have all the advantages of the technology
 advancement without worrying if some browser supports those features.
 
 
-## Native Unit Extensions
+## JavaScript Core Extensions, :extensions
 
 Native unit extensions are arguable feature, but as 99% of applications
 use only one framework and we specifically targeting Ruby/Python folks,
@@ -83,7 +119,7 @@ RightJS doesn't define any new language over JavaScript, it simply
 civilizes it and makes it more useful for server side programmers.
 
 
-## Simplified Numbers Handling
+## Simplified Numbers Handling, :numbers
 
 It is the second decade of 21-st century already, but numbers processing
 in JavaScript still remains like it was designed in 90-th.
@@ -105,7 +141,8 @@ simpler when you need to crank some numbers in your application.
 
 [Read more about numbers processing in RightJS](/tutorials/work-with-numbers)
 
-## Baked in Spinners Handling
+
+## Baked in Spinners Handling, :spinners
 
 Being a task-oriented framework, RightJS tries to get rid of as many
 routine operations as possible. One of the examples is the built-in spinners
@@ -129,7 +166,7 @@ name `'spinner'` and if finds one, it will automatically use it as a spinner
 while sending that form.
 
 
-## Forms Uploading Handling
+## Forms Uploading Handling, :forms
 
 RightJS also has a built-in AJAX forms support. All you need to do in order to
 send a form via AJAX is to call the {Form#send} method. This will
@@ -143,7 +180,7 @@ difference if you have or have no files on your form.
 
 
 
-## Object Oriented Programming
+## Object Oriented Programming, :oop
 
 RightJS is a multi-paradigm framework with an extensive object-programming
 features support. {Class} in RightJS supports everything you need to write
@@ -162,12 +199,11 @@ shared modules and so one.
 [Read more about OOP in RightJS](/tutorials/object-oriented-programming)
 
 
-## An Open Sandbox Architecture
+## An Open Sandbox Architecture, :openness
 
-While frameworks like jQuery are after safety and close things behind
-anonymous namespaces, RightJS takes its inspiration in dynamic languages
-like Ruby and Python. The main target of RightJS is not safety but an open
-and flexible architecture.
+RightJS takes its inspiration in dynamic languages like Ruby and Python,
+therefore the main target of RightJS is to provide an open and flexible
+architecture.
 
 The power of languages like Ruby is in their openness and ability to extend
 and bend things around, in ability to adjust and tune the language by itself
@@ -183,7 +219,7 @@ If you love Ruby, you will love RightJS as well.
 
 
 
-## Uniformed Events and Options Handling
+## Uniformed Events and Options Handling, :uniform
 
 RightJS makes a big deal out of unification. It has unified interfaces
 to handle events and options all across the framework and its plugins.
