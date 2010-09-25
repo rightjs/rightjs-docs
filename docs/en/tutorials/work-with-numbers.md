@@ -31,7 +31,7 @@ If you want to disable this feature, just pass `true` as the argument
 
 
 
-## Number Extensions, :extensions
+## Standard Number Extensions, :extensions
 
 The {Number} class has most of the `Math` module methods like `abs`, `floor`,
 `ceil`, `round` attached to the instance level, so that you can work with them
@@ -41,6 +41,18 @@ directly without calling the `Math` module.
     15.4.round(); // -> 15
     15.4.ceil();  // -> 16
     15.4.floor(); // -> 15
+
+## Number Value Limits, :limits
+
+RightJS also adds couple of methods to quickly limit a number to a certain value: `min` and `max`
+
+    // instead of this
+    if (number < 4) { number = 4; }
+    if (number > 8) { number = 8; }
+
+    // you can write it like that
+    number = number.min(4).max(8);
+
 
 
 ## Ruby Style Loops, :loops
