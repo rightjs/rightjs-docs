@@ -1,169 +1,171 @@
 # RightJS Extending Guide
 
-In case you would like to write some extension for RightJS, like a plugin or just some tiny library
-to organize routine operations in your application, here is a simple guidance how you could do that.
+Since version 2.0.0 all units in RightJS are essentially normal JavaScript
+classes. At this angle there is nothing special about them and you can just
+go and change any unit's `prototype` property right away
+
+    String.prototype.isBob = function() {
+      return this.indexOf('Bob') > -1;
+    };
+
+    "Bob".isBob();  // true
+    "Mary".isBob(); // false
+
+    Array.prototype.hasBob = function() {
+      return this.indexOf('Bob') > -1;
+    };
+
+    ["Bob"].hasBob();   // true
+    ["Mary"].hasMary(); // true
+
+    Element.prototype.isBob = function() {
+      return this.hasClass('bob');
+    };
+
+    Event.prototype.isBob = function() {
+      return this.target.hasClass('bob');
+    };
+
+    Document.prototype.hasBob = function() {
+      return this.find('.bob').length > 0;
+    };
+
+    Xhr.prototype.getBob = function() {
+      return this.load('/bob');
+    };
+
+You've got the picture. Basically any class in RightJS can be extended this
+way. But it is not 1999 anymore and we have much more for you to play with.
 
 
-In terms of functionality extending you should be aware of three types of units
+## Ruby Style Mixins, :mixins
 
-* [JavaScript Natives](#natives)
-* [RightJS Classes](#rightjs)
-* [DOM Level Units](#dom)
+First of all, all the classes in RightJS support Ruby style functionality
+injection using shared modules. If you are not familiar with the terminology
+don't get scared it is very simple. Say you have a hash of commonly used
+functions like this one
 
-We will get through them one by one and later I'll put some words in about methods overloading.
+    var BobOrNot = {
+      hasBob: function() {
+        return this.indexOf('Bob') > -1;
+      },
 
-
-## JavaScript Natives Extending, :natives
-
-For most JavaScript native units, like {String}, {Array}, {Function}, etc. there are class
-level methods like {String.include}, {Array.include}, etc. which are consistent with
-other units and meant to help you to extend native classes. The process of extending looks
-as simple as that
-
-    Array.include({
-      myMethod1: function() { return 1; },
-      myMethod2: function() { return 2; }
-    });
-
-    [1,2,3,4].myMethod1(); // -> 1
-    [1,2,3,4].myMethod2(); // -> 2
-
-
-    String.include({
-      hasBoo: function() {
-        return this.includes('boo');
+      hasNoBob: function() {
+        return !this.hasBob();
       }
-    });
+    };
 
-    "moo".hasBoo(); // -> false
-    "boo".hasBoo(); // -> true
+We call such hashes a `shared module` or shortly `mixin`. Manly, because it's
+a module and you can share it by injecting into other classes like that
 
+    String.include(BobOrNot);
+    Array.include(BobOrNot);
 
-## RightJS Own Classes Extending, :rightjs
+    "Bob".hasBob();    // true
+    ["Bob"].hasBob();  // true
 
-The are few RightJS own classes in the core, like {Xhr}, {Fx}, {Cookie}. All of them are
-based on the {Class} unit, which means you can use the RightJS OOP features to extend them.
-Meaningly the `include()` and `extend()` methods.
+    "Mary".hasBob();   // false
+    ["Mary"].hasBob(); // false
 
-In similar with the Ruby programming language, the `include` method extends the class instance
-level, which is the prototype level in our case. And the `extend` method extends the class level
-by itself.
+Using `.include()` you can extend any units in RightJS and you also can feed
+them with several modules at once.
 
-    Xhr.include({
-      myMethod: function() {}
-    });
+    Element.include(Module1, Module2, ...);
+    Number.include(Module1, ..);
+    Window.include(....);
+    Xhr.include(...);
+    Fx.include(...);
 
-    new Xhr('/some/url').myMethod();
-
-    Xhr.extend({
-      MY_CONSTANT: 1
-    })
-
-    if (Xhr.MY_CONSTANT) {
-      new Xhr('/some/url');
-    }
+This way you can easily share functionality between any classes including your
+own and keep your extensions library clean and organized
 
 
-If you don't have any Ruby experience and it doesn't feel much natural, you can use the usual approach too.
+## Class Level Extensions, :class
 
-    $ext(Xhr, {...});           // same as Xhr.extend
-    $ext(Xhr.prototype, {...}); // same as Xhr.include
+As you saw above, you can extend any class instances with additional
+functionality using the `.include()` method. But there is also another method
+to extend the class itself. It's called `.extend()`
+
+    String
+      .include({ method1: function() {} })
+      .extend({  method2: function() {} });
+
+    // as the result you'll have the following
+    "string".method1();
+    String.method2();
+
+The `.extend()` method also can take several modules if you need.
 
 
+## Post Injection Callbacks, :callbacks
 
-## DOM Level Extending, :dom
+Then, there is also post-injection callbacks support. You might need it in
+case if you want to use the same module with different classes that have
+different API.
 
-As there are more than one implementation of the DOM level units, extending them might be tricky.
-For this reason RightJS provides the {Element.include} feature, which might be used like this.
+For that reason you can add into your modules, methods named like
+`selfIncluded` or `selfExtended` (underscored versions `self_included` and
+`self_extended` are also supported). Once your module was injected into a
+class this method will receive the class as a parameter, and then you will be
+able to adjust the the things to make it working.
 
-    Element.include({
-      myMethod1: function() {},
-      myMehtod2: function() {}
-    });
+For example. Say, for some reason I want to use that `BobOrNot` module not
+just with the {String} and {Array} classes, but also with {Element} and
+{Document} instances as well. I don't know, maybe I want some common
+polymorphic interface. I can do that easily using the post-injection callbacks
+like so
 
-    $('my-element').myMethod1();
-    $$('*').each('myMethod2');
+    var BobOrNot = {
+      selfIncluded: function(klass) {
+        if (klass === Element) {
+          Element.prototype.hasBob = function() {
+            return this.hasClass('bob');
+          };
+        } else if (klass === Document) {
+          Document.prototype.hasBob = function() {
+            return this.find('div.bob').length > 0;
+          };
+        }
+      },
 
-Once you called the feature all your extensions will be registered and then whenever you select
-an element with RightJS methods you will have them available on the element.
+      // the rest of the methods...
+    };
 
-There are few more methods like this, to extend another dom-units
+    // now we can inject the module anywhere
+    String.include(BobOrNot);
+    Array.include(BobOrNot);
+    Element.include(BobOrNot);
+    Document.include(BobOrNot);
 
-* {Form.include} - extends the FORM elements only
-* {Input.include} - extends INPUT, SELECT and TEXTAREA elements only
-* {Event.include} - extends the dom events
-
-All those methods will register your extensions inside the objects and extend the units
-prototype level if available, so that your methods will work exactly the same way as any
-RightJS own method works.
+Note though, the callback method itself won't be transferred to the class, the
+`.include()` method will simply skip it.
 
 
 ## Methods Overloading, :overloading
 
-Sometimes you might need not just to add some new methods but overload existing ones,
-here is a tip how you could do that.
+And the last topic for this article. It doesn't have anything to do with
+RightJS itself, but it is a frequently asked question, so I'll just show how
+you do that.
 
-The idea is simple, you create a temporary function, that will return the end hash with
-extensions, and then you instantly call it with the unit you extend, like this:
+Sometimes you need to not just insert a new method, but overload an existing
+one. And not just overload, but you also might want to call the original
+method on some conditions. You can do the trick the following way
 
-    $ext(SomeClass.prototype, (function(class_prototype) {
-      var old_method = class_prototype.someMethod;
+    var old_append = Element.prototype.append;
 
-      return {
-        someMethod: function() {
-          var result = old_method.apply(this, arguments);
+    Element.prototype.append = function() {
+      if (my_conditions) {
+        // do something special in here
+      } else {
+        return old_append.apply(this, arguments);
+      }
+    };
 
-          // do something more
+As you can see the trick is simple. You just store the old method in some
+variable of yours, and then call it when you need by using the JavaScript's
+`.apply` method.
 
-          return result;
-        }
-      };
-    })(SomeClass.prototype));
 
-The reason of doing that is to have a separated namespace where you could safely disconnect
-the old methods and keep them alive for future calls.
+That's all.
 
-For example, say I want that the {Xhr} instances did some fancy stuff before sending the requests
 
-    Xhr.include(function(xhr_prototype) {
-      var old_send = xhr_prototype.send;
-
-      return {
-        send: function() {
-          this.fancyStuff();
-
-          return old_send.apply(this, arguments);
-        },
-
-        // my additional method with the fancy stuff
-        fancyStuff: function() {
-        }
-      };
-
-    })(Xhr.prototype));
-
-In case of the dom-level units, all the additional methods are stored at constants called `Methods`,
-like `Element.Methods`, `Form.Methods`, `Event.Methods`. You can use them instead of
-prototypes in the overloading process.
-
-For example I would like to know when something on the page was changed.
-
-    var call_mommy = function(element) {...};
-
-    Element.include((function(old_methods) {
-      var old_insert = old_methods.insert;
-
-      return {
-        insert: function() {
-          var result = old_insert.apply(this, arguments);
-
-          call_mommy(this);
-
-          return result;
-        }
-      };
-    })(Element.Methods));
-
-<p>&nbsp;</p>
-
-This is pretty much all about the RightJS extending techniques.
