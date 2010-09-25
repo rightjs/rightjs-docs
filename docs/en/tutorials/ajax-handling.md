@@ -22,12 +22,14 @@ encoding     | ‘utf-8’ | encoding
 async        | true    | asynchronous request
 evalScripts  | false   | extract/eval javascripts from the response
 evalResponse | false   | eval response as a javascript code
+evalJS       | true    | automatically eval responses with `javascript` content-type
 evalJSON     | true    | eval json responses automatically
-secureJSON	 | true	   | if it should validate json responses
+secureJSON   | true    | if it should validate json responses
 urlEncoded   | true    | urlencode the parameters
 spinner      | null    | spinner element or element id
 spinnerFx    | 'fade'  | spinner handling visual effect
 params       | null    | default parameters
+jsonp        | false   | `true` or a callback name for a JSONP request
 
 
 You can send any of the options in a hash as the second argument of the
@@ -153,6 +155,23 @@ will try to evaluate the response and assign the json object to the
     }).send();
 
 You can switch the feature off by setting the `evalJSON` option to `false`
+
+
+## JSONP Support, :jsonp
+
+You also can make `JSONP` responses with the {Xhr} class. It all looks just
+the same as any other request, just in addition you specify the `jsonp`
+option
+
+    new Xhr('/some.json', {
+      jsonp: true,
+      onSuccess: function() {
+        var json = this.responseJSON;
+      }
+    }).send();
+
+The `true` value means the default callback name `callback`, but you can
+specify any name instead.
 
 
 ## Shortcuts and DOM support, :shortcuts
