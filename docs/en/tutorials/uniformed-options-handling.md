@@ -68,20 +68,13 @@ Those principles work all over the framework with all the configurable classes.
 
 ## RigthJS UI Library Options, :ui
 
-All the [RightJS UI](/ui) library units can be initialized without actual writing any JavaScript code,
-all of them have their own markers, like custom `rel` attributes or css-classes, so that when the page is loaded
-the scripts could automatically find your elements and do all the initializations, for example you can initialize a
-calendar over an input field like that
-
-    <input type="text" rel="calendar" />
-
-But in case you need some customization for that kind of elements there is a conventional way of doing that.
-
-All you need is to create a custom HTML5 style attribute that named like `data-[unit-name-here]` and
-set your options inside it in a JSON format. For example
+Most of the [RightJS UI](/ui) library units can be initialized without
+actually writing any JavaScript code, for this reason they user special
+HTML5 attributes named like `data-[unit-name]` where you can specify your
+options in JSON format, like that:
 
     // a calendar field
-    <input rel="calendar" data-calendar="{format:'US'}" />
+    <input type="text" data-calendar="{format:'US'}" />
 
     // autocompleter
     <input type="text" data-autocompleter="{url:'/my/url'}">
@@ -91,6 +84,8 @@ set your options inside it in a JSON format. For example
       <img src="/.../..." />
     </a>
 
-When a script will process your element it will automatically check the attributes and try to use them as options.
+When the user starts to interact with those elements, the scripts catch them
+up, extract the options and initialize everything automatically.
 
-This principle works with all auto-initializable units out of the [UI](/ui) and [Plugins](/plugins) libraries
+This principle works with all auto-initializable units out of the [UI](/ui)
+and [Plugins](/plugins) libraries
