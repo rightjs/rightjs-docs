@@ -110,11 +110,11 @@ automatically, but you can specify the direction manually if you need.
 There are several shortcuts, which let you run visual effects directly from the dom-element
 instances, without manual effects instantiating and getting dirty with the classes
 
-* {Fx.Element#morph}(mixed style[, Object fx_options])
-* {Fx.Element#highlight}([end_color[, start_color[, Object fx_options]]])
-* {Fx.Element#fade}([String direction[, Object fx_options]])
-* {Fx.Element#slide}([String direction[, Object fx_options]])
-* {Fx.Element#scroll}(Object position);
+* {Fx.Element#morph}(mixed style\[, Object fx_options\])
+* {Fx.Element#highlight}(\[end_color\[, start_color\[, Object fx_options\]\]\])
+* {Fx.Element#fade}(\[String direction\[, Object fx_options\]\])
+* {Fx.Element#slide}\([String direction\[, Object fx_options\]\])
+* {Fx.Element#scroll}(Object position)
 
 Some examples
 

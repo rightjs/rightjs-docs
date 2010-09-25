@@ -113,11 +113,11 @@ queue      | true       | маркер, если эффект должен вс�
 Существует несколько коротких методов, позволяющих вам запускать эффекты непосредственно
 от dom-элементов без создания объектов вручную
 
-* {Fx.Element#morph}(mixed style[, Object fx_options])
-* {Fx.Element#highlight}([end_color[, start_color[, Object fx_options]]])
-* {Fx.Element#fade}([String direction[, Object fx_options]])
-* {Fx.Element#slide}([String direction[, Object fx_options]])
-* {Fx.Element#scroll}(Object position);
+* {Fx.Element#morph}(mixed style\[, Object fx_options\])
+* {Fx.Element#highlight}(\[end_color\[, start_color\[, Object fx_options\]\]\])
+* {Fx.Element#fade}(\[String direction\[, Object fx_options\]\])
+* {Fx.Element#slide}(\[String direction\[, Object fx_options\]\])
+* {Fx.Element#scroll}(Object position)
 
 Несколько примеров
 
