@@ -90,14 +90,6 @@ And the `position` argument might be one of the following
 
     $('element').insert(anther_element.childNodes, 'before');
 
-Additionally, you can send to the method a hash where the keys will be the position and the values are the content
-
-    $('element').insert({
-      top:    element1,
-      bottom: [element2, element3],
-      after:  element4.childNodes
-    });
-
 
 ## DOM Manipulation Shortcuts And Additional Methods, :shortcuts
 

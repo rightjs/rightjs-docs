@@ -91,14 +91,6 @@ RightJS так же предоставляет набор методов для 
 
     $('element').insert(anther_element.childNodes, 'before');
 
-Дополнительно вы можете указать хэш элементов для вставки
-
-    $('element').insert({
-      top:    element1,
-      bottom: [element2, element3],
-      after:  element4.childNodes
-    });
-
 
 ## Дополнительные методы для DOM манипуляций, :shortcuts
 
