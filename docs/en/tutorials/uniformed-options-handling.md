@@ -69,7 +69,7 @@ Those principles work all over the framework with all the configurable classes.
 ## RigthJS UI Library Options, :ui
 
 Most of the [RightJS UI](/ui) library units can be initialized without
-actually writing any JavaScript code, for this reason they user special
+actually writing any JavaScript code, for this reason they use special
 HTML5 attributes named like `data-[unit-name]` where you can specify your
 options in JSON format, like that:
 

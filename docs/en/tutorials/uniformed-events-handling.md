@@ -71,11 +71,11 @@ using the same names as the shortcut methods
     });
 
 The only exception is the the DOM {Element} constructor, to speed the things up, you need to use
-an option named `events` with the same hash of callbacks you would send to the `on` method
+an option named `on` with the same hash of callbacks you would send to the `on` method
 
     new Element('div', {
       id: 'my-id',
-      events: {
+      on: {
         click:     function() {},
         mouseover: function() {}
       }
@@ -86,13 +86,22 @@ an option named `events` with the same hash of callbacks you would send to the `
 In our system there is no difference between custom and predefined list of events. You can define
 and trigger your own events on fly, just like that
 
-    var calendar = new Calendar();
+    var element = new Element();
 
     // assign it
-    calendar.on('my-event', function(one, two, three) {
+    element.on('my-event', function(event) {
       // do something about it
+      event.one;
+      event.two;
+      event.three;
     });
 
     // fire it up
-    calendar.fire('my-event', 1,2,3);
+    element.fire('my-event', {
+      one: 1,
+      two: 2,
+      three: 3
+    });
 
+__NOTE__: keep in mind that those custom events will bubble through the document tree, just as
+any normal event would
