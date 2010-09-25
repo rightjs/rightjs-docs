@@ -198,6 +198,57 @@ take related class as an argument
     MyClass.BOO;           // -> 'BOO'
 
 
+
+## Methods Prebinding, :prebind
+
+Normally, when you use an instance methods in different from the instance context,
+you need to bind them manually to the context of the object which they belong to.
+For example, you have a class like that
+
+    var Kid = new Class({
+      initialize: function(name) {
+        this.name = name;
+      },
+
+      whatsYourName: function() {
+        alert(this.name);
+      }
+    });
+
+    var bobby = new Kid('Bobby');
+
+Now if you attach the `whatsYourName` method to an elements listener as is, it will not work,
+because it will be executed in the context of the element and there will be no `this.name`
+property
+
+    $('element').onClick(bobby.whatsYourName);
+    $('element').fire('click'); // alerts 'undefined'
+
+You need to bind the context explicitly
+
+    $('element').onClick(bobby.whatsYourName.bind(bobby));
+    $('element').fire('click'); // alerts 'Bobby'
+
+This is a bit annoying, people often forget about this and get into all sorts of weird bugs.
+To avoid the troubles, you can tell your class to automatically bind certain methods to its
+instances, so you could use them as is in any contexts
+
+    var Kid = new Class({
+      prebind: ['whatsYourName'], // list of methods to prebind
+
+      // the rest of the class ....
+    });
+
+Once you've specified that `prebind` property, you can use your methods as is
+
+    var bobby = new Kid('Bobby');
+
+    $('element').onClick(bobby.whatsYourName);
+    $('element').fire('click'); // alerts 'Bobby'
+
+
+
+
 <p>&nbsp;</p>
 
 <p>This is pretty much all of it</p>
