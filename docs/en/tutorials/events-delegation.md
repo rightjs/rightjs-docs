@@ -95,6 +95,9 @@ and refer callbacks by name.
     // with by-name references
     "#todos li".on('click', 'toggleClass', 'marked');
 
+    // and there shortcuts for the standard events too
+    "#todos li".onClick('toggleClass', 'marked');
+
 You can think about it as a global observer. It's all the same as the
 {Element#on} method, but it works globally for all elements on the page that
 match that css-rule.
@@ -102,40 +105,38 @@ match that css-rule.
 
 ## Deeper Features, :deeper
 
-That fancy {String#on} method is a shortcut for the {Event#behave} method. The
-difference between them is that {Event#behave} returns an object of the actual
-document level events handler, which you can use to stop observing certain
-events. For example.
+That fancy {String#on} method is a shortcut for the {Document#delegate} method.
+It simply attaches the events delegation listener to the `document` level. But
+there are also other methods like {Document#delegates} to check if the document
+delegates certain kinds of events, and {Document#undelegate} which terminates
+events delegation for cases you need. You can use them from the document
+level
 
-    var handlers = Event.behave("#todos li", "click", function() {
-      this.toggleClass('marked');
-    });
+    $(document).delegates('click', '#todos li');
+    $(document).undelegate('click', '#todos li');
 
-    // now we can switch it off like that
-    document.stopObserving(handlers);
+And you also can use the {String} level shortcuts for them too, they look the
+same way as the {Element} level events handling
 
-There is also another method called {Event#delegate} that creates the actual
-events delegation handlers. You can use this method to create your own
-delegated event handlers and attach them to the levels different from the
-`document`.
+    "#todos li".observes('click');
+    "#todos li".stopObserving('click');
 
-For example you have a table with the `THEAD` and `TBODY` sections, and you
-want that when the user clicks a cell in the header to highlight a column, and
-when the user clicks a cell in the body, then highlight a row. You can do it
-like that
+And finally, the {Element} unit has the {Element#delegate} and
+{Element#undelegate} methods as well and you can play events delegation at
+any level not just at the document. For example
 
-    $('my-table').onClick(Event.delegate({
-      'thead td': function() {
+    $('my-table').delegate('click', {
+      'thead th': function() {
         // highlight the column in here
       },
 
       'tbody td': function() {
         // highlight the row in here
       }
-    }));
+    });
 
-This will attach one single `onclick` event listener to the table element, but
-it will act differently depends on what kind of cell was clicked.
+This might be very useful if you need to deal with some events locally without
+disturbing the rest of the document tree.
 
 
 ## Troubleshooting, :troubleshooting
