@@ -13,12 +13,12 @@ in JavaScript development, but rather does something quite opposite.
 The main target of RightJS is to create a simple, fast and reliable tool for a true
 agile development. It simplifies many routine operations making JavaScript
 development an easy and natural thing. It looks simple, it works simple, but that
-is the kind of simplicity that lets you concentrate on serious things.
+is the kind of simplicity that allows you to concentrate on serious things.
 
 
 ## Designed, not Evolved
 
-Whatever your previous experience is jQuery, Prototype, Mootools, Ruby, Python or even PHP.
+Whatever your previous experience is, jQuery, Prototype, Mootools, Ruby, Python or even PHP.
 When you look through RightJS API, you immediately spot familiar things. RightJS keeps it
 close to the standards and it was specifically designed the way it was familiar for
 people with different backgrounds.

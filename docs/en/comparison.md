@@ -17,8 +17,8 @@ people's reality and therefore should not be trusted.
 
 ## RightJS vs. jQuery
 
-Both are quite small, modular and rely on plugins and extensions. Both have
-quite a lot of short and handy methods. And both help you write compact code.
+Both are modular and rely on plugins and extensions, both have quite a lot of short
+and handy methods and both help you write compact code.
 
 The main difference is that jQuery is more oriented towards procedural and
 functional approaches. RightJS on the other hand provides basic functional and
@@ -26,35 +26,33 @@ procedural programming features too, but it's more object-oriented and designed
 to be familiar to server-side developers who work with dynamic languages like Ruby
 and Python.
 
-Another major difference is that jQuery isolates all its processes
-inside of an own scope whereas RightJS extends the JavaScript unit prototypes
-and thus provides instant and more semantic access to most of its features.
-
 
 ### Pros and Cons
 
 * \+ Extensive object-oriented abilities
-* \+ Immediately available native class extensions
-* \+ Additional handy features like 'call-by-name'
+* \+ OO Dom-wrappers with inheritance and correct typization
+* \+ Immediately available JavaScript core extensions
+* \+ Additional handy features like [call-by-name](/tutorials/call-by-name)
 * \+ Shared modules {Observer} and {Options}
+* \+ Unformed events and options handling
 * \+ More readable and cleaner syntax
 * \+ Much better performance
+* \+ Much smaller size (15k against 24)
+* \+ Has cookies, forms and full-features UJS support out of box
 * \+ Much more compact and modular UI library
-* \+ Cleaner and better organization of internal code
-* \- No safe-mode (at least not yet)
+
 
 
 ## RightJS vs. Prototype/Scriptaculous
 
-Prototype and RightJS have quite a lot in common and are based on the same principle
-of `prototype` extensions. Moreover, RightJS inherited the naming principles and many
-method and class names from what you might see in Prototype.
+RightJS is a direct descendant of Prototype, it was started as an attempt to make
+a more compact and fast version of Prototype and it inherited lots of features,
+syntaxes and method names.
 
-The differences are that RightJS is a modular framework with a small simple core and
-plugins, whereas Prototype is more of a monolithic all-in-one framework. And RightJS
-mostly aims at modern browsers keeping all the old browsers support in a separate
-module with patches. Prototype on the other hand has a special public API for faster
-elements processing on old browsers.
+The main difference between them is that RightJS is a modular framework and rely
+on plugins, when Prototype is more like a monolithic all-in-one build. The other
+difference is that RightJS uses dom-wrappers to work with dom elements instead of
+direct prototype extensions. And RightJS also have a safe-mode version.
 
 ### Pros and Cons
 
@@ -63,11 +61,10 @@ elements processing on old browsers.
 * \+ Much better performance
 * \+ No rarely used code and obsolete features
 * \+ Cleaner and more compact syntax
-* \+ Additional features like call-by-name and function extensions
-* \+ Better and more flexible Fx library
+* \+ Additional features like [call-by-name](/tutorials/call-by-name) and function extensions
+* \+ Better and more flexible Fx library out of box
 * \+ Basic Fx and cookies support out of box
 * \+ Own UI library and plugins collection
-* \- No fast class-level functions (needed only for old IE 6 and 7 browsers)
 
 
 ## RightJS vs. Mootools
@@ -90,6 +87,7 @@ Prototype and Ruby/Python naming system.
 ### Pros and Cons
 
 * \+ A bit more compact core and modules
+* \+ DOM-Wrappers instead of dom-extensions
 * \+ Better performance
 * \+ More standard, clean and readable syntax
 * \+ Simplified way of dealing with everyday problems
@@ -115,4 +113,4 @@ makes it very easy to call or chain these features.
 * \+ Instant access to the functionality
 * \+ Dynamic approach like extensions of core classes
 * \+ Functional approach features
-* \- Doesn't have its own namespace
+
