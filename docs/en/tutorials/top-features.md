@@ -1,6 +1,6 @@
-# Top 10 Features of RightJS
+# Top 12 Features of RightJS
 
-This article meant to give you a quick overview of 10 most valuable features
+This article meant to give you a quick overview of 12 most valuable features
 of RightJS.
 
 ## Syntax
