@@ -27,7 +27,7 @@ to be familiar to server-side developers who work with dynamic languages like Ru
 and Python.
 
 
-### Pros and Cons
+### Pros
 
 * \+ Extensive object-oriented abilities
 * \+ OO Dom-wrappers with inheritance and correct typization
@@ -38,7 +38,7 @@ and Python.
 * \+ More readable and cleaner syntax
 * \+ Much better performance
 * \+ Much smaller size (15k against 24)
-* \+ Has cookies, forms and full-features UJS support out of box
+* \+ Has cookies, forms and full-featured UJS support out of box
 * \+ Much more compact and modular UI library
 
 
@@ -54,7 +54,7 @@ on plugins, when Prototype is more like a monolithic all-in-one build. The other
 difference is that RightJS uses dom-wrappers to work with dom elements instead of
 direct prototype extensions. And RightJS also have a safe-mode version.
 
-### Pros and Cons
+### Pros
 
 * \+ Modular and plugin oriented structure
 * \+ Much smaller size
@@ -64,6 +64,7 @@ direct prototype extensions. And RightJS also have a safe-mode version.
 * \+ Additional features like [call-by-name](/tutorials/call-by-name) and function extensions
 * \+ Better and more flexible Fx library out of box
 * \+ Basic Fx and cookies support out of box
+* \+ Full-featured UJS support out of box
 * \+ Own UI library and plugins collection
 
 
@@ -84,15 +85,16 @@ Another difference is that Mootools tries to bring its own naming system for met
 classes and modules when RightJS tries to stay as close to the more or less standard
 Prototype and Ruby/Python naming system.
 
-### Pros and Cons
+### Pros
 
 * \+ A bit more compact core and modules
 * \+ DOM-Wrappers instead of dom-extensions
+* \+ Full-featured UJS support out of box
 * \+ Better performance
 * \+ More standard, clean and readable syntax
 * \+ Simplified way of dealing with everyday problems
 * \+ Better Fx library where you just specify the end result
-* \- I don't really see any significant cons here
+
 
 
 ## RightJS vs. YUI and Dojo
@@ -106,11 +108,11 @@ and you are supposed to work through their nested APIs. RightJS, on the other ha
 provides you instant access to most of its features on the objects themselves and thus
 makes it very easy to call or chain these features.
 
-### Pros and Cons
+### Pros
 
 * \+ Smaller and modular library
 * \+ Let you write much more compact application code
 * \+ Instant access to the functionality
 * \+ Dynamic approach like extensions of core classes
 * \+ Functional approach features
-
+* \+ Full-featured UJS support out of box
