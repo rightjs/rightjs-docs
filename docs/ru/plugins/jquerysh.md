@@ -3,7 +3,7 @@
 Этот простой плагин изменяет поведение функции `$()` на то к чему привыкли
 пользователи jQuery.
 
-<%= partial '/plugins/download', :locals => {:name => 'rails'} %>
+<%= partial '/plugins/download', :locals => {:name => 'jquerysh'} %>
 
 
 ## Навигация в стиле jQuery, :navigation

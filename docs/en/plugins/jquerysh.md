@@ -3,7 +3,7 @@
 This simple plugin changes the `$()` function behavior to the one that jQuery
 users got used to
 
-<%= partial '/plugins/download', :locals => {:name => 'rails'} %>
+<%= partial '/plugins/download', :locals => {:name => 'jquerysh'} %>
 
 ## jQuery Style Navigation, :navigation
 
