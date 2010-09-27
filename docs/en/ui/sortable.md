@@ -49,7 +49,6 @@ You might use the following options to customize your sortables
 
 Name      | Default    | Description
 ----------|------------|---------------------------------------------------------------------
-tags      | 'li'       | the list items tag name
 url       | null       | the Xhr requests url address, might contain the '%{id}' placeholder
 method    | 'put'      | the Xhr requests method
 Xhr       | {}         | additional Xhr options
