@@ -24,7 +24,7 @@ set :port,        3000
 set :sessions,    true
 set :views, Proc.new { File.join(root, "docs") }
 
-PLUGINS_LIST = %w{json effects dnd rails jquerysh}
+PLUGINS_LIST = %w{json effects dnd rails jquerysh sizzle}
 UIS_LIST   = %w{autocompleter calendar tabs rater slider selectable sortable lightbox tooltips in-edit uploader resizable colorpicker}
 API_PACKS  = %w{core dom fx lang util}
 
@@ -332,7 +332,7 @@ __END__
     <%= stylesheet_link_tag 'application' %>
     <%= @content_for ? @content_for[:modules] : '' %>
     <%= stylesheet_link_tag 'rightjs-ui-home' if request.url.include?('/ui/') %>
-    <%= javascript_include_tag('/builds/i18n/right-ui-i18n-ru.js') if @lang == 'ru' %>
+    <%= javascript_include_tag('/builds/i18n/ru.js') if @lang == 'ru' %>
   </head>
   <body>
     <div id="body">

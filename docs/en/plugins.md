@@ -29,8 +29,9 @@ can include them in the main build at the [custom builds page](<%= builds_path %
                "when included it provides better JSON responses check for the {Xhr} module and "+
                "also an ability to save and retrieve objects and arrays in the {Cookie} module transparently.",
 
-  :jquerysh => "This plugin changes the `$()` function behavior to the one the jQuery users used to"
+  :jquerysh => "This plugin changes the `$()` function behavior to the one the jQuery users used to",
 
+  :sizzle   => "Sizzle CSS selectors engine support for RightJS"
 }
 %>
 
