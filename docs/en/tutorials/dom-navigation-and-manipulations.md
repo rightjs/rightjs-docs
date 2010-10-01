@@ -14,8 +14,8 @@ RightJS provides two pretty much standard methods to find elements on the page,
     var element = $('element-id');
     var elements = $$('div > div.foo + div.bar');
 
-RightJS supports all the CSS selectors up to the  Level 3. It will use a browser native
-css-selectors functionality if available.
+RightJS supports majority of the CSS selectors up to the  Level 3 and it will
+use a browser native css-selectors functionality if available.
 
 
 ## Node Relative Navigation, :subnodes

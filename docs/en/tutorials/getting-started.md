@@ -36,7 +36,8 @@ or can receive a string css-rule that will filter the result.
     element.parent();        // the first parent
     element.parent('div');   // the first DIV parent
 
-RigthJS supports all the standard CSS3 selectors on all browsers.
+RigthJS supports majority of the standard CSS3 selectors on all browsers.
+
 [Read more](/tutorials/dom-navigation-and-manipulations)
 
 
