@@ -2,7 +2,7 @@
 
 Right tooltips is the native tooltips feature for RightJS.
 
-<%= partial '/ui/head', :locals => {:name => 'tooltips'} %>
+<%= partial '/ui/head', :locals => {:name => 'tooltip'} %>
 
 <%= anchors_index %>
 

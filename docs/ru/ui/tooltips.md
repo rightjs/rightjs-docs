@@ -2,7 +2,7 @@
 
 `Tooltips` - это простой виджет для создания настраиваемых тултипов в RigthJS.
 
-<%= partial '/ui/head', :locals => {:name => 'tooltips'} %>
+<%= partial '/ui/head', :locals => {:name => 'tooltip'} %>
 
 <%= anchors_index %>
 
