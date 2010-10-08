@@ -18,6 +18,10 @@ To fire it up you'll need the Ruby environment, plus the following gems
 
     sudo gem install sinatra maruku json
 
+__Ubuntu__: you also will need to install the following
+
+    sudo apt-get install libopenssl-ruby
+
 After that simply fire it up like that
 
     ./index.rb
