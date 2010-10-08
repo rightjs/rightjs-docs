@@ -1,38 +1,48 @@
 <dl id="tutorials-index">
-  <dt>RightJS 2 Вопросы</dt>
+  <dt>Статьи RightJS 2</dt>
   <ul>
     <%= menu_link_to "Что нового в RightJS 2",           tutorial_path('what-new-in-rjs2') %>
     <%= menu_link_to "Что нового в RightJS UI 2",        tutorial_path('what-new-in-rui2') %>
-    <%= menu_link_to "DOM-Обертки в RightJS 2",          tutorial_path('dom-wrappers') %>
-    <%= menu_link_to "Безопасный режим и иже с ним",     tutorial_path('safe-mode') %>
     <%= menu_link_to "RightJS 2 пособие по миграции",    tutorial_path('rjs2-migration') %>
   </ul>
 
-  <dt>Общие вопросы</dt>
+  <dt>Для начинающих</dt>
   <ul>
     <%= menu_link_to "Быстрый старт",                    tutorial_path('getting-started') %>
     <%= menu_link_to "Двенадцать лучших особенностей",   tutorial_path('top-features') %>
+  </ul>
+
+  <dt>Базовые возможности</dt>
+  <ul>
     <%= menu_link_to "Вызов по имени",                   tutorial_path('call-by-name') %>
-    <%= menu_link_to "Мутирующие методы и цепи",         tutorial_path('assignments-and-chains') %>
     <%= menu_link_to "Работа с числами",                 tutorial_path("work-with-numbers") %>
-    <%= menu_link_to "Таймеры и периодческие вызовы",    tutorial_path('delays-and-timers') %>
-    <%= menu_link_to "Пособие по расширению RightJS",    tutorial_path('rightjs-extending') %>
+    <%= menu_link_to "Мутирующие методы и цепи",         tutorial_path('assignments-and-chains') %>
     <%= menu_link_to "Единообразная обработка опций",    tutorial_path('uniformed-options-handling') %>
     <%= menu_link_to "Единообразная обработка событий",  tutorial_path('uniformed-events-handling') %>
+    <%= menu_link_to "Таймеры и периодческие вызовы",    tutorial_path('delays-and-timers') %>
+  </ul>
+
+  <dt>Продвинутые вопросы</dt>
+  <ul>
     <%= menu_link_to "ООП программирование с RightJS",   tutorial_path('object-oriented-programming') %>
     <%= menu_link_to "Функциональное программирование",  tutorial_path('functional-programming') %>
+    <%= menu_link_to "Пособие по расширению RightJS",    tutorial_path('rightjs-extending') %>
+    <%= menu_link_to "Безопасный режим и иже с ним",     tutorial_path('safe-mode') %>
+    <%= menu_link_to "Визуальные эффекты",               tutorial_path('visual-effects') %>
   </ul>
-  <dt>DOM Манипуляции</dt>
+
+  <dt>Работа с Ajax</dt>
+  <ul>
+    <%= menu_link_to "Работа с Ajax",                    tutorial_path('ajax-handling') %>
+    <%= menu_link_to "Ajax формы",                       tutorial_path('ajax-forms') %>
+  </ul>
+
+  <dt>Работа с DOM</dt>
   <ul>
     <%= menu_link_to "DOM навигация и манипулирование",  tutorial_path('dom-navigation-and-manipulations') %>
     <%= menu_link_to "Обработка событий DOM",            tutorial_path('dom-events-handling') %>
+    <%= menu_link_to "DOM-Обертки в RightJS 2",          tutorial_path('dom-wrappers') %>
     <%= menu_link_to "Смена визуального состояния",      tutorial_path('elements-toggling') %>
     <%= menu_link_to "Unobtrusive программирование и делегация событий", tutorial_path('events-delegation') %>
-  </ul>
-  <dt>Дополнительные вопросы</dt>
-  <ul>
-    <%= menu_link_to "Работа с Ajax",                    tutorial_path('ajax-handling') %>
-    <%= menu_link_to "Ajax формы",                      tutorial_path('ajax-forms') %>
-    <%= menu_link_to "Визуальные эффекты",               tutorial_path('visual-effects') %>
   </ul>
 </dl>
