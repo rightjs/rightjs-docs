@@ -61,6 +61,18 @@
     });
 
 
+### #offset
+
+    offset() -> {x: NNN, y: NNN}
+
+Возвращает текущую позицию курсора относительно `target` элемента (полезно
+при работе с относительно позиционированными элементам внутри `target`)
+
+    $('element').onMousemove(function(event) {
+      $('relative-element').moveTo(event.offset());
+    });
+
+
 ### #find
 
     find(String css_rule) -> Element

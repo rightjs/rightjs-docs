@@ -587,6 +587,20 @@ A bidirectional method to work with the element's `innerHTML` property.
     $('element').html(); // -> 'bla bla bla'
 
 
+### #text
+
+    text()               -> String innerHTML without tags
+    test(String content) -> Element self
+
+A bidirectional method to work with element's `innerHTML` property as text
+
+    $('element').text('<b>boo hoo!</b>');
+    $('element').html(); // -> '&lt;b&gt;boo hoo!&lt;/b&gt;'
+
+    $('element').html('<b>boo hoo!</b>');
+    $('element').text(); // -> 'boo hoo!'
+
+
 ### #wrap
 
     wrap(Element wrapper) -> Element self
@@ -671,7 +685,7 @@ __NOTE__: Checks both element styles as well as the computed (CSS) styles.
 
 Checks if the element is assigned to the given CSS class name.
 
-    $(element.setClass('foo bar');
+    $(element).setClass('foo bar');
 
     $(element).hasClass('foo'); // -> true
     $(element).hasClass('bar'); // -> true
@@ -690,6 +704,16 @@ Replaces all the element CSS class names with the given one.
     $(element).setClass('boo');
 
     element.className; // -> 'boo'
+
+
+### #getClass
+
+    getClass() -> String className
+
+A simple `className` property getter
+
+    $('element').setClass('foo bar');
+    $('element').getClass(); // -> 'foo bar'
 
 
 ### #addClass

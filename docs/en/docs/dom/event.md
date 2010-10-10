@@ -62,6 +62,18 @@ Returns the current event position.
     });
 
 
+### #offset
+
+    offset() -> {x: NNN, y: NNN}
+
+Returns the current cursor position relatively to the target element
+(useful for handling relatively positioned elements within the target element)
+
+    $('element').onMousemove(function(event) {
+      $('relative-element').moveTo(event.offset());
+    });
+
+
 ### #find
 
     find(String css_rule) -> Element
