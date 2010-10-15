@@ -67,6 +67,21 @@ objects.
 
     // -> {'a': 1, 'b': 2, 'c': 3}
 
+
+### .clone
+
+    Object.clone(Object obj) -> Object new
+
+A simple object cloning method
+
+__NOTE__: this method _does not_ perform a recursive cloning!
+
+    var obj1 = {a:1};
+    var obj2 = Object.clone(obj1);
+
+    obj1 !== obj2;
+
+
 ### .toQueryString
 
     Object.toQueryString(Object object) -> String
