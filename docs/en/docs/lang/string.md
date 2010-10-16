@@ -141,8 +141,8 @@ Creates a capitalized version of the string.
 
 __NOTE__: This method supports most of the UTF-8 symbols.
 
-    'boo boo boo'.capitalize();    // -> 'Boo Boo Boo'
-    'йокарный бабай'.capitalize(); // -> 'Йокарный Бабай'
+    'boo boo boo'.capitalize();    // -> 'Boo boo boo'
+    'йокарный бабай'.capitalize(); // -> 'Йокарный бабай'
 
 
 
