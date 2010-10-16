@@ -3,9 +3,9 @@
 
 <ul id="promo" class="right-tabs">
   <ul>
-    <li id="friendly-tab"><a href="#friendly"><h1><%= @promo_texts[:friendly][:title] %></h1><i><%= @promo_texts[:friendly][:subtitle] %></i></a></li>
-    <li id="compact-tab"><a href="#compact"><h1><%= @promo_texts[:compact][:title] %></h1><i><%= @promo_texts[:compact][:subtitle] %></i></a></li>
-    <li id="fast-tab"><a href="#fast"><h1><%= @promo_texts[:fast][:title] %></h1><i><%= @promo_texts[:fast][:subtitle] %></i></a></li>
+    <li id="friendly-tab"><a href="#friendly"><h1><%= @promo_texts[:friendly][:title] %></h1></a></li>
+    <li id="compact-tab"><a href="#compact"><h1><%= @promo_texts[:compact][:title] %></h1></a></li>
+    <li id="fast-tab"><a href="#fast"><h1><%= @promo_texts[:fast][:title] %></h1></a></li>
   </ul>
 
   <li id="friendly">
@@ -17,7 +17,7 @@
   <li id="compact">
     <%= @promo_texts[:compact][:text] %>
     <p class="bottom-link">
-      <%= link_to @promo_texts[:compact][:more], '/builds' %>
+      <%= link_to @promo_texts[:compact][:more], '/top-features' %>
     </p>
   </li>
   <li id="fast">

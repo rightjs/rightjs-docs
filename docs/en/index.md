@@ -5,57 +5,63 @@
 @promo_texts = {
 
   :friendly => {
-    :title    => "It's Friendly",
-    :subtitle => "Easy to read syntax",
+    :title    => "Why?",
     :text     => %Q{
       <p>
-        RightJS is designed for dynamic languages crowd, as such, it has very simple
-        in use but well structured system where everything you need is quickly accessible
-        and easily tweakable.
+        Because we love JavaScript, because we care how it's done and
+        because we believe that JavaScript programming can be much
+        more civilized, pleasant and interesting process.
       </p>
       <p>
-        At one side RightJS has a really nice and simple, easy to read and write syntax
-        that makes it a snap to use an extend even for noobs. And on the other hand it
-        supports multiple paradigms, has extensive OOP and FP abilities along side with
-        many other features that will make any tough professional happy.
+        There are much more people working with JavaScript than just web-designers
+        and front-side developers. Majority of server-side developers are also
+        involved in JavaScript programming one way or another. And this produces
+        a demand for tools that will be comfortable and natural to use for everyone.
+      </p>
+      <p>
+        Tools that feel right no matter what you do and what your experience is.
       </p>
     },
     :more     => "Getting started"
   },
 
   :compact => {
-    :title    => "It's Compact",
-    :subtitle => "Weighs just 15k!",
+    :title    => "How?",
     :text     => %Q{
       <p>
-        RightJS is a really compact framework of just 15k of gzipped code, and as the matter
-        of fact it already has several plugins backed in. It has  dom manipulations handling,
-        native unit extensions, basic visual effects, extensive OOP abilities, AJAX, additional
-        form features, cookies. You name it!
+        RightJS is all about complexity control that allows you to do your job the way
+        you think it's right in any given circumstances.
       </p>
       <p>
-        And RightJS is not just small by itself, it has a number of small and fast plugins,
-        you can add them to the main build, or switch off unnecessary features stripping it
-        down to a very skinny core.
+        On one side it has very simple syntax that allows you to deal with simple
+        things in simple way. If you're just a web-designer it has all the usual things
+        in simple and predictable API, flawored with many shortcuts and syntax sugar.
+      </p>
+      <p>
+        On the other side RightJS provides extensive OOP and FP features, JavaScript
+        core extensions, kick-ass dom-wrappers with inheritance and lots and lots of
+        other things that will make any seasoned professional to perform at his best.
       </p>
     },
-    :more     => "Custom builds page"
+    :more     => "Top 12 Features"
   },
 
   :fast => {
-    :title    => "It's Fast",
-    :subtitle => "Possibly THE Fastest!",
+    :title    => "What?",
     :text     => %Q{
       <p>
-        RightJS takes the performance issue very seriously, we do lots of regressive
-        and performance testing to make sure all methods in the framework work
-        as fast as they possibly can.
+        RightJS is a modular JavaScript framework. It has a very skiny (15k gzipped)
+        core that has all the standard features, like dom-manipulation, animation,
+        forms, cookies, events handling and so one.
       </p>
       <p>
-        RightJS reuses all native functionality every browser can provide and it
-        doesn't overcomplicate things with too fancy, slow features. As the result,
-        RightJS beats up all the modern frameworks in most of routine operations,
-        and in many cases, gets really close to the pure dom code performance.
+        But core in RightJS is not just a closed monolyth, on contrary, it is an open
+        structure, much like Ruby or Python. It provides you with an environment and
+        basic building blocks, which you can reuse, patch, bend and hack, making the
+        core itself to fit your application.
+      </p>
+      <p>
+        And boy it's fast!
       </p>
     },
     :more     => "Benchmarks page"
