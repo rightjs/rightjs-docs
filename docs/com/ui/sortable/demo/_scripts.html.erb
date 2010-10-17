@@ -29,4 +29,24 @@
   ul.horizontal li {
     float: left;
   }
+
+  ul#custom li.nothing {
+    background: #843412;
+    display: block;
+    padding: 0;
+    height: 3px;
+    cursor: default;
+  }
+  ul#custom li.item {
+    cursor: default;
+    position: relative;
+  }
+  ul#custom li.item div.handle {
+    position: absolute;
+    right: .35em;
+    top: -0.12em;
+    font-size: 150%;
+    font-weight: bold;
+    cursor: move;
+  }
 </style>

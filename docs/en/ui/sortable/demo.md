@@ -62,3 +62,18 @@ Some [sortable](/ui/sortable) lists feature demo-cases
 <p>
   <div id="moving-status"></div>
 </p>
+
+
+## Custom List With Handlers, :custom
+
+<p>
+  <ul class="sortable" id="custom" data-sortable="{itemCss:'li.item', handleCss: 'div.handle'}">
+    <li class="nothing"></li>
+    <li class="item">Item #1 <div class="handle">&equiv;</div></li>
+    <li class="item">Item #2 <div class="handle">&equiv;</div></li>
+    <li class="item">Item #3 <div class="handle">&equiv;</div></li>
+    <li class="item">Item #4 <div class="handle">&equiv;</div></li>
+    <li class="item">Item #5 <div class="handle">&equiv;</div></li>
+    <li class="nothing"></li>
+  </ul>
+</p>

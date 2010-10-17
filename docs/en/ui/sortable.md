@@ -57,18 +57,28 @@ posParam  | 'position' | the url position value name
 parseId   | true       | if the id attribute should be converted into an integer before sending
 accept    | null       | reference or a list of references for interchangeable sortables
 minLength | 1          | minimal count of items that allowed to be left in a list
+itemCss   | 'LI'       | sortable items list css-rule
+handleCss | 'LI'       | handle elements css-rule (same as the items by default)
 cssRule   | '\*\[data-sortable\]' | the auto-initializable elements marker
 
 
 ## Events List, :events
 
-There is just one event name for this unit and it's called `'change'`.
+There are several events you can use to handle sortables
+
+Name   | Description
+-------+----------------------------------------------------
+start  | when the item drag starts
+change | when an item slipped to a new position
+finish | when the user releases the item
+
 
     new Sortable('todos', {
       onChange: function(event) {
-        event.list;
-        event.item;
-        event.index;
+        event.list;  // reference to the target list
+        event.item;  // reference to the handled item
+        event.index; // the index of the related item
+        event.event; // original dom-event object
         // ....
       }
     });
