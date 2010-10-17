@@ -67,7 +67,7 @@ cssRule   | '\*\[data-sortable\]' | the auto-initializable elements marker
 There are several events you can use to handle sortables
 
 Name   | Description
--------+----------------------------------------------------
+-------|----------------------------------------------------
 start  | when the item drag starts
 change | when an item slipped to a new position
 finish | when the user releases the item
