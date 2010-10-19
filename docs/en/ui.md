@@ -39,7 +39,9 @@ github service.
 
   :resizable     => "Resizable blocks feature for RightJS",
 
-  :colorpicker   => "The colorpicker widget for RightJS"
+  :colorpicker   => "The colorpicker widget for RightJS",
+
+  :dialog        => "Standard dialog widget solution for RightJS"
 }
 %>
 
