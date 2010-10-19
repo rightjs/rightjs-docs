@@ -1,0 +1,134 @@
+<% content_for :modules, javascript_include_tag('/builds/ui/right-dialog.js') %>
+<script type="text/javascript">
+// <![CDATA[
+  "a#demo-text".onClick(function() {
+    new Dialog({
+      title: 'Basic Example',
+      html:  $('lorem').html()
+    }).setStyle('width: 30em').show();
+
+    return false;
+  });
+
+  "a#demo-scroll".onClick(function() {
+    new Dialog({
+      title: 'Example With Scrolls',
+      html:  $('lorem').html() + '<br/>' + $('lorem').html()
+    }).setStyle('width: 30em; height: 12em').show();
+
+    return false;
+  });
+
+  "a#demo-ajax".onClick(function() {
+    new Dialog()
+      .title("Ajax Example")
+      .load('./lorem');
+
+    return false;
+  });
+
+  "a#demo-nolock".onClick(function() {
+    new Dialog({
+      lockScreen: false,
+      title: 'No Screen Lock',
+      html:  $('lorem').html()
+    }).setStyle('width: 30em').show();
+
+    return false;
+  });
+
+  "a#demo-noclose".onClick(function() {
+    new Dialog({
+      closeable: false,
+      title: "You Can't Close Me!",
+      html:  $('lorem').html()
+    }).setStyle('width: 30em').show();
+
+    return false;
+  });
+
+  "a#demo-nodrag".onClick(function() {
+    new Dialog({
+      draggable: false,
+      title: "You Can't Drag Me!",
+      html:  $('lorem').html()
+    }).setStyle('width: 30em').show();
+
+    return false;
+  });
+
+  "a#demo-expand".onClick(function() {
+    new Dialog({
+      expandable: true,
+      title: "Expand Me!",
+      html:  $('lorem').html() + '<br/>' + $('lorem').html() + '<br/>' + $('lorem').html()
+    }).setStyle('width: 30em; height: 10em').show();
+
+    return false;
+  });
+
+  "a#demo-help".onClick(function() {
+    new Dialog({
+      showHelp: true,
+      title: "I Have The Help Button!",
+      html:  $('lorem').html()
+    })
+    .setStyle('width: 30em')
+    .onHelp(function() { this.html('Help is coming!')})
+    .show();
+
+    return false;
+  });
+
+  "a#demo-alert".onClick(function() {
+    new Dialog.Alert({
+      html: "Oh dude, you're so screwed!"
+    }).show();
+
+    return false;
+  });
+
+  "a#demo-confirm".onClick(function() {
+    new Dialog.Confirm({
+      html: "Are you sure?"
+    }).show();
+
+    return false;
+  });
+
+  "a#demo-prompt".onClick(function() {
+    new Dialog.Prompt({
+      label: 'Enter your name'
+    }).show();
+
+    return false;
+  });
+
+  "a#demo-password".onClick(function() {
+    new Dialog.Prompt({
+      label: 'Enter your password',
+      input: {
+        type: 'password'
+      }
+    }).show();
+
+    return false;
+  });
+
+  "a#demo-textarea".onClick(function() {
+    new Dialog.Prompt({
+      label: "What's your story?",
+      input: {
+        type: 'textarea',
+        value: 'The story goes like that'
+      }
+    }).show();
+    return false;
+  });
+
+// ]]>
+</script>
+
+<p id="lorem" style="display:none">
+  Lorem ipsum dolor <u>sit</u> amet, consectetur adipisicing elit, <b>sed</b> do eiusmod tempor incididunt ut labore et dolore <i>magna</i> aliqua. Ut enim ad minim veniam, quis nostrud <u>exercitation</u> ullamco laboris nisi ut aliquip ex ea commodo <b>consequat</b>. Duis aute irure dolor in <i>reprehenderit</i> in voluptate velit esse cillum <u>dolore</u> eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non <b>proident</b>, sunt in culpa qui <i>officia</i> deserunt mollit anim id est laborum.
+</p>
