@@ -31,7 +31,9 @@ can include them in the main build at the [custom builds page](<%= builds_path %
 
   :jquerysh => "This plugin changes the `$()` function behavior to the one the jQuery users used to",
 
-  :sizzle   => "Sizzle CSS selectors engine support for RightJS"
+  :sizzle   => "Sizzle CSS selectors engine support for RightJS",
+
+  :table    => "Tables specific dom-wrapper for RightJS that handles sorting"
 }
 %>
 
