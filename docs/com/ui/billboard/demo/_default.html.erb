@@ -1,0 +1,38 @@
+<% content_for :modules, javascript_include_tag('/builds/ui/right-billboard.js') %>
+<style type="text/css">
+  ul.rui-billboard {
+    border: 3px solid #CFCEBD;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+  }
+
+  ul.rui-billboard li img {
+    width: 400px;
+    height: 265px;
+    display: block;
+  }
+
+  div.swap-links {
+    margin-top: .5em;
+  }
+  div.swap-links a {
+    outline: none;
+  }
+  ul.text-example {
+
+  }
+  ul.text-example li {
+    width: 30em;
+    height: 12em;
+    text-align: justify;
+  }
+</style>
+
+<p>
+  <ul class="rui-billboard">
+    <li><img src="/images/test/2-med.jpg" /></li>
+    <li><img src="/images/test/3-med.jpg" /></li>
+    <li><img src="/images/test/4-med.jpg" /></li>
+  </ul>
+</p>

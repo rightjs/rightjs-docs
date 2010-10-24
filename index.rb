@@ -25,7 +25,11 @@ set :sessions,    true
 set :views, Proc.new { File.join(root, "docs") }
 
 PLUGINS_LIST = %w{json effects dnd rails jquerysh sizzle table}
-UIS_LIST   = %w{autocompleter calendar tabs rater slider selectable sortable lightbox tooltips in-edit uploader resizable colorpicker dialog}
+UIS_LIST   = %w{
+  autocompleter calendar tabs rater slider selectable sortable
+  lightbox tooltips in-edit uploader resizable colorpicker dialog
+  billboard
+}
 API_PACKS  = %w{core dom fx lang util}
 
 LANGUAGES  = %w{

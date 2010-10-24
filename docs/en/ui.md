@@ -41,7 +41,9 @@ github service.
 
   :colorpicker   => "The colorpicker widget for RightJS",
 
-  :dialog        => "Standard dialog widget solution for RightJS"
+  :dialog        => "Standard dialog widget solution for RightJS",
+
+  :billboard     => "Standard billboard/slideshow widget for RightJS"
 }
 %>
 
