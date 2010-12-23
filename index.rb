@@ -24,7 +24,7 @@ set :port,        3000
 set :sessions,    true
 set :views, Proc.new { File.join(root, "docs") }
 
-PLUGINS_LIST = %w{json effects dnd rails jquerysh sizzle table}
+PLUGINS_LIST = %w{json effects dnd rails jquerysh sizzle table keys}
 UIS_LIST   = %w{
   autocompleter calendar tabs rater slider selectable sortable
   lightbox tooltips in-edit uploader resizable colorpicker dialog
@@ -47,7 +47,7 @@ LANGUAGES  = %w{
 
 Sinatra::Templates.instance_eval do
   RIGHTJS_TICKETS_TRACKER_URL = 'http://tickets.com'
-  RIGHTJS_VERSION             = "1.5.4"
+  RIGHTJS_VERSION             = "2.1.1"
   class PagesController
     LANGUAGES = LANGUAGES
   end
