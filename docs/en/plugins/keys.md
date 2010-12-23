@@ -49,7 +49,7 @@ of the following predefined names
 * `insert`
 * `delete`
 
-Us any letters case you like, works any way
+Use any letters case you like, works any way
 
 ## Modifiers List, :modifiers
 
