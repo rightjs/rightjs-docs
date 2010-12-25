@@ -95,6 +95,7 @@ There is a number of options the `Dialog` instances support
 Name       | Default | Description
 -----------|-------|---------------------------------------------------------
 lockScreen | true  | if you need it to lock the screen
+fxDuration ' 'short' | dialog block appearance fx duration
 draggable  | true  | allows the user to drag the dialog around
 closeable  | true  | allows the user to close the dialog
 expandable | false | show the user to expand/collapse the dialog window wide
