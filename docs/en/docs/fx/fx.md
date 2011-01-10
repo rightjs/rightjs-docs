@@ -25,6 +25,7 @@ Name       | Default  | Description                                           |
 duration   | 'normal' | the effect duration in ms or a string predefined name |
 transition | 'Sin'    | the transition algorithm used for the effect          |
 queue      | true     | boolean marker if the effect should be queued         |
+engine     | null     | the engine used by Fx.Morph, defined automatically    |
 
 ## Durations
 
@@ -82,20 +83,6 @@ Forces the effect to stop and marks it as a completely finished.
     cancel() -> Fx self
 
 Cancels the effect and interrupts the visual effects queue.
-
-
-### #pause
-
-    pause() -> Fx self
-
-Puts the effect on pause with the ability to be resumed later.
-
-
-### #resume
-
-    resume() -> Fx self
-
-Resumes a paused effect.
 
 
 ### #prepare
