@@ -327,13 +327,6 @@ filtered by the given CSS rule.
     $('one').children('#two'); // -> [div#two]
 
 
-### #subNodes
-
-    subNodes([String css_rule]) -> Array of elements
-
-__DEPRECATED__: Use {#children} instead
-
-
 ### #siblings
 
     siblings([String css_rule]) -> Array of eleemnts
@@ -466,12 +459,6 @@ Finds all matching elements from the internal structure of the element.
 
     $('one').find('div');    // -> [div#two, div#three]
     $('one').find('#three'); // -> [div#three]
-
-### #select
-
-    select(String css_rule) -> Array of elements
-
-__DEPRECATED__: use {#find} instead
 
 ### #match
 
@@ -915,12 +902,6 @@ Returns the element sizes hash.
     var width  = $('element').size().x;
     var height = $('element').size().y;
 
-
-### #sizes
-
-    sizes() -> Object {x: NN , y: NN}
-
-__DEPRECATED__: Use {#size} instead
 
 
 ### #position

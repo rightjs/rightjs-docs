@@ -12,8 +12,6 @@ a listener to it in any of the standard ways:
     $(document).onReady(function() {...});
     $(document).on('ready', function() {...});
 
-This event can also be handled the same way with the {Window} object.
-
 
 ### #on
 

@@ -10,8 +10,6 @@
     $(document).onReady(function() {...});
     $(document).on('ready', function() {...});
 
-Это событие можно точно так же обрабатывать с объектом {Window}.
-
 
 ### #on
 

@@ -70,13 +70,6 @@ Returns the form elements list in an array.
     var form_elements = $('form').elements();
 
 
-### #getElements
-
-    getElements() -> Array of elements
-
-__DEPRECATED__: please, use {#elements} instead
-
-
 ### #inputs
 
     inputs() -> Array of elements

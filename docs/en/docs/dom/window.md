@@ -11,12 +11,6 @@ Returns the internal space size of the window.
 
     window.size();
 
-### #sizes
-
-    sizes() -> Object {x: NN , y: NN }
-
-__DEPRECATED__: please, use {#size} instead
-
 
 ### #scrolls
 

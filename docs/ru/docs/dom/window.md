@@ -11,12 +11,6 @@
 
     window.size();
 
-### #sizes
-
-    sizes() -> Object {x: NN , y: NN }
-
-__УСТАРЕВШЕЕ__: пожалуйста используйте {#size}
-
 
 ### #scrolls
 

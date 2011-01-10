@@ -123,33 +123,6 @@ handlers.
       onFinish: 'clear'
     });
 
-### #observe
-
-    observe(String name, Function callback[, arguments])  -> Observer self
-    observe(String name, String method_name[, arguments]) -> Observer self
-    observe(String name, Array callbacks[, arguments])    -> Observer self
-    observe(Object hash)                                  -> Observer self
-
-Tells the observer to observe the event with the given callback.
-
-__DEPRECATED__: Please use the {#on} method instead.
-
-    var observer = new Observer();
-
-    observer.observe('something', function() {...});
-
-    // or by name
-    observer.observe('something', 'observer_method_name', arg1, arg2);
-
-    // or a whole list
-    observer.observe('something', [func1, func2, func3, ...]);
-
-    // or a hash
-    observer.observe({
-      one: function() {},
-      two: 'something'
-    })
-
 
 ### #on
 

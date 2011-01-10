@@ -127,33 +127,6 @@ __ВНИМАНИЕ__: если вы создаете подкласс наблю
       onFinish: 'clear'
     });
 
-### #observe
-
-    observe(String name, Function callback[, arguments])  -> Observer self
-    observe(String name, String method_name[, arguments]) -> Observer self
-    observe(String name, Array callbacks[, arguments])    -> Observer self
-    observe(Object hash)                                  -> Observer self
-
-Регистрирует слушателя события
-
-__УСТАРЕВШЕЕ__: используйте более короткий метод {#on}
-
-    var observer = new Observer();
-
-    observer.observe('something', function() {...});
-
-    // или по имени
-    observer.observe('something', 'observer_method_name', arg1, arg2);
-
-    // или несколько списком
-    observer.observe('something', [func1, func2, func3, ...]);
-
-    // или несколько хэшем
-    observer.observe({
-      one: function() {},
-      two: 'something'
-    })
-
 
 ### #on
 

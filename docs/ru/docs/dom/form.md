@@ -77,13 +77,6 @@ __ВНИМАНИЕ__: данный метод автоматически обр�
     var form_elements = $('form').elements();
 
 
-### #getElements
-
-    getElements() -> Array of elements
-
-__УСТАРЕВШЕЕ__: пожалуйста используйте {#elements}
-
-
 ### #inputs
 
     inputs() -> Array of elements

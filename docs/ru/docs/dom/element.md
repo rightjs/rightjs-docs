@@ -336,12 +336,6 @@ _показа_ данного элемента
     $('one').children('#two'); // -> [div#two]
 
 
-### #subNodes
-
-    subNodes([String css_rule]) -> Array of elements
-
-__УСТАРЕВШЕЕ__: пожалуйста, используйте метод {#children}
-
 ### #siblings
 
     siblings([String css_rule]) -> Array of eleemnts
@@ -477,12 +471,6 @@ __УСТАРЕВШЕЕ__: пожалуйста, используйте мето�
     $('one').find('div');    // -> [div#two, div#three]
     $('one').find('#three'); // -> [div#three]
 
-
-### #select
-
-    select(String css_rule) -> Array of elements
-
-__УСТАРЕВШЕЕ__: пожалуйста, используйте метод {#find}
 
 ### #match
 
@@ -927,12 +915,6 @@ __NOTE__: все функции обратного вызова будут вы�
 
     var width  = $('element').size().x;
     var height = $('element').size().y;
-
-### #sizes
-
-    sizes() -> Object {x: NN , y: NN}
-
-__УСТАРЕВШЕЕ__: пожалуйста используйте метод {#size}
 
 
 
