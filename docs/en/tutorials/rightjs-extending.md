@@ -143,27 +143,25 @@ Note though, the callback method itself won't be transferred to the class, the
 
 ## Methods Overloading, :overloading
 
-And the last topic for this article. It doesn't have anything to do with
-RightJS itself, but it is a frequently asked question, so I'll just show how
-you do that.
-
 Sometimes you need to not just insert a new method, but overload an existing
 one. And not just overload, but you also might want to call the original
-method on some conditions. You can do the trick the following way
+method on some conditions. You can do that by injecting your method with a
+module and making the usual `$super` call when you need it
 
-    var old_append = Element.prototype.append;
-
-    Element.prototype.append = function() {
-      if (my_conditions) {
-        // do something special in here
-      } else {
-        return old_append.apply(this, arguments);
+    Element.include({
+      append: function() {
+        if (my_conditions) {
+          // do something special in here
+        } else {
+          return this.$super.apply(this, arguments);
+        }
       }
-    };
+    });
 
-As you can see the trick is simple. You just store the old method in some
-variable of yours, and then call it when you need by using the JavaScript's
-`.apply` method.
+As you can see the trick is simple. You don't have to use `.apply` call, but
+as this particular method can take any number of arguments we make the
+super-call via the `.apply` construction to make sure that all the arguments
+were passed back correctly.
 
 
 That's all.
