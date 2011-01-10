@@ -25,6 +25,23 @@
     // -> [1, 2, 3]
 
 
+### .each
+
+    Object.each(Object object, Function callback, Object scope) -> Object object
+
+Вызывает указанную функцию с каждой парой ключ-значение из переданного объекта
+
+    var hash = {a: 1, b:2, c: 3};
+    var data = [];
+
+    Object.each(hash, function(key, value) {
+      keys.push(key + ':' + value);
+    });
+
+    data; // -> ['a:1', 'b:2', 'c:3']
+
+
+
 ### .empty
 
     Object.empty(Object object) -> boolean
@@ -62,6 +79,8 @@
     Object.merge(Object o1, Object o2[, objects..]) -> Object new
 
 Объединяет несколько в объектов в один
+
+__ВНИМАНИЕ__: данный метод рекурсивно объединяет так же все вложенные обекты!
 
     Object.merge({'a': 1, 'b': 2}, {'c': 3});
 

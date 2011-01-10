@@ -25,6 +25,22 @@ Collects the object values into an array.
     // -> [1, 2, 3]
 
 
+### .each
+
+    Object.each(Object object, Function callback, Object scope) -> Object object
+
+Calls the callback function on every key-value pairs out of the given object
+
+    var hash = {a: 1, b:2, c: 3};
+    var data = [];
+
+    Object.each(hash, function(key, value) {
+      keys.push(key + ':' + value);
+    });
+
+    data; // -> ['a:1', 'b:2', 'c:3']
+
+
 ### .empty
 
     Object.empty(Object object) -> boolean
@@ -62,6 +78,8 @@ Creates a copy of the object with only the specified key-value paris in it.
 
 Creates a new object that contains all the key-value pairs of the given
 objects.
+
+__NOTE__: this method performs a deep merge of objects!
 
     Object.merge({'a': 1, 'b': 2}, {'c': 3});
 
