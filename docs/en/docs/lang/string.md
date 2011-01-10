@@ -3,6 +3,55 @@
 RightJS extends the native String class with some additional powerful methods
 to make your life easier.
 
+## DOM Shortcuts
+
+Most of the {Element} and {Input} methods are available as shortcuts from strings,
+for example
+
+    "div.something".addClass('marked');
+    "div#something".highlight();
+
+In both cases it is the same as those ones
+
+    $$("div.something").each(function(element) {
+      element.addClass('marked');
+    });
+
+    $$("div#something").each('highlight');
+
+__BUT__: data retrieval methods, like {Element#get} or {Element#children} will
+return the result of call on the _first_ matching element
+
+    "div#some-id".get('id');     // -> 'some-id'
+    "div.some-class".getClass(); // -> 'some-class'
+
+Which is the same as calling
+
+    $$("div#some-id").first().get('id');
+    $$("div.some-class").first().getClass();
+
+If you need results of all the method calls from all the elements, please use
+the standard {$$} and {Array#map} methods combination, for example
+
+    $$("div.some-class").map("getClass");
+
+
+## UJS Shortcuts
+
+Methods like {Element#on}, {Element#stopObserving}, etc when called from strings
+_will not_ attach the event handlers directly to the elements, but use will
+_UJS_ listeners instead.
+
+
+    "div.something".onClick('toggleClass', 'clicked');
+
+It is same as calling
+
+    $(document).delegate('click', 'div.something', 'toggleClass', 'clicked');
+
+If you really need to attach event listeners directly to every matching element,
+please use {$$} and {Array#each} calls as it shown above.
+
 
 ### .include
 
@@ -229,14 +278,3 @@ Attaches a document level events delegation listener.
       mouseout:  ['removeClass', 'that-was-red'],
       click:     'hide'
     });
-
-
-### #behave
-
-    behave(String event, Function callback)              -> void
-    behave(String event, String callback[, arg, arg...]) -> void
-    behave(Object events_hash)                           -> void
-
-Alias for the {#on} method
-
-__DEPRECATED__: Please use the shorter method {#on}
