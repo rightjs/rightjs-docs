@@ -488,6 +488,24 @@ __ВНИМАНИЕ__: если в качестве второго аргумен
     $('some-element').match('span'); // -> false
 
 
+### #index
+
+  index(); -> Integer индекс элемента
+
+Возвращает индекс элемента среди соседних с ним элеметов
+
+  /*
+   <div>
+     <div id="one">one</div>
+     <div id="two">two</div>
+   </div>
+  */
+
+  $('one').index(); // -> 0
+  $('two').index(); // -> 1
+
+
+
 ### #remove
 
     remove() -> Element self

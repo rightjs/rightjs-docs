@@ -474,6 +474,23 @@ Checks if the element matches the given CSS rule.
 
     $('some-element').match('div');  // -> true
     $('some-element').match('span'); // -> false
+    
+    
+### #index
+
+  index(); -> Integer element's index
+
+Returns the integer index of the element among his siblings
+
+  /*
+   <div>
+     <div id="one">one</div>
+     <div id="two">two</div>
+   </div>
+  */
+
+  $('one').index(); // -> 0
+  $('two').index(); // -> 1
 
 
 ### #remove
