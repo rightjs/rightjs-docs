@@ -61,7 +61,7 @@ Since version 2.0.0 RightJS uses dom-wrappers to work with dom units. But
 dom-wrappers in RightJS are not just some passive interface, they are classes,
 you can define your own if you like
 
-    var Table = new Wrapper(Element, {
+    var Table = new Class(Element, {
       sort: function(column) {
         // sort the table by the column
       }

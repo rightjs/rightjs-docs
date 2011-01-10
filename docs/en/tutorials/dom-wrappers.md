@@ -165,7 +165,7 @@ The system of dom-wrappers in RightJS is an open structure and you're free to
 create your own types that will handle elements with certain tags. For example
 you can add the `TABLE` elements specific wrapper like so
 
-    var Table = new Wrapper(Element, {
+    var Table = new Class(Element, {
       sort: function() {
         // sort your table in here
       },
@@ -198,13 +198,13 @@ above, you're not really tied to the tags structure, you can create any number
 of your own private types. Say if you like to have two wrappers for tables
 that's cool with RightJS
 
-    var Table1 = new Wrapper(Element, {
+    var Table1 = new Class(Element, {
       initialize: function() {
         this.$super('table', {'class': 'table-1'});
       }
     });
 
-    var Table2 = new Wrapper(Element, {
+    var Table2 = new Class(Element, {
       initialize: function() {
         this.$super('table', {'class': 'table-2'});
       }
@@ -242,7 +242,7 @@ really messy very quick.
 But, you don't have to suffer anymore! Because in RightJS 2 you can define
 your widget as another private wrapper, just like that
 
-    var MyWidget = new Wrapper(Element, {
+    var MyWidget = new Class(Element, {
       initialize: function() {
         this.$super('div', {'class': 'my-widget'});
         this.onClick(this._clicked);

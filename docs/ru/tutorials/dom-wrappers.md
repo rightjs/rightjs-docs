@@ -167,7 +167,7 @@ dom-обетки в RightJS имеют свойство `_`, которое и �
 определенным тэгом. Например вы можете создать свой класс для управления
 таблицами
 
-    var Table = new Wrapper(Element, {
+    var Table = new Class(Element, {
       sort: function() {
         // сортирует таблицу
       },
@@ -199,13 +199,13 @@ dom-обетки в RightJS имеют свойство `_`, которое и �
 Вы можете создавать любое количество своих собственных приватных типов.
 Например вы можете создавать два отдельных класса таблиц если хотите.
 
-    var Table1 = new Wrapper(Element, {
+    var Table1 = new Class(Element, {
       initialize: function() {
         this.$super('table', {'class': 'table-1'});
       }
     });
 
-    var Table2 = new Wrapper(Element, {
+    var Table2 = new Class(Element, {
       initialize: function() {
         this.$super('table', {'class': 'table-2'});
       }
@@ -244,7 +244,7 @@ dom-обетки в RightJS имеют свойство `_`, которое и �
 В RightJS 2 все иначе. Теперь вы можете определять ваши виджеты, как приватные
 типы:
 
-    var MyWidget = new Wrapper(Element, {
+    var MyWidget = new Class(Element, {
       initialize: function() {
         this.$super('div', {'class': 'my-widget'});
         this.onClick(this._clicked);
