@@ -445,9 +445,13 @@ CSS rule.
 
 ### #find
 
-    find(String css_rule) -> Array of elements
+    find(String css_rule, boolean raw) -> Array of elements
 
 Finds all matching elements from the internal structure of the element.
+
+__NOTE__: if the second attribute is set to `true`, then the method
+_won't wrap_ the elements into the {Element} class instances and returns
+an array of raw dom-elements instead.
 
     /*
       <div id="one">
