@@ -36,16 +36,23 @@ or can receive a string css-rule that will filter the result.
     element.parent();        // the first parent
     element.parent('div');   // the first DIV parent
 
-RigthJS supports majority of the standard CSS3 selectors on all browsers.
+RightJS supports all the standard CSS3 selectors in all browsers.
 
 [Read more](/tutorials/dom-navigation-and-manipulations)
 
 
 ## Working With Collections, :collections
 
-To keep it simple RightJS doesn't have any specific interfaces to process dom-elements collections,
-instead of that it offers something nicer and more generic. You can process {Array}s by specifying
-property/method name and optional attributes just like that.
+There are two ways to process dom-collections in RightJS. First of all you can use very simple
+shortcuts to call any {Element} and {Input} methods on a group of elements, just like that
+
+    "div.some-rule".addClass('another-class');
+    "div.some-rule".highlight();
+    "div.some-rule".remove();
+    // ....
+
+The other way is to handle collections of dom elements as {Array} instances, by specifying
+callback functions, or simply name of method/property you need to access/call
 
     var ids = $$('div').map('get', 'id');
     var classes = $$('div').map('get', 'className').map('split', /\s+/).flatten();
