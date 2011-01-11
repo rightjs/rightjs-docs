@@ -7,9 +7,7 @@ selectors engine for RightJS.
 
 ## What And Why, :what
 
-By default RightJS uses native css selectors that majority of modern browsers
-provide, this way we have fast support of majority of standard CSS selectors
-up to the Level 3.
+By default RightJS supports standard CSS3 selectors only.
 
 Sizzle is an external css selectors engine that provides a full stack CSS3
 selectors support on all browsers, plus it provides several additional
