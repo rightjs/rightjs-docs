@@ -455,7 +455,7 @@ _показа_ данного элемента
 
 ### #find
 
-    find(String css_rule, boolaen raw) -> Array of elements
+    find(String css_rule[, boolaen raw]) -> Array of elements
 
 Возвращает список всех внутренних элементов данного элемента подпадающих
 под указанное правило.

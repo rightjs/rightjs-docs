@@ -21,14 +21,16 @@ Finds an element by its ID or wraps a raw dom element with a dom-wrapper
 
 ### $$
 
-    $$(String css_rule) -> Array of elements
+    $$(String css_rule[, boolean raw]) -> Array of elements
 
 Finds all the elements on the page that match the given CSS rule. It supports
-any valid CSS3 selectors.
+all valid CSS3 selectors.
 
-__NOTE__: This method will return an _empty_ list if nothing was found.
+__NOTE__: if the second attribute is `true` then it will return a list of raw
+dom elements.
 
-    $$('div > span.foo');
+    $$('div > span.foo');       // -> [Element, ....]
+    $$('div > span.foo', true); // -> [HTMLElement, ...]
 
 
 ### $w

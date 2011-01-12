@@ -445,7 +445,7 @@ CSS rule.
 
 ### #find
 
-    find(String css_rule, boolean raw) -> Array of elements
+    find(String css_rule[, boolean raw]) -> Array of elements
 
 Finds all matching elements from the internal structure of the element.
 
@@ -474,8 +474,8 @@ Checks if the element matches the given CSS rule.
 
     $('some-element').match('div');  // -> true
     $('some-element').match('span'); // -> false
-    
-    
+
+
 ### #index
 
   index(); -> Integer element's index
