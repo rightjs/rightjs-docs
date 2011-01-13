@@ -255,21 +255,21 @@ specified, the effect will be used to perform the showing.
     $('some-element').radio('slide');
     $('some-element').radio('slide', {duration: 'long'});
 
-### #window
+### #win
 
-    window() -> Window window
+    win() -> Window window
 
 Returns a wrapped {Window} object to which this element belongs to
 
-    $(element).window().size();
+    $(element).win().size();
 
-### #document
+### #doc
 
-    document() -> Document document
+    doc() -> Document document
 
 Returns a wrapped {Document} object to which this element belongs to
 
-    $(element).document().find('div.class');
+    $(element).doc().find('div.class');
 
 ### #parent
 

@@ -262,22 +262,22 @@ _показа_ данного элемента
     $('some-element').radio('slide', {duration: 'long'});
 
 
-### #window
+### #win
 
-    window() -> Window window
+    win() -> Window window
 
 Возвращает обернутый {Window} объект окна которому принадлежит данный элемент
 
-    $(element).window().size();
+    $(element).win().size();
 
-### #document
+### #doc
 
     document() -> Document document
 
 Возвращает обернутый {Document} объект документа которому принадлежит данный
 элемент
 
-    $(element).document().find('div.class');
+    $(element).doc().find('div.class');
 
 
 ### #parent
