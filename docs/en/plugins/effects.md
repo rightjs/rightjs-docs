@@ -8,36 +8,6 @@ You can see all of them in action at the main [visual effects demo](/fx-demo) pa
 
 <%= partial '/plugins/download', :locals => {:name => 'effects'} %>
 
-## Fx.CSS, :CSS
-
-`Fx.CSS` is an equivalent of the {Fx.Morph} effect, but instead of using styles it
-builds on CSS classes. This might be useful if you don't want to keep any styles inside
-your code and organize all of them on the CSS level. It also allows you to gradually remove
-any CSS class from the list
-
-The `start()` method receives two arguments: Firstly the class to add and secondly
-the class to remove. Furthermore, there is the `morphToClass()` method which is the
-element level shortcut for this effect
-
-    new Fx.CSS('my-element').start('new-class');           // adds the class
-    new Fx.CSS('my-element').start(null, 'remove-class');  // removes the class
-
-    // On element level
-    $('my-element').morphToClass('new-class');
-    $('my-element').morphToClass(null, 'remove-class');
-
-    // With options
-    $('my-element').morphToClass('something', {
-      duration: 'long',
-      onFinish: function() {...}
-    });
-
-__NOTE:__ This visual effect processes the element `style` attribute, thus once
-you have morphed it to some class you won't be able to remove the class anymore,
-because all the styles will be embedded on the `style` level which have priority
-over the CSS level definitions.
-
-
 
 ## Fx.Move, :Move
 
@@ -162,3 +132,18 @@ The `zoom()` method is the element level shortcut for the effect.
 
 __NOTE__: If you use this effect many times on the same element in both directions, you
 should round pixels and proportions in order to avoid systematic round-off errors.
+
+
+## Fx.Glow, :Glow
+
+This is a very simple effect, which is basically the same as {Fx.Highlight} but
+it changes the text-color instead of the background-color
+
+    new Fx.Glow('element').start();
+
+    $('element').glow();
+    $('element').glow('white');
+    $('element').glow('blue', 'green');
+
+Default glowing color can be changed at the `Fx.Glow.Options.color` attribute.
+
