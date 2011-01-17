@@ -8,7 +8,7 @@
 Версию библиотеки `TaskSpeed` содержащую тесты для RightJS можно найти на сервере GitHub
 [http://github.com/MadRabbit/taskspeed](http://github.com/MadRabbit/taskspeed)
 
-Для тестов использовался macbook 2GHz Intel Core 2 Duo, 4 GB 1067 MHz DDR3, под OS X 10.6.2
+Для тестов использовался macbook 2GHz Intel Core 2 Duo, 4 GB 1067 MHz DDR3, под OS X 10.6.6
 
 В тестах использовались следующие браузеры:
 

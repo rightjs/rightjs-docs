@@ -5,7 +5,7 @@ performance measurements were taken. All the tests were done with the
 the `TaskSpeed` suite, you find the exact version used along with all
 tests for RightJS here <http://github.com/MadRabbit/taskspeed>.
 
-Hardware: unibody MacBook 2GHz Intel Core 2 Duo, 4 GB 1067 MHz DDR3, Mac OS X 10.6.2
+Hardware: MacBook 2GHz Intel Core 2 Duo, 4 GB 1067 MHz DDR3, Mac OS X 10.6.6
 
 
 The following browsers were used
