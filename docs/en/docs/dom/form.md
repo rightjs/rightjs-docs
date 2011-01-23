@@ -153,6 +153,16 @@ __NOTE__: Works with file uploads too!
     });
 
 
+### #cancelXhr
+
+    cancelXhr() -> Form self
+
+Cancels the currently running {Xhr} request started with the {#send} method
+
+    $('form').send();
+    $('form').cancelXhr();
+
+
 ### #remotize
 
     remotize([Object options]) -> Form self
