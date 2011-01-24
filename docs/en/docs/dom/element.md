@@ -478,7 +478,7 @@ Checks if the element matches the given CSS rule.
 
 ### #index
 
-    index(); -> Integer element's index
+    index() -> Integer element's index
 
 Returns the integer index of the element among his siblings
 
