@@ -1,63 +1,38 @@
-# Project Philosophy
+# RightJS Philosophy
 
-Although it looks small, simple and not always serious, RightJS actually has
-a pretty solid idea behind and if you would like to have it described in one sentence
-that would be "causal but well organized"
+JavaScript is the most widely used programming language in those days. But it
+is also the most hated one. Which is kinda sucks, because we are doomed to
+deal with client-side scripting in the nearest future.
 
-
-## Causal, but Well Organized
-
-RightJS does not have any intention to enlight you with some radically new approach
-in JavaScript development, but rather does something quite opposite.
-
-The main target of RightJS is to create a simple, fast and reliable tool for a true
-agile development. It simplifies many routine operations making JavaScript
-development an easy and natural thing. It looks simple, it works simple, but that
-is the kind of simplicity that allows you to concentrate on serious things.
+And that brings us to the idea of RightJS.
 
 
-## Designed, not Evolved
+## Why Do We Do That?
 
-Whatever your previous experience is, jQuery, Prototype, Mootools, Ruby, Python or even PHP.
-When you look through RightJS API, you immediately spot familiar things. RightJS keeps it
-close to the standards and it was specifically designed the way it was familiar for
-people with different backgrounds.
-
-And it's not just designed to be familiar, it is designed to make JavaScript development
-the most natural thing specifically for the server-side developers who work with dynamic
-languages like Ruby or Python. We have extensive object-oriented programming features,
-flexible dynamic language attitude, native unit extensions, etc, etc.
+RightJS is not about some super-duper features, it's not about writing less or
+writing better either. RightJS is all about making the developer happy. It is
+about getting rid of the dirty JavaScript hackery as much as possible. It is
+about making JavaScript development a civilized and controllable process.
 
 
-## Don't Learn, Have Fun!
+## How Do We Do That?
 
-You might notice that there is not so much of the documentation for RightJS. One of the reasons
-is that we simplified and systematically organized all the things the way there is
-almost nothing to learn. Because we don't want you to learn, we want you to have fun.
+RightJS takes its inspiration in things like Ruby and Rails. And just like
+Ruby or Rails, RightJS is very simple and casual in everyday use. It has a
+standard and mostly familiar API, and it offers lots of shortcuts, syntax
+sugar and handy features.
 
-There are just a few key features in RightJS you need to know to start working with it.
-Well, you even don't need to know them either, because when you see things like that
+But, RightJS is also very powerful when you need to implement something
+serious. It provides a fully featured consistent OOP environment, shared
+modules, OOP dom-wrappers, uniformed events handling, and so one and so one.
+Everything a full grown developer needs.
 
-    $(element).update('with text').highlight();
 
-    $(element).onClick('addClass', 'clicked');
+## What Do We Have?
 
-    $$('li').each('onClick', 'toggleClass', 'marked');
+We have a very tiny and blazingly fast RightJS core that doesn't force you to
+get the things done one way or another. You always have a choice, use
+procedural, object-oriented or functional approach, and do that in a clean,
+civilized way.
 
-You don't need to be a genius or read any documentation to figure out what's going on.
-Those things snap immediately even for people who are just starting their way to
-JavaScript development.
-
-## And It's Highly Hackable!
-
-RightJS might look like a simple and cute thing, but it is very hackable too. We've
-put lots of thoughts, tries, tests and years of experience in the internal structures
-development in order to bring in the JavaScript development the joy of dynamic
-languages programming.
-
-We specifically choose object-oriented structures and functionality injection approach,
-providing a clean and reliably working skeleton, which can be easily bended, patched
-and overridden when your task requires any sort of customization.
-
-If you can hack it on the server-side, you don't need to change your habits and can
-have the same exact fun with RightJS on the front-side.
+That is what makes RightJS a tool that feels right.
