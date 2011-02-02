@@ -236,7 +236,7 @@ an element inside, kinda like that
 
 As you can see there quite a lot of headache with stitching the contexts of
 the widget and the element, you also need to tunnel some methods so the user
-could work with your widget, and so one, and so one. Those things are getting
+could work with your widget, and so on, and so on. Those things are getting
 really messy very quick.
 
 But, you don't have to suffer anymore! Because in RightJS 2 you can define
@@ -264,7 +264,7 @@ they manipulate with any other elements on the page
     widget.addClass('custompization');
     widget.insertTo(document.body, 'top');
     widget.onClick(my_additional_handler);
-    // and so one ....
+    // and so on ....
 
 This will allow you to create much nicer and easier to maintain widgets than
 before, more of that they will be much compacter and simpler to understand.

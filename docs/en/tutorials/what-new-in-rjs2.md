@@ -91,7 +91,7 @@ those extensions if you need by simply passing your variables through the
     (4).times;                    // -> null
     RightJS(4).times;             // -> function
 
-And so one. All the JavaScript extensions are available this way.
+And so on. All the JavaScript extensions are available this way.
 
 RightJS also provides you with something called the `semi-safe` mode. As all
 the global functions in RightJS 2 are simply links, you can allow other
@@ -322,7 +322,7 @@ contexts, you always need to bind them manually to the instances, like that
     $('element').onClick(inst.alert.bind(inst));
 
 It is quite annoying and sometimes you forget it, which leads to all sorts of
-bugs, and so one. Say no more! Because now you can make the class to
+bugs, and so on. Say no more! Because now you can make the class to
 automatically prebind specified methods on instance, like that
 
     var Klass = new Class({

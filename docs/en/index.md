@@ -9,7 +9,7 @@
     :text     => %Q{
       <p>
         Because we love JavaScript, because we care how it's done and
-        because we believe that JavaScript programming can be much
+        because we believe that JavaScript programming can be a much
         more civilized, pleasant and interesting process.
       </p>
       <p>
@@ -35,7 +35,7 @@
       <p>
         On one side it has very simple syntax that allows you to deal with simple
         things in simple way. If you're just a web-designer it has all the usual things
-        in simple and predictable API, flawored with many shortcuts and syntax sugar.
+        in a simple and predictable API, flavored with many shortcuts and syntax sugar.
       </p>
       <p>
         On the other side RightJS provides extensive OOP and FP features, JavaScript
@@ -52,13 +52,13 @@
       <p>
         RightJS is a modular JavaScript framework. It has a very skiny (15k gzipped)
         core that has all the standard features, like dom-manipulation, animation,
-        forms, cookies, events handling and so one.
+        forms, cookies, events handling and so on.
       </p>
       <p>
-        But core in RightJS is not just a closed monolyth, on contrary, it is an open
-        structure, much like Ruby or Python. It provides you with an environment and
-        basic building blocks, which you can reuse, patch, bend and hack, making the
-        core itself to fit your application.
+        But the core in RightJS is not just a closed monolith, on the contrary, it is
+        an open structure, much like Ruby or Python. It provides you with an environment
+        and basic building blocks, which you can reuse, patch, bend and hack, making
+        the core itself fit your application.
       </p>
       <p>
         And boy it's fast!

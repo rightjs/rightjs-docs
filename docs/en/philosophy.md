@@ -24,7 +24,7 @@ sugar and handy features.
 
 But, RightJS is also very powerful when you need to implement something
 serious. It provides a fully featured consistent OOP environment, shared
-modules, OOP dom-wrappers, uniformed events handling, and so one and so one.
+modules, OOP dom-wrappers, uniformed events handling, and so on and so on.
 Everything a full grown developer needs.
 
 

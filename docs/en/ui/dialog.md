@@ -85,7 +85,7 @@ And you also can specify all sorts of options for the {Input} field
     .onOk(process_the_input)
     .show();
 
-You can use anything you like, textareas, selectboxes and so one.
+You can use anything you like, textareas, selectboxes and so on.
 
 
 ## Options List, :options

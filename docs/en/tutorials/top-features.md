@@ -69,7 +69,7 @@ you can define your own if you like
 
 After that all your tables (and only tables) will have this new method. We
 also support inheritance, functionality-injection, allow you to create any
-number of your own private types and so one. It is a big and pretty thing
+number of your own private types and so on. It is a big and pretty thing
 
 [Read more about dom-wrappers](/tutorials/dom-wrappers)
 
@@ -171,7 +171,7 @@ while sending that form.
 RightJS also has a built-in AJAX forms support. All you need to do in order to
 send a form via AJAX is to call the {Form#send} method. This will
 automatically handle all the routine operations, like locking/unlocking form,
-collecting data, displaying/hiding spinners, and so one.
+collecting data, displaying/hiding spinners, and so on.
 
 More of that, if your form has files to upload, RightJS will automatically
 try to submit your form via a hidden IFrame element. The API in this case
@@ -185,7 +185,7 @@ difference if you have or have no files on your form.
 RightJS is a multi-paradigm framework with an extensive object-programming
 features support. {Class} in RightJS supports everything you need to write
 serious OO applications. It has inheritance, functionality injection,
-shared modules and so one.
+shared modules and so on.
 
     var Klass = new Class(AnotherClass, {
       include: Module1,

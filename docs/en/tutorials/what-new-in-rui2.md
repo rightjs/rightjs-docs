@@ -114,7 +114,7 @@ all the widgets now have consistent class names like `rui-widget-name`
 
 And what's more important, now we have cross-widget classes like `rui-panel`,
 `rui-button`, `rui-spinner`, etc. We will use those later on to create visual
-themes for our widgets, with a skins constructor and so one.
+themes for our widgets, with a skins constructor and so on.
 
 It should be fun.
 

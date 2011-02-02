@@ -56,7 +56,7 @@ You just {#update} it
     var dialog = new Dialog();
     dialog.update('with some text');
 
-And so one. Every time when you need to do something unusual with a widget and
+And so on. Every time when you need to do something unusual with a widget and
 you don't see a corresponding method on its API documentation, check for the
 {Element} API all its methods will be there.
 

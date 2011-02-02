@@ -24,7 +24,7 @@ all in one request.
 
 Thirdly, it provides better gzip compression, because stylesheets and
 javascript usually share lots of common things like class names, keywords and
-so one.
+so on.
 
 
 ## Inlined Styles Gotcha, :gotcha

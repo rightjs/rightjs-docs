@@ -14,7 +14,7 @@ Chrome, FF4 and latest versions of Opera, so it's time to put them in a good
 use for real.
 
 RightJS now uses this native feature to handle element animations like
-{Element#morph}, {Element#slide}, {Element#fade} and so one. There is
+{Element#morph}, {Element#slide}, {Element#fade} and so on. There is
 practically no change in the existing API, RightJS will automatically
 determine if the feature is supported and use it internally when available.
 
@@ -157,7 +157,7 @@ the top class of everything in the system.
 
 This provides some additional features, like for example now you can always
 check objects if they are based on RightJS technology. Or you also might have
-global, system level changes by tweaking the {Class} unit and so one.
+global, system level changes by tweaking the {Class} unit and so on.
 
 
 ## Supercalls On Modules, :supercalls
@@ -329,7 +329,7 @@ RightJS 2.2 weighs `15.6k` gzipped
 And last, but not least, RightJS was cleaned up from all the nasty `eval` and
 `document.write` hacks that we inherited from RightJS 1, so that now RightJS
 is nice and clean and ready to be used with all those asynchronous scripts
-loaders like RequireJS and so one.
+loaders like RequireJS and so on.
 
 
 &nbsp;

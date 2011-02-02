@@ -90,7 +90,7 @@ still can access those handy features by simply passing your data trough the
     R.RegExp.escape('{[<**?/]}');
     R.Math.random(1, 4);
 
-And so one.
+And so on.
 
 This way you can take a full advantage of RightJS power without interrupting
 with any other things on the page.

@@ -64,7 +64,7 @@ bottom corner. But this widget can work with any of the four directions
 specifically.
 
 If you create your resizable as a HTML structure, then simply use css classes,
-like `rui-resizable-right`, `rui-resizable-bottom`, and so one.
+like `rui-resizable-right`, `rui-resizable-bottom`, and so on.
 
     <div class="rui-resizable-bottom">
       // the rest of the stuff in here
