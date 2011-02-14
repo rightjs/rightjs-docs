@@ -93,17 +93,17 @@ You can use anything you like, textareas, selectboxes and so on.
 There is a number of options the `Dialog` instances support
 
 Name       | Default | Description
------------|-------|---------------------------------------------------------
-lockScreen | true  | if you need it to lock the screen
-fxDuration ' 'short' | dialog block appearance fx duration
-draggable  | true  | allows the user to drag the dialog around
-closeable  | true  | allows the user to close the dialog
-expandable | false | show the user to expand/collapse the dialog window wide
-showHelp   | false | show the 'Help' button
-showIcon   | null  | `null` or some text to be show in the dialog body icon
-title      | null  | default title to preset
-html       | null  | html content to set on instance
-url        | null  | url address that should be loaded on instance
+-----------|---------|--------------------------------------------------------
+lockScreen | true    | if you need it to lock the screen
+fxDuration | 'short' | dialog block appearance fx duration
+draggable  | true    | allows the user to drag the dialog around
+closeable  | true    | allows the user to close the dialog
+expandable | false   | show the user to expand/collapse the dialog window wide
+showHelp   | false   | show the 'Help' button
+showIcon   | null    | `null` or some text to be show in the dialog body icon
+title      | null    | default title to preset
+html       | null    | html content to set on instance
+url        | null    | url address that should be loaded on instance
 
 The `Dialog.Prompt` class also supports two additional options
 
