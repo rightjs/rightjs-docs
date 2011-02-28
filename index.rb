@@ -47,7 +47,7 @@ LANGUAGES  = %w{
 
 Sinatra::Templates.instance_eval do
   RIGHTJS_TICKETS_TRACKER_URL = 'http://tickets.com'
-  RIGHTJS_VERSION             = "2.1.1"
+  RIGHTJS_VERSION             = "2.2.2"
   class PagesController
     LANGUAGES = LANGUAGES
   end

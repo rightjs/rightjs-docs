@@ -23,14 +23,11 @@ directory.
        right-olds[bla-bla-bla].js
 
 
-# Hot Link
+# RightJS CDN
 
-As we didn't quite make it to the Google API hosting yet. You can use the hot-links
-above to have a common RightJS library connection.
-
-The first link always points to the _latest_ version of RightJS and will get automatically
-updated over the time. The second link always points to _that exact_ version of RightJS.
-
+RightJS has it's own [CDN Server](http://cdn.rightjs.org) where you can hot link
+all the recent builds of the core and plugins. It is hosted at google's host
+and powered by their app-engine.
 
 
 # Custom Build
