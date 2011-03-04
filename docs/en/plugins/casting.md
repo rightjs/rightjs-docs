@@ -71,7 +71,9 @@ Name                                | Description
 ------------------------------------|---------------------------------
 set(String css_rule, Class wrapper) | registers a custom dom-wrapper
 get(String css_rule)                | finds the wrapper by a css-rule
+get(Class wrapper)                  | finds a list of css-rules for a wrapper
 has(String css_rule)                | checks if there is a wrapper for this rule
+has(Class wrapper)                  | checks if this wrapper is registered
 remove(String css_rule)             | Removes a wrapper by a css-rule
 remove(Class wrapper)               | Unregisters a certain wrapper
 

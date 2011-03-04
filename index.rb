@@ -24,7 +24,7 @@ set :port,        3000
 set :sessions,    true
 set :views, Proc.new { File.join(root, "docs") }
 
-PLUGINS_LIST = %w{json effects dnd rails jquerysh sizzle table keys}
+PLUGINS_LIST = %w{json effects dnd rails jquerysh sizzle table keys casting}
 UIS_LIST   = %w{
   autocompleter calendar tabs rater slider selectable sortable
   lightbox tooltips in-edit uploader resizable colorpicker dialog

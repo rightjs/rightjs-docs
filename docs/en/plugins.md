@@ -35,7 +35,9 @@ can include them in the main build at the [custom builds page](<%= builds_path %
 
   :table    => "Tables specific dom-wrapper for RightJS that handles sorting",
 
-  :keys     => "Provides pretty event names support for keyboard events"
+  :keys     => "Provides pretty event names support for keyboard events",
+
+  :casting  => "Advanced dynamic typecasting features for dom-wrappers"
 }
 %>
 
