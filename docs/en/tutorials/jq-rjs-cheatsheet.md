@@ -244,7 +244,7 @@ Triggering events manually
 
 Adding global UJS handlers
 
-    $('div.someghing').live('click', function() {.. });
+    $('div.something').live('click', function() {.. });
 
     "div.something".onClick(function() {});
     "div.something".onClick('toggleClass', 'marked');

@@ -244,7 +244,7 @@
 
 Добавляем глобальный UJS обработчик
 
-    $('div.someghing').live('click', function() {.. });
+    $('div.something').live('click', function() {.. });
 
     "div.something".onClick(function() {});
     "div.something".onClick('toggleClass', 'marked');
