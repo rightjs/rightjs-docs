@@ -43,7 +43,9 @@ github service.
 
   :dialog        => "Standard dialog widget solution for RightJS",
 
-  :billboard     => "Standard billboard/slideshow widget for RightJS"
+  :billboard     => "Standard billboard/slideshow widget for RightJS",
+
+  :tags          => "User friendly tags/tokens input field"
 }
 %>
 

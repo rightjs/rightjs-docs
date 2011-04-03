@@ -12,7 +12,7 @@
 # Browse:
 #   http://localhost:3000
 #
-# Copyright (C) 2010 Nikolay Nemshilov
+# Copyright (C) 2010-2011 Nikolay Nemshilov
 #
 
 require 'rubygems'
@@ -28,7 +28,7 @@ PLUGINS_LIST = %w{json effects dnd rails jquerysh sizzle table keys casting}
 UIS_LIST   = %w{
   autocompleter calendar tabs rater slider selectable sortable
   lightbox tooltips in-edit uploader resizable colorpicker dialog
-  billboard
+  billboard tags
 }
 API_PACKS  = %w{core dom fx lang util}
 
@@ -47,7 +47,7 @@ LANGUAGES  = %w{
 
 Sinatra::Templates.instance_eval do
   RIGHTJS_TICKETS_TRACKER_URL = 'http://tickets.com'
-  RIGHTJS_VERSION             = "2.2.2"
+  RIGHTJS_VERSION             = "2.2.3"
   class PagesController
     LANGUAGES = LANGUAGES
   end

@@ -69,7 +69,7 @@ class
 ## Options List, :options
 
 There is the following simple list of options, which you can use in any
-standard for RigthJS way: by altering them globally at the `Uploader.Options`
+standard for RightJS way: by altering them globally at the `Uploader.Options`
 variable, with the `Uploader` class constructor, or by specifying a custom
 form element attribute named `data-uploader`
 

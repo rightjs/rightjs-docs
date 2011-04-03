@@ -1,0 +1,17 @@
+<% content_for :modules, javascript_include_tag('/builds/ui/right-tags.js') %>
+<style type="text/css">
+  input.demo-field {
+    width: 24em;
+    font-size: 1em;
+  }
+  div.rui-tags ul.rui-dd-menu li {
+    list-style: none;
+    list-style-image: none;
+    font-weight: normal;
+  }
+</style>
+
+<p>
+  <input type="text" class="demo-field" value="Ruby, JavaScript"
+    data-tags='{tags: <%= PagesController::LANGUAGES.to_json %>}' />
+</p>
