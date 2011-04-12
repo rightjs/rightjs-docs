@@ -28,7 +28,7 @@ PLUGINS_LIST = %w{json effects dnd rails jquerysh sizzle table keys casting}
 UIS_LIST   = %w{
   autocompleter calendar tabs rater slider selectable sortable
   lightbox tooltips in-edit uploader resizable colorpicker dialog
-  billboard tags
+  billboard tags rte
 }
 API_PACKS  = %w{core dom fx lang util}
 

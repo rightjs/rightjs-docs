@@ -45,7 +45,9 @@ github service.
 
   :billboard     => "Standard billboard/slideshow widget for RightJS",
 
-  :tags          => "User friendly tags/tokens input field"
+  :tags          => "User friendly tags/tokens input field",
+
+  :rte           => "Standard Rich Text Editor for RightJS"
 }
 %>
 
