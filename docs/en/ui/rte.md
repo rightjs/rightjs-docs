@@ -23,7 +23,7 @@ forms. All you need to make it up and running is to include one of the files
 above on your page and save [this image](/images/rightjs-ui/rte.png)
 at the same location on your server.
 
-After that use just the standard for RightJS UI `data-rte` attribute with your
+After that just use the standard for RightJS UI `data-rte` attribute with your
 textarea element
 
     <textarea name="text" data-rte="{}">
@@ -185,7 +185,7 @@ RRTE has a simple keyboard shortcuts settings that are stored in the
     };
 
 Here, the keys refer to the tool names, and the letters refer to the
-keyboard keys. They key bindings work with both, the `Ctrl` and `Cmd`
+keyboard keys. The key bindings work with both, the `Ctrl` and `Cmd`
 modifiers, so they are pretty much natural for both `Win` and `OSX` users
 
 

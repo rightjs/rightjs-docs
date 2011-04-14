@@ -1,0 +1,50 @@
+<% content_for :modules, javascript_include_tag('/builds/ui/right-rte.js') %>
+<style type="text/css">
+  textarea {
+    width: 430px;
+  }
+  .rui-rte h2 {
+    margin-top: 0;
+  }
+  .rui-rte blockquote,
+  .rui-rte pre {
+    margin: .5em 0 0 1em;
+    padding: .2em .5em;
+    border: 1px solid #DDD;
+    border-radius: .25em;
+    -moz-border-radius: .25em;
+    -webkit-border-radius: .25em;
+  }
+  .rui-rte blockquote {
+    background: #EED;
+  }
+  .rui-rte pre {
+    background: #EEF;
+    margin: .5em 0 0 1em;
+    padding: .2em .5em;
+    font-family: Monaco, "Lucida Console", monospace;
+    font-size: 95%;
+  }
+  .rui-rte tt {
+    font-family: Monaco, "Lucida Console", monospace;
+    font-size: 95%;
+    background: #DDD;
+    padding: 0 .5em;
+  }
+  .rui-rte img {
+    float: left;
+    vertical-align: top;
+    margin-right: .5em;
+    margin-bottom: .5em;
+  }
+  form.save-example textarea {
+    height: 2em !important;
+  }
+</style>
+
+<p>
+  <textarea name="t1" data-rte=""><h2>Hello There!</h2> <b>bold</b> <i>italic</i>
+    <u>underline</u> <s>strike</s> <tt>typetext</tt><br/>
+    some plain text
+  </textarea>
+</p>
