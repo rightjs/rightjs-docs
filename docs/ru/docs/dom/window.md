@@ -9,7 +9,7 @@
 
 Возвращает внутренние размеры данного окна
 
-    window.size();
+    $(window).size();
 
 
 ### #scrolls
@@ -18,7 +18,7 @@
 
 Возвращает параметры скроллинга для данного окна
 
-    window.scrolls();
+    $(window).scrolls();
 
 
 ### #scrollTo
@@ -30,8 +30,8 @@
 
 Смещает прокрутку окна в указанную позицию или к указанному элементу
 
-    window.scrollTo(123, 123);
-    window.scrollTo({x: 123, y: 123});
-    window.scrollTo($('element'));
-    window.scrollTo('element-id');
+    $(window).scrollTo(123, 123);
+    $(window).scrollTo({x: 123, y: 123});
+    $(window).scrollTo($('element'));
+    $(window).scrollTo('element-id');
 

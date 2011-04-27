@@ -114,7 +114,7 @@ RightJS расширяет функциональность класса `Array`
 
     [1,2,3,4].last(function(i) { return i < 4; }) // -> 3
 
-    ['foo', 'moo', 'bar'].first('match', 'oo') // -> 'moo'
+    ['foo', 'moo', 'bar'].last('match', 'oo') // -> 'moo'
 
 
 ### #random

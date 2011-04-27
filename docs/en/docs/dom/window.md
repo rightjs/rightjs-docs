@@ -9,7 +9,7 @@
 
 Returns the internal space size of the window.
 
-    window.size();
+    $(window).size();
 
 
 ### #scrolls
@@ -18,7 +18,7 @@ Returns the internal space size of the window.
 
 Returns the scroll offsets for the window.
 
-    window.scrolls();
+    $(window).scrolls();
 
 
 ### #scrollTo
@@ -31,8 +31,8 @@ Returns the scroll offsets for the window.
 Handles the main scrollbars of the window. Can scroll the window to any
 position or element.
 
-    window.scrollTo(123, 123);
-    window.scrollTo({x: 123, y: 123});
-    window.scrollTo($('element'));
-    window.scrollTo('element-id');
+    $(window).scrollTo(123, 123);
+    $(window).scrollTo({x: 123, y: 123});
+    $(window).scrollTo($('element'));
+    $(window).scrollTo('element-id');
 
