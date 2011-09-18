@@ -74,6 +74,7 @@ listYears      | false      | show the year switching buttons
 hideOnPick     | false      | a marker if the popup should get hidden when user picks a date
 update         | null       | an input field that should be updated when the user picks a date
 trigger        | null       | a trigger element reference for calendar helpers
+highlight      | null       | a list of dates to highlight
 cssRule        | '\*\[data-calendar\]' | the auto-initializable calendar elements css-rule
 
 
@@ -175,6 +176,7 @@ elements structure description as a guidance.
                 <td class="blank">
                 <td class="selected">
                 <td class="disabled">
+                <td class="highlighted">
                 <td><td><td><td>...
               .....
             </tbody>
