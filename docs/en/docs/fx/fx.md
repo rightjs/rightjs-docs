@@ -39,18 +39,8 @@ long   | 800 ms            |
 
 ## Transitions
 
-There are several predefined transitions for visual effects. You can use
-them in options or specify your own function if you need.
-
-Name | Description                                               |
------|-----------------------------------------------------------|
-Sin  | slow at the beginning and the end, but fast in the middle |
-Cos  | fast at the beginning and the end, but slow in the middle |
-Exp  | slow at the beginning, quickly accelerates to the end     |
-Log  | fast at the beginning, quickly slows down to the end      |
-Lin  | a constant speed transition                               |
-
-The default transition `Sin` is a good choice in most cases.
+Since RightJS 2.3.0 the transition attribute can be defined via standard CSS3
+cubic bezier functions.
 
 
 ### #initialize
