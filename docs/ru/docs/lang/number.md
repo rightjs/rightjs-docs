@@ -115,6 +115,16 @@ RightJS расширяет класс `Number` для того чтобы раб
     numbers; // [8,7,6,5,4]
 
 
+### #to
+
+    to(number end, Function lambda[, Object scope]) -> number self
+
+Тоже что и {#upto}, {#downto} но автоматически определяет в каком направлении считать
+
+    1..to(4, function() {}); // -> считает от 1 до 4
+    4..to(1, function() {}); // -> считает от 4 до 1
+
+
 ### #min
 
     min(number limit) -> number

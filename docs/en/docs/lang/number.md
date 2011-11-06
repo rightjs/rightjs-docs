@@ -115,6 +115,17 @@ stop number:
     numbers; // [8,7,6,5,4]
 
 
+### #to
+
+    to(number end, Function lambda[, Object scope]) -> number self
+
+Same as {#upto}, {#downto} but automatically decides which direction to count
+
+    1..to(4, function() {}); // -> counts from 1 to 4
+    4..to(1, function() {}); // -> counts from 4 to 1
+
+
+
 ### #min
 
     min(number limit) -> number
