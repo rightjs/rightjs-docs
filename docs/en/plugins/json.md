@@ -1,5 +1,8 @@
 # JSON Support
 
+__WARNING!__ this module was merged into the RightJS core since version 2.3.0
+
+
 This module provides the standard JSON import/export functionality, plus some additional features
 
 __NOTE__: this module uitilizes browser's _native_ JSON format support if it is available
