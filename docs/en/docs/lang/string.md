@@ -194,6 +194,16 @@ __NOTE__: This method supports most of the UTF-8 symbols.
     'йокарный бабай'.capitalize(); // -> 'Йокарный бабай'
 
 
+### #dasherize
+
+    dasherize() -> String new
+
+Creates a dashed version of the string
+
+    'fooBar'.dasherize();  // -> 'foo-bar'
+    'foo_bar'.dasherize(); // -> 'foo-bar'
+
+
 
 ### #includes
 
