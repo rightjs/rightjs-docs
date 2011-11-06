@@ -262,6 +262,33 @@ _показа_ данного элемента
     $('some-element').radio('slide', {duration: 'long'});
 
 
+### #data
+
+    data(String key)              -> mixed data
+    data(Object values)           -> Element self
+    data(String key, mixed value) -> Element self
+
+Метод для работы с HTML5 datasets
+
+    element.data('something');              // -> данные из 'data-something' атрибута
+    element.data('something', 'something'); // -> устанавливает 'data-something' атрибут
+    element.data('something', null);        // -> удаляет 'data-something' атрибут
+    element.data({
+      one: 1, two: 2
+    }); // -> устанавливает 'data-one' и 'data-two'
+
+    // Считывание HTML5 datasets
+    element.set('data-name-one', '1');
+    element.set('data-name-two', '2');
+    element.data('name'); // -> {one: 1, two: 2}
+
+    // Установка HTML5 datasets
+    element.data('name', {one: 1, two: 2});
+    element.get('data-name-one'); // -> '1'
+    element.get('data-name-two'); // -> '2'
+
+
+
 ### #win
 
     win() -> Window window

@@ -255,6 +255,34 @@ specified, the effect will be used to perform the showing.
     $('some-element').radio('slide');
     $('some-element').radio('slide', {duration: 'long'});
 
+
+### #data
+
+    data(String key)              -> mixed data
+    data(Object values)           -> Element self
+    data(String key, mixed value) -> Element self
+
+HTML5 datasets access method
+
+    element.data('something');              // -> the 'data-something' attribute data
+    element.data('something', 'something'); // -> sets 'data-something' attribute
+    element.data('something', null);        // -> removes 'data-something' attribute
+    element.data({
+      one: 1, two: 2
+    }); // -> sets 'data-one' and 'data-two'
+
+    // HTML5 datasets access
+    element.set('data-name-one', '1');
+    element.set('data-name-two', '2');
+    element.data('name'); // -> {one: 1, two: 2}
+
+    // HTML5 datasets setting
+    element.data('name', {one: 1, two: 2});
+    element.get('data-name-one'); // -> '1'
+    element.get('data-name-two'); // -> '2'
+
+
+
 ### #win
 
     win() -> Window window
