@@ -203,7 +203,7 @@ There is a simple public API for all the `Tabs` class instances
 
 Name                             | Description
 ---------------------------------|----------------------------------
-show(index)                      | shows the tab at the index
+select(index)                    | shows the tab by an _integer_ index
 add(title, content\[, options\]) | creates a new tab
 remove(index\[s\])               | removes the tab(s)
 move(index, position)            | moves the tab to the position
