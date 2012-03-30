@@ -12,7 +12,7 @@ Right Calendar is the standard calendar/datepicker feature for RightJS
 Right Calendar has the following features:
 
 * Allows to pick dates and times
-* Supports multiple months in a greed
+* Supports multiple months in a grid
 * Supports date/time limits
 * Can be used as an inline widget
 * Can automatically initialize on input fields as a helper
@@ -67,7 +67,7 @@ maxDate        | null       | the maximum date you can select
 fxName         | 'fade'     | the visual effect name, use `null` if you don't want any fx
 fxDuration     | 'short'    | the visual effects duration
 firstDay       | 1          | 1 for Monday, 0 for Sunday
-numberOfMonths | 1          | a number of month to display, or a \[x,y\] months greed definition
+numberOfMonths | 1          | a number of month to display, or a \[x,y\] grid size
 timePeriod     | 1          | the time picker min time quantity in minutes
 twentyFourHour | null       | a marker if the 24 or 12 hours time picker should be used
 listYears      | false      | show the year switching buttons
@@ -163,7 +163,7 @@ elements structure description as a guidance.
         <div class="rui-button prev-month">&rsaquo:</div>
       </div>
 
-      <table class="greed">
+      <table class="grid">
         <tr><td>
 
           <table class="month">

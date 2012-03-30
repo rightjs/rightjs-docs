@@ -164,19 +164,19 @@ new Calendar({showButtons: true}).insertTo('simple-calendar-with-buttons');
 //]]>
 </script>
 
-You also can build several months calendars and calendar greed by defining the
+You also can build several months calendars and calendar grid by defining the
 `numberOfMonths` option
 
 <p>
   <div id="two-calendars"></div>
 </p>
 <p>
-  <div id="calendar-greed"></div>
+  <div id="calendar-grid"></div>
 </p>
 <script type="text/javascript">
 //<![CDATA[
 new Calendar({numberOfMonths: 2}).insertTo('two-calendars');
-new Calendar({numberOfMonths: [2,2]}).insertTo('calendar-greed');
+new Calendar({numberOfMonths: [2,2]}).insertTo('calendar-grid');
 //]]>
 </script>
 

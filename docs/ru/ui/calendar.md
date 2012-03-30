@@ -165,7 +165,7 @@ assignTo(element\[,trigger\]) | назначает календарь работ
         <div class="rui-button prev-month">&rsaquo:</div>
       </div>
 
-      <table class="greed">
+      <table class="grid">
         <tr><td>
 
           <table class="month">
